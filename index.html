@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andelo — Your design team without the hiring.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" data-calendly-css>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async data-calendly-js></script>
+
+<!-- Play CDN for preview only. In a real build, delete this script and use tailwind.config.js + a PostCSS/Vite build. -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+/* Mirror of tailwind.config.js — keep the two in sync. */
+tailwind.config = {
+  theme: {
+    screens: { sm: '721px', md: '901px', lg: '1201px', xl: '1440px' },
+    extend: {
+      colors: {
+        canvas: { DEFAULT: '#0A0C22', raised: '#12152F' },
+        navy: { 1: '#161B45', 2: '#0C0E28' },
+        glass: { DEFAULT: 'rgba(255,255,255,0.045)', hover: 'rgba(255,255,255,0.08)' },
+        hairline: { DEFAULT: 'rgba(255,255,255,0.08)', card: 'rgba(255,255,255,0.09)', hover: 'rgba(255,255,255,0.28)' },
+        brand: {
+          DEFAULT: '#3DE68C', hover: '#5CEBA1', ink: '#04160C',
+          soft: 'rgba(61,230,140,0.16)', softStrong: 'rgba(61,230,140,0.26)',
+          border: 'rgba(61,230,140,0.3)', onWhite: '#0E7A43',
+        },
+        heading: { DEFAULT: '#F5F7FF', hi: '#F6F8FF' },
+        body: {
+          DEFAULT: '#EEF0FF', strong: '#C4C8E6', muted: '#A6AAD0',
+          tertiary: '#9EA2C8', caption: '#8388AE', faint: '#6B7099',
+        },
+        paper: '#FFFFFF',
+        ink: { DEFAULT: '#12141C', body: '#3D4048' },
+        jewel: {
+          blue: '#61A5F2', blueDeep: '#2E5FB0',
+          indigo: '#6170F2', indigoDeep: '#2E38B0',
+          purple: '#A661F2', purpleDeep: '#6E2EB0',
+          magenta: '#E161F2', magentaDeep: '#A32EB0',
+          pink: '#F2619E', pinkDeep: '#B02E5E',
+          red: '#F26161', redDeep: '#B02E2E',
+        },
+        onSecondary: { DEFAULT: '#FFFFFF', body: 'rgba(255,255,255,0.9)' },
+        status: {
+          red: '#FF9494', redBg: 'rgba(255,99,99,0.15)',
+          amber: '#F2BE5C', amberBg: 'rgba(240,178,72,0.15)',
+          neutral: '#9AA0C0', neutralBg: 'rgba(255,255,255,0.06)',
+          redInk: '#BE3826', redPaper: '#FCE7E4',
+          amberInk: '#966410', amberPaper: '#FBF0D8',
+          neutralInk: '#586070', neutralPaper: '#EAEEF0',
+        },
+      },
+      fontFamily: {
+        display: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        body: ['Hanken Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['ui-monospace', 'SF Mono', 'Menlo', 'monospace'],
+      },
+      fontSize: {
+        h1: ['clamp(40px, 4.6vw, 60px)', { lineHeight: '1.04', letterSpacing: '-0.03em' }],
+        h2: ['clamp(34px, 4.5vw, 54px)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
+        h3: ['21.5px', { lineHeight: '1.25', letterSpacing: '-0.015em' }],
+        base: ['18px', { lineHeight: '1.6' }],
+        lead: ['19px', { lineHeight: '1.6' }],
+        small: ['16.5px', { lineHeight: '1.6' }],
+        'body-lg': ['19px', { lineHeight: '1.6' }],
+        body: ['18px', { lineHeight: '1.6' }],
+        'body-sm': ['16.5px', { lineHeight: '1.6' }],
+        eyebrow: ['14px', { lineHeight: '1.2', letterSpacing: '0.2em' }],
+        caption: ['14px', { lineHeight: '1.5' }],
+      },
+      fontWeight: {
+        regular: '400', medium: '500', semibold: '600', bold: '700', heavy: '800',
+      },
+      letterSpacing: {
+        display: '-0.03em', tight: '-0.02em', snug: '-0.01em',
+        label: '0.14em', 'label-wide': '0.16em', eyebrow: '0.2em',
+      },
+      lineHeight: { heading: '1.04', tight: '1.1', snug: '1.5', body: '1.6' },
+      spacing: { 1: '6px', 2: '12px', 3: '18px', 4: '24px', 5: '34px', 6: '52px', 7: '80px', card: '20px', gutter: '32px', section: '80px' },
+      maxWidth: { container: '1200px', narrow: '920px' },
+      borderRadius: { xs: '8px', sm: '12px', md: '18px', card: '20px', lg: '26px', pill: '999px' },
+      boxShadow: {
+        btn: '0 14px 34px rgba(61,230,140,0.28)',
+        'btn-hover': '0 18px 38px rgba(61,230,140,0.34)',
+        card: '0 20px 44px rgba(0,0,0,0.32)',
+        panel: '0 20px 44px rgba(46,95,176,0.28)',
+      },
+      backdropBlur: { card: '16px', glow: '28px' },
+      backgroundImage: {
+        'grad-mint': 'linear-gradient(150deg, #3DE68C, #12A566)',
+        'grad-blue': 'linear-gradient(150deg, #61A5F2, #2E5FB0)',
+        'grad-indigo': 'linear-gradient(150deg, #6170F2, #2E38B0)',
+        'grad-purple': 'linear-gradient(150deg, #A661F2, #6E2EB0)',
+        'grad-magenta': 'linear-gradient(150deg, #E161F2, #A32EB0)',
+        'grad-pink': 'linear-gradient(150deg, #F2619E, #B02E5E)',
+        'grad-red': 'linear-gradient(150deg, #F26161, #B02E2E)',
+        'grad-navy': 'linear-gradient(160deg, #161B45, #0C0E28)',
+      },
+      transitionTimingFunction: { house: 'cubic-bezier(0.16, 0.8, 0.24, 1)' },
+      transitionDuration: { fast: '200ms', DEFAULT: '350ms' },
+      keyframes: {
+        dsGlow: {
+          '0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
+          '50%': { opacity: '0.85', transform: 'scale(1.08)' },
+        },
+        dsLift: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+      animation: {
+        glow: 'dsGlow 6s cubic-bezier(0.16, 0.8, 0.24, 1) infinite',
+        lift: 'dsLift 5s cubic-bezier(0.16, 0.8, 0.24, 1) infinite',
+      },
+    },
+  },
+};
+</script>
+
+<style type="text/tailwindcss">
+  /* The eight patterns that repeat across the page. Everything else is raw utilities. */
+  @layer components {
+    /* Mint button. Flat fill only, never a gradient. Dark ink on top. */
+    .btn-mint {
+      @apply inline-flex items-center justify-center gap-[10px] rounded-pill bg-brand text-brand-ink
+             font-bold shadow-btn transition-[transform,background] duration-fast
+             hover:bg-brand-hover hover:-translate-y-[2px];
+    }
+    /* Ghost/secondary button. Hairline border, mint wash on hover. */
+    .btn-ghost {
+      @apply inline-flex items-center justify-center gap-[10px] rounded-pill border border-white/20
+             text-body font-semibold transition-[border-color,background,transform,color] duration-fast
+             hover:bg-brand/[.14] hover:border-brand hover:text-white hover:-translate-y-[2px];
+    }
+    /* The universal surface: frosted glass card with the standard hover. */
+    .card-glass {
+      @apply bg-glass backdrop-blur-card border border-hairline-card rounded-lg
+             transition-[background,border-color,transform] duration-fast
+             hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[4px];
+    }
+    /* Small tag/chip. */
+    .chip {
+      @apply px-[12px] py-[6px] rounded-pill bg-white/[.06] border border-white/10
+             text-[14px] text-body-strong transition-[background,border-color] duration-fast
+             hover:bg-white/[.12] hover:border-hairline-hover;
+    }
+    /* Uppercase mint eyebrow. */
+    .eyebrow {
+      @apply inline-flex items-center gap-[9px] text-eyebrow font-semibold uppercase text-brand;
+    }
+    /* 44px icon tile: mint-soft wash holding a mint line icon. */
+    .icon-tile {
+      @apply w-[50px] h-[50px] rounded-sm bg-brand-soft border border-brand-soft
+             flex items-center justify-center;
+    }
+    /* Scroll-reveal start state. JS clears it on intersect. */
+    .reveal {
+      @apply opacity-0 translate-y-[24px] transition-all duration-700 ease-house;
+    }
+    .reveal-in { @apply opacity-100 translate-y-0; }
+  }
+
+  /* Ambient + decorative motion. House easing only, no bounce. */
+  @keyframes pulseGlow { 0%,100% { opacity:.45; transform:scale(1); } 50% { opacity:.8; transform:scale(1.1); } }
+  @keyframes floaty1 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-20px); } }
+  @keyframes floaty2 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(16px); } }
+  @keyframes floaty3 { 0%,100% { transform:translateY(0) rotate(-5deg); } 50% { transform:translateY(-14px) rotate(-5deg); } }
+  @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+  [data-carousel] { scrollbar-width: none; -ms-overflow-style: none; cursor: grab; }
+  [data-carousel]::-webkit-scrollbar { display: none; }
+  /* Scale a wrapper, not the <img>, so overflow+radius on the media frame keeps clipping. */
+  [data-testimonial]:hover .ts-zoom { transform: scale(1.07); }
+  ::selection { background: rgba(61,230,140,.28); color: #fff; }
+</style>
+</head>
+
+<body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
+<div id="top" class="relative">
+
+  <!-- Ambient glows -->
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-[140px] -left-[100px] w-[540px] h-[540px] rounded-full blur-[24px]
+                bg-[radial-gradient(circle,rgba(61,230,140,.16),transparent_70%)]
+                animate-[pulseGlow_9s_ease-in-out_infinite]"></div>
+    <div class="absolute top-[320px] -right-[160px] w-[600px] h-[600px] rounded-full blur-[24px]
+                bg-[radial-gradient(circle,rgba(124,92,240,.15),transparent_70%)]
+                animate-[pulseGlow_12s_ease-in-out_infinite]"></div>
+  </div>
+
+  <div class="relative z-[1]">
+
+    <!-- Site nav mounted by /assets/site-nav.js -->
+  <div data-site-nav-mount></div>
+  <script src="/assets/site-nav.js"></script>
+
+
+  <!-- ══ HERO ══ -->
+  <section class="relative pt-[150px] pb-[96px]">
+    <div class="absolute inset-0 pointer-events-none
+                bg-[radial-gradient(1100px_560px_at_72%_4%,rgba(124,92,240,.22),transparent_58%),linear-gradient(180deg,rgba(19,23,58,.6),transparent_40%)]"></div>
+    <div class="relative max-w-container mx-auto px-gutter grid grid-cols-1 sm:grid-cols-[1.05fr_.95fr] gap-3 sm:gap-6 items-center">
+      <div class="reveal">
+        <div class="inline-flex items-center gap-[9px] px-[14px] py-[7px] rounded-pill border border-white/[.12] bg-white/[.04]
+                    text-[13.5px] font-semibold tracking-label-wide uppercase text-[#BFC4E6]">
+          <span class="w-[7px] h-[7px] rounded-full bg-brand shadow-[0_0_12px_#3DE68C]"></span>Design subscription Australia
+        </div>
+        <h1 class="font-display font-bold text-h1 text-heading-hi mt-[22px]">Your design team<br>without the <span class="text-brand">hiring.</span></h1>
+        <p class="max-w-[480px] text-body text-[clamp(18px,1.5vw,21.5px)] leading-body mt-[22px]">More design work than hands? A dedicated team that learns your brand, keeps pace with your calendar, and hits every date it gives. Australian-founded.</p>
+        <div class="flex flex-wrap gap-[14px] mt-5">
+          <a href="/book-a-call" data-calendly-popup class="btn-mint px-[26px] py-[16px] text-[17px]">Book a 15-Min Call</a>
+          <a href="#how" class="btn-ghost px-[26px] py-[16px] text-[17px]">See How It Works</a>
+        </div>
+      </div>
+
+      <!-- Abstract collage. Decorative jewel gradients, one per tile. -->
+      <div class="reveal [transition-delay:120ms] relative h-[440px] sm:h-[520px]">
+        <div class="absolute inset-y-[6%] inset-x-[8%] blur-[14px] bg-[radial-gradient(circle_at_55%_42%,rgba(61,230,140,.2),transparent_62%)]"></div>
+        <div class="absolute top-[42px] left-[8%] w-[186px] h-[242px] rounded-[22px] p-[18px] overflow-hidden
+                    bg-[linear-gradient(160deg,#A661F2,#6E2EB0)] shadow-[0_34px_66px_rgba(0,0,0,.5)]
+                    animate-[floaty1_6.5s_ease-in-out_infinite]">
+          <div class="w-[34px] h-[34px] rounded-[9px] bg-white/[.24]"></div>
+          <div class="mt-[60px] h-[9px] rounded-[6px] w-[82%] bg-white/50"></div>
+          <div class="mt-[9px] h-[9px] rounded-[6px] w-[60%] bg-white/[.32]"></div>
+          <div class="mt-[9px] h-[9px] rounded-[6px] w-[70%] bg-white/[.24]"></div>
+        </div>
+        <div class="absolute top-[16px] right-[6%] w-[198px] h-[150px] rounded-card p-4 overflow-hidden
+                    bg-[linear-gradient(160deg,#E161F2,#A32EB0)] shadow-[0_30px_60px_rgba(0,0,0,.45)]
+                    animate-[floaty2_7.5s_ease-in-out_infinite]">
+          <div class="flex gap-[6px]">
+            <span class="w-[26px] h-[26px] rounded-xs bg-white/90"></span>
+            <span class="w-[26px] h-[26px] rounded-xs bg-white/[.55]"></span>
+            <span class="w-[26px] h-[26px] rounded-xs bg-white/30"></span>
+          </div>
+          <div class="mt-5 h-[8px] rounded-[5px] w-[88%] bg-white/[.55]"></div>
+          <div class="mt-[8px] h-[8px] rounded-[5px] w-[64%] bg-white/[.35]"></div>
+        </div>
+        <div class="absolute bottom-[56px] right-[12%] w-[210px] h-[236px] rounded-[22px] p-[18px] overflow-hidden
+                    bg-[linear-gradient(160deg,#61A5F2,#2E5FB0)] shadow-[0_34px_66px_rgba(0,0,0,.5)]
+                    animate-[floaty1_8s_ease-in-out_infinite_400ms]">
+          <div class="w-full h-[96px] rounded-sm bg-[linear-gradient(140deg,rgba(255,255,255,.28),rgba(255,255,255,.08))]"></div>
+          <div class="mt-4 h-[9px] rounded-[6px] w-[78%] bg-white/50"></div>
+          <div class="mt-[9px] h-[9px] rounded-[6px] w-[52%] bg-white/30"></div>
+        </div>
+        <div class="absolute bottom-5 left-[12%] w-[150px] h-[120px] rounded-md flex items-center justify-center
+                    bg-[linear-gradient(160deg,#6170F2,#2E38B0)] shadow-[0_26px_54px_rgba(0,0,0,.45)]
+                    animate-[floaty3_7s_ease-in-out_infinite]">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#06231F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TRUSTED BY ══ -->
+  <section class="pt-[26px] pb-[84px]">
+    <div class="max-w-container mx-auto px-gutter">
+      <div class="text-center text-[13.5px] font-semibold tracking-[.24em] uppercase text-body-faint mb-[30px]">Trusted by</div>
+      <div class="overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_12%,#000_88%,transparent)] [-webkit-mask-image:linear-gradient(90deg,transparent,#000_12%,#000_88%,transparent)]">
+        <div class="flex gap-[60px] w-max items-center animate-[marquee_34s_linear_infinite]">
+          <span class="font-display font-bold text-[23.5px] tracking-[.02em] text-[#676C96] whitespace-nowrap">Fitness Cartel</span>
+          <span class="font-display font-bold text-[23.5px] tracking-label text-[#676C96] whitespace-nowrap">SPEEDFIT</span>
+          <span class="font-display font-bold text-[23.5px] tracking-[.02em] text-[#676C96] whitespace-nowrap">Bridgit</span>
+          <span class="font-display font-bold text-[23.5px] tracking-[.02em] text-[#676C96] whitespace-nowrap">Refilled</span>
+          <span class="font-display font-bold text-[23.5px] tracking-label text-[#676C96] whitespace-nowrap">KURVE</span>
+          <span class="font-display font-bold text-[23.5px] tracking-eyebrow text-[#676C96] whitespace-nowrap">BUTCHER</span>
+          <span class="font-display font-bold text-[23.5px] tracking-[.02em] text-[#676C96] whitespace-nowrap">Scope</span>
+          <span class="font-display font-bold text-[23.5px] tracking-[.02em] text-[#676C96] whitespace-nowrap">MaskCo</span>
+          <span class="font-display font-bold text-[23.5px] tracking-[.1em] text-[#676C96] whitespace-nowrap">Digital Native</span>
+          <span class="font-display font-bold text-[23.5px] tracking-[.02em] text-[#676C96] whitespace-nowrap" aria-hidden="true">Fitness Cartel</span>
+          <span class="font-display font-bold text-[23.5px] tracking-label text-[#676C96] whitespace-nowrap" aria-hidden="true">SPEEDFIT</span>
+          <span class="font-display font-bold text-[23.5px] tracking-[.02em] text-[#676C96] whitespace-nowrap" aria-hidden="true">Bridgit</span>
+          <span class="font-display font-bold text-[23.5px] tracking-[.02em] text-[#676C96] whitespace-nowrap" aria-hidden="true">Refilled</span>
+          <span class="font-display font-bold text-[23.5px] tracking-label text-[#676C96] whitespace-nowrap" aria-hidden="true">KURVE</span>
+          <span class="font-display font-bold text-[23.5px] tracking-eyebrow text-[#676C96] whitespace-nowrap" aria-hidden="true">BUTCHER</span>
+          <span class="font-display font-bold text-[23.5px] tracking-[.02em] text-[#676C96] whitespace-nowrap" aria-hidden="true">Scope</span>
+          <span class="font-display font-bold text-[23.5px] tracking-[.02em] text-[#676C96] whitespace-nowrap" aria-hidden="true">MaskCo</span>
+          <span class="font-display font-bold text-[23.5px] tracking-[.1em] text-[#676C96] whitespace-nowrap" aria-hidden="true">Digital Native</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHAT YOU GET (bento) ══ -->
+  <section id="why" class="py-section">
+    <div class="max-w-container mx-auto px-gutter">
+      <div class="reveal text-center max-w-[640px] mx-auto mb-6">
+        <div class="eyebrow">What you get</div>
+        <h2 class="font-display font-bold text-[clamp(32px,4vw,50px)] leading-[1.06] tracking-tight text-heading mt-4">All the design done.<br>None of the hassle.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-card items-stretch">
+        <!-- purple, tall -->
+        <div class="reveal md:col-start-1 md:row-span-2 relative overflow-hidden rounded-lg p-[30px] flex flex-col
+                    bg-[linear-gradient(165deg,#A661F2,#6E2EB0)] shadow-[0_24px_50px_rgba(60,40,140,.3)]
+                    hover:-translate-y-[5px] hover:shadow-[0_36px_72px_rgba(0,0,0,.46)]">
+          <div class="absolute -top-[40px] -right-[40px] w-[180px] h-[180px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,.22),transparent_70%)]"></div>
+          <img src="assets/why-consistent.png" alt="" class="relative w-[140px] h-[140px] object-contain" width="140" height="140">
+          <div class="flex-1"></div>
+          <h3 class="relative font-display font-bold text-[27px] text-onSecondary mb-2">
+            <span class="block text-[12.5px] font-bold tracking-label-wide uppercase text-white/[.72] mb-[10px]">Consistent</span>Stop re-explaining your brand
+          </h3>
+          <p class="relative text-onSecondary-body text-base leading-body">One team learns it once and keeps it right, so every file comes back on-brand and ready to use.</p>
+        </div>
+        <!-- blue -->
+        <div class="reveal [transition-delay:80ms] relative overflow-hidden rounded-lg p-[28px]
+                    bg-[linear-gradient(165deg,#61A5F2,#2E5FB0)] shadow-[0_24px_50px_rgba(30,60,160,.28)]
+                    hover:-translate-y-[5px] hover:shadow-[0_36px_72px_rgba(0,0,0,.46)]">
+          <div class="w-[52px] h-[52px] rounded-sm bg-white/[.16] border border-white/[.24] flex items-center justify-center mb-[20px]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 10-2.3 5.6" stroke="#fff" stroke-width="1.9" stroke-linecap="round"/><path d="M20 5v5h-5" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-[23.5px] text-onSecondary mb-[10px]">
+            <span class="block text-[12.5px] font-bold tracking-label-wide uppercase text-white/[.72] mb-[8px]">Reliable</span>Promise a date and keep it
+          </h3>
+          <p class="text-onSecondary-body text-base leading-snug">Every brief gets a delivery date before work starts, and we hit it, so you can commit with confidence.</p>
+        </div>
+        <!-- indigo -->
+        <div class="reveal [transition-delay:160ms] relative overflow-hidden rounded-lg p-[28px]
+                    bg-grad-indigo shadow-[0_24px_50px_rgba(30,120,140,.28)]
+                    hover:-translate-y-[5px] hover:shadow-[0_36px_72px_rgba(0,0,0,.46)]">
+          <div class="w-[52px] h-[52px] rounded-sm bg-white/[.18] border border-white/[.26] flex items-center justify-center mb-[20px]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-[23.5px] text-onSecondary mb-[10px]">
+            <span class="block text-[12.5px] font-bold tracking-label-wide uppercase text-white/75 mb-[8px]">Senior</span>Quality that doesn't slip
+          </h3>
+          <p class="text-white/[.88] text-base leading-snug">Experienced designers on every brief, so the work stays strong even when you need it fast.</p>
+        </div>
+        <!-- red, wide -->
+        <div class="reveal [transition-delay:120ms] md:col-start-2 md:col-span-2 md:row-start-2 relative overflow-hidden rounded-lg px-[30px] py-[22px]
+                    flex items-center gap-[26px] bg-[linear-gradient(120deg,#F26161,#B02E2E)] shadow-[0_24px_50px_rgba(120,40,150,.28)]
+                    hover:-translate-y-[5px] hover:shadow-[0_36px_72px_rgba(0,0,0,.46)]">
+          <div class="flex-none w-[62px] h-[62px] rounded-[16px] bg-white/20 border border-white/[.28] flex items-center justify-center">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 5l14 14M18 8a6 6 0 00-8.5-2M6 16a6 6 0 008.5 2" stroke="#fff" stroke-width="1.9" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-[25px] text-onSecondary mb-[8px]">
+              <span class="block text-[12.5px] font-bold tracking-label-wide uppercase text-white/[.72] mb-[8px]">Effortless</span>We manage it for you
+            </h3>
+            <p class="text-onSecondary-body text-base leading-snug max-w-[520px]">One point of contact runs the whole job, so there's nothing to chase and nothing to manage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHO WE WORK WITH ══ -->
+  <section class="py-section">
+    <div class="max-w-container mx-auto px-gutter">
+      <div class="reveal text-center max-w-[680px] mx-auto mb-[48px]">
+        <div class="eyebrow">Who we work with</div>
+        <h2 class="font-display font-bold text-h2 text-heading mt-4">Built for teams the workload never lets up on.</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-card">
+        <div class="reveal card-glass p-[30px]">
+          <div class="icon-tile mb-[22px]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 11l14-6v14L3 13z" stroke="#3DE68C" stroke-width="1.8" stroke-linejoin="round"/><path d="M17 8a3.5 3.5 0 010 7" stroke="#3DE68C" stroke-width="1.8"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-h3 text-heading mb-2">No designer in-house</h3>
+          <p class="text-body text-[17px] leading-body">Design keeps landing on people who were never hired to do it. We become the team you don't have, so they get their real job back.</p>
+        </div>
+        <div class="reveal [transition-delay:80ms] card-glass p-[30px]">
+          <div class="icon-tile mb-[22px]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#3DE68C" stroke-width="1.8"/><path d="M3 20a6 6 0 0112 0" stroke="#3DE68C" stroke-width="1.8" stroke-linecap="round"/><path d="M16 6a3 3 0 010 6M18 20a6 6 0 00-3-5.2" stroke="#3DE68C" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-h3 text-heading mb-2">An overloaded creative team</h3>
+          <p class="text-body text-[17px] leading-body">The volume buries the work that matters. We take the overflow so your designers get back to it.</p>
+        </div>
+        <div class="reveal [transition-delay:160ms] card-glass p-[30px]">
+          <div class="icon-tile mb-[22px]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="7" height="7" rx="1.5" stroke="#3DE68C" stroke-width="1.8"/><rect x="14" y="4" width="7" height="7" rx="1.5" stroke="#3DE68C" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#3DE68C" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="#3DE68C" stroke-width="1.8"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-h3 text-heading mb-2">Agencies</h3>
+          <p class="text-body text-[17px] leading-body">More client work than you can staff for. We're the production team behind your brand, so you take on more without hiring.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES CAROUSEL ══ -->
+  <section id="work" class="py-section">
+    <div class="max-w-container mx-auto px-gutter flex items-end justify-between gap-4 mb-5">
+      <div class="reveal">
+        <div class="eyebrow">Our Work</div>
+        <h2 class="font-display font-bold text-[clamp(34px,4.5vw,52px)] leading-[1.06] tracking-tight text-heading mt-[14px]">Everything your brand ships.</h2>
+      </div>
+      <div class="flex gap-2">
+        <button data-car-prev aria-label="Previous" class="w-[48px] h-[48px] rounded-full bg-glass border border-white/[.14] text-body flex items-center justify-center transition-[background,border-color] duration-fast hover:bg-white/[.12] hover:border-hairline-hover">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button data-car-next aria-label="Next" class="w-[48px] h-[48px] rounded-full bg-glass border border-white/[.14] text-body flex items-center justify-center transition-[background,border-color] duration-fast hover:bg-white/[.12] hover:border-hairline-hover">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <div data-carousel class="flex gap-card overflow-x-auto pt-[6px] pb-4 px-[max(32px,calc((100%-1200px)/2+32px))] [scroll-padding-left:max(32px,calc((100%-1200px)/2+32px))] snap-x snap-mandatory select-none">
+
+      <div data-card class="snap-start flex-none w-[330px] card-glass overflow-hidden cursor-pointer">
+        <div class="h-[186px] bg-grad-blue"></div>
+        <div class="p-[22px]">
+          <h3 class="font-display font-semibold text-[19px] text-heading mb-[14px] leading-tight">Social Media</h3>
+          <div class="flex flex-wrap gap-[8px]"><span class="chip">Posts</span><span class="chip">Carousels</span><span class="chip">Story sets</span></div>
+        </div>
+      </div>
+
+      <div data-card class="snap-start flex-none w-[330px] card-glass overflow-hidden cursor-pointer">
+        <div class="h-[186px] bg-grad-indigo"></div>
+        <div class="p-[22px]">
+          <h3 class="font-display font-semibold text-[19px] text-heading mb-[14px] leading-tight">Campaign Artwork</h3>
+          <div class="flex flex-wrap gap-[8px]"><span class="chip">Key visuals</span><span class="chip">Ad sets</span><span class="chip">Multi-channel rollouts</span></div>
+        </div>
+      </div>
+
+      <div data-card class="snap-start flex-none w-[330px] card-glass overflow-hidden cursor-pointer">
+        <div class="h-[186px] bg-grad-purple"></div>
+        <div class="p-[22px]">
+          <h3 class="font-display font-semibold text-[19px] text-heading mb-[14px] leading-tight">Presentations</h3>
+          <div class="flex flex-wrap gap-[8px]"><span class="chip">Pitch decks</span><span class="chip">Sales decks</span><span class="chip">Reusable templates</span></div>
+        </div>
+      </div>
+
+      <div data-card class="snap-start flex-none w-[330px] card-glass overflow-hidden cursor-pointer">
+        <div class="h-[186px] bg-grad-magenta"></div>
+        <div class="p-[22px]">
+          <h3 class="font-display font-semibold text-[19px] text-heading mb-[14px] leading-tight">Email</h3>
+          <div class="flex flex-wrap gap-[8px]"><span class="chip">EDMs</span><span class="chip">Newsletters</span><span class="chip">Campaign emails</span></div>
+        </div>
+      </div>
+
+      <div data-card class="snap-start flex-none w-[330px] card-glass overflow-hidden cursor-pointer">
+        <div class="h-[186px] bg-grad-red"></div>
+        <div class="p-[22px]">
+          <h3 class="font-display font-semibold text-[19px] text-heading mb-[14px] leading-tight">Print &amp; Signage</h3>
+          <div class="flex flex-wrap gap-[8px]"><span class="chip">Flyers</span><span class="chip">Posters</span><span class="chip">Brochures</span><span class="chip">Pull-up banners</span><span class="chip">Event walls</span></div>
+        </div>
+      </div>
+
+      <div data-card class="snap-start flex-none w-[330px] card-glass overflow-hidden cursor-pointer">
+        <div class="h-[186px] bg-grad-blue"></div>
+        <div class="p-[22px]">
+          <h3 class="font-display font-semibold text-[19px] text-heading mb-[14px] leading-tight">Reports &amp; Documents</h3>
+          <div class="flex flex-wrap gap-[8px]"><span class="chip">Annual reports</span><span class="chip">Whitepapers</span><span class="chip">One-pagers</span><span class="chip">Infographics</span></div>
+        </div>
+      </div>
+
+      <div data-card class="snap-start flex-none w-[330px] card-glass overflow-hidden cursor-pointer">
+        <div class="h-[186px] bg-grad-indigo"></div>
+        <div class="p-[22px]">
+          <h3 class="font-display font-semibold text-[19px] text-heading mb-[14px] leading-tight">Web Graphics</h3>
+          <div class="flex flex-wrap gap-[8px]"><span class="chip">Web banners</span><span class="chip">Icons</span><span class="chip">Blog images</span></div>
+        </div>
+      </div>
+
+      <div data-card class="snap-start flex-none w-[330px] card-glass overflow-hidden cursor-pointer">
+        <div class="h-[186px] bg-grad-purple"></div>
+        <div class="p-[22px]">
+          <h3 class="font-display font-semibold text-[19px] text-heading mb-[14px] leading-tight">Motion</h3>
+          <div class="flex flex-wrap gap-[8px]"><span class="chip">Animated posts</span><span class="chip">Kinetic type</span><span class="chip">Simple social motion</span></div>
+        </div>
+      </div>
+
+      <div data-card class="snap-start flex-none w-[330px] card-glass overflow-hidden cursor-pointer">
+        <div class="h-[186px] bg-grad-magenta"></div>
+        <div class="p-[22px]">
+          <h3 class="font-display font-semibold text-[19px] text-heading mb-[14px] leading-tight">3D</h3>
+          <div class="flex flex-wrap gap-[8px]"><span class="chip">Product renders</span><span class="chip">Packaging mockups</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HOW IT WORKS ══ -->
+  <section id="how" class="py-section scroll-mt-[90px]">
+    <div class="max-w-container mx-auto px-gutter">
+      <div class="reveal text-center mx-auto mb-[48px]">
+        <div class="eyebrow">How it works</div>
+        <h2 class="font-display font-bold text-h2 text-heading mt-4">Simple, every time</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-card">
+        <div class="reveal card-glass relative p-[30px] overflow-hidden">
+          <div class="absolute top-[14px] right-[22px] font-display font-bold text-[72px] text-white/[.05]">01</div>
+          <div class="icon-tile mb-[22px]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20l3-1 10-10-2-2L5 17z" stroke="#3DE68C" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 6l2-2 2 2-2 2" stroke="#3DE68C" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="text-[14px] font-semibold tracking-label uppercase text-brand mb-[8px]">Step 1</div>
+          <h3 class="font-display font-semibold text-[22.5px] text-heading mb-2">Brief us</h3>
+          <p class="text-body text-[17px] leading-body">Submit your request. We confirm the cost and the delivery date before any work starts, so you know both upfront.</p>
+        </div>
+        <div class="reveal [transition-delay:100ms] card-glass relative p-[30px] overflow-hidden">
+          <div class="absolute top-[14px] right-[22px] font-display font-bold text-[72px] text-white/[.05]">02</div>
+          <div class="icon-tile mb-[22px]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#3DE68C" stroke-width="1.8"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke="#3DE68C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="text-[14px] font-semibold tracking-label uppercase text-brand mb-[8px]">Step 2</div>
+          <h3 class="font-display font-semibold text-[22.5px] text-heading mb-2">We deliver</h3>
+          <p class="text-body text-[17px] leading-body">Every file is checked before it reaches you, so there's no back-and-forth. On-brand work, on the date we gave you.</p>
+        </div>
+        <div class="reveal [transition-delay:200ms] card-glass relative p-[30px] overflow-hidden">
+          <div class="absolute top-[14px] right-[22px] font-display font-bold text-[72px] text-white/[.05]">03</div>
+          <div class="icon-tile mb-[22px]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6" stroke="#3DE68C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="text-[14px] font-semibold tracking-label uppercase text-brand mb-[8px]">Step 3</div>
+          <h3 class="font-display font-semibold text-[22.5px] text-heading mb-2">Scale up</h3>
+          <p class="text-body text-[17px] leading-body">Need more? Upgrade anytime, add hours, or move to a dedicated team as the work grows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LEAD MAGNET BANNER (purple jewel panel, one per view) ══ -->
+  <section class="py-[60px]">
+    <div class="max-w-[1280px] mx-auto px-gutter">
+      <div class="reveal relative overflow-hidden rounded-lg p-6 sm:p-[52px] grid grid-cols-1 sm:grid-cols-[.85fr_1.15fr] gap-gutter items-center
+                  bg-[linear-gradient(120deg,#3A2170,#6D3BC4_55%,#A661F2)]">
+        <div class="relative sm:pl-4">
+          <h2 class="font-display font-bold text-[clamp(29.5px,4vw,45px)] leading-tight tracking-tight text-onSecondary">Do you have enough design capacity?</h2>
+          <p class="text-white/[.82] text-base leading-body mt-[18px] mb-[26px] max-w-[640px]">Find out exactly how many hours you or your team can cover, and whether you need more help. Then take a real number into your next budget conversation, not a guess. Free, no email required.</p>
+          <a href="/design-capacity-formula" class="btn-mint font-display font-extrabold px-[40px] py-[19px] text-[19px] uppercase tracking-snug shadow-[0_12px_30px_rgba(0,0,0,.25)]">Work out my capacity number</a>
+        </div>
+        <div class="relative flex items-center justify-center">
+          <img src="assets/blog-design-hours-cta.png" alt="Do you have enough design capacity?" class="block w-[76%] h-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CLIENT STORIES ══ -->
+  <section class="py-section">
+    <div class="max-w-container mx-auto px-gutter">
+      <div class="reveal text-center mx-auto mb-[48px]">
+        <div class="eyebrow">Client stories</div>
+        <h2 class="font-display font-bold text-h2 text-heading mt-4 mx-auto max-w-[960px]">Don't take our word for it. Hear it from the teams we work with.</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-card">
+
+        <div data-testimonial class="reveal card-glass backdrop-blur-none overflow-hidden">
+          <div class="relative h-[200px] overflow-hidden rounded-t-lg">
+            <div class="ts-zoom absolute inset-0 transition-transform duration-[550ms] ease-house will-change-transform">
+              <img class="ts-img w-full h-full object-cover object-center block" src="assets/home-hannah.png" alt="Hannah, Head of Marketing at MaskCo">
+            </div>
+            <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,8,24,.05),rgba(6,8,24,.5))]"></div>
+            <button data-play data-vname="MaskCo — Hannah, Head of Marketing" class="absolute bottom-[14px] right-[14px] inline-flex items-center gap-[8px] pl-[13px] pr-4 py-[9px] rounded-pill bg-[rgba(10,12,34,.62)] border border-white/20 backdrop-blur-[6px] text-white font-display font-semibold text-[14px] cursor-pointer transition-[background,transform,color] duration-fast hover:bg-brand hover:text-brand-ink hover:-translate-y-[2px]">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Play
+            </button>
+          </div>
+          <div class="p-4">
+            <div class="font-display font-bold text-[19px] tracking-[.08em] text-brand mb-[4px]">MaskCo</div>
+            <div class="text-body-caption text-caption mb-4">Client for 2.5 years</div>
+            <p class="text-h3 leading-snug font-medium tracking-snug text-[#F3F4FD] mb-[22px]">"I've given them huge amounts of artwork and they've never <span class="text-brand">missed a deadline</span>. As we scale and need more, it's great the team can support bigger volumes."</p>
+            <div>
+              <div class="font-semibold text-heading text-small mb-[3px]">Hannah</div>
+              <div class="text-body-caption text-[14.5px]">Head of Marketing</div>
+            </div>
+          </div>
+        </div>
+
+        <div data-testimonial class="reveal [transition-delay:100ms] card-glass backdrop-blur-none overflow-hidden">
+          <div class="relative h-[200px] overflow-hidden rounded-t-lg">
+            <div class="ts-zoom absolute inset-0 transition-transform duration-[550ms] ease-house will-change-transform">
+              <img class="ts-img w-full h-full object-cover object-center block" src="assets/speedfit-matej.png" alt="Matej Varhalik, CEO and Co-Founder of Speedfit">
+            </div>
+            <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,8,24,.05),rgba(6,8,24,.5))]"></div>
+            <button data-play data-vname="Speedfit — Matej Varhalik, CEO &amp; Co-Founder" class="absolute bottom-[14px] right-[14px] inline-flex items-center gap-[8px] pl-[13px] pr-4 py-[9px] rounded-pill bg-[rgba(10,12,34,.62)] border border-white/20 backdrop-blur-[6px] text-white font-display font-semibold text-[14px] cursor-pointer transition-[background,transform,color] duration-fast hover:bg-brand hover:text-brand-ink hover:-translate-y-[2px]">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Play
+            </button>
+          </div>
+          <div class="p-4">
+            <div class="font-display font-bold text-[19px] tracking-[.12em] text-brand mb-[4px]">SPEEDFIT</div>
+            <div class="text-body-caption text-caption mb-4">30 locations · 2.5 years</div>
+            <p class="text-h3 leading-snug font-medium tracking-snug text-[#F3F4FD] mb-[22px]">"We scaled up hours to relaunch our website, then scaled back once it was done. <span class="text-brand">Very cost-effective</span> compared to having multiple internal people."</p>
+            <div>
+              <div class="font-semibold text-heading text-small mb-[3px]">Matej Varhalik</div>
+              <div class="text-body-caption text-[14.5px]">CEO &amp; Co-Founder</div>
+            </div>
+          </div>
+        </div>
+
+        <div data-testimonial class="reveal [transition-delay:200ms] card-glass backdrop-blur-none overflow-hidden">
+          <div class="relative h-[200px] overflow-hidden rounded-t-lg">
+            <div class="ts-zoom absolute inset-0 transition-transform duration-[550ms] ease-house will-change-transform">
+              <img class="ts-img w-full h-full object-cover object-center block" src="assets/oren-hero.png" alt="Oren Greenberg, Marketing Consultant">
+            </div>
+            <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,8,24,.05),rgba(6,8,24,.5))]"></div>
+            <button data-play data-vname="Oren Greenberg — Marketing Consultant" class="absolute bottom-[14px] right-[14px] inline-flex items-center gap-[8px] pl-[13px] pr-4 py-[9px] rounded-pill bg-[rgba(10,12,34,.62)] border border-white/20 backdrop-blur-[6px] text-white font-display font-semibold text-[14px] cursor-pointer transition-[background,transform,color] duration-fast hover:bg-brand hover:text-brand-ink hover:-translate-y-[2px]">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Play
+            </button>
+          </div>
+          <div class="p-4">
+            <div class="font-display font-bold text-[19px] tracking-[.12em] text-brand mb-[4px]">OREN</div>
+            <div class="text-body-caption text-caption mb-4">Partner for 8+ years</div>
+            <p class="text-h3 leading-snug font-medium tracking-snug text-[#F3F4FD] mb-[22px]">"Most designers get the aesthetics but miss the substance. Stephen's team <span class="text-brand">nails how to present the information</span>, every single time."</p>
+            <div>
+              <div class="font-semibold text-heading text-small mb-[3px]">Oren Greenberg</div>
+              <div class="text-body-caption text-[14.5px]">Marketing Consultant</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PRICING ══ -->
+  <section id="pricing" class="py-section">
+    <div class="max-w-container mx-auto px-gutter">
+      <div class="reveal text-center max-w-[820px] mx-auto mb-[44px]">
+        <div class="eyebrow">Pricing</div>
+        <h2 class="font-display font-bold text-h2 text-heading mt-4 mb-2">Know your costs upfront. Always.</h2>
+        <p class="text-body text-base leading-body">Choose the plan that fits your workload. Need more than 90 hours? We build larger teams for bigger volumes.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-[1.55fr_1fr] gap-[26px] items-start">
+        <div class="flex flex-col gap-4">
+
+          <div class="reveal flex flex-wrap items-center gap-[22px] rounded-lg p-gutter
+                      bg-[linear-gradient(120deg,rgba(97,165,242,.14),rgba(255,255,255,.03))] border-[1.5px] border-[rgba(97,165,242,.55)]
+                      transition-[border-color,transform] duration-fast hover:border-brand hover:-translate-y-[3px]">
+            <div class="flex-1 min-w-[180px]">
+              <div class="text-[17px] font-bold tracking-label uppercase text-body">Pilot</div>
+              <div class="inline-block mt-[10px] px-[14px] py-[5px] rounded-pill bg-white/[.08] border border-white/[.14] text-body text-[15px] font-semibold">30 hours included</div>
+              <p class="text-body text-small leading-snug mt-[8px]">You've got steady design work coming in and need reliable quality without hiring.</p>
+            </div>
+            <div class="flex-none flex flex-col items-end">
+              <span class="font-display font-bold text-[34px] text-heading">$1,895</span>
+              <span class="text-body-caption text-[14.5px] mt-[2px]">per month</span>
+            </div>
+          </div>
+
+          <div class="reveal [transition-delay:80ms] relative flex flex-wrap items-center gap-[22px] rounded-lg px-gutter py-[36px]
+                      bg-[linear-gradient(120deg,rgba(97,165,242,.14),rgba(255,255,255,.03))] border-[1.5px] border-[rgba(97,165,242,.55)]
+                      transition-[border-color,transform] duration-fast hover:border-brand hover:-translate-y-[3px]">
+            <div class="flex-1 min-w-[180px]">
+              <div class="flex items-center gap-[10px] flex-wrap">
+                <span class="text-[17px] font-bold tracking-label uppercase text-brand">Essentials</span>
+                <span class="px-[10px] py-[3px] rounded-pill bg-brand text-brand-ink text-[12px] font-bold tracking-[.04em]">Most Popular</span>
+              </div>
+              <div class="inline-block mt-[10px] px-[14px] py-[5px] rounded-pill bg-white/[.08] border border-white/[.14] text-body text-[15px] font-semibold">60 hours included</div>
+              <p class="text-body text-small leading-snug mt-[8px]">You're running campaigns weekly and need a team that never falls behind.</p>
+            </div>
+            <div class="flex-none flex flex-col items-end">
+              <span class="font-display font-bold text-[36px] text-heading">$3,495</span>
+              <span class="text-body-caption text-[14.5px] mt-[2px]">per month</span>
+            </div>
+          </div>
+
+          <div class="reveal [transition-delay:160ms] flex flex-wrap items-center gap-[22px] rounded-lg p-gutter
+                      bg-[linear-gradient(120deg,rgba(97,165,242,.14),rgba(255,255,255,.03))] border-[1.5px] border-[rgba(97,165,242,.55)]
+                      transition-[border-color,transform] duration-fast hover:border-brand hover:-translate-y-[3px]">
+            <div class="flex-1 min-w-[180px]">
+              <div class="text-[17px] font-bold tracking-label uppercase text-body">Premium</div>
+              <div class="inline-block mt-[10px] px-[14px] py-[5px] rounded-pill bg-white/[.08] border border-white/[.14] text-body text-[15px] font-semibold">90 hours included</div>
+              <p class="text-body text-small leading-snug mt-[8px]">You've got high volume and need a dedicated team that knows your brand and runs without you steering it.</p>
+            </div>
+            <div class="flex-none flex flex-col items-end">
+              <span class="font-display font-bold text-[34px] text-heading">$4,995</span>
+              <span class="text-body-caption text-[14.5px] mt-[2px]">per month</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal [transition-delay:120ms] md:sticky md:top-[100px] pt-[6px] pl-[6px]">
+          <div class="text-[13.5px] font-semibold tracking-[.18em] uppercase text-brand mb-5">Every plan includes</div>
+          <ul class="flex flex-col gap-[14px] list-none p-0 m-0">
+            <li class="flex items-start gap-[10px] text-[#C8CBE6] text-[16px] leading-[1.45]"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" class="flex-none mt-[3px]"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Your own dedicated design team</li>
+            <li class="flex items-start gap-[10px] text-[#C8CBE6] text-[16px] leading-[1.45]"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" class="flex-none mt-[3px]"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Every file checked before delivery</li>
+            <li class="flex items-start gap-[10px] text-[#C8CBE6] text-[16px] leading-[1.45]"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" class="flex-none mt-[3px]"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Month-to-month. Cancel anytime, no notice period.</li>
+            <li class="flex items-start gap-[10px] text-[#C8CBE6] text-[16px] leading-[1.45]"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" class="flex-none mt-[3px]"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Most work lands in 2-3 business days, with a committed delivery date on every brief.</li>
+            <li class="flex items-start gap-[10px] text-[#C8CBE6] text-[16px] leading-[1.45]"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" class="flex-none mt-[3px]"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Unused hours roll into next month</li>
+            <li class="flex items-start gap-[10px] text-[#C8CBE6] text-[16px] leading-[1.45]"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" class="flex-none mt-[3px]"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Money-back guarantee: a full first month on Pilot, or 14 days on Essentials and Premium.</li>
+          </ul>
+          <div class="h-px bg-hairline mt-[26px] mb-[22px]"></div>
+          <a href="/book-a-call" class="btn-mint px-[28px] py-[15px] text-[17px] shadow-[0_12px_28px_rgba(61,230,140,.28)]">Book a call</a>
+          <a href="/pricing" class="inline-flex items-center gap-[6px] mt-[28px] ml-[18px] text-body-strong font-semibold text-[16px] transition-colors duration-fast hover:text-brand">See full pricing details
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section class="py-section">
+    <div class="max-w-[820px] mx-auto px-gutter">
+      <div class="reveal text-center mb-5">
+        <h2 class="font-display font-bold text-[clamp(34px,4.5vw,52px)] leading-[1.05] tracking-tight text-heading">Common questions?</h2>
+      </div>
+      <div class="flex flex-col gap-2">
+
+        <div data-faq data-open="0" class="border border-hairline-card rounded-md bg-glass overflow-hidden transition-colors duration-fast hover:border-hairline-hover">
+          <button data-faq-q class="w-full flex items-center justify-between gap-4 px-4 py-5 bg-transparent border-none cursor-pointer text-left text-heading text-[18.5px] font-semibold font-display">How fast do you deliver?
+            <span data-faq-icon class="flex-none text-brand transition-transform duration-[300ms]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div data-faq-a class="max-h-0 opacity-0 overflow-hidden transition-[max-height,opacity] duration-[450ms]"><p class="px-4 pb-[22px] text-body text-[17px] leading-[1.65]">Every brief gets a committed delivery date before work starts, and we hit the date we give. Most work lands in 2-3 business days; small tasks in by 12pm Sydney can land same day. Bigger projects like multi-page decks or campaign packs get their date confirmed upfront, so you always know when it's landing.</p></div>
+        </div>
+
+        <div data-faq data-open="0" class="border border-hairline-card rounded-md bg-glass overflow-hidden transition-colors duration-fast hover:border-hairline-hover">
+          <button data-faq-q class="w-full flex items-center justify-between gap-4 px-4 py-5 bg-transparent border-none cursor-pointer text-left text-heading text-[18.5px] font-semibold font-display">What do my hours cover?
+            <span data-faq-icon class="flex-none text-brand transition-transform duration-[300ms]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div data-faq-a class="max-h-0 opacity-0 overflow-hidden transition-[max-height,opacity] duration-[450ms]"><p class="px-4 pb-[22px] text-body text-[17px] leading-[1.65]">Everything needed to deliver: design, revisions, and the coordination and quality checks that keep it all running. One number covers the whole job. Your safeguard is the estimate: every brief gets one before work starts, it acts as the ceiling, and if we come in under, only the actual time is deducted. You always know the maximum before we begin.</p></div>
+        </div>
+
+        <div data-faq data-open="0" class="border border-hairline-card rounded-md bg-glass overflow-hidden transition-colors duration-fast hover:border-hairline-hover">
+          <button data-faq-q class="w-full flex items-center justify-between gap-4 px-4 py-5 bg-transparent border-none cursor-pointer text-left text-heading text-[18.5px] font-semibold font-display">How do revisions work?
+            <span data-faq-icon class="flex-none text-brand transition-transform duration-[300ms]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div data-faq-a class="max-h-0 opacity-0 overflow-hidden transition-[max-height,opacity] duration-[450ms]"><p class="px-4 pb-[22px] text-body text-[17px] leading-[1.65]">No caps on revision rounds. Revision time is tracked within your hours, and each round gets its own committed date. Our internal quality checks mean most work lands in 1-2 rounds, so your hours go to new work, not fixes. Estimates assume up to three rounds; if something needs more, we flag it before continuing, never after. Feedback works best as one consolidated set per round, and your Account Manager helps gather it.</p></div>
+        </div>
+
+        <div data-faq data-open="0" class="border border-hairline-card rounded-md bg-glass overflow-hidden transition-colors duration-fast hover:border-hairline-hover">
+          <button data-faq-q class="w-full flex items-center justify-between gap-4 px-4 py-5 bg-transparent border-none cursor-pointer text-left text-heading text-[18.5px] font-semibold font-display">What's the contract?
+            <span data-faq-icon class="flex-none text-brand transition-transform duration-[300ms]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div data-faq-a class="max-h-0 opacity-0 overflow-hidden transition-[max-height,opacity] duration-[450ms]"><p class="px-4 pb-[22px] text-body text-[17px] leading-[1.65]">Month-to-month. Cancel anytime: your plan runs to the end of the current billing period, then stops. No notice period, no fees. You can pause by whole months from your next renewal, and one email restarts everything within 3-5 business days. And you're covered by our money-back guarantee: a full first month on Pilot, or 14 days on Essentials and Premium.</p></div>
+        </div>
+
+        <div data-faq data-open="0" class="border border-hairline-card rounded-md bg-glass overflow-hidden transition-colors duration-fast hover:border-hairline-hover">
+          <button data-faq-q class="w-full flex items-center justify-between gap-4 px-4 py-5 bg-transparent border-none cursor-pointer text-left text-heading text-[18.5px] font-semibold font-display">Where's your team based?
+            <span data-faq-icon class="flex-none text-brand transition-transform duration-[300ms]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div data-faq-a class="max-h-0 opacity-0 overflow-hidden transition-[max-height,opacity] duration-[450ms]"><p class="px-4 pb-[22px] text-body text-[17px] leading-[1.65]">Australian-founded and Sydney-led. Your Account Manager and Project Coordinator work Australian business hours, and our production designers are based in Indonesia and the Philippines: senior, dedicated to your account, and trained on your brand. We're upfront about this because it's how we deliver senior-level quality at these prices.</p></div>
+        </div>
+
+        <div data-faq data-open="0" class="border border-hairline-card rounded-md bg-glass overflow-hidden transition-colors duration-fast hover:border-hairline-hover">
+          <button data-faq-q class="w-full flex items-center justify-between gap-4 px-4 py-5 bg-transparent border-none cursor-pointer text-left text-heading text-[18.5px] font-semibold font-display">What don't you do?
+            <span data-faq-icon class="flex-none text-brand transition-transform duration-[300ms]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div data-faq-a class="max-h-0 opacity-0 overflow-hidden transition-[max-height,opacity] duration-[450ms]"><p class="px-4 pb-[22px] text-body text-[17px] leading-[1.65]">Brand strategy, product and app UI/UX, filming and photography, and copywriting. We're production partners: you bring the direction, we make it. (New website builds and longer explainer videos we do too, scoped as their own one-off projects alongside your plan.)</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FINAL CTA (navy panel) ══ -->
+  <section id="book" class="pt-5 pb-[90px]">
+    <div class="max-w-container mx-auto px-gutter">
+      <div class="reveal relative overflow-hidden px-[40px] py-[96px] text-center rounded-lg border border-hairline
+                  bg-[radial-gradient(900px_400px_at_50%_-10%,rgba(124,92,240,.4),transparent_60%),linear-gradient(160deg,#161B45,#0C0E28)]">
+        <div class="absolute -bottom-[120px] left-1/2 -translate-x-1/2 w-[520px] h-[340px] rounded-full blur-[24px]
+                    bg-[radial-gradient(circle,rgba(61,230,140,.22),transparent_70%)]"></div>
+        <div class="relative">
+          <h2 class="font-display font-bold text-[clamp(38.5px,5.5vw,67.5px)] leading-[1.03] tracking-[-.025em] text-heading-hi">Stop chasing designers.<br>Get the design work handled, <span class="text-brand">every week.</span></h2>
+          <p class="text-body text-lead mt-[22px] mb-5">15-minute call. No pitch deck, no pressure.</p>
+          <a href="/book-a-call" class="btn-mint px-[36px] py-[18px] text-[18px] shadow-[0_16px_40px_rgba(61,230,140,.3)]">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ VIDEO MODAL ══ -->
+  <div data-vmodal class="fixed inset-0 z-[1000] hidden items-center justify-center p-gutter bg-[rgba(5,6,20,.86)] backdrop-blur-[10px]">
+    <button data-vclose aria-label="Close" class="absolute top-4 right-4 w-[46px] h-[46px] rounded-full bg-white/[.08] border border-white/[.16] text-body cursor-pointer flex items-center justify-center transition-[background,border-color] duration-fast hover:bg-white/[.16] hover:border-white/[.34]">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="w-full max-w-[860px]">
+      <div class="relative w-full aspect-video rounded-lg overflow-hidden border border-white/[.12] bg-grad-navy shadow-[0_40px_90px_rgba(0,0,0,.5)] flex items-center justify-center">
+        <div class="text-center">
+          <div class="w-[74px] h-[74px] rounded-full bg-brand flex items-center justify-center mx-auto mb-[18px] shadow-[0_14px_34px_rgba(61,230,140,.4)]">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="#04160C"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div data-vlabel class="font-display font-semibold text-base text-heading-hi"></div>
+          <div class="text-caption text-body-caption mt-[6px]">Testimonial video</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site footer mounted by /assets/site-footer.js -->
+  <div data-site-footer-mount></div>
+  <script src="/assets/site-footer.js"></script>
+
+  </div>
+</div>
+
+<script>
+/* Behaviour. Framework-agnostic: port each block to your component lifecycle as-is. */
+(function () {
+  var root = document;
+
+  /* 1. Scroll reveal — adds .reveal-in when the element enters view. */
+  var reveals = root.querySelectorAll('.reveal');
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('reveal-in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }) : null;
+  reveals.forEach(function (el) {
+    if (el.getBoundingClientRect().top < window.innerHeight * 1.15) el.classList.add('reveal-in');
+    else if (io) io.observe(el);
+    else el.classList.add('reveal-in');
+  });
+
+  /* 2. Nav — frosts past 24px, hides on scroll down, returns on scroll up. */
+  var nav = root.querySelector('[data-nav]');
+  var lastY = window.scrollY || 0, ticking = false;
+  function updateNav() {
+    ticking = false;
+    if (!nav) return;
+    var y = window.scrollY || document.documentElement.scrollTop || 0;
+    var frosted = y > 24;
+    nav.style.background = frosted ? 'rgba(9,11,30,0.78)' : 'transparent';
+    nav.style.backdropFilter = frosted ? 'blur(16px)' : 'none';
+    /* border handled by site-nav.js */
+    if (y <= 120 || y < lastY - 3) nav.style.transform = 'translateY(0)';
+    else if (y > lastY + 3) nav.style.transform = 'translateY(-100%)';
+    lastY = y;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateNav); }
+  }, { passive: true });
+  updateNav();
+
+  /* 3. FAQ — single-open accordion, plus icon rotates to a cross. */
+  var faqs = root.querySelectorAll('[data-faq]');
+  faqs.forEach(function (item) {
+    var q = item.querySelector('[data-faq-q]');
+    if (!q) return;
+    q.addEventListener('click', function () {
+      var wasOpen = item.getAttribute('data-open') === '1';
+      faqs.forEach(function (o) {
+        o.setAttribute('data-open', '0');
+        var oa = o.querySelector('[data-faq-a]'), oi = o.querySelector('[data-faq-icon]');
+        if (oa) { oa.style.maxHeight = '0px'; oa.style.opacity = '0'; }
+        if (oi) oi.style.transform = 'rotate(0deg)';
+        o.style.borderColor = '';
+      });
+      if (!wasOpen) {
+        item.setAttribute('data-open', '1');
+        var a = item.querySelector('[data-faq-a]'), i = item.querySelector('[data-faq-icon]');
+        if (a) { a.style.maxHeight = a.scrollHeight + 'px'; a.style.opacity = '1'; }
+        if (i) i.style.transform = 'rotate(45deg)';
+        item.style.borderColor = '#3DE68C';
+      }
+    });
+  });
+
+  /* 4. Testimonial video modal. Replace the placeholder with a real <video>/embed. */
+  var vmodal = root.querySelector('[data-vmodal]');
+  var vlabel = root.querySelector('[data-vlabel]');
+  function closeVideo() { if (vmodal) { vmodal.style.display = 'none'; } }
+  root.querySelectorAll('[data-play]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (!vmodal) return;
+      if (vlabel) vlabel.textContent = btn.getAttribute('data-vname') || '';
+      vmodal.style.display = 'flex';
+    });
+  });
+  var vclose = root.querySelector('[data-vclose]');
+  if (vclose) vclose.addEventListener('click', closeVideo);
+  if (vmodal) vmodal.addEventListener('click', function (e) { if (e.target === vmodal) closeVideo(); });
+  window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeVideo(); });
+
+  /* 5. Services carousel — drag to scroll + arrow stepping. */
+  var car = root.querySelector('[data-carousel]');
+  if (car) {
+    var down = false, startX = 0, scroll = 0, moved = false;
+    car.addEventListener('pointerdown', function (e) {
+      down = true; moved = false; startX = e.clientX; scroll = car.scrollLeft;
+      car.style.cursor = 'grabbing';
+      try { car.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    car.addEventListener('pointermove', function (e) {
+      if (!down) return;
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) moved = true;
+      car.scrollLeft = scroll - dx;
+    });
+    var up = function () { down = false; car.style.cursor = 'grab'; };
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (ev) { car.addEventListener(ev, up); });
+    car.addEventListener('click', function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
+    var step = function () { var c = car.querySelector('[data-card]'); return (c ? c.offsetWidth : 330) + 20; };
+    var prev = root.querySelector('[data-car-prev]'), next = root.querySelector('[data-car-next]');
+    if (prev) prev.addEventListener('click', function () { car.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    if (next) next.addEventListener('click', function () { car.scrollBy({ left: step(), behavior: 'smooth' }); });
+  }
+
+  /* Hero Book a call → Calendly popup (widget preloaded in <head>; falls back to /book-a-call) */
+  var CALENDLY_URL = 'https://calendly.com/stephen-118/book-a-call?primary_color=15f397';
+  var calendlyAssets = null;
+  // #region agent log
+  var __dbgClickN = 0;
+  var __dbgOpenN = 0;
+  var __dbgInitN = 0;
+  var __dbgIframeLoadN = 0;
+  var __dbgRunId = 'post-fix-noreload';
+  function __dbgLog(hypothesisId, location, message, data) {
+    var payload = JSON.stringify({sessionId:'f04756',runId:__dbgRunId,hypothesisId:hypothesisId,location:location,message:message,data:data||{},timestamp:Date.now()});
+    // text/plain avoids CORS preflight so ingest receives browser logs from local servers
+    fetch('http://127.0.0.1:7556/ingest/c1d5d96e-1526-4bc2-b335-8b771f799945',{method:'POST',headers:{'Content-Type':'text/plain','X-Debug-Session-Id':'f04756'},body:payload,mode:'cors',keepalive:true}).catch(function(){});
+    try { navigator.sendBeacon && navigator.sendBeacon('http://127.0.0.1:7556/ingest/c1d5d96e-1526-4bc2-b335-8b771f799945', new Blob([payload],{type:'text/plain'})); } catch (e) {}
+  }
+  window.addEventListener('beforeunload', function () {
+    __dbgLog('J', 'index.html:beforeunload', 'page is unloading/reloading', { href: location.href, clickN: __dbgClickN, openN: __dbgOpenN, initN: __dbgInitN });
+  });
+  if (!window.__andeloCalDbgObs) {
+    window.__andeloCalDbgObs = new MutationObserver(function (muts) {
+      muts.forEach(function (m) {
+        if (m.type === 'attributes' && m.target.tagName === 'IFRAME' && m.attributeName === 'src' && (m.target.src || '').indexOf('calendly') >= 0) {
+          __dbgLog('E', 'index.html:calendly-mo', 'calendly iframe src changed', { src: (m.target.src || '').slice(0, 160), overlays: document.querySelectorAll('.calendly-overlay').length, iframes: document.querySelectorAll('iframe[src*="calendly"]').length });
+        }
+        m.addedNodes.forEach(function (n) {
+          if (n.nodeType !== 1) return;
+          var isOverlay = n.classList && n.classList.contains('calendly-overlay');
+          var isIframe = n.tagName === 'IFRAME' && (n.src || '').indexOf('calendly') >= 0;
+          var nestedIframes = n.querySelectorAll ? n.querySelectorAll('iframe[src*="calendly"]') : [];
+          var nested = n.querySelectorAll ? n.querySelectorAll('.calendly-overlay, iframe[src*="calendly"]') : [];
+          if (isOverlay || isIframe || (nested && nested.length)) {
+            __dbgLog('E', 'index.html:calendly-mo', 'calendly DOM added', { tag: n.tagName, cls: n.className || '', overlays: document.querySelectorAll('.calendly-overlay').length, iframes: document.querySelectorAll('iframe[src*="calendly"]').length });
+          }
+          var iframesToWatch = [];
+          if (isIframe) iframesToWatch.push(n);
+          if (nestedIframes && nestedIframes.length) nestedIframes.forEach(function (f) { iframesToWatch.push(f); });
+          iframesToWatch.forEach(function (f) {
+            if (f.__andeloDbgLoadBound) return;
+            f.__andeloDbgLoadBound = true;
+            f.addEventListener('load', function () {
+              __dbgIframeLoadN += 1;
+              __dbgLog('F', 'index.html:iframe-load', 'calendly iframe load event', { iframeLoadN: __dbgIframeLoadN, src: (f.src || '').slice(0, 160) });
+            });
+          });
+        });
+      });
+    });
+    window.__andeloCalDbgObs.observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+  }
+  // #endregion
+
+  function calendlyReady() {
+    return !!(window.Calendly && typeof Calendly.initPopupWidget === 'function');
+  }
+
+  function loadCalendlyAssets() {
+    if (calendlyReady()) return Promise.resolve();
+    if (calendlyAssets) return calendlyAssets;
+    // #region agent log
+    __dbgLog('F', 'index.html:loadCalendlyAssets', 'waiting for preloaded assets', { existingScripts: document.querySelectorAll('script[src*="calendly"]').length, existingCss: document.querySelectorAll('link[href*="calendly"]').length });
+    // #endregion
+    calendlyAssets = new Promise(function (resolve, reject) {
+      if (!document.querySelector('link[data-calendly-css]')) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://assets.calendly.com/assets/external/widget.css';
+        link.setAttribute('data-calendly-css', '');
+        document.head.appendChild(link);
+      }
+      var existing = document.querySelector('script[data-calendly-js]');
+      if (!existing) {
+        var script = document.createElement('script');
+        script.src = 'https://assets.calendly.com/assets/external/widget.js';
+        script.async = true;
+        script.setAttribute('data-calendly-js', '');
+        script.onload = function () {
+          // #region agent log
+          __dbgLog('D', 'index.html:script.onload', 'widget.js loaded (injected)', { scripts: document.querySelectorAll('script[src*="calendly"]').length, ready: calendlyReady() });
+          // #endregion
+          resolve();
+        };
+        script.onerror = function () { calendlyAssets = null; reject(new Error('Calendly failed to load')); };
+        document.head.appendChild(script);
+      } else {
+        var wait = setInterval(function () {
+          if (calendlyReady()) { clearInterval(wait); resolve(); }
+        }, 40);
+        setTimeout(function () {
+          clearInterval(wait);
+          if (!calendlyReady()) { calendlyAssets = null; reject(new Error('Calendly timed out')); }
+        }, 8000);
+      }
+    });
+    return calendlyAssets;
+  }
+
+  function openCalendlyPopup() {
+    __dbgOpenN += 1;
+    var already = !!document.querySelector('.calendly-overlay');
+    // #region agent log
+    __dbgLog('B', 'index.html:openCalendlyPopup', 'open called', { openN: __dbgOpenN, alreadyOverlay: already, ready: calendlyReady(), href: location.href });
+    // #endregion
+    if (already) return;
+    if (window.Calendly && Calendly.initPopupWidget && !Calendly.initPopupWidget.__andeloDbgWrapped) {
+      var _origInit = Calendly.initPopupWidget.bind(Calendly);
+      Calendly.initPopupWidget = function (opts) {
+        __dbgInitN += 1;
+        // #region agent log
+        __dbgLog('B', 'index.html:initPopupWidget', 'initPopupWidget invoked', { initN: __dbgInitN, url: opts && opts.url, overlaysBefore: document.querySelectorAll('.calendly-overlay').length, iframesBefore: document.querySelectorAll('iframe[src*="calendly"]').length });
+        // #endregion
+        var result = _origInit(opts);
+        // #region agent log
+        __dbgLog('B', 'index.html:initPopupWidget:after', 'initPopupWidget returned', { initN: __dbgInitN, overlaysAfter: document.querySelectorAll('.calendly-overlay').length, iframesAfter: document.querySelectorAll('iframe[src*="calendly"]').length });
+        // #endregion
+        return result;
+      };
+      Calendly.initPopupWidget.__andeloDbgWrapped = true;
+    }
+    Calendly.initPopupWidget({ url: CALENDLY_URL });
+  }
+
+  root.addEventListener('click', function (e) {
+    var trigger = e.target.closest('[data-calendly-popup]');
+    if (!trigger) return;
+    __dbgClickN += 1;
+    // #region agent log
+    __dbgLog('A', 'index.html:click', 'calendly CTA click', { clickN: __dbgClickN, eventPhase: e.eventPhase, defaultPrevented: e.defaultPrevented, ready: calendlyReady(), overlay: !!document.querySelector('.calendly-overlay'), href: location.href });
+    // #endregion
+    e.preventDefault();
+    e.stopPropagation();
+    if (document.querySelector('.calendly-overlay')) return;
+
+    if (calendlyReady()) {
+      // #region agent log
+      __dbgLog('F', 'index.html:click:ready', 'branch ready → open (single phase)', { clickN: __dbgClickN });
+      // #endregion
+      openCalendlyPopup();
+      return;
+    }
+
+    // #region agent log
+    __dbgLog('F', 'index.html:click:wait', 'branch wait for preload → then open', { clickN: __dbgClickN });
+    // #endregion
+    loadCalendlyAssets().then(openCalendlyPopup).catch(function () {
+      // #region agent log
+      __dbgLog('C', 'index.html:click:fallback', 'fallback navigate to book-a-call', { clickN: __dbgClickN, href: trigger.getAttribute('href') });
+      // #endregion
+      window.location.href = trigger.getAttribute('href') || '/book-a-call';
+    });
+  });
+})();
+</script>
+</body>
+</html>

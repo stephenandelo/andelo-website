@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speedfit case study — Andelo</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Play CDN for preview only. In a real build, delete this script and use tailwind.config.js + a PostCSS/Vite build. -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+/* Mirror of tailwind.config.js — keep the two in sync. */
+tailwind.config = {
+  theme: {
+    screens: { sm: '721px', md: '901px', lg: '1201px', xl: '1440px' },
+    extend: {
+      colors: {
+        canvas: { DEFAULT: '#0A0C22', raised: '#12152F' },
+        navy: { 1: '#161B45', 2: '#0C0E28' },
+        glass: { DEFAULT: 'rgba(255,255,255,0.045)', hover: 'rgba(255,255,255,0.08)' },
+        hairline: { DEFAULT: 'rgba(255,255,255,0.08)', card: 'rgba(255,255,255,0.09)', hover: 'rgba(255,255,255,0.28)' },
+        brand: {
+          DEFAULT: '#3DE68C', hover: '#5CEBA1', ink: '#04160C',
+          soft: 'rgba(61,230,140,0.16)', softStrong: 'rgba(61,230,140,0.26)',
+          border: 'rgba(61,230,140,0.3)', onWhite: '#0E7A43',
+        },
+        heading: { DEFAULT: '#F5F7FF', hi: '#F6F8FF' },
+        body: {
+          DEFAULT: '#EEF0FF', strong: '#C4C8E6', muted: '#A6AAD0',
+          tertiary: '#9EA2C8', caption: '#8388AE', faint: '#6B7099',
+        },
+        paper: '#FFFFFF',
+        ink: { DEFAULT: '#12141C', body: '#3D4048' },
+        jewel: {
+          blue: '#61A5F2', blueDeep: '#2E5FB0',
+          indigo: '#6170F2', indigoDeep: '#2E38B0',
+          purple: '#A661F2', purpleDeep: '#6E2EB0',
+          magenta: '#E161F2', magentaDeep: '#A32EB0',
+          pink: '#F2619E', pinkDeep: '#B02E5E',
+          red: '#F26161', redDeep: '#B02E2E',
+        },
+        onSecondary: { DEFAULT: '#FFFFFF', body: 'rgba(255,255,255,0.9)' },
+      },
+      fontFamily: {
+        display: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        body: ['Hanken Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['ui-monospace', 'SF Mono', 'Menlo', 'monospace'],
+      },
+      fontSize: {
+        h1: ['clamp(40px, 4.6vw, 60px)', { lineHeight: '1.04', letterSpacing: '-0.03em' }],
+        h2: ['clamp(34px, 4.5vw, 54px)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
+        h3: ['21.5px', { lineHeight: '1.25', letterSpacing: '-0.015em' }],
+        base: ['18px', { lineHeight: '1.6' }],
+        lead: ['19px', { lineHeight: '1.6' }],
+        small: ['16.5px', { lineHeight: '1.6' }],
+        eyebrow: ['14px', { lineHeight: '1.2', letterSpacing: '0.2em' }],
+        caption: ['14px', { lineHeight: '1.5' }],
+      },
+      letterSpacing: {
+        display: '-0.03em', tight: '-0.02em', snug: '-0.01em',
+        label: '0.14em', 'label-wide': '0.16em', eyebrow: '0.2em',
+      },
+      lineHeight: { heading: '1.04', tight: '1.1', snug: '1.5', body: '1.6' },
+      spacing: { 1: '6px', 2: '12px', 3: '18px', 4: '24px', 5: '34px', 6: '52px', 7: '80px', card: '20px', gutter: '32px', section: '80px' },
+      maxWidth: { container: '1200px', narrow: '920px' },
+      borderRadius: { xs: '8px', sm: '12px', md: '18px', card: '20px', lg: '26px', pill: '999px' },
+      boxShadow: {
+        btn: '0 14px 34px rgba(61,230,140,0.28)',
+        'btn-hover': '0 18px 38px rgba(61,230,140,0.34)',
+        card: '0 20px 44px rgba(0,0,0,0.32)',
+        panel: '0 20px 44px rgba(46,95,176,0.28)',
+      },
+      backdropBlur: { card: '16px', glow: '28px' },
+      backgroundImage: {
+        'grad-mint': 'linear-gradient(150deg, #3DE68C, #12A566)',
+        'grad-blue': 'linear-gradient(150deg, #61A5F2, #2E5FB0)',
+        'grad-indigo': 'linear-gradient(150deg, #6170F2, #2E38B0)',
+        'grad-purple': 'linear-gradient(150deg, #A661F2, #6E2EB0)',
+        'grad-magenta': 'linear-gradient(150deg, #E161F2, #A32EB0)',
+        'grad-pink': 'linear-gradient(150deg, #F2619E, #B02E5E)',
+        'grad-red': 'linear-gradient(150deg, #F26161, #B02E2E)',
+        'grad-navy': 'linear-gradient(160deg, #161B45, #0C0E28)',
+      },
+      transitionTimingFunction: { house: 'cubic-bezier(0.16, 0.8, 0.24, 1)' },
+      transitionDuration: { fast: '200ms', DEFAULT: '350ms' },
+    },
+  },
+};
+</script>
+
+<style type="text/tailwindcss">
+  /* The eight patterns that repeat across the page. Everything else is raw utilities. */
+  @layer components {
+    /* Mint button. Flat fill only, never a gradient. Dark ink on top. */
+    .btn-mint {
+      @apply inline-flex items-center justify-center gap-[10px] rounded-pill bg-brand text-brand-ink
+             font-bold shadow-btn transition-[transform,background] duration-fast
+             hover:bg-brand-hover hover:-translate-y-[2px];
+    }
+    /* Ghost/secondary button. Hairline border, mint wash on hover. */
+    .btn-ghost {
+      @apply inline-flex items-center justify-center gap-[10px] rounded-pill border border-white/20
+             text-body font-semibold transition-[border-color,background,transform,color] duration-fast
+             hover:bg-brand/[.14] hover:border-brand hover:text-white hover:-translate-y-[2px];
+    }
+    /* The universal surface: frosted glass card with the standard hover. */
+    .card-glass {
+      @apply bg-glass backdrop-blur-card border border-hairline-card rounded-lg
+             transition-[background,border-color,transform] duration-fast
+             hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[4px];
+    }
+    /* Small tag/chip. */
+    .chip {
+      @apply px-[12px] py-[6px] rounded-pill bg-white/[.06] border border-white/10
+             text-[14px] text-body-strong transition-[background,border-color] duration-fast
+             hover:bg-white/[.12] hover:border-hairline-hover;
+    }
+    /* Uppercase mint eyebrow. */
+    .eyebrow {
+      @apply inline-flex items-center gap-[9px] text-eyebrow font-semibold uppercase text-brand;
+    }
+    /* 44px icon tile: mint-soft wash holding a mint line icon. */
+    .icon-tile {
+      @apply w-[50px] h-[50px] rounded-sm bg-brand-soft border border-brand-soft
+             flex items-center justify-center;
+    }
+    /* Scroll-reveal start state. JS clears it on intersect. */
+    .reveal {
+      @apply opacity-0 translate-y-[24px] transition-all duration-700 ease-house;
+    }
+    .reveal-in { @apply opacity-100 translate-y-0; }
+  }
+
+  /* Ambient + decorative motion. House easing only, no bounce. */
+  @keyframes pulseGlow { 0%,100% { opacity:.45; transform:scale(1); } 50% { opacity:.8; transform:scale(1.1); } }
+  @keyframes floaty1 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-20px); } }
+  @keyframes floaty2 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(16px); } }
+  @keyframes floaty3 { 0%,100% { transform:translateY(0) rotate(-5deg); } 50% { transform:translateY(-14px) rotate(-5deg); } }
+  [data-video] .hero-vid-img{transition:transform .55s cubic-bezier(.16,.8,.24,1);}
+  [data-video]:hover .hero-vid-img{transform:scale(1.07);}
+  @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+  [data-carousel] { scrollbar-width: none; -ms-overflow-style: none; cursor: grab; }
+  [data-carousel]::-webkit-scrollbar { display: none; }
+  [data-testimonial]:hover .ts-img { transform: scale(1.07); }
+  ::selection { background: rgba(61,230,140,.28); color: #fff; }
+</style>
+</head>
+
+<body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
+<div id="top" class="relative">
+
+  <!-- Ambient glows -->
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-[140px] -left-[100px] w-[540px] h-[540px] rounded-full blur-[24px] bg-[radial-gradient(circle,rgba(61,230,140,.16),transparent_70%)] animate-[pulseGlow_9s_ease-in-out_infinite]"></div>
+    <div class="absolute top-[520px] -right-[160px] w-[600px] h-[600px] rounded-full blur-[24px] bg-[radial-gradient(circle,rgba(124,92,240,.15),transparent_70%)] animate-[pulseGlow_12s_ease-in-out_infinite]"></div>
+  </div>
+
+<div class="relative z-[1]">
+
+    <!-- Site nav mounted by /assets/site-nav.js -->
+  <div data-site-nav-mount></div>
+  <script src="/assets/site-nav.js"></script>
+
+
+  <!-- ══ HERO ══ -->
+  <section class="relative pt-[140px]">
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(1000px_500px_at_20%_0%,rgba(124,92,240,.2),transparent_58%)]"></div>
+    <div class="relative max-w-container mx-auto px-gutter grid grid-cols-1 md:grid-cols-[1.1fr_.9fr] gap-[48px] items-center">
+      <div class="reveal">
+        <div class="inline-flex items-center gap-[9px] px-[14px] py-[7px] rounded-pill border border-white/[.12] bg-white/[.04] text-[12.5px] font-semibold tracking-label-wide uppercase text-[#BFC4E6] mb-[22px]">Case Study · Speedfit</div>
+        <h1 class="font-display font-bold text-[clamp(38px,4.8vw,58px)] leading-[1.04] tracking-display text-heading-hi">How Speedfit kept one brand consistent across <span class="text-brand">30 locations</span> for three years.</h1>
+        <p class="max-w-[520px] text-body text-[clamp(16px,1.4vw,19px)] leading-body mt-4">Social content, local campaigns, and promotional assets delivered daily for every location across AU and NZ.</p>
+        <div class="mt-[30px]">
+          <div class="font-body font-bold text-[45px] leading-[.6] text-brand h-[26px]">&ldquo;</div>
+          <p class="font-display font-semibold italic text-[clamp(20px,2vw,26px)] leading-[1.35] text-[#F3F4FD] mt-[14px] mb-[18px]">Our franchisees are very happy with the quality and the speed of delivery. It's been an amazing experience.</p>
+          <div><div class="font-semibold text-heading text-[15px]">Matej Varhalik</div><div class="text-body-caption text-[13.5px]">CEO &amp; Co-Founder, Speedfit</div></div>
+        </div>
+      </div>
+      <div data-video class="reveal [transition-delay:120ms] relative rounded-lg overflow-hidden border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,.5)] aspect-[9/16] w-full max-w-[340px] md:justify-self-end bg-[#0F1230] cursor-pointer">
+        <img class="hero-vid-img absolute inset-0 w-full h-full object-cover block" src="../../assets/speedfit-matej.png" alt="Matej, CEO &amp; Co-Founder of Speedfit">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(255,255,255,.22),transparent_60%)]"></div>
+        <div class="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,transparent_45%,rgba(6,8,24,.55))]"></div>
+        <button type="button" data-play class="btn-mint absolute left-[16px] right-[16px] bottom-[16px] gap-2 p-2 border-none text-[14px] tracking-[.08em] uppercase shadow-[0_10px_24px_rgba(0,0,0,.35)]"><span class="w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center flex-none"><svg width="14" height="14" viewBox="0 0 24 24" fill="#0A0C22" class="ml-[2px]"><path d="M8 5v14l11-7z"/></svg></span>Watch testimonial video</button>
+      </div>
+    </div>
+    <div class="max-w-container mx-auto mt-[28px] px-gutter">
+      <div class="reveal [transition-delay:180ms] grid grid-cols-1 sm:grid-cols-3 border border-white/[.14] rounded-lg overflow-hidden bg-[rgba(61,230,140,.14)]">
+        <div class="flex items-center gap-[16px] px-[30px] py-[26px] sm:border-r border-b sm:border-b-0 border-[rgba(61,230,140,.2)]"><span class="flex-none w-[3px] self-stretch bg-brand rounded-[3px]"></span><div><div class="text-[11.5px] font-semibold tracking-label uppercase text-[#8AA9C0] mb-[8px]">Client Partnership</div><div class="font-display font-bold text-[30px] leading-none text-brand">3 Years</div></div></div>
+        <div class="flex items-center gap-[16px] px-[30px] py-[26px] sm:border-r border-b sm:border-b-0 border-[rgba(61,230,140,.2)]"><span class="flex-none w-[3px] self-stretch bg-brand rounded-[3px]"></span><div><div class="text-[11.5px] font-semibold tracking-label uppercase text-[#8AA9C0] mb-[8px]">Locations</div><div class="font-display font-bold text-[30px] text-brand">30 <span class="text-[17px] text-[#5E8B72] font-semibold">AU &amp; NZ</span></div></div></div>
+        <div class="flex items-center gap-[16px] px-[30px] py-[26px] "><span class="flex-none w-[3px] self-stretch bg-brand rounded-[3px]"></span><div><div class="text-[11.5px] font-semibold tracking-label uppercase text-[#8AA9C0] mb-[8px]">Scope of Work</div><div class="font-display font-bold text-[22px] leading-[1.15] text-brand">Social, Print, Marketing</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CHALLENGE / SOLUTION / RESULT ══ -->
+  <section class="pt-[90px] pb-[70px]">
+    <div class="max-w-container mx-auto px-gutter">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-[20px] items-start max-md:max-w-[560px] max-md:mx-auto">
+        <div class="reveal card-glass p-gutter">
+          <span class="inline-block px-[14px] py-[6px] rounded-pill border text-[11.5px] font-bold tracking-label uppercase mb-[20px] bg-[rgba(245,63,142,.16)] border-[rgba(245,63,142,.3)] text-[#F58FB8]">The Challenge</span>
+          <h3 class="font-display font-semibold text-[21px] text-heading mb-[14px] leading-[1.25]">30 locations, daily requests, one buried team.</h3>
+          <p class="text-body text-base leading-body m-0">Speedfit was expanding fast across Australia and New Zealand, and the volume outgrew what any internal team could hold: social content, local area marketing, and promotional campaigns multiplying across every franchise location, with brand consistency on the line at each one.</p>
+        </div>
+        <div class="reveal [transition-delay:100ms] card-glass p-gutter">
+          <span class="inline-block px-[14px] py-[6px] rounded-pill border text-[11.5px] font-bold tracking-label uppercase mb-[20px] bg-[rgba(76,134,255,.16)] border-[rgba(76,134,255,.34)] text-[#7CA6FF]">The Solution</span>
+          <h3 class="font-display font-semibold text-[21px] text-heading mb-[14px] leading-[1.25]">A managed design team that runs itself.</h3>
+          <p class="text-body text-base leading-body m-0">Andelo became Speedfit's production design team: one point of contact managing the queue, and the same designers on the account throughout, so the brand was learned once and applied the same way to every location's assets. That's how consistency held across 30 sites without Speedfit policing it. They briefed, approved, and moved on.</p>
+        </div>
+        <div class="reveal [transition-delay:200ms] card-glass p-gutter">
+          <span class="inline-block px-[14px] py-[6px] rounded-pill border text-[11.5px] font-bold tracking-label uppercase mb-[20px] bg-brand-soft border-brand-border text-brand">The Result</span>
+          <h3 class="font-display font-semibold text-[21px] text-heading mb-[14px] leading-[1.25]">Three years of consistent output.</h3>
+          <p class="text-body text-base leading-body m-0">Across a three-year partnership, Speedfit scaled hours up during campaign peaks and stabilised through quieter periods. No recruitment, no onboarding gaps, no brand drift across 30 locations, and franchisees at every site happy with the quality and speed. Consistent output, month after month, for three years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ GALLERY (full-bleed strip; gradient placeholders until real work lands) ══ -->
+  <section class="pt-4 pb-[84px] overflow-hidden">
+    <div class="max-w-container mx-auto mb-[44px] px-gutter">
+      <h2 class="reveal font-display font-bold text-[clamp(26px,3.2vw,38px)] leading-[1.06] tracking-tight text-heading">Selected work <span class="text-brand">for Speedfit.</span></h2>
+    </div>
+    <div class="reveal [transition-delay:80ms] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 auto-rows-[200px] md:auto-rows-[300px] gap-[16px] px-gutter md:px-0 md:w-[112vw] md:-ml-[6vw]">
+      <div class="md:col-start-1 md:row-span-2 rounded-md border border-white/[.08] bg-[linear-gradient(155deg,#38C6D9,#1E7FB0)] transition-[transform,border-color,box-shadow] duration-fast hover:-translate-y-[4px] hover:border-hairline-hover hover:shadow-[0_22px_46px_rgba(0,0,0,.4)]"></div>
+      <div class="md:col-span-2 md:row-span-2 rounded-md border border-white/[.08] bg-[linear-gradient(155deg,#2B7FE6,#38C6A8)] transition-[transform,border-color,box-shadow] duration-fast hover:-translate-y-[4px] hover:border-hairline-hover hover:shadow-[0_22px_46px_rgba(0,0,0,.4)]"></div>
+      <div class=" rounded-md border border-white/[.08] bg-[linear-gradient(155deg,#34D98A,#12A566)] transition-[transform,border-color,box-shadow] duration-fast hover:-translate-y-[4px] hover:border-hairline-hover hover:shadow-[0_22px_46px_rgba(0,0,0,.4)]"></div>
+      <div class=" rounded-md border border-white/[.08] bg-[linear-gradient(155deg,#12B3A6,#0E7C8E)] transition-[transform,border-color,box-shadow] duration-fast hover:-translate-y-[4px] hover:border-hairline-hover hover:shadow-[0_22px_46px_rgba(0,0,0,.4)]"></div>
+      <div class="md:col-start-6 md:row-start-1 md:row-span-2 rounded-md border border-white/[.08] bg-[linear-gradient(155deg,#F53F8E,#B4267E)] transition-[transform,border-color,box-shadow] duration-fast hover:-translate-y-[4px] hover:border-hairline-hover hover:shadow-[0_22px_46px_rgba(0,0,0,.4)]"></div>
+      <div class="md:col-span-2 md:col-start-4 md:row-start-2 rounded-md border border-white/[.08] bg-[linear-gradient(155deg,#8E6EF2,#5B3FD6)] transition-[transform,border-color,box-shadow] duration-fast hover:-translate-y-[4px] hover:border-hairline-hover hover:shadow-[0_22px_46px_rgba(0,0,0,.4)]"></div>
+    </div>
+  </section>
+
+  <!-- ══ CLOSING CTA (navy panel) ══ -->
+  <section id="book" class="pt-5 pb-[100px]">
+    <div class="max-w-container mx-auto px-gutter">
+      <div class="reveal relative overflow-hidden rounded-lg px-5 py-[76px] text-center border border-hairline bg-[radial-gradient(900px_400px_at_50%_-10%,rgba(124,92,240,.4),transparent_60%),linear-gradient(160deg,#161B45,#0C0E28)]">
+        <div class="absolute -bottom-[120px] left-1/2 -translate-x-1/2 w-[520px] h-[340px] rounded-full blur-[24px] bg-[radial-gradient(circle,rgba(61,230,140,.22),transparent_70%)]"></div>
+        <div class="relative max-w-[640px] mx-auto">
+          <h2 class="font-display font-bold text-[clamp(32px,4.4vw,52px)] leading-[1.05] tracking-[-.025em] text-heading-hi">Running one brand across <span class="text-brand">multiple locations?</span></h2>
+          <p class="text-body text-base leading-[1.55] mt-4 mb-5 mx-auto max-w-[520px]">Book a 15-minute call. We'll look at your locations and your workload, and show you how the design gets handled, every week.</p>
+          <div class="flex flex-wrap justify-center gap-[14px]">
+            <a href="/book-a-call" class="btn-mint px-5 py-[17px] text-[16px] shadow-[0_16px_40px_rgba(61,230,140,.3)]">Book a Call</a>
+            <a href="/work" class="btn-ghost px-5 py-[17px] text-[16px]">See More Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ VIDEO MODAL (placeholder; drop a real embed in the 9:16 box) ══ -->
+  <div data-vmodal class="fixed inset-0 z-[1000] hidden items-center justify-center p-gutter bg-[rgba(5,6,20,.86)] backdrop-blur-[10px]">
+    <button type="button" data-vclose aria-label="Close" class="absolute top-4 right-4 w-[46px] h-[46px] rounded-full bg-white/[.08] border border-white/[.16] text-body cursor-pointer flex items-center justify-center transition-[background,border-color] duration-fast hover:bg-white/[.16] hover:border-white/[.34]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+    <div class="w-full max-w-[520px]">
+      <div class="relative w-full aspect-[9/16] max-h-[80vh] rounded-lg overflow-hidden border border-white/[.12] bg-grad-navy shadow-[0_40px_90px_rgba(0,0,0,.5)] flex items-center justify-center">
+        <div class="text-center p-4">
+          <div class="w-[74px] h-[74px] rounded-full bg-brand flex items-center justify-center mx-auto mb-[18px] shadow-[0_14px_34px_rgba(61,230,140,.4)]"><svg width="30" height="30" viewBox="0 0 24 24" fill="#04160C"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="font-display font-semibold text-base text-heading-hi">Testimonial video</div>
+          <div class="text-caption text-body-caption mt-[6px]">Embed goes here</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site footer mounted by /assets/site-footer.js -->
+  <div data-site-footer-mount></div>
+  <script src="/assets/site-footer.js"></script>
+
+</div>
+</div>
+
+<script>
+(function () {
+  var root = document;
+  /* Scroll reveal */
+  var reveals = root.querySelectorAll('.reveal');
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('reveal-in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }) : null;
+  reveals.forEach(function (el) {
+    if (el.getBoundingClientRect().top < window.innerHeight * 1.15) el.classList.add('reveal-in');
+    else if (io) io.observe(el); else el.classList.add('reveal-in');
+  });
+
+  /* Nav — frosts past 24px, hides on scroll down, returns on scroll up */
+  var nav = root.querySelector('[data-nav]');
+  var lastY = window.scrollY || 0, ticking = false;
+  function updateNav() {
+    ticking = false; if (!nav) return;
+    var y = window.scrollY || document.documentElement.scrollTop || 0;
+    var frosted = y > 24;
+    nav.style.background = frosted ? 'rgba(9,11,30,0.78)' : 'transparent';
+    nav.style.backdropFilter = frosted ? 'blur(16px)' : 'none';
+    /* border handled by site-nav.js */
+    if (y <= 120 || y < lastY - 3) nav.style.transform = 'translateY(0)';
+    else if (y > lastY + 3) nav.style.transform = 'translateY(-100%)';
+    lastY = y;
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(updateNav); } }, { passive: true });
+  updateNav();
+
+  /* Testimonial video modal */
+  var vmodal = root.querySelector('[data-vmodal]');
+  var open = function () { if (vmodal) vmodal.style.display = 'flex'; };
+  var close = function () { if (vmodal) vmodal.style.display = 'none'; };
+  var vid = root.querySelector('[data-video]'); if (vid) vid.addEventListener('click', open);
+  var vclose = root.querySelector('[data-vclose]'); if (vclose) vclose.addEventListener('click', close);
+  if (vmodal) vmodal.addEventListener('click', function (e) { if (e.target === vmodal) close(); });
+  window.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Design Capacity Formula — Andelo</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Play CDN for preview only. In a real build, delete this script and use tailwind.config.js + a PostCSS/Vite build. -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+/* Mirror of tailwind.config.js — keep the two in sync. */
+tailwind.config = {
+  theme: {
+    screens: { sm: '721px', md: '901px', lg: '1201px', xl: '1440px' },
+    extend: {
+      colors: {
+        canvas: { DEFAULT: '#0A0C22', raised: '#12152F' },
+        navy: { 1: '#161B45', 2: '#0C0E28' },
+        glass: { DEFAULT: 'rgba(255,255,255,0.045)', hover: 'rgba(255,255,255,0.08)' },
+        hairline: { DEFAULT: 'rgba(255,255,255,0.08)', card: 'rgba(255,255,255,0.09)', hover: 'rgba(255,255,255,0.28)' },
+        brand: {
+          DEFAULT: '#3DE68C', hover: '#5CEBA1', ink: '#04160C',
+          soft: 'rgba(61,230,140,0.16)', softStrong: 'rgba(61,230,140,0.26)',
+          border: 'rgba(61,230,140,0.3)', onWhite: '#0E7A43',
+        },
+        heading: { DEFAULT: '#F5F7FF', hi: '#F6F8FF' },
+        body: {
+          DEFAULT: '#EEF0FF', strong: '#C4C8E6', muted: '#A6AAD0',
+          tertiary: '#9EA2C8', caption: '#8388AE', faint: '#6B7099',
+        },
+        paper: '#FFFFFF',
+        ink: { DEFAULT: '#12141C', body: '#3D4048' },
+        jewel: {
+          blue: '#61A5F2', blueDeep: '#2E5FB0',
+          indigo: '#6170F2', indigoDeep: '#2E38B0',
+          purple: '#A661F2', purpleDeep: '#6E2EB0',
+          magenta: '#E161F2', magentaDeep: '#A32EB0',
+          pink: '#F2619E', pinkDeep: '#B02E5E',
+          red: '#F26161', redDeep: '#B02E2E',
+        },
+        onSecondary: { DEFAULT: '#FFFFFF', body: 'rgba(255,255,255,0.9)' },
+      },
+      fontFamily: {
+        display: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        body: ['Hanken Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['ui-monospace', 'SF Mono', 'Menlo', 'monospace'],
+      },
+      fontSize: {
+        h1: ['clamp(40px, 4.6vw, 60px)', { lineHeight: '1.04', letterSpacing: '-0.03em' }],
+        h2: ['clamp(34px, 4.5vw, 54px)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
+        h3: ['21.5px', { lineHeight: '1.25', letterSpacing: '-0.015em' }],
+        base: ['18px', { lineHeight: '1.6' }],
+        lead: ['19px', { lineHeight: '1.6' }],
+        small: ['16.5px', { lineHeight: '1.6' }],
+        eyebrow: ['14px', { lineHeight: '1.2', letterSpacing: '0.2em' }],
+        caption: ['14px', { lineHeight: '1.5' }],
+      },
+      letterSpacing: {
+        display: '-0.03em', tight: '-0.02em', snug: '-0.01em',
+        label: '0.14em', 'label-wide': '0.16em', eyebrow: '0.2em',
+      },
+      lineHeight: { heading: '1.04', tight: '1.1', snug: '1.5', body: '1.6' },
+      spacing: { 1: '6px', 2: '12px', 3: '18px', 4: '24px', 5: '34px', 6: '52px', 7: '80px', card: '20px', gutter: '32px', section: '80px' },
+      maxWidth: { container: '1200px', narrow: '920px' },
+      borderRadius: { xs: '8px', sm: '12px', md: '18px', card: '20px', lg: '26px', pill: '999px' },
+      boxShadow: {
+        btn: '0 14px 34px rgba(61,230,140,0.28)',
+        'btn-hover': '0 18px 38px rgba(61,230,140,0.34)',
+        card: '0 20px 44px rgba(0,0,0,0.32)',
+        panel: '0 20px 44px rgba(46,95,176,0.28)',
+      },
+      backdropBlur: { card: '16px', glow: '28px' },
+      backgroundImage: {
+        'grad-mint': 'linear-gradient(150deg, #3DE68C, #12A566)',
+        'grad-blue': 'linear-gradient(150deg, #61A5F2, #2E5FB0)',
+        'grad-indigo': 'linear-gradient(150deg, #6170F2, #2E38B0)',
+        'grad-purple': 'linear-gradient(150deg, #A661F2, #6E2EB0)',
+        'grad-magenta': 'linear-gradient(150deg, #E161F2, #A32EB0)',
+        'grad-pink': 'linear-gradient(150deg, #F2619E, #B02E5E)',
+        'grad-red': 'linear-gradient(150deg, #F26161, #B02E2E)',
+        'grad-navy': 'linear-gradient(160deg, #161B45, #0C0E28)',
+      },
+      transitionTimingFunction: { house: 'cubic-bezier(0.16, 0.8, 0.24, 1)' },
+      transitionDuration: { fast: '200ms', DEFAULT: '350ms' },
+    },
+  },
+};
+</script>
+
+<style type="text/tailwindcss">
+  /* The eight patterns that repeat across the page. Everything else is raw utilities. */
+  @layer components {
+    /* Mint button. Flat fill only, never a gradient. Dark ink on top. */
+    .btn-mint {
+      @apply inline-flex items-center justify-center gap-[10px] rounded-pill bg-brand text-brand-ink
+             font-bold shadow-btn transition-[transform,background] duration-fast
+             hover:bg-brand-hover hover:-translate-y-[2px];
+    }
+    /* Ghost/secondary button. Hairline border, mint wash on hover. */
+    .btn-ghost {
+      @apply inline-flex items-center justify-center gap-[10px] rounded-pill border border-white/20
+             text-body font-semibold transition-[border-color,background,transform,color] duration-fast
+             hover:bg-brand/[.14] hover:border-brand hover:text-white hover:-translate-y-[2px];
+    }
+    /* The universal surface: frosted glass card with the standard hover. */
+    .card-glass {
+      @apply bg-glass backdrop-blur-card border border-hairline-card rounded-lg
+             transition-[background,border-color,transform] duration-fast
+             hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[4px];
+    }
+    /* Small tag/chip. */
+    .chip {
+      @apply px-[12px] py-[6px] rounded-pill bg-white/[.06] border border-white/10
+             text-[14px] text-body-strong transition-[background,border-color] duration-fast
+             hover:bg-white/[.12] hover:border-hairline-hover;
+    }
+    /* Uppercase mint eyebrow. */
+    .eyebrow {
+      @apply inline-flex items-center gap-[9px] text-eyebrow font-semibold uppercase text-brand;
+    }
+    /* 44px icon tile: mint-soft wash holding a mint line icon. */
+    .icon-tile {
+      @apply w-[50px] h-[50px] rounded-sm bg-brand-soft border border-brand-soft
+             flex items-center justify-center;
+    }
+    /* Scroll-reveal start state. JS clears it on intersect. */
+    .reveal {
+      @apply opacity-0 translate-y-[24px] transition-all duration-700 ease-house;
+    }
+    .reveal-in { @apply opacity-100 translate-y-0; }
+  }
+
+  /* Ambient + decorative motion. House easing only, no bounce. */
+  @keyframes pulseGlow { 0%,100% { opacity:.45; transform:scale(1); } 50% { opacity:.8; transform:scale(1.1); } }
+  @keyframes floaty1 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-20px); } }
+  @keyframes floaty2 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(16px); } }
+  @keyframes floaty3 { 0%,100% { transform:translateY(0) rotate(-5deg); } 50% { transform:translateY(-14px) rotate(-5deg); } }
+  /* Formula page: light band + the calculator's stateful surfaces. Component CSS, not utilities, because the
+     rows are rendered by JS and the result panel toggles tone classes. */
+  .cs-in{width:76px;padding:7px 9px;border:1px solid #D7DBE3;border-radius:8px;font:inherit;font-size:15px;color:#14161C;background:#fff;font-variant-numeric:tabular-nums;}
+  .cs-in.cs-in-text{width:100%;min-width:130px;}
+  .cs-in:focus{outline:2px solid #3DE68C;outline-offset:1px;border-color:#3DE68C;}
+  .cs-tbl{overflow-x:auto;border:1px solid #E8E4DC;border-radius:20px;background:#fff;box-shadow:0 1px 2px rgba(24,36,28,.04),0 14px 34px rgba(24,36,28,.05);margin:28px 0 12px;}
+  .cs-tbl table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  .cs-tbl thead th{background:#161B45;color:#EEF0FF;font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;padding:15px 18px;text-align:left;white-space:nowrap;}
+  .cs-tbl tbody td{padding:14px 18px;border-bottom:1px solid #EFEBE4;vertical-align:top;color:#3D4048;line-height:1.55;}
+  .cs-tbl tbody tr:last-child td{border-bottom:none;}
+  .cs-tbl tbody tr:hover{background:#F6FBF7;}
+  .cs-tbl td:first-child{color:#14161C;font-weight:500;}
+  .cs-tbl tfoot td{padding:14px 18px;border-top:1px solid #E3EDE5;background:#F1F7F2;font-weight:700;color:#14161C;}
+  .cs-num{color:#0E7A43;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .cs-rm{margin-left:10px;width:24px;height:24px;border-radius:50%;border:1.5px solid #C9CED8;background:#fff;padding:0;cursor:pointer;vertical-align:middle;display:inline-flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;}
+  .cs-rm:hover{border-color:#BE3826;background:#FCE7E4;}
+  .cs-gapformula.is-short{background:rgba(242,97,97,.16)!important;border-color:rgba(242,97,97,.45)!important;}
+  .cs-gapformula.is-spare{background:rgba(61,230,140,.14)!important;border-color:rgba(61,230,140,.42)!important;}
+  .cs-gap .cs-in{background:rgba(0,0,0,.22);border-color:rgba(255,255,255,.28);color:#fff;width:62px;padding:4px 7px;}
+  /* Step rail */
+  .cs-side{opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .cs-side.is-on{opacity:1;pointer-events:auto;}
+  .cs-side a.is-active{color:#F6F8FF!important;}
+  .cs-side a.is-active .cs-side-n{background:#3DE68C;color:#04160C;border-color:#3DE68C;}
+  .cs-side .cs-side-t{display:none;} .cs-side:hover .cs-side-t{display:inline;}
+  @media(max-width:1180px){.cs-side{left:auto!important;right:16px!important;top:auto!important;bottom:16px!important;transform:none!important;flex-direction:row!important;border-radius:999px!important;padding:8px!important;gap:2px!important;}.cs-side a{padding:6px!important;}.cs-side:hover .cs-side-t{display:none;}}
+  @media print {
+    .print\:hidden { display: none !important; }
+    html, body, #top, #top > .relative { background: #fff !important; color: #14161C !important; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    /* Reveal states must not hide content in the PDF */
+    .reveal { opacity: 1 !important; transform: none !important; }
+    /* Strip dark hero / jewel chrome — keep the calculator result */
+    .cs-print-hide { display: none !important; }
+    .cs-print-only { display: block !important; }
+    .bg-paper, .bg-paper * { color: #14161C; }
+    .bg-paper { background: #fff !important; }
+    h1, h2, h3, h4, p, li, span, td, th, label, strong, div {
+      color: inherit;
+    }
+    .text-heading-hi, .text-heading, .text-ink, .text-ink-body,
+    .text-body, .text-body-caption, .text-body-muted, .text-body-faint,
+    .text-onSecondary, .text-white, [class*="text-white"] {
+      color: #14161C !important;
+    }
+    .text-brand, .text-brand-onWhite, .cs-num, .cs-tick { color: #0E7A43 !important; }
+    .cs-in {
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      color: #14161C !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      width: auto !important;
+      min-width: 0 !important;
+      appearance: textfield;
+      -moz-appearance: textfield;
+    }
+    .cs-tbl {
+      border-color: #E5E2DD !important;
+      background: #fff !important;
+      box-shadow: none !important;
+      break-inside: avoid;
+    }
+    .cs-tbl thead th {
+      background: #F4F6F8 !important;
+      color: #3D4048 !important;
+      border-bottom: 1px solid #E5E2DD !important;
+    }
+    .cs-tbl tbody td, .cs-tbl tfoot td {
+      color: #3D4048 !important;
+      background: #fff !important;
+      border-color: #EEE !important;
+    }
+    .cs-tbl td:first-child, .cs-tbl tfoot td { color: #14161C !important; }
+    .cs-tbl tfoot td { background: #F1F7F2 !important; }
+    /* Result panel: light, readable, keep the numbers */
+    .cs-gap {
+      background: #F4F6F8 !important;
+      color: #14161C !important;
+      border: 1px solid #D7DBE3 !important;
+      box-shadow: none !important;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .cs-gap, .cs-gap * { color: #14161C !important; }
+    .cs-gap .cs-in { color: #14161C !important; background: transparent !important; border-bottom: 1px solid #C9CED8 !important; border-radius: 0 !important; }
+    .cs-gapformula {
+      background: #fff !important;
+      border: 1px solid #D7DBE3 !important;
+      color: #14161C !important;
+    }
+    .cs-gapformula.is-short { background: #FCE7E4 !important; border-color: #F26161 !important; }
+    .cs-gapformula.is-spare { background: #E8F8EF !important; border-color: #3DE68C !important; }
+    [data-verdict] { border-color: #D7DBE3 !important; }
+    /* Solution cards + intro cards */
+    .bg-white, .bg-\[\#F4F6F8\] {
+      background: #fff !important;
+      box-shadow: none !important;
+      border-color: #E6E8EE !important;
+    }
+    /* Subscription jewel card → plain card in print */
+    .sm\:col-span-3.relative.overflow-hidden {
+      background: #F4F6F8 !important;
+      border: 1px solid #E6E8EE !important;
+      box-shadow: none !important;
+    }
+    a { color: #0E7A43 !important; text-decoration: none; }
+    img { max-width: 60px !important; }
+  }
+  @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+  [data-carousel] { scrollbar-width: none; -ms-overflow-style: none; cursor: grab; }
+  [data-carousel]::-webkit-scrollbar { display: none; }
+  [data-testimonial]:hover .ts-img { transform: scale(1.07); }
+  ::selection { background: rgba(61,230,140,.28); color: #fff; }
+</style>
+</head>
+
+<body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
+<div id="top" class="relative">
+
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none print:hidden">
+    <div class="absolute -top-[140px] -left-[100px] w-[540px] h-[540px] rounded-full blur-[24px] bg-[radial-gradient(circle,rgba(61,230,140,.16),transparent_70%)] animate-[pulseGlow_9s_ease-in-out_infinite]"></div>
+    <div class="absolute top-[420px] -right-[160px] w-[600px] h-[600px] rounded-full blur-[24px] bg-[radial-gradient(circle,rgba(124,92,240,.15),transparent_70%)] animate-[pulseGlow_12s_ease-in-out_infinite]"></div>
+  </div>
+
+<div class="relative z-[1]">
+
+    <!-- Site nav mounted by /assets/site-nav.js -->
+  <div data-site-nav-mount></div>
+  <script src="/assets/site-nav.js"></script>
+
+
+  <!-- ══ HERO ══ -->
+  <section class="cs-print-hide relative pt-[150px] pb-7">
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(1100px_500px_at_50%_-4%,rgba(124,92,240,.22),transparent_60%)]"></div>
+    <div class="relative max-w-container mx-auto px-gutter grid grid-cols-1 sm:grid-cols-2 gap-[36px] sm:gap-[56px] items-center">
+      <div class="reveal text-left">
+        <h1 class="font-display font-bold text-[clamp(34px,4.6vw,54px)] leading-[1.07] tracking-display text-heading-hi">Get Your <span class="text-brand">Real</span> Design Capacity Number</h1>
+        <p class="text-[clamp(17px,1.6vw,20px)] leading-body text-body mt-[22px] mb-[12px] max-w-[760px]">A free interactive tool to diagnose your design capacity. Put in a number, and we'll do the calculation for you: see if you're short, by how many hours, and which solution fits.</p>
+        <ul class="list-none m-0 mb-5 p-0 flex flex-col gap-[4px] max-w-[760px]">
+          <li class="flex items-start gap-2 text-base leading-body text-body"><span class="flex-none mt-[4px] flex"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Enter your numbers, we do the maths</span></li>
+          <li class="flex items-start gap-2 text-base leading-body text-body"><span class="flex-none mt-[4px] flex"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>See your hours gap, live</span></li>
+          <li class="flex items-start gap-2 text-base leading-body text-body"><span class="flex-none mt-[4px] flex"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Get the solution that fits, and your time back</span></li>
+        </ul>
+        <div class="flex flex-wrap gap-2 items-center print:hidden">
+          <a href="#cs-start" class="btn-mint px-5 py-[16px] text-[16px]">Get my number</a>
+          <a href="../assets/Andelo-The-Design-Capacity-Formula.pdf" download="Andelo-The-Design-Capacity-Formula.pdf" target="_blank" rel="noopener" class="btn-ghost px-[30px] py-[16px] text-[16px] gap-[9px]"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" class="w-[18px] h-[18px]"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3"/></svg>Download the PDF</a>
+        </div>
+      </div>
+      <div class="reveal [transition-delay:100ms] print:hidden">
+        <img src="../assets/lead-magnet-hero-capacity.png" alt="Hours need vs team capacity" class="w-full h-auto aspect-[1014/961] object-contain block ml-auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTENT (paper band) ══ -->
+  <div class="bg-paper bg-[radial-gradient(900px_420px_at_50%_-80px,rgba(61,230,140,.08),transparent_70%)]">
+  <div class="cs-print-only hidden max-w-[720px] mx-auto px-gutter pt-4 pb-2">
+    <div class="text-[12px] font-semibold tracking-label uppercase text-[#0E7A43] mb-1">Andelo · Design Capacity Formula</div>
+    <h1 class="font-display font-bold text-[28px] leading-tight tracking-tight text-ink m-0">Your capacity result</h1>
+  </div>
+  <div class="max-w-[1080px] mx-auto px-gutter pt-[64px] pb-[12px]">
+
+    <!-- Introduction -->
+    <div id="cs-start" class="reveal max-w-[720px] mx-auto mt-[56px] mb-[88px] bg-[#F4F6F8] border border-[#E6E8EE] rounded-card px-5 py-[36px] scroll-mt-[100px]">
+      <div class="text-[12px] font-semibold tracking-label uppercase text-brand-onWhite mb-2">Introduction</div>
+      <h2 class="font-display font-bold text-[clamp(30px,3.4vw,42px)] leading-[1.1] tracking-[-.025em] text-ink mb-[20px]">Stop guessing. Start counting.</h2>
+      <p class="text-small leading-[1.75] text-ink-body mb-[16px]">How many hours have you spent managing design, or even doing it yourself? Exactly. That's not your role, but you have to do it, otherwise the backlog just keeps piling up. It just happens: you don't even know if it's a capacity problem or an efficiency problem. What you know is that it's chaotic and causes burnout, for you and your team.</p>
+      <p class="text-small leading-[1.75] text-ink-body mb-[16px]">That's what this guide is about: ending that cycle. We'll help you diagnose the real issue step by step, so by the end you'll know your next step.</p>
+      <p class="text-small leading-[1.75] text-ink-body m-0">We use this framework to evaluate our own capacity every quarter. After a few years of refining it, we've found it's the most liberating way to find the real numbers and plan ahead. A few minutes of effort that saves you from unnecessary budget leaks. The final step will help you choose the right fit to close the gap.</p>
+    </div>
+
+    <!-- Four steps -->
+    <div class="reveal max-w-[720px] mx-auto mb-[88px]">
+
+      <h2 id="step-1" class="font-display font-bold text-[clamp(27px,3.6vw,38px)] leading-[1.15] tracking-tight text-ink mt-[56px] mb-[16px] scroll-mt-[110px]">Step 1: Count Your Monthly Design Needs</h2>
+      <p class="text-small leading-[1.7] text-ink-body mb-[20px] max-w-[720px] mb-0">What are your ongoing design needs? Take your time with this one: getting the list right is the first step. Then map it across the slow season, the regular months, and the peak. Use the table below to work out the average hours each one needs.</p>
+      <div class="flex items-center gap-[8px] text-caption text-ink-body mt-[18px]"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#0E7A43" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Based on years of production work delivered across Australian marketing teams</span></div>
+      <div class="cs-tbl">
+        <table>
+          <thead><tr><th>What You're Producing</th><th>Qty/Month</th><th>Avg Hours Each</th><th>Total Hours</th></tr></thead>
+          <tbody data-bench-rows></tbody>
+          <tfoot><tr><td>Total</td><td></td><td>Production hours:</td><td data-prod>= 0h</td></tr></tfoot>
+        </table>
+      </div>
+      <button type="button" data-add-bench class="print:hidden mt-2 px-[16px] py-[9px] bg-transparent border border-dashed border-[#C9CED8] rounded-pill text-brand-onWhite font-semibold text-[14.5px] cursor-pointer transition-colors duration-fast hover:border-brand-onWhite">+ Add another row</button>
+
+      <h2 id="step-2" class="font-display font-bold text-[clamp(27px,3.6vw,38px)] leading-[1.15] tracking-tight text-ink mt-[56px] mb-[16px] scroll-mt-[110px]">Step 2: Add the Working Margin</h2>
+      <p class="text-small leading-[1.7] text-ink-body mb-[20px] max-w-[720px] mb-0">Realistically, design has never been just the design. Think about it: from the first brief to the delivered file, plenty of things along the way cost time.</p>
+      <div class="cs-tbl">
+        <table>
+          <thead><tr><th>Where design time really goes</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td>Read the brief and research</td><td>Nobody starts designing right away. The designer needs to read and understand the task first. Especially if it's not a repeat task, fresh research is needed to understand the context fully.</td></tr>
+            <tr><td>Exploration</td><td>The outcome may look simple. Sometimes the designer hits it right straight away. Other times, a few iterations are needed to get to the right one.</td></tr>
+            <tr><td>Revision</td><td>One or two revisions are common. But sometimes a change of direction or a new idea causes many more, especially on tasks with plenty of stakeholders involved.</td></tr>
+            <tr><td>Context switch</td><td>The most underrated one. The more tasks and revisions come in, the more cooldown a designer needs between them, so a bit of buffer helps.</td></tr>
+            <tr><td>Late additions</td><td>Extra sizes, formats, or versions asked for after approval.</td></tr>
+            <tr><td>Final file preparation</td><td>Every output needs to be prepared and uploaded. Then a typo shows up, and another round of fixing and re-uploading has to be accommodated.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-small leading-[1.7] text-ink-body mb-[20px] max-w-[720px] mt-[20px]">Now add those invisible activities to your time plan. On average, that takes around a 20% working margin. Then you get the real monthly need:</p>
+      <p class="text-[13.5px] text-body-caption mb-[8px] italic">Calculated from your Step 1 total. Change a number above and this updates.</p>
+      <div class="bg-[#F4F6F8] border border-[#E6E8EE] rounded-sm px-4 py-[18px] text-center font-display italic font-semibold text-[19px] tracking-snug text-[#14161C] mb-[22px]">production hours <span data-prod class="text-brand-onWhite tabular-nums">0h</span> &nbsp;+&nbsp; 20% margin <span data-margin class="text-brand-onWhite tabular-nums">0h</span> &nbsp;=&nbsp; monthly need <strong><span data-need class="text-brand-onWhite tabular-nums">0h</span></strong></div>
+      <p class="text-caption text-body-caption mt-[10px] italic leading-[1.55]">Count from a real month, not the plan. Figures are typical averages covering the full production cycle: brief review, design, self-checking, file preparation, and revisions within the estimate.</p>
+
+      <h2 id="step-3" class="font-display font-bold text-[clamp(27px,3.6vw,38px)] leading-[1.15] tracking-tight text-ink mt-[56px] mb-[16px] scroll-mt-[110px]">Step 3: Count Your Real In-House Hours</h2>
+      <p class="text-base leading-body text-ink-body mb-[20px] max-w-[720px]">Full-time is 38 hours a week: about 165 hours a month contracted. Take out leave and public holidays first and about 150 attended hours remain. A designer's real working time is around 80% of that: meetings, seeking creative inspiration, and peer communication take the rest. So a full-time in-house designer's real hours:</p>
+      <div class="bg-white border border-[#E8E4DC] rounded-[16px] px-[22px] py-[4px] my-[22px] shadow-[0_1px_2px_rgba(24,36,28,.04)]">
+        <div class="flex items-baseline gap-[14px] py-[14px] border-b border-[#EFEBE4]"><span class="font-semibold text-[15px] flex-[0_0_200px] text-[#14161C]">Contracted hours</span><span class="text-[13.5px] flex-1 text-[#6A6E78]">38h/week × ~4.33 weeks</span><span class="font-bold text-[16px] flex-[0_0_90px] text-right tabular-nums whitespace-nowrap text-[#14161C]">~165h</span></div>
+        <div class="flex items-baseline gap-[14px] py-[14px] border-b border-[#EFEBE4]"><span class="font-semibold text-[15px] flex-[0_0_200px] text-[#14161C]">Minus paid leave</span><span class="text-[13.5px] flex-1 text-[#6A6E78]">~41 days/year under Australian entitlements (annual, public holidays, sick), averaged</span><span class="font-bold text-[16px] flex-[0_0_90px] text-right tabular-nums whitespace-nowrap text-[#14161C]">−~26h</span></div>
+        <div class="flex items-baseline gap-[14px] py-[14px] border-b border-[#EFEBE4]"><span class="font-semibold text-[15px] flex-[0_0_200px] text-[#14161C]">Minus meetings &amp; admin</span><span class="text-[13.5px] flex-1 text-[#6A6E78]">~80% of the time that's left is billable design</span><span class="font-bold text-[16px] flex-[0_0_90px] text-right tabular-nums whitespace-nowrap text-[#14161C]">~111h</span></div>
+        <div class="flex items-baseline gap-[14px] py-[16px] -mx-[22px] -mb-[4px] px-[22px] bg-[#F1F7F2] rounded-b-[16px] border-t border-[#E3EDE5]"><span class="font-semibold text-[15px] flex-[0_0_200px] text-brand-onWhite">Real productive hours</span><span class="text-[13.5px] flex-1 text-[#6A6E78]">what you can actually brief</span><span class="font-bold text-[16px] flex-[0_0_90px] text-right tabular-nums whitespace-nowrap text-brand-onWhite">~110–120h/month</span></div>
+      </div>
+      <div class="cs-tbl">
+        <table>
+          <thead><tr><th>Who</th><th>How many</th><th>Real hours each</th><th>Total</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Full-time designers</td>
+              <td><input type="number" min="0" inputmode="numeric" class="cs-in" aria-label="Full-time designers" data-ft></td>
+              <td class="cs-num">× 120</td>
+              <td class="cs-num" data-ft-total>= 0h</td>
+            </tr>
+            <tr>
+              <td>Part-time designers</td>
+              <td class="whitespace-nowrap"><input type="number" min="0" inputmode="numeric" class="cs-in" aria-label="How many part-timers" data-pt-count> × <input type="number" min="0" max="5" step="0.5" inputmode="decimal" class="cs-in !w-[64px]" placeholder="2.5" aria-label="Days per week each" data-pt-days> days/wk</td>
+              <td class="cs-num">÷ 5 × 120</td>
+              <td class="cs-num" data-pt-total>= 0h</td>
+            </tr>
+          </tbody>
+          <tbody data-team-rows></tbody>
+          <tfoot><tr><td colspan="3">Real monthly in-house hours</td><td data-team>= 0h</td></tr></tfoot>
+        </table>
+      </div>
+      <button type="button" data-add-team class="print:hidden mt-2 px-[16px] py-[9px] bg-transparent border border-dashed border-[#C9CED8] rounded-pill text-brand-onWhite font-semibold text-[14.5px] cursor-pointer transition-colors duration-fast hover:border-brand-onWhite">+ Add a person</button>
+      <p class="text-caption text-body-caption mt-[10px] italic leading-[1.55]">The ~120 figure lands in the same range as labour studies averaging 1,558 productive hours a year for full-time employees (Law Insider, Asana Anatomy of Work Index).</p>
+
+      <h2 id="step-4" class="font-display font-bold text-[clamp(27px,3.6vw,38px)] leading-[1.15] tracking-tight text-ink mt-[56px] mb-[16px] scroll-mt-[110px]">Step 4: Work Out Your Gap</h2>
+      <p class="text-base leading-body text-ink-body mb-[20px] max-w-[720px]">Now bring the two numbers together: what your month demands, minus what your team can hold. And because demand moves with the calendar, your result also includes the busy season, at a 1.5x multiplier on your monthly need.</p>
+
+      <!-- Result panel (navy) -->
+      <div class="cs-gap relative overflow-hidden rounded-lg border border-hairline px-gutter py-[30px] mt-4 mb-[8px] text-white shadow-[0_22px_50px_rgba(0,0,0,.4)] bg-[radial-gradient(500px_260px_at_90%_-30%,rgba(61,230,140,.12),transparent_60%),linear-gradient(160deg,#161B45,#0C0E28)]">
+        <div class="text-[12.5px] font-bold tracking-label uppercase mb-[14px]">Your result</div>
+        <div class="text-[17px] font-semibold mb-[8px] flex items-center gap-[6px] flex-wrap">Slow season (<input type="number" class="cs-in" min="0" max="1" step="0.1" aria-label="Slow multiplier" value="0.8" data-mult-slow>×)</div>
+        <div data-gap-slow class="cs-gapformula bg-black/[.18] border border-white/[.24] rounded-[10px] px-[16px] py-[12px] text-center font-display font-semibold text-[14.5px] mb-[22px] transition-colors duration-fast"><span data-slow-need>0h</span> needed − <span data-team>0h</span> in-house &nbsp;=&nbsp; <strong data-gap-slow-val>0h spare</strong></div>
+        <div class="text-[17px] font-semibold mb-[8px]">Regular month</div>
+        <div data-gap-reg class="cs-gapformula bg-black/[.18] border border-white/[.24] rounded-[10px] px-[16px] py-[12px] text-center font-display font-semibold text-[14.5px] mb-[22px] transition-colors duration-fast"><span data-need>0h</span> needed − <span data-team>0h</span> in-house &nbsp;=&nbsp; <strong data-gap-reg-val>0h spare</strong></div>
+        <div class="text-[17px] font-semibold mb-[8px] flex items-center gap-[6px] flex-wrap">Busy month (<input type="number" class="cs-in" min="1" max="3" step="0.1" aria-label="Busy multiplier" value="1.5" data-mult-busy>×)</div>
+        <div data-gap-busy class="cs-gapformula bg-black/[.18] border border-white/[.24] rounded-[10px] px-[16px] py-[12px] text-center font-display font-semibold text-[14.5px] mb-[22px] transition-colors duration-fast"><span data-busy-need>0h</span> needed − <span data-team>0h</span> in-house &nbsp;=&nbsp; <strong data-gap-busy-val>0h spare</strong></div>
+        <div data-verdict class="hidden mt-[22px] pt-[20px] border-t border-white/[.24]"><p class="m-0 text-[19px] font-bold leading-[1.35]" data-verdict-text></p></div>
+        <div class="print:hidden flex gap-[10px] mt-[18px] flex-wrap">
+          <button type="button" data-print class="btn-mint px-[20px] py-[12px] text-[15px] !text-brand-ink border-none cursor-pointer shadow-[0_10px_26px_rgba(61,230,140,.28)]">Save my result as PDF</button>
+          <button type="button" data-copynums class="px-[20px] py-[12px] rounded-pill bg-white/[.06] border border-white/[.28] text-white font-semibold text-[15px] cursor-pointer transition-[background,border-color] duration-fast hover:bg-white/[.12] hover:border-white/40"><span data-copylabel>Copy my numbers</span></button>
+        </div>
+        <p class="mt-[14px] text-[13.5px] leading-[1.55] text-white/[.85] m-0">Computed from your Steps 1 to 3. Change any number above and this updates. Run it again every quarter: the number moves with the calendar. Your numbers save in this browser only: nothing is sent anywhere.</p>
+      </div>
+    </div>
+
+    <!-- Solutions -->
+    <div class="reveal max-w-[720px] mx-auto mb-7">
+      <h2 id="step-5" class="font-display font-bold text-[clamp(27px,3.6vw,38px)] leading-[1.15] tracking-tight text-ink mb-[16px] scroll-mt-[110px]">Solutions to Fill Your Gap</h2>
+      <p class="text-base leading-body text-ink-body mb-4 max-w-[720px]">Now that you know your gap hours, these are our matching recommendations:</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-[16px] mt-4 max-w-[720px]">
+          <div class="bg-white border border-[#E6E8EE] rounded-[16px] px-4 pt-4 pb-[22px] shadow-[0_1px_2px_rgba(24,36,28,.04)]">
+            <div class="inline-flex items-center justify-center w-[30px] h-[30px] rounded-xs bg-brand-soft text-brand-onWhite font-display font-bold text-[14px] mb-[14px]">1</div>
+            <h4 class="font-display font-bold text-[17px] text-[#14161C] mb-[8px]">Hiring fits when</h4>
+            <p class="text-small text-ink-body leading-body m-0">demand is high, steady, and mostly one kind of work: enough volume, every week, to keep a full-time designer busy.</p>
+          </div>
+          <div class="bg-white border border-[#E6E8EE] rounded-[16px] px-4 pt-4 pb-[22px] shadow-[0_1px_2px_rgba(24,36,28,.04)]">
+            <div class="inline-flex items-center justify-center w-[30px] h-[30px] rounded-xs bg-brand-soft text-brand-onWhite font-display font-bold text-[14px] mb-[14px]">2</div>
+            <h4 class="font-display font-bold text-[17px] text-[#14161C] mb-[8px]">A specialist freelancer fits when</h4>
+            <p class="text-small text-ink-body leading-body m-0">you need one specific thing from someone excellent at exactly that thing outside your team's usual lane.</p>
+          </div>
+          <div class="bg-white border border-[#E6E8EE] rounded-[16px] px-4 pt-4 pb-[22px] shadow-[0_1px_2px_rgba(24,36,28,.04)]">
+            <div class="inline-flex items-center justify-center w-[30px] h-[30px] rounded-xs bg-brand-soft text-brand-onWhite font-display font-bold text-[14px] mb-[14px]">3</div>
+            <h4 class="font-display font-bold text-[17px] text-[#14161C] mb-[8px]">Ad-hoc services fit when</h4>
+            <p class="text-small text-ink-body leading-body m-0">only your busy-period gap is real: a launch, an event season, one big project. An occasional spike needs occasional help.</p>
+          </div>
+          <!-- Subscription: the page's jewel panel -->
+          <div class="sm:col-span-3 relative overflow-hidden rounded-[16px] px-4 pt-4 pb-[22px] border border-white/[.14] shadow-[0_18px_40px_rgba(110,46,176,.28)] bg-[radial-gradient(420px_220px_at_90%_-20%,rgba(230,178,255,.3),transparent_60%),linear-gradient(150deg,#A661F2,#6E2EB0)]">
+            <div class="inline-flex items-center justify-center w-[30px] h-[30px] rounded-xs bg-brand text-brand-ink font-display font-bold text-[14px] mb-[14px]">4</div>
+            <h4 class="font-display font-bold text-[17px] text-onSecondary mb-[8px]">A design subscription fits when</h4>
+            <p class="text-small text-white/[.92] leading-body m-0">your regular-month gap is real: short even in an average month, across changing formats and channels. You get a design team, not just a designer: people who learn your brand and stay on it, a coordinator who checks every file and keeps every date, and the hours sized to your gap. The ongoing work covered, without the hiring or the managing.</p>
+          </div>
+      </div>
+
+      <div class="reveal mt-[44px] pt-[28px] border-t border-[#E6E8EE]">
+        <p class="text-[17px] text-ink-body mb-[18px] leading-body">Thanks for reading, and I hope this interactive tool helps!</p>
+        <div class="flex items-center gap-[16px] flex-wrap">
+          <img src="../assets/stephen-andelo.jpeg" alt="Stephen Andelo" class="w-[60px] h-[60px] rounded-full object-cover flex-none">
+          <div class="flex-1 min-w-[180px]">
+            <div class="font-display font-bold text-[18px] text-ink">Stephen Andelo</div>
+            <div class="text-[#6B7280] text-[15px] mt-[2px]">Founder, Andelo · <a href="https://www.linkedin.com/in/stephenandelo/" target="_blank" rel="noopener" class="font-semibold text-brand-onWhite hover:text-[#0A5730] transition-colors duration-fast">Connect on LinkedIn</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="print:hidden mt-[28px] pt-[20px] border-t border-[#E6E8EE] flex items-center gap-[14px] flex-wrap">
+        <p class="text-[15px] text-ink-body m-0">Know someone buried in design work? Send them this page.</p>
+        <button type="button" data-copylink class="text-[14px] font-semibold text-brand-onWhite bg-transparent border-[1.5px] border-brand-onWhite rounded-pill px-[16px] py-[7px] cursor-pointer transition-colors duration-fast hover:bg-brand-soft"><span data-copylabel>Copy link</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA (purple jewel) + sources -->
+  <div class="max-w-[1120px] mx-auto px-gutter mt-[56px] pb-7">
+    <div class="cs-print-hide reveal relative overflow-hidden rounded-lg px-5 py-[64px] text-center bg-[radial-gradient(700px_340px_at_82%_-20%,rgba(230,178,255,.3),transparent_60%),linear-gradient(150deg,#A661F2,#6E2EB0)]">
+      <h2 class="font-display font-bold text-[clamp(28px,3.6vw,44px)] leading-[1.08] tracking-[-.025em] text-onSecondary mx-auto max-w-[24ch]">Leaning toward the subscription option? Let's talk.</h2>
+      <p class="text-base leading-body text-white/90 mx-auto mt-[20px] mb-5 max-w-[56ch] [text-wrap:pretty]">We'll help you see if a design subscription is a real fit, within your number and your budget. If it is, the subscription gets you a design team running production for you, without the hiring.</p>
+      <a href="/book-a-call" class="btn-mint font-display font-extrabold px-[40px] py-[19px] text-[19px] uppercase tracking-[.01em] shadow-[0_14px_34px_rgba(0,0,0,.24)]">Book my 15-minute call</a>
+    </div>
+    <p class="max-w-[720px] mx-auto mt-[36px] text-caption leading-[1.65] text-[#5A6172]"><strong class="font-semibold text-ink">Sources and method.</strong> Full-time hours use the Australian 38-hour standard week (Fair Work Act, National Employment Standards). Production benchmarks come from Andelo's estimate records across client briefs. The 20% working margin and the 80% working-time rate are Andelo planning standards, from running this framework on our own team every quarter.</p>
+  </div>
+  </div>
+
+  <!-- Step rail -->
+  <nav data-side class="cs-side print:hidden fixed left-[24px] top-1/2 -translate-y-1/2 z-[60] flex flex-col gap-[4px] p-[10px] rounded-md bg-[rgba(10,12,34,.9)] backdrop-blur-card border border-white/10 shadow-card" aria-label="Jump to step">
+    <a href="#step-1" data-side-link="step-1" class="flex items-center gap-[10px] px-[10px] py-[8px] rounded-sm text-body-muted text-caption font-medium whitespace-nowrap transition-[background,color] duration-fast hover:bg-white/[.08] hover:text-body"><span class="cs-side-n flex-none w-[26px] h-[26px] rounded-full border border-white/[.22] flex items-center justify-center font-display font-bold text-[12px] text-body transition-colors duration-fast">1</span><span class="cs-side-t">Design needs</span></a>
+    <a href="#step-2" data-side-link="step-2" class="flex items-center gap-[10px] px-[10px] py-[8px] rounded-sm text-body-muted text-caption font-medium whitespace-nowrap transition-[background,color] duration-fast hover:bg-white/[.08] hover:text-body"><span class="cs-side-n flex-none w-[26px] h-[26px] rounded-full border border-white/[.22] flex items-center justify-center font-display font-bold text-[12px] text-body transition-colors duration-fast">2</span><span class="cs-side-t">Working margin</span></a>
+    <a href="#step-3" data-side-link="step-3" class="flex items-center gap-[10px] px-[10px] py-[8px] rounded-sm text-body-muted text-caption font-medium whitespace-nowrap transition-[background,color] duration-fast hover:bg-white/[.08] hover:text-body"><span class="cs-side-n flex-none w-[26px] h-[26px] rounded-full border border-white/[.22] flex items-center justify-center font-display font-bold text-[12px] text-body transition-colors duration-fast">3</span><span class="cs-side-t">In-house hours</span></a>
+    <a href="#step-4" data-side-link="step-4" class="flex items-center gap-[10px] px-[10px] py-[8px] rounded-sm text-body-muted text-caption font-medium whitespace-nowrap transition-[background,color] duration-fast hover:bg-white/[.08] hover:text-body"><span class="cs-side-n flex-none w-[26px] h-[26px] rounded-full border border-white/[.22] flex items-center justify-center font-display font-bold text-[12px] text-body transition-colors duration-fast">4</span><span class="cs-side-t">Your gap</span></a>
+    <a href="#step-5" data-side-link="step-5" class="flex items-center gap-[10px] px-[10px] py-[8px] rounded-sm text-body-muted text-caption font-medium whitespace-nowrap transition-[background,color] duration-fast hover:bg-white/[.08] hover:text-body"><span class="cs-side-n flex-none w-[26px] h-[26px] rounded-full border border-white/[.22] flex items-center justify-center font-display font-bold text-[12px] text-body transition-colors duration-fast">5</span><span class="cs-side-t">Solutions</span></a>
+  </nav>
+
+  <!-- Site footer mounted by /assets/site-footer.js -->
+  <div data-site-footer-mount></div>
+  <script src="/assets/site-footer.js"></script>
+
+</div>
+</div>
+
+<script>
+/* The Design Capacity Formula. Framework-agnostic; state persists to localStorage under one key. */
+(function () {
+  var root = document;
+
+  /* Scroll reveal */
+  var reveals = root.querySelectorAll('.reveal');
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('reveal-in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' }) : null;
+  reveals.forEach(function (el) {
+    if (el.getBoundingClientRect().top < window.innerHeight * 1.15) el.classList.add('reveal-in');
+    else if (io) io.observe(el); else el.classList.add('reveal-in');
+  });
+
+  /* Nav + step rail */
+  var nav = root.querySelector('[data-nav]'), side = root.querySelector('[data-side]');
+  var STEPS = ['step-1','step-2','step-3','step-4','step-5'];
+  var lastY = window.scrollY || 0, ticking = false;
+  function onScroll() {
+    ticking = false;
+    var y = window.scrollY || document.documentElement.scrollTop || 0;
+    if (nav) {
+      var frosted = y > 24;
+      nav.style.background = frosted ? 'rgba(9,11,30,0.78)' : 'transparent';
+      nav.style.backdropFilter = frosted ? 'blur(16px)' : 'none';
+      /* border handled by site-nav.js */
+      if (y <= 120 || y < lastY - 3) nav.style.transform = 'translateY(0)'; else if (y > lastY + 3) nav.style.transform = 'translateY(-100%)';
+    }
+    if (side) {
+      var first = root.getElementById('step-1'), last = root.getElementById('step-5'), vh = window.innerHeight;
+      if (first && last) {
+        side.classList.toggle('is-on', first.getBoundingClientRect().top < vh * 0.8 && last.getBoundingClientRect().bottom > -vh * 0.5);
+        var active = STEPS[0];
+        STEPS.forEach(function (id) { var el = root.getElementById(id); if (el && el.getBoundingClientRect().top <= vh * 0.4) active = id; });
+        side.querySelectorAll('[data-side-link]').forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('data-side-link') === active); });
+      }
+    }
+    lastY = y;
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  /* ── Calculator ── */
+  var KEY = 'andelo-capacity-v2';
+  var BENCH = [['Social media posts',2.5],['EDMs',4],['Presentations',8],['Flyers / posters',3],['Brochures',10],['Report pages',2],['Event collateral',4],['Banner / web assets',4]];
+  var S = { bench: BENCH.map(function(){return '';}), extraBench: [], ftCount: '', ptCount: '', ptDays: '', extraTeam: [], multSlow: '0.8', multBusy: '1.5' };
+  try { var saved = JSON.parse(localStorage.getItem(KEY) || 'null'); if (saved) for (var k in S) if (saved[k] !== undefined) S[k] = saved[k]; } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  var num = function (v) { var n = parseFloat(v); return isFinite(n) ? n : 0; };
+  var fmt = function (x) { return (Math.round(x * 10) / 10) + 'h'; };
+  var esc = function (s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); };
+  var q = function (sel) { return root.querySelector(sel); };
+  var all = function (sel, fn) { root.querySelectorAll(sel).forEach(fn); };
+  var RM = '<button type="button" class="cs-rm print:hidden" aria-label="Remove row" title="Remove row" data-rm><svg width="11" height="11" viewBox="0 0 24 24" fill="none" class="block"><path d="M6 6l12 12M18 6L6 18" stroke="#6B7280" stroke-width="3" stroke-linecap="round"/></svg></button>';
+
+  function renderRows() {
+    var b = q('[data-bench-rows]'), t = q('[data-team-rows]');
+    b.innerHTML = BENCH.map(function (r, i) {
+      return '<tr><td>' + esc(r[0]) + '</td><td><input type="number" min="0" inputmode="numeric" class="cs-in" aria-label="Quantity per month" data-bench="' + i + '" value="' + esc(S.bench[i]) + '"></td><td class="cs-num">× ' + r[1] + 'h</td><td class="cs-num" data-bench-total="' + i + '">= 0h</td></tr>';
+    }).join('') + S.extraBench.map(function (r, i) {
+      return '<tr><td><input type="text" class="cs-in cs-in-text" placeholder="What is it?" aria-label="Item name" data-xb-label="' + i + '" value="' + esc(r.label) + '"></td><td><input type="number" min="0" inputmode="numeric" class="cs-in" aria-label="Quantity per month" data-xb-qty="' + i + '" value="' + esc(r.qty) + '"></td><td class="cs-num">× <input type="number" min="0" step="0.5" inputmode="decimal" class="cs-in" style="width:64px" aria-label="Hours each" data-xb-hrs="' + i + '" value="' + esc(r.hrs) + '">h</td><td class="cs-num whitespace-nowrap"><span data-xb-total="' + i + '">= 0h</span>' + RM.replace('data-rm', 'data-rm-bench="' + i + '"') + '</td></tr>';
+    }).join('');
+    t.innerHTML = S.extraTeam.map(function (r, i) {
+      return '<tr><td><input type="text" class="cs-in cs-in-text" placeholder="Who?" aria-label="Person" data-xt-label="' + i + '" value="' + esc(r.label) + '"></td><td colspan="2" class="whitespace-nowrap"><input type="number" min="0" inputmode="numeric" class="cs-in" aria-label="Real hours" data-xt-qty="' + i + '" value="' + esc(r.qty) + '"> real hours</td><td class="cs-num whitespace-nowrap"><span data-xt-total="' + i + '">= 0h</span>' + RM.replace('data-rm', 'data-rm-team="' + i + '"') + '</td></tr>';
+    }).join('');
+    q('[data-ft]').value = S.ftCount; q('[data-pt-count]').value = S.ptCount; q('[data-pt-days]').value = S.ptDays;
+    q('[data-mult-slow]').value = S.multSlow; q('[data-mult-busy]').value = S.multBusy;
+    compute();
+  }
+  var NUMS = {};
+  function compute() {
+    var prod = 0;
+    BENCH.forEach(function (r, i) { var t = num(S.bench[i]) * r[1]; prod += t; var el = q('[data-bench-total="' + i + '"]'); if (el) el.textContent = '= ' + fmt(t); });
+    S.extraBench.forEach(function (r, i) { var t = num(r.qty) * num(r.hrs); prod += t; var el = q('[data-xb-total="' + i + '"]'); if (el) el.textContent = '= ' + fmt(t); });
+    var need = prod * 1.2;
+    var ftT = num(S.ftCount) * 120, ptT = num(S.ptCount) * num(S.ptDays) / 5 * 120, team = ftT + ptT;
+    S.extraTeam.forEach(function (r, i) { team += num(r.qty); var el = q('[data-xt-total="' + i + '"]'); if (el) el.textContent = '= ' + fmt(num(r.qty)); });
+    var mS = num(S.multSlow) || 0.8, mB = num(S.multBusy) || 1.5;
+    var gs = need * mS - team, gr = need - team, gb = need * mB - team;
+    var gapTxt = function (g) { return g > 0 ? fmt(g) + ' short' : fmt(-g) + ' spare'; };
+    var has = !(prod === 0 && team === 0);
+    var tone = function (el, g) { el.classList.remove('is-short','is-spare'); if (has) el.classList.add(g > 0 ? 'is-short' : 'is-spare'); };
+    all('[data-prod]', function (el) { el.textContent = (el.tagName === 'TD' ? '= ' : '') + fmt(prod); });
+    q('[data-margin]').textContent = fmt(prod * 0.2);
+    all('[data-need]', function (el) { el.textContent = fmt(need); });
+    q('[data-ft-total]').textContent = '= ' + fmt(ftT); q('[data-pt-total]').textContent = '= ' + fmt(ptT);
+    all('[data-team]', function (el) { el.textContent = (el.tagName === 'TD' ? '= ' : '') + fmt(team); });
+    q('[data-slow-need]').textContent = fmt(need * mS); q('[data-busy-need]').textContent = fmt(need * mB);
+    q('[data-gap-slow-val]').textContent = gapTxt(gs); q('[data-gap-reg-val]').textContent = gapTxt(gr); q('[data-gap-busy-val]').textContent = gapTxt(gb);
+    tone(q('[data-gap-slow]'), gs); tone(q('[data-gap-reg]'), gr); tone(q('[data-gap-busy]'), gb);
+    var verdict = '';
+    if (has) {
+      if (gr <= 0 && gb <= 0) verdict = 'Your hours cover both the regular and busy months. You have your proof.';
+      else if (gr <= 0) verdict = 'Regular months are covered. The busy months are where the gap lives, and the backlog with it.';
+      else verdict = 'The gap is there in a regular month, and grows in the busy ones. That is your number for the next step.';
+    }
+    q('[data-verdict]').classList.toggle('hidden', !verdict); q('[data-verdict-text]').textContent = verdict;
+    NUMS = { prod: fmt(prod), need: fmt(need), team: fmt(team), slow: gapTxt(gs), reg: gapTxt(gr), busy: gapTxt(gb), mS: mS, mB: mB };
+  }
+
+  /* Event delegation: one listener for every input in the page */
+  root.addEventListener('input', function (e) {
+    var t = e.target, d = t.dataset;
+    if ('bench' in d) S.bench[+d.bench] = t.value;
+    else if ('xbLabel' in d) S.extraBench[+d.xbLabel].label = t.value;
+    else if ('xbQty' in d) S.extraBench[+d.xbQty].qty = t.value;
+    else if ('xbHrs' in d) S.extraBench[+d.xbHrs].hrs = t.value;
+    else if ('xtLabel' in d) S.extraTeam[+d.xtLabel].label = t.value;
+    else if ('xtQty' in d) S.extraTeam[+d.xtQty].qty = t.value;
+    else if ('ft' in d) S.ftCount = t.value;
+    else if ('ptCount' in d) S.ptCount = t.value;
+    else if ('ptDays' in d) S.ptDays = t.value;
+    else if ('multSlow' in d) S.multSlow = t.value;
+    else if ('multBusy' in d) S.multBusy = t.value;
+    else return;
+    save(); compute();
+  });
+  root.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-rm-bench],[data-rm-team],[data-add-bench],[data-add-team],[data-print],[data-copynums],[data-copylink]');
+    if (!b) return;
+    var d = b.dataset;
+    if ('addBench' in d) { S.extraBench.push({ label: '', qty: '', hrs: '' }); save(); renderRows(); }
+    else if ('addTeam' in d) { S.extraTeam.push({ label: '', qty: '' }); save(); renderRows(); }
+    else if ('rmBench' in d) { S.extraBench.splice(+d.rmBench, 1); save(); renderRows(); }
+    else if ('rmTeam' in d) { S.extraTeam.splice(+d.rmTeam, 1); save(); renderRows(); }
+    else if ('print' in d) {
+      e.preventDefault();
+      root.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('reveal-in'); });
+      window.print();
+    }
+    else if ('copynums' in d || 'copylink' in d) {
+      e.preventDefault();
+      var lbl = b.querySelector('[data-copylabel]'), orig = lbl.textContent, isNums = 'copynums' in d;
+      var txt = isNums
+        ? 'My design capacity (The Design Capacity Formula, Andelo)\nProduction hours: ' + NUMS.prod + '\nMonthly need (with 20% margin): ' + NUMS.need + '\nReal in-house hours: ' + NUMS.team + '\nSlow season (' + NUMS.mS + 'x): ' + NUMS.slow + '\nRegular month: ' + NUMS.reg + '\nBusy month (' + NUMS.mB + 'x): ' + NUMS.busy + '\nandelo.com.au/design-hours-guide'
+        : location.href;
+      var done = function () { lbl.textContent = isNums ? 'Copied' : 'Link copied'; setTimeout(function () { lbl.textContent = orig; }, 1800); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, done); else done();
+    }
+  });
+  renderRows();
+})();
+</script>
+</body>
+</html>
