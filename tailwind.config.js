@@ -200,7 +200,7 @@ module.exports = {
       },
 
       transitionTimingFunction: {
-        house: 'cubic-bezier(0.16, 0.8, 0.24, 1)', // the single house curve
+        house: 'cubic-bezier(0.22, 1, 0.36, 1)', // live house ease — matches docs/animation-standards.md & input.css --ease-out
       },
       transitionDuration: {
         fast: '200ms',
@@ -218,8 +218,8 @@ module.exports = {
         },
       },
       animation: {
-        glow: 'dsGlow 6s cubic-bezier(0.16, 0.8, 0.24, 1) infinite',
-        lift: 'dsLift 5s cubic-bezier(0.16, 0.8, 0.24, 1) infinite',
+        glow: 'dsGlow 6s cubic-bezier(0.22, 1, 0.36, 1) infinite',
+        lift: 'dsLift 5s cubic-bezier(0.22, 1, 0.36, 1) infinite',
       },
     },
   },

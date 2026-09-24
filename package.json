@@ -4,6 +4,8 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./input.css -o ./style.css",
+    "watch:css": "npx @tailwindcss/cli -i ./input.css -o ./style.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
