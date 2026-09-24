@@ -1,206 +1,60 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en-AU" style="color-scheme:dark;background-color:#0A0C22">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
+<!-- andelo-critical-canvas -->
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0C22">
+<style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}.btn-mint{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:#3DE68C;color:#04160C;font-weight:700;text-decoration:none;box-shadow:0 8px 22px rgba(61,230,140,.28)}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Why your design hours blow out — Andelo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- Play CDN for preview only. In a real build, delete this script and use tailwind.config.js + a PostCSS/Vite build. -->
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>
-/* Mirror of tailwind.config.js — keep the two in sync. */
-tailwind.config = {
-  theme: {
-    screens: { sm: '721px', md: '901px', lg: '1201px', xl: '1440px' },
-    extend: {
-      colors: {
-        canvas: { DEFAULT: '#0A0C22', raised: '#12152F' },
-        navy: { 1: '#161B45', 2: '#0C0E28' },
-        glass: { DEFAULT: 'rgba(255,255,255,0.045)', hover: 'rgba(255,255,255,0.08)' },
-        hairline: { DEFAULT: 'rgba(255,255,255,0.08)', card: 'rgba(255,255,255,0.09)', hover: 'rgba(255,255,255,0.28)' },
-        brand: {
-          DEFAULT: '#3DE68C', hover: '#5CEBA1', ink: '#04160C',
-          soft: 'rgba(61,230,140,0.16)', softStrong: 'rgba(61,230,140,0.26)',
-          border: 'rgba(61,230,140,0.3)', onWhite: '#0E7A43',
-        },
-        heading: { DEFAULT: '#F5F7FF', hi: '#F6F8FF' },
-        body: {
-          DEFAULT: '#EEF0FF', strong: '#C4C8E6', muted: '#A6AAD0',
-          tertiary: '#9EA2C8', caption: '#8388AE', faint: '#6B7099',
-        },
-        paper: '#FFFFFF',
-        ink: { DEFAULT: '#12141C', body: '#3D4048' },
-        jewel: {
-          blue: '#61A5F2', blueDeep: '#2E5FB0',
-          indigo: '#6170F2', indigoDeep: '#2E38B0',
-          purple: '#A661F2', purpleDeep: '#6E2EB0',
-          magenta: '#E161F2', magentaDeep: '#A32EB0',
-          pink: '#F2619E', pinkDeep: '#B02E5E',
-          red: '#F26161', redDeep: '#B02E2E',
-        },
-        onSecondary: { DEFAULT: '#FFFFFF', body: 'rgba(255,255,255,0.9)' },
-      },
-      fontFamily: {
-        display: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        body: ['Hanken Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['ui-monospace', 'SF Mono', 'Menlo', 'monospace'],
-      },
-      fontSize: {
-        h1: ['clamp(40px, 4.6vw, 60px)', { lineHeight: '1.04', letterSpacing: '-0.03em' }],
-        h2: ['clamp(34px, 4.5vw, 54px)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
-        h3: ['21.5px', { lineHeight: '1.25', letterSpacing: '-0.015em' }],
-        base: ['18px', { lineHeight: '1.6' }],
-        lead: ['19px', { lineHeight: '1.6' }],
-        small: ['16.5px', { lineHeight: '1.6' }],
-        eyebrow: ['14px', { lineHeight: '1.2', letterSpacing: '0.2em' }],
-        caption: ['14px', { lineHeight: '1.5' }],
-      },
-      letterSpacing: {
-        display: '-0.03em', tight: '-0.02em', snug: '-0.01em',
-        label: '0.14em', 'label-wide': '0.16em', eyebrow: '0.2em',
-      },
-      lineHeight: { heading: '1.04', tight: '1.1', snug: '1.5', body: '1.6' },
-      spacing: { 1: '6px', 2: '12px', 3: '18px', 4: '24px', 5: '34px', 6: '52px', 7: '80px', card: '20px', gutter: '32px', section: '80px' },
-      maxWidth: { container: '1200px', narrow: '920px' },
-      borderRadius: { xs: '8px', sm: '12px', md: '18px', card: '20px', lg: '26px', pill: '999px' },
-      boxShadow: {
-        btn: '0 14px 34px rgba(61,230,140,0.28)',
-        'btn-hover': '0 18px 38px rgba(61,230,140,0.34)',
-        card: '0 20px 44px rgba(0,0,0,0.32)',
-        panel: '0 20px 44px rgba(46,95,176,0.28)',
-      },
-      backdropBlur: { card: '16px', glow: '28px' },
-      backgroundImage: {
-        'grad-mint': 'linear-gradient(150deg, #3DE68C, #12A566)',
-        'grad-blue': 'linear-gradient(150deg, #61A5F2, #2E5FB0)',
-        'grad-indigo': 'linear-gradient(150deg, #6170F2, #2E38B0)',
-        'grad-purple': 'linear-gradient(150deg, #A661F2, #6E2EB0)',
-        'grad-magenta': 'linear-gradient(150deg, #E161F2, #A32EB0)',
-        'grad-pink': 'linear-gradient(150deg, #F2619E, #B02E5E)',
-        'grad-red': 'linear-gradient(150deg, #F26161, #B02E2E)',
-        'grad-navy': 'linear-gradient(160deg, #161B45, #0C0E28)',
-      },
-      transitionTimingFunction: { house: 'cubic-bezier(0.16, 0.8, 0.24, 1)' },
-      transitionDuration: { fast: '200ms', DEFAULT: '350ms' },
-    },
-  },
-};
-</script>
-
-<style type="text/tailwindcss">
-  /* The eight patterns that repeat across the page. Everything else is raw utilities. */
-  @layer components {
-    /* Mint button. Flat fill only, never a gradient. Dark ink on top. */
-    .btn-mint {
-      @apply inline-flex items-center justify-center gap-[10px] rounded-pill bg-brand text-brand-ink
-             font-bold shadow-btn transition-[transform,background] duration-fast
-             hover:bg-brand-hover hover:-translate-y-[2px];
-    }
-    /* Ghost/secondary button. Hairline border, mint wash on hover. */
-    .btn-ghost {
-      @apply inline-flex items-center justify-center gap-[10px] rounded-pill border border-white/20
-             text-body font-semibold transition-[border-color,background,transform,color] duration-fast
-             hover:bg-brand/[.14] hover:border-brand hover:text-white hover:-translate-y-[2px];
-    }
-    /* The universal surface: frosted glass card with the standard hover. */
-    .card-glass {
-      @apply bg-glass backdrop-blur-card border border-hairline-card rounded-lg
-             transition-[background,border-color,transform] duration-fast
-             hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[4px];
-    }
-    /* Small tag/chip. */
-    .chip {
-      @apply px-[12px] py-[6px] rounded-pill bg-white/[.06] border border-white/10
-             text-[14px] text-body-strong transition-[background,border-color] duration-fast
-             hover:bg-white/[.12] hover:border-hairline-hover;
-    }
-    /* Uppercase mint eyebrow. */
-    .eyebrow {
-      @apply inline-flex items-center gap-[9px] text-eyebrow font-semibold uppercase text-brand;
-    }
-    /* 44px icon tile: mint-soft wash holding a mint line icon. */
-    .icon-tile {
-      @apply w-[50px] h-[50px] rounded-sm bg-brand-soft border border-brand-soft
-             flex items-center justify-center;
-    }
-    /* Scroll-reveal start state. JS clears it on intersect. */
-    .reveal {
-      @apply opacity-0 translate-y-[24px] transition-all duration-700 ease-house;
-    }
-    .reveal-in { @apply opacity-100 translate-y-0; }
-  }
-
-  /* Ambient + decorative motion. House easing only, no bounce. */
-  @keyframes pulseGlow { 0%,100% { opacity:.45; transform:scale(1); } 50% { opacity:.8; transform:scale(1.1); } }
-  @keyframes floaty1 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-20px); } }
-  @keyframes floaty2 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(16px); } }
-  @keyframes floaty3 { 0%,100% { transform:translateY(0) rotate(-5deg); } 50% { transform:translateY(-14px) rotate(-5deg); } }
-  /* Rich text: article body on paper. Component-level CSS because it styles authored HTML. */
-  .rt{color:#232842;font-size:18px;line-height:1.75;}
-  .rt h2{font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:30px;line-height:1.2;letter-spacing:-.02em;color:#12162E;margin:48px 0 16px;}
-  .rt h3{font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:22px;line-height:1.25;color:#12162E;margin:34px 0 12px;}
-  .rt p{margin:0 0 20px;}
-  .rt a{color:#0E8C5A;text-decoration:underline;text-underline-offset:2px;}
-  .rt a:hover{color:#0A6B45;}
-  .rt strong{color:#12162E;font-weight:700;}
-  .rt ul,.rt ol{margin:0 0 22px;padding-left:24px;}
-  .rt li{margin:0 0 10px;padding-left:6px;}
-  .rt li::marker{color:#0E8C5A;}
-  .rt figure{margin:22px 0 28px;}
-  .rt table{width:100%;border-collapse:collapse;margin:28px 0;font-size:16px;}
-  .rt th,.rt td{text-align:left;padding:13px 16px;border-bottom:1px solid #E3E7EF;vertical-align:top;}
-  .rt th{font-family:Inter,system-ui,sans-serif;font-weight:600;color:#12162E;background:#F5F7FB;}
-  .rt td{color:#3A4160;}
-  .rt hr{border:none;border-top:1px solid #E3E7EF;margin:40px 0;}
-  @media(max-width:720px){.rt h2{font-size:26px;}}
-  @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
-
-  [data-carousel] { scrollbar-width: none; -ms-overflow-style: none; cursor: grab; }
-  [data-carousel]::-webkit-scrollbar { display: none; }
-  [data-testimonial]:hover .ts-img { transform: scale(1.07); }
-  ::selection { background: rgba(61,230,140,.28); color: #fff; }
-</style>
+<!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
+<link rel="stylesheet" href="/style.css">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
-<div id="top" class="relative">
+<main id="top" class="relative">
 
-    <!-- Site nav mounted by /assets/site-nav.js -->
   <div data-site-nav-mount></div>
   <script src="/assets/site-nav.js"></script>
 
+  <div data-progress class="fixed top-0 left-0 h-[3px] z-[101] bg-brand" aria-hidden="true"></div>
 
-  <div data-progress class="fixed top-0 left-0 h-[3px] w-0 z-[101] bg-[linear-gradient(90deg,#3DE68C,#1F9BC7)] transition-[width] duration-100 ease-linear"></div>
-
+  <article>
   <!-- ══ HERO ══ -->
-  <section class="relative pt-[120px] pb-[44px]">
-    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(1100px_480px_at_50%_-4%,rgba(124,92,240,.22),transparent_58%)]"></div>
-    <div class="relative max-w-[1120px] mx-auto px-gutter grid grid-cols-1 sm:grid-cols-[1fr_.82fr] gap-gutter sm:gap-[48px] items-center">
-      <div class="text-left">
-        <a href="/blog" class="inline-flex items-center gap-[9px] text-[12.5px] font-semibold tracking-label-wide uppercase text-brand mb-[20px]">Efficiency</a>
-        <h1 class="font-display font-bold text-[clamp(32px,3.8vw,50px)] leading-[1.08] tracking-display text-heading-hi">Why your design hours blow out</h1>
-        <p class="max-w-[520px] mt-[20px] text-body text-[clamp(16px,1.5vw,19px)] leading-body">The hours blow out during the design, but they are never caused there. Here is what actually drains them, and how to catch it before work starts.</p>
-        <div class="flex items-center gap-[16px] mt-[28px] flex-wrap">
-          <div class="flex items-center gap-[11px]"><img src="../../assets/stephen-andelo.jpeg" alt="Stephen Andelo" class="w-[42px] h-[42px] rounded-full object-cover border border-white/[.12]"><div class="text-body-strong text-[14.5px]">by <span class="text-heading font-semibold">Stephen Andelo</span> · 22 July 2026 · 8 min read</div></div>
+  <header class="relative pt-nav pb-section-sm">
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(1100px_480px_at_50%_-4%,rgba(97,112,242,.18),transparent_58%)]"></div>
+    <div class="relative max-w-narrow mx-auto px-gutter grid grid-cols-1 sm:grid-cols-[1fr_.82fr] gap-gutter sm:gap-[48px] items-center">
+      <div>
+        <a href="/blog#efficiency" class="eyebrow mb-[20px]">Efficiency</a>
+        <h1 class="font-display font-bold text-blog-h1 tracking-display text-heading-hi">Why your design hours blow out</h1>
+        <p class="max-w-prose mt-[20px] text-body text-lead leading-body">The hours blow out during the design, but they are never caused there. Here is what actually drains them, and how to catch it before work starts.</p>
+        <div class="flex items-center gap-[11px] mt-[28px] flex-wrap">
+          <img src="../../assets/stephen-andelo.jpeg" alt="" width="42" height="42" class="w-[42px] h-[42px] rounded-full object-cover border border-white/[.12]">
+          <div class="text-body-strong text-small">by <span class="text-heading font-semibold">Stephen Andelo</span> · <time datetime="2026-07-22">22 July 2026</time> · 8 min read</div>
         </div>
       </div>
-      <div class="aspect-[16/9] sm:aspect-[4/3] max-sm:-order-1 rounded-lg overflow-hidden border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,.45)] relative"><img src="../../assets/blog-hours-blow-out.png" alt="Why your design hours blow out" class="w-full h-full object-cover block"></div>
+      <div class="aspect-[16/9] sm:aspect-[4/3] max-sm:-order-1 rounded-lg overflow-hidden border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,.45)] relative">
+        <img src="../../assets/blog-hours-blow-out.png" alt="" class="w-full h-full object-cover block" width="1024" height="550" fetchpriority="high">
+      </div>
     </div>
-  </section>
+  </header>
 
   <!-- ══ ARTICLE BODY (paper) ══ -->
-  <section class="bg-paper pt-[48px] pb-[60px]">
-    <div class="max-w-[720px] mx-auto px-gutter">
+  <section class="bg-paper pt-section-sm pb-section">
+    <div class="max-w-prose mx-auto px-gutter">
       <div class="rt">
         <p>How does a straightforward design end up eating so many hours just to get over the line? The hours blow out during the design, but they're never caused there.</p>
         <p>You prepared the brief. It felt like a regular job, and the designer got straight onto it. Then the first version comes back, and it's not quite what you pictured. You send feedback, it shifts but drifts, another round, still not there, and now the due date is in the corner of every email. Nobody did anything wrong. The hours are going anyway.</p>
         <p>The blowout lands as hours first: rounds you didn't plan for, then the deadline they push, then the cost that follows. And it's the outcome of what went unplanned at the setup: the brief that looked fine, the request that sounded small. By the time the hours are gone, the cause is three weeks behind you.</p>
 
-        <h2 id="s1">The briefs that bleed hours</h2>
+        <h2 id="briefs-that-bleed-hours">The briefs that bleed hours</h2>
         <p>After years of running production for in-house marketing teams, the same patterns keep appearing, and every row on this page has cost us real hours on real projects before it earned its place here. These are the conditions a brief carries in with it, and every one is catchable before work starts. That's the point of this page.</p>
         <table>
           <thead><tr><th>What slips in</th><th>Why it blows out</th><th>Risk</th></tr></thead>
@@ -214,7 +68,7 @@ tailwind.config = {
           </tbody>
         </table>
 
-        <h2 id="s2">The 15-minute jobs that aren't</h2>
+        <h2 id="fifteen-minute-jobs">The 15-minute jobs that aren't</h2>
         <p>Some requests look small from the outside, and if you're not the one designing, there's no reason you'd know otherwise. These are the ones that make people wonder why it's taking so long, with the designer's logic behind each.</p>
         <table>
           <thead><tr><th>What gets said</th><th>Why it takes time</th></tr></thead>
@@ -230,15 +84,15 @@ tailwind.config = {
           </tbody>
         </table>
 
-        <h2 id="s3">The trade you're making without knowing it</h2>
-        <figure><img src="../../assets/blog-instruction-vs-direction.jpg" alt="Instruction equals less time and limited creativity. Direction equals more time and more creativity." class="block w-full h-auto rounded-card border border-white/[.12]"></figure>
+        <h2 id="direction-vs-instruction">The trade you're making without knowing it</h2>
+        <figure><img src="../../assets/blog-instruction-vs-direction.jpg" alt="Instruction equals less time and limited creativity. Direction equals more time and more creativity." class="block w-full h-auto rounded-card border border-hairline-light" width="1200" height="675" loading="lazy"></figure>
         <p>Plenty of the rows above come down to one confusion: sending direction while expecting the speed of instruction.</p>
         <p><strong>Direction</strong> ("make the key visual feel premium," "something that captures the spring campaign") hands the designer a destination without a route. They research, explore, and shape it into a design that meets what you meant. That's where the creativity lives, and it's genuinely time-consuming, because interpretation is work.</p>
         <p><strong>Instruction</strong> ("product centred on a white set, headline top left in our red, logo bottom right, like this reference") is fast, because nothing is left to interpret. But it caps the creativity at exactly what you specified. If you brief by instruction, don't be surprised when the designer plays inside your limits: following them is the job you gave.</p>
         <p>Neither is wrong. The blowout comes from mixing them up: paying direction-level hours for what you thought was an instruction, or getting instruction-level output where you hoped for direction. Say which one you're sending, and the hours stop surprising you.</p>
 
-        <h2 id="s4">How to prevent design blowouts</h2>
-        <figure><img src="../../assets/blog-good-output-good-input.jpg" alt="Good output is downstream of good input" class="block w-full h-auto rounded-card border border-white/[.12]"></figure>
+        <h2 id="how-to-prevent">How to prevent design blowouts</h2>
+        <figure><img src="../../assets/blog-good-output-good-input.jpg" alt="Good output is downstream of good input" class="block w-full h-auto rounded-card border border-hairline-light" width="1200" height="675" loading="lazy"></figure>
         <p>Good output is downstream of good input. No amount of talent on the design side rescues a brief that left the decisions unmade, which means the cheapest place to prevent rework is before the work starts.</p>
         <p>Take the next brief you're about to send and check three things before it goes:</p>
         <ul>
@@ -249,65 +103,76 @@ tailwind.config = {
         <p>Three answers. Every one of them is a revision round you don't pay for later.</p>
         <p>If you'd rather not do it from memory each time, the free <a href="/design-brief-builder">Design Brief Builder</a> asks these questions and hands you the finished brief, or use the free <a href="/capacity-calculator">Capacity Calculator</a> to sanity-check the hours before you commit to a timeline.</p>
         <hr>
+      </div>
 
-        <div class="mt-[48px] bg-brand-soft border border-[rgba(61,230,140,.24)] rounded-[16px] px-[28px] py-[22px] flex flex-wrap items-center justify-between gap-[16px]">
-          <span class="font-display font-semibold text-[16px] text-[#12162E]">Know someone buried in design work? Send them this page.</span>
-          <a href="#" data-copylink class="inline-flex items-center gap-[9px] px-[22px] py-[12px] rounded-pill bg-white border border-[#D7DBE3] !text-[#232842] !no-underline font-semibold text-[14.5px] transition-[background,border-color] duration-fast hover:bg-[#F4F6F8] hover:border-[#B9BFCC]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7L12 19"/></svg><span data-copylabel>Copy link</span></a>
+      <div>
+        <div class="mt-[48px] bg-brand-soft border border-brand-border rounded-card px-[28px] py-[22px] flex flex-wrap items-center justify-between gap-[16px]">
+          <span class="font-display font-semibold text-base text-ink">Know someone buried in design work? Send them this page.</span>
+          <button type="button" data-copylink class="btn-light">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7L12 19"/></svg>
+            <span data-copylabel aria-live="polite">Copy link</span>
+          </button>
         </div>
-        <div class="mt-[20px] bg-[#F4F6F8] rounded-card px-gutter py-[30px]">
-          <div class="font-display font-semibold text-[12px] tracking-label uppercase text-brand-onWhite mb-[18px]">Written by</div>
+        <div class="mt-[20px] bg-white border border-hairline-light rounded-card px-gutter py-[30px]">
+          <div class="eyebrow-paper mb-[18px]">Written by</div>
           <div class="flex items-center gap-[16px] flex-wrap">
-            <img src="../../assets/stephen-andelo.jpeg" alt="Stephen Andelo" class="w-[60px] h-[60px] rounded-full object-cover flex-none">
+            <img src="../../assets/stephen-andelo.jpeg" alt="" width="60" height="60" class="w-[60px] h-[60px] rounded-full object-cover flex-none" loading="lazy">
             <div class="flex-1 min-w-[180px]">
-              <div class="font-display font-bold text-[18px] text-[#12162E]">Stephen Andelo</div>
-              <div class="text-[#6B7280] text-[15px] mt-[2px]">Founder &amp; CEO, Andelo</div>
+              <div class="font-display font-bold text-base text-ink">Stephen Andelo</div>
+              <div class="text-ink-muted text-small mt-[2px]">Founder &amp; CEO, Andelo</div>
             </div>
-            <a href="https://www.linkedin.com/in/stephenandelo/" target="_blank" rel="noopener" class="flex-none inline-flex items-center gap-[8px] px-[18px] py-[11px] rounded-pill bg-white border border-[#D7DBE3] !text-[#12162E] !no-underline font-display font-semibold text-[14.5px] transition-[background,border-color] duration-fast hover:bg-[#EAF1FB] hover:border-[#0A66C2]"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>Connect on LinkedIn</a>
+            <a href="https://www.linkedin.com/in/stephenandelo/" target="_blank" rel="noopener" class="btn-light flex-none font-display">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              Connect on LinkedIn
+            </a>
           </div>
-          <div class="text-[#4A4F63] text-small mt-[18px] leading-[1.65]">Stephen has spent more than fifteen years in design, nine of them running Andelo, a design subscription service based in Sydney. His team handles everything from weekly social content and campaign rollouts to national rebrand rollouts for in-house teams across Australia. He writes about what actually works when the design workload outgrows the hours.</div>
+          <div class="text-ink-muted text-small mt-[18px] leading-[1.65]">Stephen has spent more than fifteen years in design, nine of them running Andelo, a design subscription service based in Sydney. His team handles everything from weekly social content and campaign rollouts to national rebrand rollouts for in-house teams across Australia. He writes about what actually works when the design workload outgrows the hours.</div>
         </div>
       </div>
     </div>
   </section>
+  </article>
 
-  <!-- ══ CHEAT SHEET (on paper) ══ -->
-  <section class="bg-paper pb-[64px]">
-    <div class="max-w-[1000px] mx-auto px-gutter">
-      <div class="reveal relative overflow-hidden rounded-lg p-6 sm:p-[48px] grid grid-cols-1 sm:grid-cols-2 gap-[28px] items-center bg-[linear-gradient(120deg,#3A2170,#6D3BC4_55%,#7B2BE6)]">
+  <!-- ══ CAPACITY CTA ══ -->
+  <section class="bg-paper pb-section">
+    <div class="max-w-narrow mx-auto px-gutter">
+      <div class="reveal relative overflow-hidden rounded-lg p-card sm:p-[48px] grid grid-cols-1 sm:grid-cols-2 gap-[28px] items-center bg-grad-purple">
         <div class="relative">
-          <h2 class="font-display font-bold text-[clamp(24px,3vw,34px)] leading-[1.12] tracking-tight text-onSecondary">Do you have enough design capacity?</h2>
-          <p class="text-white text-base leading-body mt-[18px] mb-[26px] max-w-[520px]">Find out exactly how many hours you or your team can cover, and whether you need more help. Then take a real number into your next budget conversation, not a guess. Free, no email required.</p>
-          <a href="/design-capacity-formula" class="btn-mint px-[34px] py-[18px] text-[17px] shadow-[0_12px_30px_rgba(0,0,0,.25)]">Work out my capacity number</a>
+          <h2 class="font-display font-bold text-h3 leading-tight tracking-tight text-onSecondary sm:text-[clamp(24px,3vw,34px)]">Do you have enough design capacity?</h2>
+          <p class="text-white text-base leading-body mt-[18px] mb-[26px] max-w-prose">Find out exactly how many hours you or your team can cover, and whether you need more help. Then take a real number into your next budget conversation, not a guess. Free, no email required.</p>
+          <a href="/design-capacity-formula" class="btn-mint-lg">Work out my capacity number</a>
         </div>
-        <div class="relative flex items-center justify-center"><img src="../../assets/blog-design-hours-cta.png" alt="Do you have enough design hours?" class="block w-full h-auto"></div>
+        <div class="relative flex items-center justify-center">
+          <img src="../../assets/blog-design-hours-cta.png" alt="" class="block w-full h-auto" width="800" height="600" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ══ KEEP READING ══ -->
-  <section class="pt-[72px] pb-[56px]">
-    <div class="max-w-[1000px] mx-auto px-gutter">
-      <h2 class="font-display font-bold text-[clamp(24px,3vw,34px)] leading-[1.1] tracking-tight text-heading mb-[26px]">Keep reading</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-[20px] max-w-[680px]">
-        <a href="/blog/what-is-a-design-subscription" class="card-glass hover:bg-glass-hover flex flex-col overflow-hidden">
-          <div class="h-[160px] overflow-hidden"><img src="../../assets/blog-design-subscription.png" alt="What is a design subscription service" class="w-full h-full object-cover block"></div>
-          <div class="p-[22px]"><div class="text-[12.5px] font-semibold tracking-label uppercase text-body-caption mb-[10px]">8 min read</div><h3 class="font-display font-semibold text-[19px] leading-[1.28] text-heading m-0">What is a design subscription service?</h3></div>
+  <section class="pt-section pb-section">
+    <div class="max-w-narrow mx-auto px-gutter">
+      <h2 class="font-display font-bold text-h3 leading-tight tracking-tight text-heading mb-[26px] sm:text-[clamp(24px,3vw,34px)]">Keep reading</h2>
+      <div class="grid grid-cols-1 gap-[20px] max-w-[680px]">
+        <a href="/blog/what-is-a-design-subscription" class="card-glass flex flex-col overflow-hidden">
+          <div class="h-[160px] overflow-hidden"><img src="../../assets/blog-design-subscription.png" alt="" class="w-full h-full object-cover block" width="680" height="160" loading="lazy"></div>
+          <div class="p-[22px]">
+            <div class="eyebrow text-body-caption mb-[10px]">8 min read</div>
+            <h3 class="font-display font-semibold text-h3 text-heading">What is a design subscription service?</h3>
+          </div>
         </a>
-
       </div>
     </div>
   </section>
 
-  <!-- Site footer mounted by /assets/site-footer.js -->
   <div data-site-footer-mount></div>
   <script src="/assets/site-footer.js"></script>
 
-</div>
+</main>
 
 <script>
 (function () {
   var root = document;
-  /* Scroll reveal */
   var reveals = root.querySelectorAll('.reveal');
   var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
     entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('reveal-in'); io.unobserve(e.target); } });
@@ -317,32 +182,35 @@ tailwind.config = {
     else if (io) io.observe(el); else el.classList.add('reveal-in');
   });
 
-  /* Nav — frosts past 24px, hides on scroll down, returns on scroll up */
-  var nav = root.querySelector('[data-nav]');
-  var lastY = window.scrollY || 0, ticking = false;
-  function updateNav() {
-    ticking = false; if (!nav) return;
+  var bar = root.querySelector('[data-progress]');
+  var ticking = false;
+  function updateProgress() {
+    ticking = false;
+    if (!bar) return;
     var y = window.scrollY || document.documentElement.scrollTop || 0;
-    var frosted = y > 24;
-    nav.style.background = frosted ? 'rgba(9,11,30,0.78)' : 'transparent';
-    nav.style.backdropFilter = frosted ? 'blur(16px)' : 'none';
-    /* border handled by site-nav.js */
-    if (y <= 120 || y < lastY - 3) nav.style.transform = 'translateY(0)';
-    else if (y > lastY + 3) nav.style.transform = 'translateY(-100%)';
-    var bar = root.querySelector('[data-progress]');
-    if (bar) { var h = (document.documentElement.scrollHeight || 0) - window.innerHeight; bar.style.width = (h > 0 ? Math.min(100, Math.max(0, y / h * 100)) : 0) + '%'; }
-    lastY = y;
+    var h = (document.documentElement.scrollHeight || 0) - window.innerHeight;
+    var fraction = h > 0 ? Math.min(1, Math.max(0, y / h)) : 0;
+    bar.style.transform = 'scaleX(' + fraction + ')';
   }
-  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(updateNav); } }, { passive: true });
-  updateNav();
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
+  }, { passive: true });
+  updateProgress();
 
-  /* Copy link */
   root.querySelectorAll('[data-copylink]').forEach(function (btn) {
-    var lbl = btn.querySelector('[data-copylabel]') || btn, orig = lbl.textContent;
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      var done = function () { lbl.textContent = 'Link copied'; setTimeout(function () { lbl.textContent = orig; }, 2000); };
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(location.href).then(done, done); else done();
+    var lbl = btn.querySelector('[data-copylabel]') || btn;
+    var orig = lbl.textContent;
+    btn.addEventListener('click', function () {
+      var url = location.origin + location.pathname;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(
+          function () { lbl.textContent = 'Link copied'; },
+          function () { lbl.textContent = 'Copy failed'; }
+        );
+      } else {
+        lbl.textContent = 'Copy failed';
+      }
+      setTimeout(function () { lbl.textContent = orig; }, 2000);
     });
   });
 })();
