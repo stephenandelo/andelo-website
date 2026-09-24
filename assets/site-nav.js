@@ -88,33 +88,61 @@
     }).join('');
   }
 
+  /* Match frost to current scroll so remount / scroll-restore never flash transparent */
+  var __initY = window.scrollY || document.documentElement.scrollTop || 0;
+  var __initFrost = __initY > 24;
+
   var html =
-    '<nav data-nav data-site-nav class="print:hidden fixed top-0 left-0 right-0 z-[100] ' +
-    'border-b border-transparent transition-[background,border-color,backdrop-filter,transform] duration-[350ms]" ' +
-    'style="background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none">' +
+    '<nav data-nav data-site-nav data-nav-frost="' + (__initFrost ? 'true' : 'false') + '" data-nav-hidden="false" class="print:hidden fixed top-0 left-0 right-0 z-[100] ' +
+    'border-b border-transparent">' +
     '<div class="max-w-container mx-auto px-gutter py-[15px] flex items-center justify-between gap-4">' +
       '<a href="/" class="flex items-center flex-none" aria-label="Andelo home">' + LOGO + '</a>' +
       '<div class="hidden md:flex gap-gutter items-center">' + primaryLinks(false) + '</div>' +
       '<div class="flex items-center gap-4">' +
         '<a href="/book-a-call/" class="hidden md:inline-flex btn-mint px-[20px] py-[11px] text-[16px] shadow-[0_8px_22px_rgba(61,230,140,.28)]' +
           (isActive(['/book-a-call']) ? ' ring-2 ring-brand/40' : '') + '">Book a call</a>' +
-        '<button type="button" data-menu-btn class="md:hidden w-[44px] h-[44px] rounded-full border border-white/[.14] flex flex-col items-center justify-center gap-[5px] transition-colors duration-fast hover:border-white/[.28]" aria-label="Open menu" aria-expanded="false" aria-controls="site-mobile-nav">' +
-          '<span data-bar class="w-[18px] h-[2px] bg-body rounded-full transition-all duration-300 origin-center"></span>' +
-          '<span data-bar class="w-[18px] h-[2px] bg-body rounded-full transition-all duration-300 origin-center"></span>' +
-          '<span data-bar class="w-[18px] h-[2px] bg-body rounded-full transition-all duration-300 origin-center"></span>' +
+        '<button type="button" data-menu-btn class="md:hidden w-[44px] h-[44px] rounded-full border border-white/[.14] flex flex-col items-center justify-center gap-[5px] transition-colors duration-fast" aria-label="Open menu" aria-expanded="false" aria-controls="site-mobile-nav">' +
+          '<span data-bar class="w-[18px] h-[2px] bg-body rounded-full origin-center"></span>' +
+          '<span data-bar class="w-[18px] h-[2px] bg-body rounded-full origin-center"></span>' +
+          '<span data-bar class="w-[18px] h-[2px] bg-body rounded-full origin-center"></span>' +
         '</button>' +
       '</div>' +
     '</div>' +
-    '<div id="site-mobile-nav" data-mobile-menu data-open="false" class="md:hidden fixed top-[68px] left-0 right-0 bg-canvas border-b border-hairline transition-all duration-300 max-h-0 overflow-hidden data-[open=true]:max-h-screen">' +
-      '<div class="px-gutter py-4 flex flex-col gap-3">' +
+    '<div id="site-mobile-nav" data-mobile-menu data-open="false" class="md:hidden fixed top-[68px] left-0 right-0 bg-canvas border-b border-hairline">' +
+      '<div class="mobile-menu-inner">' +
+        '<div class="px-gutter py-4 flex flex-col gap-3">' +
         primaryLinks(true) +
         '<div class="border-t border-hairline pt-3 mt-2">' + mobileExtraLinks() + '</div>' +
         '<a href="/book-a-call/" class="mt-2 btn-mint w-full px-[20px] py-[11px] text-[16px] shadow-[0_8px_22px_rgba(61,230,140,.28)]">Book a call</a>' +
-      '</div>' +
+      '</div></div>' +
     '</div>' +
     '</nav>';
 
+  /* Ensure motion tokens + mobile menu grid work on CDN pages too */
+  if (!document.getElementById('andelo-nav-motion')) {
+    var s = document.createElement('style');
+    s.id = 'andelo-nav-motion';
+    s.textContent =
+      'html{color-scheme:dark;background-color:#0A0C22}html,body{background-color:#0A0C22;color-scheme:dark}' +
+      ':root{--ease-out:cubic-bezier(0.22,1,0.36,1);--ease-in-out:cubic-bezier(0.65,0,0.35,1);--dur-fast:150ms;--dur-base:250ms;--dur-slow:500ms}' +
+      /* Omit background from transition — transparent↔rgba interpolates as a white flash */
+      '[data-nav]{background:transparent;border-bottom-color:transparent;transition:border-color var(--dur-base) var(--ease-out),backdrop-filter var(--dur-base) var(--ease-out),transform var(--dur-base) var(--ease-out)}' +
+      '[data-nav][data-nav-frost="true"]{background:rgba(9,11,30,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:rgba(255,255,255,.08)}' +
+      '[data-nav][data-nav-hidden="true"]{transform:translateY(-100%)}' +
+      '[data-nav]:focus-within,[data-nav][data-nav-hidden="true"]:focus-within{transform:translateY(0)}' +
+      '[data-mobile-menu]{display:grid;grid-template-rows:0fr;overflow:hidden;transition:grid-template-rows var(--dur-base) var(--ease-out)}' +
+      '[data-mobile-menu]>.mobile-menu-inner{overflow:hidden;min-height:0}' +
+      '[data-mobile-menu][data-open="true"]{grid-template-rows:1fr}' +
+      '@media (min-width:901px){[data-mobile-menu]{display:none!important}}' +
+      '[data-bar]{transition:transform var(--dur-base) var(--ease-out),opacity var(--dur-base) var(--ease-out)}' +
+      '@media (hover:hover){[data-menu-btn]:hover{border-color:rgba(255,255,255,.28)}}' +
+      '@media (prefers-reduced-motion:reduce){[data-nav],[data-mobile-menu],[data-bar]{transition-duration:.01ms!important}}';
+    document.head.appendChild(s);
+  }
+
   function mount() {
+    /* Avoid remount flicker if nav already live (HMR / duplicate script) */
+    if (document.querySelector('[data-site-nav][data-nav-bound]')) return;
     var mountEl = document.querySelector('[data-site-nav-mount]');
     if (mountEl) {
       mountEl.outerHTML = html;
@@ -144,6 +172,13 @@
   function bind() {
     var nav = document.querySelector('[data-site-nav]');
     if (!nav) return;
+    nav.setAttribute('data-nav-bound', '1');
+    /* Drop legacy inline frost styles so data-nav-frost CSS wins */
+    nav.style.background = '';
+    nav.style.backdropFilter = '';
+    nav.style.webkitBackdropFilter = '';
+    nav.style.borderBottomColor = '';
+    nav.style.transform = '';
 
     var menuBtn = nav.querySelector('[data-menu-btn]');
     var menu = nav.querySelector('[data-mobile-menu]');
@@ -177,25 +212,38 @@
       if (e.key === 'Escape') setMobile(false);
     });
 
-    /* Frost past 24px; hide on scroll down, return on scroll up */
+    /* Frost past 24px; hide on scroll down, return on scroll up.
+       Keep visible while keyboard focus is inside the nav.
+       Hidden state is sticky — small per-frame deltas must not flash it back. */
     var lastY = window.scrollY || 0;
+    var hidden = false;
     var ticking = false;
     function updateNav() {
       ticking = false;
       var y = window.scrollY || document.documentElement.scrollTop || 0;
+      var delta = y - lastY;
       var frosted = y > 24;
-      nav.style.background = frosted ? 'rgba(9,11,30,0.78)' : 'transparent';
-      nav.style.backdropFilter = frosted ? 'blur(16px)' : 'none';
-      nav.style.webkitBackdropFilter = frosted ? 'blur(16px)' : 'none';
-      nav.style.borderBottomColor = frosted ? 'rgba(255,255,255,0.08)' : 'transparent';
       var menuOpen = menu && menu.getAttribute('data-open') === 'true';
-      if (y <= 120 || y < lastY - 3 || menuOpen) nav.style.transform = 'translateY(0)';
-      else if (y > lastY + 3) nav.style.transform = 'translateY(-100%)';
+      var focusInside = nav.contains(document.activeElement);
+      nav.setAttribute('data-nav-frost', frosted ? 'true' : 'false');
+
+      if (y <= 120 || menuOpen || focusInside) {
+        hidden = false;
+      } else if (delta > 6) {
+        hidden = true;
+      } else if (delta < -6) {
+        hidden = false;
+      }
+      nav.setAttribute('data-nav-hidden', hidden ? 'true' : 'false');
       lastY = y;
     }
     window.addEventListener('scroll', function () {
       if (!ticking) { ticking = true; requestAnimationFrame(updateNav); }
     }, { passive: true });
+    nav.addEventListener('focusin', updateNav);
+    nav.addEventListener('focusout', function () {
+      requestAnimationFrame(updateNav);
+    });
     updateNav();
   }
 
