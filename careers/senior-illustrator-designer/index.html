@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-AU"><head>
+<html lang="en-AU" style="color-scheme:dark;background-color:#0A0C22"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- andelo-critical-canvas -->
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0C22">
+<style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}.btn-mint{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:#3DE68C;color:#04160C;font-weight:700;text-decoration:none;box-shadow:0 8px 22px rgba(61,230,140,.28)}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Senior Illustrator Designer — Andelo Careers</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,157 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 
-<!-- Play CDN for preview only. In a real build, delete this script and use tailwind.config.js + a PostCSS/Vite build. -->
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>
-/* Mirror of tailwind.config.js — keep the two in sync. */
-tailwind.config = {
-  theme: {
-    screens: { sm: '721px', md: '901px', lg: '1201px', xl: '1440px' },
-    extend: {
-      colors: {
-        canvas: { DEFAULT: '#0A0C22', raised: '#12152F' },
-        navy: { 1: '#161B45', 2: '#0C0E28' },
-        glass: { DEFAULT: 'rgba(255,255,255,0.045)', hover: 'rgba(255,255,255,0.08)' },
-        hairline: { DEFAULT: 'rgba(255,255,255,0.08)', card: 'rgba(255,255,255,0.09)', hover: 'rgba(255,255,255,0.28)' },
-        brand: {
-          DEFAULT: '#3DE68C', hover: '#5CEBA1', ink: '#04160C',
-          soft: 'rgba(61,230,140,0.16)', softStrong: 'rgba(61,230,140,0.26)',
-          border: 'rgba(61,230,140,0.3)', onWhite: '#0E7A43',
-        },
-        heading: { DEFAULT: '#F5F7FF', hi: '#F6F8FF' },
-        body: {
-          DEFAULT: '#EEF0FF', strong: '#C4C8E6', muted: '#A6AAD0',
-          tertiary: '#9EA2C8', caption: '#8388AE', faint: '#6B7099',
-        },
-        paper: '#FFFFFF',
-        ink: { DEFAULT: '#12141C', body: '#3D4048' },
-        jewel: {
-          blue: '#61A5F2', blueDeep: '#2E5FB0',
-          indigo: '#6170F2', indigoDeep: '#2E38B0',
-          purple: '#A661F2', purpleDeep: '#6E2EB0',
-          magenta: '#E161F2', magentaDeep: '#A32EB0',
-          pink: '#F2619E', pinkDeep: '#B02E5E',
-          red: '#F26161', redDeep: '#B02E2E',
-        },
-        onSecondary: { DEFAULT: '#FFFFFF', body: 'rgba(255,255,255,0.9)' },
-      },
-      fontFamily: {
-        display: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        body: ['Hanken Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['ui-monospace', 'SF Mono', 'Menlo', 'monospace'],
-      },
-      fontSize: {
-        h1: ['clamp(40px, 4.6vw, 60px)', { lineHeight: '1.04', letterSpacing: '-0.03em' }],
-        h2: ['clamp(34px, 4.5vw, 54px)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
-        h3: ['21.5px', { lineHeight: '1.25', letterSpacing: '-0.015em' }],
-        base: ['18px', { lineHeight: '1.6' }],
-        lead: ['19px', { lineHeight: '1.6' }],
-        small: ['16.5px', { lineHeight: '1.6' }],
-        eyebrow: ['14px', { lineHeight: '1.2', letterSpacing: '0.2em' }],
-        caption: ['14px', { lineHeight: '1.5' }],
-      },
-      letterSpacing: {
-        display: '-0.03em', tight: '-0.02em', snug: '-0.01em',
-        label: '0.14em', 'label-wide': '0.16em', eyebrow: '0.2em',
-      },
-      lineHeight: { heading: '1.04', tight: '1.1', snug: '1.5', body: '1.6' },
-      spacing: { 1: '6px', 2: '12px', 3: '18px', 4: '24px', 5: '34px', 6: '52px', 7: '80px', gutter: '32px', section: '80px' },
-      maxWidth: { container: '1200px', narrow: '920px' },
-      borderRadius: { xs: '8px', sm: '12px', md: '18px', card: '20px', lg: '26px', pill: '999px' },
-      boxShadow: {
-        btn: '0 14px 34px rgba(61,230,140,0.28)',
-        'btn-hover': '0 18px 38px rgba(61,230,140,0.34)',
-        card: '0 20px 44px rgba(0,0,0,0.32)',
-        panel: '0 20px 44px rgba(46,95,176,0.28)',
-      },
-      backdropBlur: { card: '16px', glow: '28px' },
-      backgroundImage: {
-        'grad-mint': 'linear-gradient(150deg, #3DE68C, #12A566)',
-        'grad-blue': 'linear-gradient(150deg, #61A5F2, #2E5FB0)',
-        'grad-indigo': 'linear-gradient(150deg, #6170F2, #2E38B0)',
-        'grad-purple': 'linear-gradient(150deg, #A661F2, #6E2EB0)',
-        'grad-magenta': 'linear-gradient(150deg, #E161F2, #A32EB0)',
-        'grad-pink': 'linear-gradient(150deg, #F2619E, #B02E5E)',
-        'grad-red': 'linear-gradient(150deg, #F26161, #B02E2E)',
-        'grad-navy': 'linear-gradient(160deg, #161B45, #0C0E28)',
-      },
-      transitionTimingFunction: { house: 'cubic-bezier(0.16, 0.8, 0.24, 1)' },
-      transitionDuration: { fast: '200ms', DEFAULT: '350ms' },
-    },
-  },
-};
-</script>
-
-<style type="text/tailwindcss">
-  /* The eight patterns that repeat across the page. Everything else is raw utilities. */
-  @layer components {
-    /* Mint button. Flat fill only, never a gradient. Dark ink on top. */
-    .btn-mint {
-      @apply inline-flex items-center justify-center gap-[10px] rounded-pill bg-brand text-brand-ink
-             font-bold shadow-btn transition-[transform,background] duration-fast
-             hover:bg-brand-hover hover:-translate-y-[2px];
-    }
-    /* Ghost/secondary button. Hairline border, mint wash on hover. */
-    .btn-ghost {
-      @apply inline-flex items-center justify-center gap-[10px] rounded-pill border border-white/20
-             text-body font-semibold transition-[border-color,background,transform,color] duration-fast
-             hover:bg-brand/[.14] hover:border-brand hover:text-white hover:-translate-y-[2px];
-    }
-    /* The universal surface: frosted glass card with the standard hover. */
-    .card-glass {
-      @apply bg-glass backdrop-blur-card border border-hairline-card rounded-lg
-             transition-[background,border-color,transform] duration-fast
-             hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[4px];
-    }
-    /* Small tag/chip. */
-    .chip {
-      @apply px-[12px] py-[6px] rounded-pill bg-white/[.06] border border-white/10
-             text-[14px] text-body-strong transition-[background,border-color] duration-fast
-             hover:bg-white/[.12] hover:border-hairline-hover;
-    }
-    /* Uppercase mint eyebrow. */
-    .eyebrow {
-      @apply inline-flex items-center gap-[9px] text-eyebrow font-semibold uppercase text-brand;
-    }
-    /* 44px icon tile: mint-soft wash holding a mint line icon. */
-    .icon-tile {
-      @apply w-[50px] h-[50px] rounded-sm bg-brand-soft border border-brand-soft
-             flex items-center justify-center;
-    }
-    /* Scroll-reveal start state. JS clears it on intersect. */
-    .reveal {
-      @apply opacity-0 translate-y-[24px] transition-all duration-700 ease-house;
-    }
-    .reveal-in { @apply opacity-100 translate-y-0; }
-  }
-
-  /* Ambient + decorative motion. House easing only, no bounce. */
-  @keyframes pulseGlow { 0%,100% { opacity:.45; transform:scale(1); } 50% { opacity:.8; transform:scale(1.1); } }
-  @keyframes floaty1 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-20px); } }
-  @keyframes floaty2 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(16px); } }
-  @keyframes floaty3 { 0%,100% { transform:translateY(0) rotate(-5deg); } 50% { transform:translateY(-14px) rotate(-5deg); } }
-  /* Job description prose on paper. Component CSS: authored HTML. */
-  .job h2{font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-.02em;color:#12162E;margin:56px 0 18px;}
-  .job h2:first-child{margin-top:0;}
-  .job h3{font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;color:#12162E;margin:34px 0 14px;}
-  .job p{color:#3A4160;font-size:18px;line-height:1.7;margin:0 0 18px;text-wrap:pretty;}
-  .job ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
-  .job li{display:flex;align-items:flex-start;gap:13px;color:#3A4160;font-size:18px;line-height:1.6;}
-  .job li::before{content:"";flex:none;margin-top:7px;width:7px;height:7px;border-radius:50%;background:#0E7A43;}
-  .job .steps{display:flex;flex-direction:column;}
-  .job .step{display:flex;align-items:flex-start;gap:18px;padding:13px 0;border-top:1px solid rgba(18,22,46,.1);}
-  .job .step-n{flex:none;width:36px;height:36px;border-radius:50%;background:rgba(14,122,67,.1);border:1px solid rgba(14,122,67,.26);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:16px;color:#0E7A43;}
-  .job .step-t{font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;color:#12162E;margin-bottom:5px;}
-  .job .step p{color:#5A6172;font-size:17px;line-height:1.55;margin:0;}
-  .job .eeo{margin:32px 0 0;color:#5A6172;font-size:16px;line-height:1.65;}
-  @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
-
-  [data-carousel] { scrollbar-width: none; -ms-overflow-style: none; cursor: grab; }
-  [data-carousel]::-webkit-scrollbar { display: none; }
-  [data-testimonial]:hover .ts-img { transform: scale(1.07); }
-  ::selection { background: rgba(61,230,140,.28); color: #fff; }
-</style>
+<!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
+<link rel="stylesheet" href="/style.css">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-clip">
@@ -324,7 +179,7 @@ tailwind.config = {
     ticking = false; if (!nav) return;
     var y = window.scrollY || document.documentElement.scrollTop || 0;
     var frosted = y > 24;
-    nav.style.background = frosted ? 'rgba(9,11,30,0.78)' : 'transparent';
+    nav.style.background = frosted ? 'rgba(9,11,30,0.92)' : 'transparent';
     nav.style.backdropFilter = frosted ? 'blur(16px)' : 'none';
     /* border handled by site-nav.js */
     if (y <= 120 || y < lastY - 3) nav.style.transform = 'translateY(0)';

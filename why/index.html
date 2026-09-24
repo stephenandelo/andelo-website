@@ -1,153 +1,20 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en-AU" style="color-scheme:dark;background-color:#0A0C22">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- andelo-critical-canvas -->
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0C22">
+<style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}.btn-mint{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:#3DE68C;color:#04160C;font-weight:700;text-decoration:none;box-shadow:0 8px 22px rgba(61,230,140,.28)}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Andelo — Why Andelo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Play CDN for preview only. In a real build, delete this script and use tailwind.config.js + a PostCSS/Vite build. -->
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>
-/* Mirror of tailwind.config.js — keep the two in sync. */
-tailwind.config = {
-  theme: {
-    screens: { sm: '721px', md: '901px', lg: '1201px', xl: '1440px' },
-    extend: {
-      colors: {
-        canvas: { DEFAULT: '#0A0C22', raised: '#12152F' },
-        navy: { 1: '#161B45', 2: '#0C0E28' },
-        glass: { DEFAULT: 'rgba(255,255,255,0.045)', hover: 'rgba(255,255,255,0.08)' },
-        hairline: { DEFAULT: 'rgba(255,255,255,0.08)', card: 'rgba(255,255,255,0.09)', hover: 'rgba(255,255,255,0.28)' },
-        brand: {
-          DEFAULT: '#3DE68C', hover: '#5CEBA1', ink: '#04160C',
-          soft: 'rgba(61,230,140,0.16)', softStrong: 'rgba(61,230,140,0.26)',
-          border: 'rgba(61,230,140,0.3)', onWhite: '#0E7A43',
-        },
-        heading: { DEFAULT: '#F5F7FF', hi: '#F6F8FF' },
-        body: {
-          DEFAULT: '#EEF0FF', strong: '#C4C8E6', muted: '#A6AAD0',
-          tertiary: '#9EA2C8', caption: '#8388AE', faint: '#6B7099',
-        },
-        paper: '#FFFFFF',
-        ink: { DEFAULT: '#12141C', body: '#3D4048' },
-        jewel: {
-          blue: '#61A5F2', blueDeep: '#2E5FB0',
-          indigo: '#6170F2', indigoDeep: '#2E38B0',
-          purple: '#A661F2', purpleDeep: '#6E2EB0',
-          magenta: '#E161F2', magentaDeep: '#A32EB0',
-          pink: '#F2619E', pinkDeep: '#B02E5E',
-          red: '#F26161', redDeep: '#B02E2E',
-        },
-        onSecondary: { DEFAULT: '#FFFFFF', body: 'rgba(255,255,255,0.9)' },
-      },
-      fontFamily: {
-        display: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        body: ['Hanken Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['ui-monospace', 'SF Mono', 'Menlo', 'monospace'],
-      },
-      fontSize: {
-        h1: ['clamp(40px, 4.6vw, 60px)', { lineHeight: '1.04', letterSpacing: '-0.03em' }],
-        h2: ['clamp(34px, 4.5vw, 54px)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
-        h3: ['21.5px', { lineHeight: '1.25', letterSpacing: '-0.015em' }],
-        base: ['18px', { lineHeight: '1.6' }],
-        lead: ['19px', { lineHeight: '1.6' }],
-        small: ['16.5px', { lineHeight: '1.6' }],
-        eyebrow: ['14px', { lineHeight: '1.2', letterSpacing: '0.2em' }],
-        caption: ['14px', { lineHeight: '1.5' }],
-      },
-      letterSpacing: {
-        display: '-0.03em', tight: '-0.02em', snug: '-0.01em',
-        label: '0.14em', 'label-wide': '0.16em', eyebrow: '0.2em',
-      },
-      lineHeight: { heading: '1.04', tight: '1.1', snug: '1.5', body: '1.6' },
-      spacing: { 1: '6px', 2: '12px', 3: '18px', 4: '24px', 5: '34px', 6: '52px', 7: '80px', card: '20px', gutter: '32px', section: '80px' },
-      maxWidth: { container: '1200px', narrow: '920px' },
-      borderRadius: { xs: '8px', sm: '12px', md: '18px', card: '20px', lg: '26px', pill: '999px' },
-      boxShadow: {
-        btn: '0 14px 34px rgba(61,230,140,0.28)',
-        'btn-hover': '0 18px 38px rgba(61,230,140,0.34)',
-        card: '0 20px 44px rgba(0,0,0,0.32)',
-        panel: '0 20px 44px rgba(46,95,176,0.28)',
-      },
-      backdropBlur: { card: '16px', glow: '28px' },
-      backgroundImage: {
-        'grad-mint': 'linear-gradient(150deg, #3DE68C, #12A566)',
-        'grad-blue': 'linear-gradient(150deg, #61A5F2, #2E5FB0)',
-        'grad-indigo': 'linear-gradient(150deg, #6170F2, #2E38B0)',
-        'grad-purple': 'linear-gradient(150deg, #A661F2, #6E2EB0)',
-        'grad-magenta': 'linear-gradient(150deg, #E161F2, #A32EB0)',
-        'grad-pink': 'linear-gradient(150deg, #F2619E, #B02E5E)',
-        'grad-red': 'linear-gradient(150deg, #F26161, #B02E2E)',
-        'grad-navy': 'linear-gradient(160deg, #161B45, #0C0E28)',
-      },
-      transitionTimingFunction: { house: 'cubic-bezier(0.16, 0.8, 0.24, 1)' },
-      transitionDuration: { fast: '200ms', DEFAULT: '350ms' },
-    },
-  },
-};
-</script>
-
-<style type="text/tailwindcss">
-  /* The eight patterns that repeat across the page. Everything else is raw utilities. */
-  @layer components {
-    /* Mint button. Flat fill only, never a gradient. Dark ink on top. */
-    .btn-mint {
-      @apply inline-flex items-center justify-center gap-[10px] rounded-pill bg-brand text-brand-ink
-             font-bold shadow-btn transition-[transform,background] duration-fast
-             hover:bg-brand-hover hover:-translate-y-[2px];
-    }
-    /* Ghost/secondary button. Hairline border, mint wash on hover. */
-    .btn-ghost {
-      @apply inline-flex items-center justify-center gap-[10px] rounded-pill border border-white/20
-             text-body font-semibold transition-[border-color,background,transform,color] duration-fast
-             hover:bg-brand/[.14] hover:border-brand hover:text-white hover:-translate-y-[2px];
-    }
-    /* The universal surface: frosted glass card with the standard hover. */
-    .card-glass {
-      @apply bg-glass backdrop-blur-card border border-hairline-card rounded-lg
-             transition-[background,border-color,transform] duration-fast
-             hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[4px];
-    }
-    /* Small tag/chip. */
-    .chip {
-      @apply px-[12px] py-[6px] rounded-pill bg-white/[.06] border border-white/10
-             text-[14px] text-body-strong transition-[background,border-color] duration-fast
-             hover:bg-white/[.12] hover:border-hairline-hover;
-    }
-    /* Uppercase mint eyebrow. */
-    .eyebrow {
-      @apply inline-flex items-center gap-[9px] text-eyebrow font-semibold uppercase text-brand;
-    }
-    /* 44px icon tile: mint-soft wash holding a mint line icon. */
-    .icon-tile {
-      @apply w-[50px] h-[50px] rounded-sm bg-brand-soft border border-brand-soft
-             flex items-center justify-center;
-    }
-    /* Scroll-reveal start state. JS clears it on intersect. */
-    .reveal {
-      @apply opacity-0 translate-y-[24px] transition-all duration-700 ease-house;
-    }
-    .reveal-in { @apply opacity-100 translate-y-0; }
-  }
-
-  /* Ambient + decorative motion. House easing only, no bounce. */
-  @keyframes pulseGlow { 0%,100% { opacity:.45; transform:scale(1); } 50% { opacity:.8; transform:scale(1.1); } }
-  @keyframes floaty1 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-20px); } }
-  @keyframes floaty2 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(16px); } }
-  @keyframes floaty3 { 0%,100% { transform:translateY(0) rotate(-5deg); } 50% { transform:translateY(-14px) rotate(-5deg); } }
-  [data-vmodal]{transition:opacity .25s ease;}
-  [data-vpanel]{transition:transform .3s cubic-bezier(.16,.8,.24,1);}
-  @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
-
-  [data-carousel] { scrollbar-width: none; -ms-overflow-style: none; cursor: grab; }
-  [data-carousel]::-webkit-scrollbar { display: none; }
-  [data-testimonial]:hover .ts-img { transform: scale(1.07); }
-  ::selection { background: rgba(61,230,140,.28); color: #fff; }
-</style>
+<!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
+<link rel="stylesheet" href="/style.css">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
@@ -212,32 +79,32 @@ tailwind.config = {
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
         <div class="reveal overflow-hidden rounded-lg p-[26px] bg-[linear-gradient(160deg,#A661F2,#6E2EB0)] shadow-[0_24px_50px_rgba(60,40,140,.3)] hover:shadow-[0_34px_66px_rgba(60,40,140,.5)] transition-[transform,box-shadow] duration-fast hover:-translate-y-[4px]">
-          <div class="w-[52px] h-[52px] rounded-[14px] bg-white/[.18] border-white/[.28] border flex items-center justify-center mb-[22px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#fff" stroke-width="1.8"/><path d="M3 20a6 6 0 0112 0" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M16 6a3 3 0 010 6M18 20a6 6 0 00-3-5.2" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <img src="../assets/icon-fix-base.svg" alt="" class="w-[52px] h-[52px] object-contain mb-[22px]" width="52" height="52">
           <h3 class="font-display font-semibold text-[19px] text-onSecondary mb-[10px]">Never start from zero again</h3>
           <p class="text-white/[.86] text-small leading-[1.55] m-0">We become your brand custodian. Your guidelines, your tone, absorbed once and held, so you never explain your brand twice.</p>
         </div>
         <div class="reveal [transition-delay:40ms] overflow-hidden rounded-lg p-[26px] bg-[linear-gradient(160deg,#61A5F2,#2E5FB0)] shadow-[0_24px_50px_rgba(30,60,160,.28)] hover:shadow-[0_34px_66px_rgba(30,60,160,.5)] transition-[transform,box-shadow] duration-fast hover:-translate-y-[4px]">
-          <div class="w-[52px] h-[52px] rounded-[14px] bg-white/[.18] border-white/[.28] border flex items-center justify-center mb-[22px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.8"/><path d="M12 7.5V12l3 2" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <img src="../assets/icon-fix-clock.svg" alt="" class="w-[52px] h-[52px] object-contain mb-[22px]" width="52" height="52">
           <h3 class="font-display font-semibold text-[19px] text-onSecondary mb-[10px]">Delivered in days, on a committed date</h3>
           <p class="text-white/[.86] text-small leading-[1.55] m-0">Most work lands in 2-3 business days, and small revisions usually come back the same day. Every brief gets a date up front, delivered as promised.</p>
         </div>
         <div class="reveal [transition-delay:80ms] overflow-hidden rounded-lg p-[26px] bg-[linear-gradient(160deg,#F2619E,#B02E5E)] shadow-[0_24px_50px_rgba(176,46,94,.3)] hover:shadow-[0_34px_66px_rgba(176,46,94,.5)] transition-[transform,box-shadow] duration-fast hover:-translate-y-[4px]">
-          <div class="w-[52px] h-[52px] rounded-[14px] bg-white/20 border-white/30 border flex items-center justify-center mb-[22px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <img src="../assets/icon-fix-search.svg" alt="" class="w-[52px] h-[52px] object-contain mb-[22px]" width="52" height="52">
           <h3 class="font-display font-semibold text-[19px] text-onSecondary mb-[10px]">You stop catching the mistakes</h3>
           <p class="text-white/90 text-small leading-[1.55] m-0">You shouldn't be the one spotting wrong fonts and missing bleeds. We check every file so you don't have to.</p>
         </div>
         <div class="reveal [transition-delay:120ms] overflow-hidden rounded-lg p-[26px] bg-[linear-gradient(160deg,#6170F2,#2E38A6)] shadow-[0_24px_50px_rgba(46,56,176,.3)] hover:shadow-[0_34px_66px_rgba(46,56,176,.5)] transition-[transform,box-shadow] duration-fast hover:-translate-y-[4px]">
-          <div class="w-[52px] h-[52px] rounded-[14px] bg-white/20 border-white/30 border flex items-center justify-center mb-[22px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20l3-1L18 8l-2-2L5 17l-1 3z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 6l2-2 2 2-2 2" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+          <img src="../assets/icon-fix-paper.svg" alt="" class="w-[52px] h-[52px] object-contain mb-[22px]" width="52" height="52">
           <h3 class="font-display font-semibold text-[19px] text-onSecondary mb-[10px]">Brief us and walk away</h3>
           <p class="text-white/[.86] text-small leading-[1.55] m-0">We manage everything after it. The checking and the chasing become ours.</p>
         </div>
         <div class="reveal [transition-delay:160ms] overflow-hidden rounded-lg p-[26px] bg-[linear-gradient(160deg,#E161F2,#B02EAE)] shadow-[0_24px_50px_rgba(150,40,150,.3)] hover:shadow-[0_34px_66px_rgba(150,40,150,.5)] transition-[transform,box-shadow] duration-fast hover:-translate-y-[4px]">
-          <div class="w-[52px] h-[52px] rounded-[14px] bg-white/20 border-white/30 border flex items-center justify-center mb-[22px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 18V9m5 9V5m5 13v-6m5 6V8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <img src="../assets/icon-fix-resize.svg" alt="" class="w-[52px] h-[52px] object-contain mb-[22px]" width="52" height="52">
           <h3 class="font-display font-semibold text-[19px] text-onSecondary mb-[10px]">Busy periods without the scramble</h3>
           <p class="text-white/90 text-small leading-[1.55] m-0">When the volume spikes, you don't go hunting for extra hands. The team scales with your need, then scales back when it passes.</p>
         </div>
         <div class="reveal [transition-delay:200ms] overflow-hidden rounded-lg p-[26px] bg-[linear-gradient(160deg,#F26161,#B02E2E)] shadow-[0_24px_50px_rgba(176,46,46,.3)] hover:shadow-[0_34px_66px_rgba(176,46,46,.5)] transition-[transform,box-shadow] duration-fast hover:-translate-y-[4px]">
-          <div class="w-[52px] h-[52px] rounded-[14px] bg-white/20 border-white/30 border flex items-center justify-center mb-[22px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L5 13h6l-1 9 8-11h-6l1-9z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+          <img src="../assets/icon-fix-cubes.svg" alt="" class="w-[52px] h-[52px] object-contain mb-[22px]" width="52" height="52">
           <h3 class="font-display font-semibold text-[19px] text-onSecondary mb-[10px]">Senior thinking, AI speed</h3>
           <p class="text-white/90 text-small leading-[1.55] m-0">Our senior designers lead the creative thinking. AI runs underneath, speeding the repetitive work so your plan covers more.</p>
         </div>
@@ -292,16 +159,16 @@ tailwind.config = {
         <p class="text-body text-base leading-body mt-[16px] mx-auto max-w-[640px]">One team for every design and campaign need, so your brand gets the same senior judgement across all of it.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-[14px] max-w-[820px] mx-auto">
-          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] rounded-[9px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-why-social-graphics.png" alt="" class="w-full h-full object-contain block"></span><span class="text-body text-base font-medium">Social graphics</span></div>
-          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] rounded-[9px] bg-brand-soft flex items-center justify-center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="text-body text-base font-medium">Campaign artwork &amp; key visuals</span></div>
-          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] rounded-[9px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-why-presentations.png" alt="" class="w-full h-full object-contain block"></span><span class="text-body text-base font-medium">Presentations</span></div>
-          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] rounded-[9px] bg-brand-soft flex items-center justify-center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="text-body text-base font-medium">Email</span></div>
-          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] rounded-[9px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-why-digital-ads.png" alt="" class="w-full h-full object-contain block"></span><span class="text-body text-base font-medium">Digital ads</span></div>
-          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] rounded-[9px] bg-brand-soft flex items-center justify-center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="text-body text-base font-medium">Print &amp; signage</span></div>
-          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] rounded-[9px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-why-reports-documents.png" alt="" class="w-full h-full object-contain block"></span><span class="text-body text-base font-medium">Reports &amp; documents</span></div>
-          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] rounded-[9px] bg-brand-soft flex items-center justify-center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="text-body text-base font-medium">Web graphics</span></div>
-          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] rounded-[9px] bg-brand-soft flex items-center justify-center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="text-body text-base font-medium">Motion graphics</span></div>
-          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] rounded-[9px] bg-brand-soft flex items-center justify-center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="text-body text-base font-medium">3D product renders</span></div>
+          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-svc-social.svg" alt="" class="w-full h-full object-contain block" width="30" height="30"></span><span class="text-body text-base font-medium">Social graphics</span></div>
+          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-svc-campaign.svg" alt="" class="w-full h-full object-contain block" width="30" height="30"></span><span class="text-body text-base font-medium">Campaign artwork &amp; key visuals</span></div>
+          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-svc-presentations.svg" alt="" class="w-full h-full object-contain block" width="30" height="30"></span><span class="text-body text-base font-medium">Presentations</span></div>
+          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-svc-email.svg" alt="" class="w-full h-full object-contain block" width="30" height="30"></span><span class="text-body text-base font-medium">Email</span></div>
+          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-svc-ads.svg" alt="" class="w-full h-full object-contain block" width="30" height="30"></span><span class="text-body text-base font-medium">Digital ads</span></div>
+          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-svc-print.svg" alt="" class="w-full h-full object-contain block" width="30" height="30"></span><span class="text-body text-base font-medium">Print &amp; signage</span></div>
+          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-svc-reports.svg" alt="" class="w-full h-full object-contain block" width="30" height="30"></span><span class="text-body text-base font-medium">Reports &amp; documents</span></div>
+          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-svc-web.svg" alt="" class="w-full h-full object-contain block" width="30" height="30"></span><span class="text-body text-base font-medium">Web graphics</span></div>
+          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-svc-motion.svg" alt="" class="w-full h-full object-contain block" width="30" height="30"></span><span class="text-body text-base font-medium">Motion graphics</span></div>
+          <div class="flex items-center gap-[11px] rounded-md px-[20px] py-[18px] bg-[rgba(97,165,242,.1)] border border-[rgba(97,165,242,.32)] transition-[background,border-color] duration-fast hover:bg-[rgba(97,165,242,.16)] hover:border-[rgba(97,165,242,.5)]"><span class="flex-none w-[30px] h-[30px] overflow-hidden flex items-center justify-center"><img src="../assets/icon-svc-3d.svg" alt="" class="w-full h-full object-contain block" width="30" height="30"></span><span class="text-body text-base font-medium">3D product renders</span></div>
       </div>
       <div class="reveal max-w-[820px] mx-auto mt-5 bg-white/[.02] border border-white/[.07] rounded-lg px-[28px] py-4">
         <p class="text-body text-small leading-body m-0">A few things sit outside our lane: product and app UI/UX, 3D and character animation, full video production and filming, photography, and copywriting. That focus is exactly what lets us put a date on every brief and hit it.</p>
@@ -318,22 +185,22 @@ tailwind.config = {
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[16px]">
         <div class="reveal [transition-delay:50ms] card-glass rounded-md p-[26px]">
-          <div class="w-[46px] h-[46px] rounded-sm bg-brand-soft border border-brand-border flex items-center justify-center mb-[18px]"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.2 5.5.8-4 3.9 1 5.6L12 16.9 6.9 19.5l1-5.6-4-3.9 5.5-.8L12 3z" stroke="#3DE68C" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+          <img src="../assets/icon-team-star.svg" alt="" class="w-[46px] h-[46px] object-contain mb-[18px]" width="46" height="46">
           <h3 class="font-display font-semibold text-base text-[#F3F5FF] mb-[8px]">Vetted senior designers</h3>
           <p class="text-small leading-[1.55] text-body m-0">Every designer has at least five years at senior level behind them, and many come from multinational agency backgrounds.</p>
         </div>
         <div class="reveal [transition-delay:100ms] card-glass rounded-md p-[26px]">
-          <div class="w-[46px] h-[46px] rounded-sm bg-brand-soft border border-brand-border flex items-center justify-center mb-[18px]"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3.1" stroke="#3DE68C" stroke-width="1.7"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5" stroke="#3DE68C" stroke-width="1.7" stroke-linecap="round"/><path d="M16 4.5a3.1 3.1 0 0 1 0 6M18 20c0-2.4-1.3-4.2-3.4-4.8" stroke="#3DE68C" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <img src="../assets/icon-team-cubes.svg" alt="" class="w-[46px] h-[46px] object-contain mb-[18px]" width="46" height="46">
           <h3 class="font-display font-semibold text-base text-[#F3F5FF] mb-[8px]">Your designers stay yours</h3>
           <p class="text-small leading-[1.55] text-body m-0">The same designers on your account every time, learning your brand inside out and owning it like an in-house designer would.</p>
         </div>
         <div class="reveal [transition-delay:150ms] card-glass rounded-md p-[26px]">
-          <div class="w-[46px] h-[46px] rounded-sm bg-brand-soft border border-brand-border flex items-center justify-center mb-[18px]"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 4.4-3 7.5-7 9-4-1.5-7-4.6-7-9V7l7-4z" stroke="#3DE68C" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#3DE68C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <img src="../assets/icon-team-container.svg" alt="" class="w-[46px] h-[46px] object-contain mb-[18px]" width="46" height="46">
           <h3 class="font-display font-semibold text-base text-[#F3F5FF] mb-[8px]">Built for Australian audiences</h3>
           <p class="text-small leading-[1.55] text-body m-0">Our designers work on Australian brands every day, so the work lands with your audience, not just on brand.</p>
         </div>
         <div class="reveal [transition-delay:200ms] card-glass rounded-md p-[26px]">
-          <div class="w-[46px] h-[46px] rounded-sm bg-brand-soft border border-brand-border flex items-center justify-center mb-[18px]"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#3DE68C" stroke-width="1.7"/><path d="M12 7.5V12l3 2" stroke="#3DE68C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <img src="../assets/icon-team-check.svg" alt="" class="w-[46px] h-[46px] object-contain mb-[18px]" width="46" height="46">
           <h3 class="font-display font-semibold text-base text-[#F3F5FF] mb-[8px]">Dedicated Account Manager</h3>
           <p class="text-small leading-[1.55] text-body m-0">Yours by name, working your Australian hours and answering for the whole account. Every file is checked before it reaches you.</p>
         </div>
@@ -349,7 +216,7 @@ tailwind.config = {
         <div class="absolute -bottom-[120px] -left-[60px] w-[520px] h-[340px] rounded-full blur-[24px] bg-[radial-gradient(circle,rgba(61,230,140,.22),transparent_70%)]"></div>
         <div class="relative grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-[28px] sm:gap-[48px] items-center justify-items-center sm:justify-items-start">
           <div class="flex-none w-[220px] h-[264px] rounded-[22px] overflow-hidden border border-white/[.14] shadow-[0_24px_54px_rgba(0,0,0,.45)]">
-            <img src="../assets/why-founder.jfif" alt="Stephen Andelo, Founder" class="w-full h-full object-cover block">
+            <img src="../assets/why-founder.jpg" alt="Stephen Andelo, Founder" class="w-full h-full object-cover block">
           </div>
           <div class="text-center sm:text-left">
             <div class="eyebrow text-[12.5px] mb-[20px]">From Stephen Andelo, The Founder</div>
@@ -408,7 +275,7 @@ tailwind.config = {
     ticking = false; if (!nav) return;
     var y = window.scrollY || document.documentElement.scrollTop || 0;
     var frosted = y > 24;
-    nav.style.background = frosted ? 'rgba(9,11,30,0.78)' : 'transparent';
+    nav.style.background = frosted ? 'rgba(9,11,30,0.92)' : 'transparent';
     nav.style.backdropFilter = frosted ? 'blur(16px)' : 'none';
     /* border handled by site-nav.js */
     if (y <= 120 || y < lastY - 3) nav.style.transform = 'translateY(0)';
