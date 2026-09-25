@@ -47,7 +47,7 @@
           <div><div class="font-semibold text-heading text-[15px]">Matej Varhalik</div><div class="text-body-caption text-[13.5px]">CEO &amp; Co-Founder, Speedfit</div></div>
         </div>
       </div>
-      <div data-video class="reveal [transition-delay:120ms] relative rounded-lg overflow-hidden border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,.5)] aspect-[9/16] w-full max-w-[340px] md:justify-self-end bg-[#0F1230] cursor-pointer">
+      <div data-video data-vsrc="https://www.youtube-nocookie.com/embed/aqFulkv0U_4?autoplay=1&amp;rel=0&amp;playsinline=1" class="reveal [transition-delay:120ms] relative rounded-lg overflow-hidden border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,.5)] aspect-[9/16] w-full max-w-[340px] md:justify-self-end bg-[#0F1230] cursor-pointer">
         <img class="hero-vid-img absolute inset-0 w-full h-full object-cover block" src="../../assets/speedfit-matej.png" alt="Matej, CEO &amp; Co-Founder of Speedfit">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(255,255,255,.22),transparent_60%)]"></div>
         <div class="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,transparent_45%,rgba(6,8,24,.55))]"></div>
@@ -122,13 +122,7 @@
   <div data-vmodal class="fixed inset-0 z-[1000] hidden items-center justify-center p-gutter bg-[rgba(5,6,20,.86)] backdrop-blur-[10px]">
     <button type="button" data-vclose aria-label="Close" class="absolute top-4 right-4 w-[46px] h-[46px] rounded-full bg-white/[.08] border border-white/[.16] text-body cursor-pointer flex items-center justify-center transition-[background,border-color] duration-fast hover:bg-white/[.16] hover:border-white/[.34]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
     <div class="w-full max-w-[520px]">
-      <div class="relative w-full aspect-[9/16] max-h-[80vh] rounded-lg overflow-hidden border border-white/[.12] bg-grad-navy shadow-[0_40px_90px_rgba(0,0,0,.5)] flex items-center justify-center">
-        <div class="text-center p-4">
-          <div class="w-[74px] h-[74px] rounded-full bg-brand flex items-center justify-center mx-auto mb-[18px] shadow-[0_14px_34px_rgba(61,230,140,.4)]"><svg width="30" height="30" viewBox="0 0 24 24" fill="#04160C"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="font-display font-semibold text-base text-heading-hi">Testimonial video</div>
-          <div class="text-caption text-body-caption mt-[6px]">Embed goes here</div>
-        </div>
-      </div>
+      <div data-vplayer class="relative w-full aspect-[9/16] max-h-[80vh] rounded-lg overflow-hidden border border-white/[.12] bg-grad-navy shadow-[0_40px_90px_rgba(0,0,0,.5)]"></div>
     </div>
   </div>
 
@@ -169,11 +163,24 @@
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(updateNav); } }, { passive: true });
   updateNav();
 
-  /* Testimonial video modal */
+  /* Testimonial video — Matej's Short, autoplays on open and stops on close. */
   var vmodal = root.querySelector('[data-vmodal]');
-  var open = function () { if (vmodal) vmodal.style.display = 'flex'; };
-  var close = function () { if (vmodal) vmodal.style.display = 'none'; };
-  var vid = root.querySelector('[data-video]'); if (vid) vid.addEventListener('click', open);
+  var vplayer = vmodal && vmodal.querySelector('[data-vplayer]');
+  var vid = root.querySelector('[data-video]');
+  var open = function () {
+    if (!vmodal || !vid) return;
+    var src = vid.getAttribute('data-vsrc');
+    if (vplayer && src) {
+      vplayer.innerHTML = '<iframe class="absolute inset-0 w-full h-full border-0" src="' + src + '" title="Matej Varhalik, Speedfit" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    }
+    vmodal.style.display = 'flex';
+  };
+  var close = function () {
+    if (!vmodal) return;
+    vmodal.style.display = 'none';
+    if (vplayer) vplayer.innerHTML = '';
+  };
+  if (vid) vid.addEventListener('click', open);
   var vclose = root.querySelector('[data-vclose]'); if (vclose) vclose.addEventListener('click', close);
   if (vmodal) vmodal.addEventListener('click', function (e) { if (e.target === vmodal) close(); });
   window.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });

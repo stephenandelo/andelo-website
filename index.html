@@ -24,9 +24,8 @@
 
   <!-- Ambient glow (max 2 loops/page with marquee — docs/animation-standards.md rule 11) -->
   <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-    <div data-ambient class="absolute -top-[140px] -left-[100px] w-[540px] h-[540px] rounded-full blur-[24px]
-                bg-[radial-gradient(circle,rgba(61,230,140,.16),transparent_70%)]
-                animate-pulse-glow"></div>
+    <div class="absolute -top-[140px] -left-[100px] w-[540px] h-[540px] rounded-full blur-[24px]
+                bg-[radial-gradient(circle,rgba(61,230,140,.16),transparent_70%)]"></div>
   </div>
 
   <div class="relative z-[1]">
@@ -54,36 +53,9 @@
         </div>
       </div>
 
-      <!-- Abstract collage. Decorative jewel gradients, one per tile. -->
-      <div class="reveal-atf relative h-[440px] sm:h-[520px]">
-        <div class="absolute inset-y-[6%] inset-x-[8%] blur-[14px] bg-[radial-gradient(circle_at_55%_42%,rgba(61,230,140,.2),transparent_62%)]"></div>
-        <div class="absolute top-[42px] left-[8%] w-[186px] h-[242px] rounded-[22px] p-[18px] overflow-hidden
-                    bg-[linear-gradient(160deg,#A661F2,#6E2EB0)] shadow-[0_34px_66px_rgba(0,0,0,.5)]">
-          <div class="w-[34px] h-[34px] rounded-[9px] bg-white/[.24]"></div>
-          <div class="mt-[60px] h-[9px] rounded-[6px] w-[82%] bg-white/50"></div>
-          <div class="mt-[9px] h-[9px] rounded-[6px] w-[60%] bg-white/[.32]"></div>
-          <div class="mt-[9px] h-[9px] rounded-[6px] w-[70%] bg-white/[.24]"></div>
-        </div>
-        <div class="absolute top-[16px] right-[6%] w-[198px] h-[150px] rounded-card p-4 overflow-hidden
-                    bg-[linear-gradient(160deg,#E161F2,#A32EB0)] shadow-[0_30px_60px_rgba(0,0,0,.45)]">
-          <div class="flex gap-[6px]">
-            <span class="w-[26px] h-[26px] rounded-xs bg-white/90"></span>
-            <span class="w-[26px] h-[26px] rounded-xs bg-white/[.55]"></span>
-            <span class="w-[26px] h-[26px] rounded-xs bg-white/30"></span>
-          </div>
-          <div class="mt-5 h-[8px] rounded-[5px] w-[88%] bg-white/[.55]"></div>
-          <div class="mt-[8px] h-[8px] rounded-[5px] w-[64%] bg-white/[.35]"></div>
-        </div>
-        <div class="absolute bottom-[56px] right-[12%] w-[210px] h-[236px] rounded-[22px] p-[18px] overflow-hidden
-                    bg-[linear-gradient(160deg,#61A5F2,#2E5FB0)] shadow-[0_34px_66px_rgba(0,0,0,.5)]">
-          <div class="w-full h-[96px] rounded-sm bg-[linear-gradient(140deg,rgba(255,255,255,.28),rgba(255,255,255,.08))]"></div>
-          <div class="mt-4 h-[9px] rounded-[6px] w-[78%] bg-white/50"></div>
-          <div class="mt-[9px] h-[9px] rounded-[6px] w-[52%] bg-white/30"></div>
-        </div>
-        <div class="absolute bottom-5 left-[12%] w-[150px] h-[120px] rounded-md flex items-center justify-center
-                    bg-[linear-gradient(160deg,#6170F2,#2E38B0)] shadow-[0_26px_54px_rgba(0,0,0,.45)]">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#06231F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+      <!-- Work collage. Gentle float; paused off-screen, off under reduced motion. -->
+      <div class="reveal-atf relative">
+        <img data-ambient src="assets/hero-collage.png" alt="Design work: Protein One WPI, Fitness Cartel flyer, Mask × Anna Polyviou campaign, and a Vintage Lane popup poster" class="animate-hero-float block w-full h-auto" width="1008" height="1050">
       </div>
     </div>
   </section>
@@ -308,40 +280,45 @@
   <!-- ══ HOW IT WORKS ══ -->
   <section id="how" class="py-section scroll-mt-[90px]">
     <div class="max-w-container mx-auto px-gutter">
-      <div class="reveal text-center mx-auto mb-[48px]">
+      <div class="reveal mb-[56px] md:mb-[72px]">
         <div class="eyebrow">How it works</div>
-        <h2 class="font-display font-bold text-h2 text-heading mt-4">Simple, every time</h2>
+        <h2 class="font-display font-bold text-h2 text-heading mt-[16px]">Simple, every time</h2>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-card">
-        <div class="reveal card-glass relative p-[30px] overflow-hidden">
-          <div class="absolute top-[14px] right-[22px] font-display font-bold text-[72px] text-white/[.05]">01</div>
-          <img src="assets/icon-how-brief.svg" alt="" class="w-[56px] h-[56px] object-contain mb-[22px]" width="56" height="56">
-          <div class="text-[14px] font-semibold tracking-label uppercase text-brand mb-[8px]">Step 1</div>
-          <h3 class="font-display font-semibold text-[22.5px] text-heading mb-2">Brief us</h3>
-          <p class="text-body text-[17px] leading-body">Submit your request. We confirm the cost and the delivery date before any work starts, so you know both upfront.</p>
+      <div data-how class="reveal [transition-delay:80ms] relative">
+        <div aria-hidden="true" data-how-rail class="absolute left-[27px] top-[28px] bottom-0 w-[2px] md:left-[28px] md:right-0 md:top-[27px] md:bottom-auto md:w-auto md:h-[2px] rounded-pill bg-white/[.12] overflow-hidden [mask-image:linear-gradient(180deg,#000_75%,transparent)] md:[mask-image:linear-gradient(90deg,#000_82%,transparent)]">
+          <div data-how-fill class="absolute inset-0 bg-brand origin-top md:origin-left transition-transform duration-[250ms] ease-out"></div>
         </div>
-        <div class="reveal [transition-delay:80ms] card-glass relative p-[30px] overflow-hidden">
-          <div class="absolute top-[14px] right-[22px] font-display font-bold text-[72px] text-white/[.05]">02</div>
-          <img src="assets/icon-how-deliver.svg" alt="" class="w-[56px] h-[56px] object-contain mb-[22px]" width="56" height="56">
-          <div class="text-[14px] font-semibold tracking-label uppercase text-brand mb-[8px]">Step 2</div>
-          <h3 class="font-display font-semibold text-[22.5px] text-heading mb-2">We deliver</h3>
-          <p class="text-body text-[17px] leading-body">Every file is checked before it reaches you, so there's no back-and-forth. On-brand work, on the date we gave you.</p>
-        </div>
-        <div class="reveal [transition-delay:160ms] card-glass relative p-[30px] overflow-hidden">
-          <div class="absolute top-[14px] right-[22px] font-display font-bold text-[72px] text-white/[.05]">03</div>
-          <img src="assets/icon-how-scale.svg" alt="" class="w-[56px] h-[56px] object-contain mb-[22px]" width="56" height="56">
-          <div class="text-[14px] font-semibold tracking-label uppercase text-brand mb-[8px]">Step 3</div>
-          <h3 class="font-display font-semibold text-[22.5px] text-heading mb-2">Scale up</h3>
-          <p class="text-body text-[17px] leading-body">Need more? Upgrade anytime, add hours, or move to a dedicated team as the work grows.</p>
-        </div>
+        <ol class="relative grid grid-cols-1 md:grid-cols-3 gap-y-[44px] md:gap-x-[40px] m-0 p-0 list-none">
+          <li data-how-step data-active="true" class="group grid grid-cols-[56px_minmax(0,1fr)] md:grid-cols-1 gap-x-[22px] md:gap-y-[30px] items-start">
+            <div data-how-node class="relative w-[56px] h-[56px] rounded-full flex items-center justify-center border border-hairline-card bg-canvas font-display font-bold text-[20px] tabular-nums text-brand transition-[background-color,border-color,color,box-shadow] duration-[400ms] group-data-[active=true]:bg-brand group-data-[active=true]:border-brand group-data-[active=true]:text-brand-ink group-data-[active=true]:shadow-[0_0_0_8px_rgba(61,230,140,.12),0_12px_30px_rgba(61,230,140,.32)]" aria-hidden="true">1</div>
+            <div class="pt-[4px] md:pt-0 opacity-40 translate-y-[8px] group-data-[active=true]:opacity-100 group-data-[active=true]:translate-y-0 transition-[opacity,transform] duration-[500ms] ease-[cubic-bezier(.22,1,.36,1)]">
+              <h3 class="font-display font-bold text-[clamp(26px,2.6vw,34px)] leading-[1.1] tracking-tight text-heading-hi mb-[12px]">Brief us</h3>
+              <p class="text-body text-[17px] leading-body max-w-[36ch] [text-wrap:pretty]">Submit your request. We confirm the cost and the delivery date before any work starts, so you know both upfront.</p>
+            </div>
+          </li>
+          <li data-how-step data-active="true" class="group grid grid-cols-[56px_minmax(0,1fr)] md:grid-cols-1 gap-x-[22px] md:gap-y-[30px] items-start">
+            <div data-how-node class="relative w-[56px] h-[56px] rounded-full flex items-center justify-center border border-hairline-card bg-canvas font-display font-bold text-[20px] tabular-nums text-brand transition-[background-color,border-color,color,box-shadow] duration-[400ms] group-data-[active=true]:bg-brand group-data-[active=true]:border-brand group-data-[active=true]:text-brand-ink group-data-[active=true]:shadow-[0_0_0_8px_rgba(61,230,140,.12),0_12px_30px_rgba(61,230,140,.32)]" aria-hidden="true">2</div>
+            <div class="pt-[4px] md:pt-0 opacity-40 translate-y-[8px] group-data-[active=true]:opacity-100 group-data-[active=true]:translate-y-0 transition-[opacity,transform] duration-[500ms] ease-[cubic-bezier(.22,1,.36,1)]">
+              <h3 class="font-display font-bold text-[clamp(26px,2.6vw,34px)] leading-[1.1] tracking-tight text-heading-hi mb-[12px]">We deliver</h3>
+              <p class="text-body text-[17px] leading-body max-w-[36ch] [text-wrap:pretty]">Every file is checked before it reaches you, so there's no back-and-forth. On-brand work, on the date we gave you.</p>
+            </div>
+          </li>
+          <li data-how-step data-active="true" class="group grid grid-cols-[56px_minmax(0,1fr)] md:grid-cols-1 gap-x-[22px] md:gap-y-[30px] items-start">
+            <div data-how-node class="relative w-[56px] h-[56px] rounded-full flex items-center justify-center border border-hairline-card bg-canvas font-display font-bold text-[20px] tabular-nums text-brand transition-[background-color,border-color,color,box-shadow] duration-[400ms] group-data-[active=true]:bg-brand group-data-[active=true]:border-brand group-data-[active=true]:text-brand-ink group-data-[active=true]:shadow-[0_0_0_8px_rgba(61,230,140,.12),0_12px_30px_rgba(61,230,140,.32)]" aria-hidden="true">3</div>
+            <div class="pt-[4px] md:pt-0 opacity-40 translate-y-[8px] group-data-[active=true]:opacity-100 group-data-[active=true]:translate-y-0 transition-[opacity,transform] duration-[500ms] ease-[cubic-bezier(.22,1,.36,1)]">
+              <h3 class="font-display font-bold text-[clamp(26px,2.6vw,34px)] leading-[1.1] tracking-tight text-heading-hi mb-[12px]">Scale up</h3>
+              <p class="text-body text-[17px] leading-body max-w-[36ch] [text-wrap:pretty]">Need more? Upgrade anytime, add hours, or move to a dedicated team as the work grows.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 
   <!-- ══ LEAD MAGNET BANNER (purple jewel panel, one per view) ══ -->
   <section class="py-[60px]">
-    <div class="max-w-[1280px] mx-auto px-gutter">
-      <div class="reveal relative overflow-hidden rounded-lg p-card sm:p-[52px] grid grid-cols-1 sm:grid-cols-[.85fr_1.15fr] gap-gutter items-center
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-gutter">
+      <div class="reveal relative overflow-hidden rounded-lg px-4 py-5 sm:p-[40px] md:p-[52px] grid grid-cols-1 sm:grid-cols-[.85fr_1.15fr] gap-5 sm:gap-gutter items-center
                   bg-grad-purple">
         <div class="relative sm:pl-4">
           <h2 class="font-display font-bold text-[clamp(29.5px,4vw,45px)] leading-tight tracking-tight text-onSecondary">Do you have enough design capacity?</h2>
@@ -349,7 +326,7 @@
           <a href="/design-capacity-formula" class="btn-mint font-display font-extrabold px-[40px] py-[19px] text-[19px] uppercase tracking-snug shadow-[0_12px_30px_rgba(0,0,0,.25)]">Work out my capacity number</a>
         </div>
         <div class="relative flex items-center justify-center">
-          <img src="assets/blog-design-hours-cta.png" alt="Do you have enough design capacity?" class="block w-[76%] h-auto">
+          <img src="assets/capacity-cta-panel.png" alt="Do you have enough design capacity?" class="block w-[48%] max-w-[180px] sm:w-[68%] sm:max-w-[280px] md:w-[76%] md:max-w-none h-auto mx-auto" width="597" height="414">
         </div>
       </div>
     </div>
@@ -370,7 +347,7 @@
               <img class="ts-img w-full h-full object-cover object-center block" src="assets/home-hannah.png" alt="Hannah, Head of Marketing at MaskCo">
             </div>
             <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,8,24,.05),rgba(6,8,24,.5))]"></div>
-            <button data-play data-vname="MaskCo — Hannah, Head of Marketing" class="absolute bottom-[14px] right-[14px] inline-flex items-center gap-[8px] pl-[13px] pr-4 py-[9px] rounded-pill bg-[rgba(10,12,34,.62)] border border-white/20 backdrop-blur-[6px] text-white font-display font-semibold text-[14px] cursor-pointer transition-[background,transform,color] duration-fast">
+            <button data-play data-vname="MaskCo — Hannah, Head of Marketing" data-vsrc="https://www.youtube-nocookie.com/embed/6Hx7yGEpAV4?autoplay=1&amp;rel=0&amp;playsinline=1" class="absolute bottom-[14px] right-[14px] inline-flex items-center gap-[8px] pl-[13px] pr-4 py-[9px] rounded-pill bg-[rgba(10,12,34,.62)] border border-white/20 backdrop-blur-[6px] text-white font-display font-semibold text-[14px] cursor-pointer transition-[background,transform,color] duration-fast">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Play
             </button>
           </div>
@@ -391,7 +368,7 @@
               <img class="ts-img w-full h-full object-cover object-center block" src="assets/speedfit-matej.png" alt="Matej Varhalik, CEO and Co-Founder of Speedfit">
             </div>
             <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,8,24,.05),rgba(6,8,24,.5))]"></div>
-            <button data-play data-vname="Speedfit — Matej Varhalik, CEO &amp; Co-Founder" class="absolute bottom-[14px] right-[14px] inline-flex items-center gap-[8px] pl-[13px] pr-4 py-[9px] rounded-pill bg-[rgba(10,12,34,.62)] border border-white/20 backdrop-blur-[6px] text-white font-display font-semibold text-[14px] cursor-pointer transition-[background,transform,color] duration-fast">
+            <button data-play data-vname="Speedfit — Matej Varhalik, CEO &amp; Co-Founder" data-vsrc="https://www.youtube-nocookie.com/embed/aqFulkv0U_4?autoplay=1&amp;rel=0&amp;playsinline=1" class="absolute bottom-[14px] right-[14px] inline-flex items-center gap-[8px] pl-[13px] pr-4 py-[9px] rounded-pill bg-[rgba(10,12,34,.62)] border border-white/20 backdrop-blur-[6px] text-white font-display font-semibold text-[14px] cursor-pointer transition-[background,transform,color] duration-fast">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Play
             </button>
           </div>
@@ -412,7 +389,7 @@
               <img class="ts-img w-full h-full object-cover object-center block" src="assets/oren-hero.png" alt="Oren Greenberg, Marketing Consultant">
             </div>
             <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,8,24,.05),rgba(6,8,24,.5))]"></div>
-            <button data-play data-vname="Oren Greenberg — Marketing Consultant" class="absolute bottom-[14px] right-[14px] inline-flex items-center gap-[8px] pl-[13px] pr-4 py-[9px] rounded-pill bg-[rgba(10,12,34,.62)] border border-white/20 backdrop-blur-[6px] text-white font-display font-semibold text-[14px] cursor-pointer transition-[background,transform,color] duration-fast">
+            <button data-play data-vname="Oren Greenberg — Marketing Consultant" data-vsrc="https://www.youtube-nocookie.com/embed/Cg_QJIZMeqs?autoplay=1&amp;rel=0&amp;playsinline=1" class="absolute bottom-[14px] right-[14px] inline-flex items-center gap-[8px] pl-[13px] pr-4 py-[9px] rounded-pill bg-[rgba(10,12,34,.62)] border border-white/20 backdrop-blur-[6px] text-white font-display font-semibold text-[14px] cursor-pointer transition-[background,transform,color] duration-fast">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Play
             </button>
           </div>
@@ -581,8 +558,8 @@
     <button data-vclose aria-label="Close" class="absolute top-4 right-4 w-[46px] h-[46px] rounded-full bg-white/[.08] border border-white/[.16] text-body cursor-pointer flex items-center justify-center transition-[background,border-color] duration-fast">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
     </button>
-    <div class="w-full max-w-[860px]">
-      <div class="relative w-full aspect-video rounded-lg overflow-hidden border border-white/[.12] bg-grad-navy shadow-[0_40px_90px_rgba(0,0,0,.5)] flex items-center justify-center">
+    <div data-vframe class="relative w-full max-w-[860px] aspect-video rounded-lg overflow-hidden border border-white/[.12] bg-grad-navy shadow-[0_40px_90px_rgba(0,0,0,.5)]">
+      <div data-vplaceholder class="absolute inset-0 flex items-center justify-center">
         <div class="text-center">
           <div class="w-[74px] h-[74px] rounded-full bg-brand flex items-center justify-center mx-auto mb-[18px] shadow-[0_14px_34px_rgba(61,230,140,.4)]">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="#04160C"><path d="M8 5v14l11-7z"/></svg>
@@ -591,6 +568,7 @@
           <div class="text-caption text-body-caption mt-[6px]">Testimonial video</div>
         </div>
       </div>
+      <div data-vplayer class="absolute inset-0 hidden"></div>
     </div>
   </div>
 
@@ -646,6 +624,39 @@
 
   /* 2. Nav frost/hide handled by site-nav.js */
 
+  /* 2b. How it works — rail fills on scroll; steps light when the fill reaches each node.
+     Breakpoint matches theme md (901px), not Tailwind’s default 768. */
+  var how = root.querySelector('[data-how]');
+  if (how) {
+    var howRail = how.querySelector('[data-how-rail]');
+    var howFill = how.querySelector('[data-how-fill]');
+    var howSteps = how.querySelectorAll('[data-how-step]');
+    var howNodes = how.querySelectorAll('[data-how-node]');
+    var howWide = window.matchMedia('(min-width: 901px)');
+    var howReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var howTicking = false;
+    var howUpdate = function () {
+      howTicking = false;
+      if (!howRail || !howFill) return;
+      var vh = window.innerHeight, wide = howWide.matches;
+      var r = howRail.getBoundingClientRect();
+      var len = wide ? r.width : r.height;
+      var p = howReduce.matches ? 1 : wide ? (vh * 0.78 - r.top) / (vh * 0.42) : (vh * 0.62 - r.top) / Math.max(1, len);
+      p = Math.min(1, Math.max(0, p));
+      howFill.style.transform = (wide ? 'scaleX(' : 'scaleY(') + p + ')';
+      var reach = p * len;
+      howNodes.forEach(function (n, i) {
+        var nr = n.getBoundingClientRect();
+        var at = wide ? nr.left + nr.width / 2 - r.left : nr.top + nr.height / 2 - r.top;
+        howSteps[i].setAttribute('data-active', p > 0 && reach >= at - 2 ? 'true' : 'false');
+      });
+    };
+    var howQueue = function () { if (!howTicking) { howTicking = true; requestAnimationFrame(howUpdate); } };
+    window.addEventListener('scroll', howQueue, { passive: true });
+    window.addEventListener('resize', howQueue);
+    howUpdate();
+  }
+
   /* 3. FAQ — single-open; open state via data-open (grid 0fr→1fr in CSS). */
   var faqs = root.querySelectorAll('[data-faq]');
   faqs.forEach(function (item) {
@@ -664,16 +675,37 @@
     });
   });
 
-  /* 4. Testimonial video modal. Replace the placeholder with a real <video>/embed. */
+  /* 4. Testimonial video modal. A data-vsrc button loads that embed and autoplays; others stay a placeholder. */
   var vmodal = root.querySelector('[data-vmodal]');
   var vlabel = root.querySelector('[data-vlabel]');
-  function closeVideo() { if (vmodal) { vmodal.style.display = 'none'; } }
+  var vframe = vmodal && vmodal.querySelector('[data-vframe]');
+  var vplaceholder = vmodal && vmodal.querySelector('[data-vplaceholder]');
+  var vplayer = vmodal && vmodal.querySelector('[data-vplayer]');
+  function closeVideo() {
+    if (!vmodal) return;
+    vmodal.style.display = 'none';
+    if (vplayer) { vplayer.innerHTML = ''; vplayer.classList.add('hidden'); }
+  }
+  function openVideo(btn) {
+    if (!vmodal) return;
+    var src = btn.getAttribute('data-vsrc');
+    if (vlabel) vlabel.textContent = btn.getAttribute('data-vname') || '';
+    if (src && vplayer && vframe) {
+      vframe.style.maxWidth = '420px';
+      vframe.style.aspectRatio = '9 / 16';
+      vframe.style.maxHeight = '80vh';
+      vplayer.innerHTML = '<iframe class="absolute inset-0 w-full h-full border-0" src="' + src + '" title="' + (btn.getAttribute('data-vname') || 'Testimonial video') + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+      vplayer.classList.remove('hidden');
+      if (vplaceholder) vplaceholder.classList.add('hidden');
+    } else {
+      if (vframe) { vframe.style.maxWidth = ''; vframe.style.aspectRatio = ''; vframe.style.maxHeight = ''; }
+      if (vplayer) { vplayer.innerHTML = ''; vplayer.classList.add('hidden'); }
+      if (vplaceholder) vplaceholder.classList.remove('hidden');
+    }
+    vmodal.style.display = 'flex';
+  }
   root.querySelectorAll('[data-play]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (!vmodal) return;
-      if (vlabel) vlabel.textContent = btn.getAttribute('data-vname') || '';
-      vmodal.style.display = 'flex';
-    });
+    btn.addEventListener('click', function () { openVideo(btn); });
   });
   var vclose = root.querySelector('[data-vclose]');
   if (vclose) vclose.addEventListener('click', closeVideo);
