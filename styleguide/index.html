@@ -29,6 +29,7 @@
       <a href="#type" class="chip">Typography</a>
       <a href="#buttons" class="chip">Buttons</a>
       <a href="#components" class="chip">Components</a>
+      <a href="#jewel-ramps" class="chip">Jewel ramps</a>
       <a href="#spacing" class="chip">Spacing</a>
       <a href="#radius" class="chip">Radius</a>
       <a href="#shadows" class="chip">Shadows</a>
@@ -189,6 +190,39 @@
         </div>
         <p class="text-body">On dark, an <a href="#components" class="link">inline link</a> uses the shared link class.</p>
       </div>
+    </section>
+
+    <section id="jewel-ramps" class="pt-section">
+      <h2 class="font-display text-h2 text-heading">Jewel ramps (text-safe)</h2>
+      <p class="text-body-muted text-small mt-2 mb-6 max-w-prose">Same two brand stops per jewel; only angle and stop positions change. Use these on any panel that carries copy. Reserve <code class="text-caption">bg-grad-*</code> for decorative fills with no text.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-card">
+        <div class="rounded-lg overflow-hidden border border-hairline-card bg-jewel-purple-icon-top p-card-compact min-h-[200px] flex flex-col">
+          <img src="/assets/icon-consistent.svg" alt="" class="w-[72px] h-[72px] mb-auto" width="72" height="72">
+          <p class="text-micro font-bold tracking-label-wide uppercase text-onSecondary mb-2">Icon top</p>
+          <p class="font-display text-h3 text-onSecondary mb-2">Light stop above the icon</p>
+          <p class="text-onSecondary-body text-small m-0">Dark stop before the first line of copy. Bento cards, Why fix cards.</p>
+          <p class="text-caption text-body-muted mt-3 mb-0"><code>bg-jewel-*-icon-top</code></p>
+        </div>
+        <div class="rounded-lg overflow-hidden border border-hairline-card bg-jewel-purple-copy-left p-card-compact min-h-[200px] grid grid-cols-[1.1fr_.9fr] gap-3 items-center">
+          <div>
+            <p class="font-display text-h3 text-onSecondary mb-2">Copy left</p>
+            <p class="text-onSecondary-body text-small m-0">Dark stop under the copy column; light toward the art side.</p>
+            <p class="text-caption text-body-muted mt-3 mb-0"><code>bg-jewel-*-copy-left</code> (md+). Below md, pair with copy-top.</p>
+          </div>
+          <div class="flex items-center justify-center opacity-90" aria-hidden="true"><img src="/assets/capacity-cta-panel.png" alt="" class="w-full max-w-[120px] h-auto" width="597" height="414"></div>
+        </div>
+        <div class="rounded-lg overflow-hidden border border-hairline-card bg-jewel-purple-copy-top p-card-compact min-h-[200px]">
+          <p class="font-display text-h3 text-onSecondary mb-2">Copy top</p>
+          <p class="text-onSecondary-body text-small m-0">Stacked layouts: dark band behind full-width copy; light at the bottom or image row.</p>
+          <p class="text-caption text-body-muted mt-3 mb-0"><code>max-sm:bg-jewel-*-copy-top sm:bg-jewel-*-copy-left</code> or <code>max-md:… md:…</code></p>
+        </div>
+        <div class="rounded-lg overflow-hidden border border-hairline-card bg-jewel-purple-copy-center p-card-compact min-h-[200px] text-center px-4 py-6">
+          <p class="font-display text-h3 text-onSecondary mb-2">Copy centre</p>
+          <p class="text-onSecondary-body text-small m-0 max-w-prose mx-auto">Narrow light band at the top only; centred lines sit on the dark stop.</p>
+          <p class="text-caption text-body-muted mt-3 mb-0"><code>bg-jewel-*-copy-center</code></p>
+        </div>
+      </div>
+      <p class="text-caption text-body-muted mt-4 max-w-prose">Jewel copy: headings and labels <code>text-onSecondary</code>; body <code>text-onSecondary-body</code>.</p>
     </section>
 
     <section id="spacing" class="pt-section">

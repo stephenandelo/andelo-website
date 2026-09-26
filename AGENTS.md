@@ -13,6 +13,8 @@ Use tokens from the style guide. Never hand-type a size, colour, or spacing valu
 - Cards: p-card-standard or p-card-compact. Page heroes: pt-hero-offset. Article headers and legal pages keep their own top offset.
 - Buttons: btn-mint-sm, btn-mint, or btn-mint-lg. Full-width buttons stay full width. Play: btn-play. Filters: chip. Fields: field, field-label, and their states.
 - Button and label text is sentence case. Proper names keep their capitals.
+- **Jewel panels with copy:** always use a text-safe ramp (`bg-jewel-*-icon-top`, `copy-left`, `copy-top`, or `copy-center`). Same two brand stops per jewel; only angle or stop positions change. On stacked breakpoints, pair `copy-left` with `copy-top` so copy is not over the light stop (e.g. `max-sm:bg-jewel-purple-copy-top sm:bg-jewel-purple-copy-left`).
+- **Decorative jewel fills only:** `bg-grad-*` (150° default) for empty panels, placeholders, and art blocks with no text on the gradient.
 
 ## Standing rules
 
