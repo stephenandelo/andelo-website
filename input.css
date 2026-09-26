@@ -6,14 +6,14 @@
 
 /* Animation standards — see docs/animation-standards.md */
 :root {
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 0.8, 0.24, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --dur-fast: 150ms;
   --dur-base: 250ms;
   --dur-slow: 500ms;
 }
 
-@theme {
+@theme static {
   --breakpoint-sm: 721px;
   --breakpoint-md: 901px;
   --breakpoint-lg: 1201px;
@@ -87,15 +87,18 @@
   --font-body: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
 
-  --text-h1: clamp(40px, 4.6vw, 60px);
-  --text-h1--line-height: 1.04;
+  --text-h1: clamp(2.5rem, 5.2vw, 4rem);
+  --text-h1--line-height: 1.05;
   --text-h1--letter-spacing: -0.03em;
-  --text-h2: clamp(34px, 4.5vw, 54px);
-  --text-h2--line-height: 1.05;
+  --text-h1--font-weight: 700;
+  --text-h2: clamp(2rem, 4.2vw, 3.25rem);
+  --text-h2--line-height: 1.1;
   --text-h2--letter-spacing: -0.02em;
-  --text-h3: 21.5px;
+  --text-h2--font-weight: 700;
+  --text-h3: clamp(1.375rem, 2.1vw, 1.625rem);
   --text-h3--line-height: 1.25;
-  --text-h3--letter-spacing: -0.015em;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 700;
   --text-blog-h1: clamp(32px, 3.8vw, 50px);
   --text-blog-h1--line-height: 1.08;
   --text-blog-h1--letter-spacing: -0.03em;
@@ -106,8 +109,10 @@
   --text-rt-h3--line-height: 1.25;
   --text-base: 18px;
   --text-base--line-height: 1.6;
-  --text-lead: 19px;
-  --text-lead--line-height: 1.6;
+  --text-lead: clamp(1.125rem, 1.6vw, 1.3125rem);
+  --text-lead--line-height: 1.55;
+  --text-button: 17px;
+  --text-badge: 13px;
   --text-small: 16.5px;
   --text-small--line-height: 1.6;
   --text-body-lg: 19px;
@@ -164,8 +169,12 @@
 
   --shadow-btn: 0 14px 34px rgba(61, 230, 140, 0.28);
   --shadow-btn-hover: 0 18px 38px rgba(61, 230, 140, 0.34);
+  --shadow-btn-lg: 0 12px 30px rgba(0, 0, 0, 0.25);
   --shadow-card: 0 20px 44px rgba(0, 0, 0, 0.32);
   --shadow-panel: 0 20px 44px rgba(46, 95, 176, 0.28);
+  --shadow-lift: 0 36px 72px rgba(0, 0, 0, 0.46);
+  --shadow-table: 0 1px 2px rgba(24, 36, 28, 0.04), 0 14px 34px rgba(24, 36, 28, 0.05);
+  --shadow-field: 0 0 0 3px rgba(61, 230, 140, 0.16);
 
   --blur-card: 16px;
   --blur-glow: 28px;
@@ -179,7 +188,7 @@
   --background-image-grad-red: linear-gradient(150deg, #F26161, #B02E2E);
   --background-image-grad-navy: linear-gradient(160deg, #161B45, #0C0E28);
 
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 0.8, 0.24, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --default-transition-timing-function: var(--ease-out);
 
@@ -224,16 +233,40 @@ body {
 @layer components {
   .btn-mint {
     @apply inline-flex items-center justify-center gap-[10px] rounded-pill bg-brand text-brand-ink
-           font-bold shadow-btn transition-[transform,background,box-shadow] duration-fast;
+           font-bold px-[26px] py-[16px] text-button shadow-btn
+           transition-[transform,background,box-shadow] duration-fast;
   }
   .btn-mint-lg {
     @apply inline-flex items-center justify-center gap-[10px] rounded-pill bg-brand text-brand-ink
            font-bold px-[34px] py-[18px] text-lead
-           shadow-[0_12px_30px_rgba(0,0,0,.25)] transition-[transform,background,box-shadow] duration-fast;
+           shadow-btn-lg transition-[transform,background,box-shadow] duration-fast;
   }
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-[10px] rounded-pill border border-white/20
-           text-body font-semibold transition-[border-color,background,transform,color] duration-fast;
+           text-body font-semibold px-[26px] py-[16px] text-button
+           transition-[border-color,background,transform,color] duration-fast;
+  }
+  .btn-mint:disabled,
+  .btn-mint[aria-disabled="true"],
+  .btn-mint-lg:disabled,
+  .btn-mint-lg[aria-disabled="true"],
+  .btn-ghost:disabled,
+  .btn-ghost[aria-disabled="true"],
+  .btn-light:disabled,
+  .btn-light[aria-disabled="true"] {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+  .badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: var(--text-badge);
+    color: var(--color-body-strong);
   }
   .btn-light {
     @apply inline-flex items-center justify-center gap-[9px] px-[22px] py-[12px] rounded-pill
@@ -464,7 +497,7 @@ body {
   .cs-in{width:76px;padding:7px 9px;border:1px solid #D7DBE3;border-radius:8px;font:inherit;font-size:15px;color:#14161C;background:#fff;font-variant-numeric:tabular-nums;}
   .cs-in.cs-in-text{width:100%;min-width:130px;}
   .cs-in:focus{outline:2px solid #3DE68C;outline-offset:1px;border-color:#3DE68C;}
-  .cs-tbl{overflow-x:auto;border:1px solid #E8E4DC;border-radius:20px;background:#fff;box-shadow:0 1px 2px rgba(24,36,28,.04),0 14px 34px rgba(24,36,28,.05);margin:28px 0 12px;}
+  .cs-tbl{overflow-x:auto;border:1px solid #E8E4DC;border-radius:20px;background:#fff;box-shadow:var(--shadow-table);margin:28px 0 12px;}
   .cs-tbl table{width:100%;border-collapse:collapse;font-size:14.5px;}
   .cs-tbl thead th{background:#161B45;color:#EEF0FF;font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;padding:15px 18px;text-align:left;white-space:nowrap;}
   .cs-tbl tbody td{padding:14px 18px;border-bottom:1px solid #EFEBE4;vertical-align:top;color:#3D4048;line-height:1.55;}
@@ -473,13 +506,13 @@ body {
   .cs-tbl td:first-child{color:#14161C;font-weight:500;}
   .cs-tbl tfoot td{padding:14px 18px;border-top:1px solid #E3EDE5;background:#F1F7F2;font-weight:700;color:#14161C;}
   .cs-num{color:#0E7A43;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;}
-  .cs-rm{margin-left:10px;width:24px;height:24px;border-radius:50%;border:1.5px solid #C9CED8;background:#fff;padding:0;cursor:pointer;vertical-align:middle;display:inline-flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;}
+  .cs-rm{margin-left:10px;width:24px;height:24px;border-radius:50%;border:1.5px solid #C9CED8;background:#fff;padding:0;cursor:pointer;vertical-align:middle;display:inline-flex;align-items:center;justify-content:center;transition:border-color .2s var(--ease-out),background .2s var(--ease-out);}
   .cs-rm:hover{border-color:#BE3826;background:#FCE7E4;}
   .cs-gapformula.is-short{background:rgba(242,97,97,.16)!important;border-color:rgba(242,97,97,.45)!important;}
   .cs-gapformula.is-spare{background:rgba(61,230,140,.14)!important;border-color:rgba(61,230,140,.42)!important;}
   .cs-gap .cs-in{background:rgba(0,0,0,.22);border-color:rgba(255,255,255,.28);color:#fff;width:62px;padding:4px 7px;}
   /* Step rail */
-  .cs-side{opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .cs-side{opacity:0;pointer-events:none;transition:opacity .3s var(--ease-out);}
   .cs-side.is-on{opacity:1;pointer-events:auto;}
   .cs-side a.is-active{color:#F6F8FF!important;}
   .cs-side a.is-active .cs-side-n{background:#3DE68C;color:#04160C;border-color:#3DE68C;}
@@ -573,12 +606,12 @@ body {
   /* Design brief builder */
   /* Brief Builder form on paper. Component CSS: form controls + states. */
   .bt-light{color-scheme:light;}
-  .bt-in{width:100%;padding:14px 16px;border:1.5px solid #D4D9E6;border-radius:14px;background:#fff;color:#12141C;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:15px;line-height:1.5;transition:border-color .18s,box-shadow .18s;}
-  .bt-in:focus{outline:none;border-color:#3DE68C;box-shadow:0 0 0 3px rgba(61,230,140,.16);}
+  .bt-in{width:100%;padding:14px 16px;border:1.5px solid #D4D9E6;border-radius:14px;background:#fff;color:#12141C;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:15px;line-height:1.5;transition:border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);}
+  .bt-in:focus{outline:none;border-color:#3DE68C;box-shadow:var(--shadow-field);}
   .bt-in::placeholder{color:#9AA0B2;opacity:1;}
   textarea.bt-in{resize:vertical;min-height:52px;}
   .bt-in.bt-bad,.bt-bad{border-color:#F26161!important;}
-  .bt-seg label{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:500;font-size:14px;padding:11px 16px;border:1.5px solid #D4D9E6;border-radius:100px;cursor:pointer;transition:all .15s;margin:0;position:relative;}
+  .bt-seg label{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:500;font-size:14px;padding:11px 16px;border:1.5px solid #D4D9E6;border-radius:100px;cursor:pointer;transition:all .15s var(--ease-out);margin:0;position:relative;}
   .bt-seg label span{display:block;color:#3D4048;}
   .bt-seg input{position:absolute;opacity:0;pointer-events:none;}
   .bt-seg label:has(input:checked){background:#3DE68C;border-color:#3DE68C;}
@@ -586,7 +619,7 @@ body {
   #bt-firm{appearance:none;-webkit-appearance:none;width:20px;height:20px;margin:0;border:1.5px solid #C2C8D6;border-radius:6px;background:#fff;position:relative;flex:none;cursor:pointer;}
   #bt-firm:checked{background:#3DE68C;border-color:#3DE68C;}
   #bt-firm:checked::after{content:"";position:absolute;left:50%;top:46%;width:5px;height:9.5px;border:solid #04160C;border-width:0 2.4px 2.4px 0;transform:translate(-50%,-50%) rotate(45deg);}
-  .bt-cal button.day{height:36px;border-radius:10px;border:1px solid transparent;background:transparent;color:#12141C;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:background .15s,border-color .15s;}
+  .bt-cal button.day{height:36px;border-radius:10px;border:1px solid transparent;background:transparent;color:#12141C;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:background .15s var(--ease-out),border-color .15s var(--ease-out);}
   .bt-cal button.day:hover:not(:disabled):not(.sel){background:rgba(61,230,140,.16);}
   .bt-cal button.day.today{border-color:#C9CFDD;}
   .bt-cal button.day.sel{background:#3DE68C;border-color:#3DE68C;color:#04160C;font-weight:700;}
@@ -615,14 +648,14 @@ body {
 
   /* Work portfolio tiles */
   /* Portfolio tile hover choreography */
-  [data-tile] .tile-img,[data-tile] .tile-glow{transition:transform .5s cubic-bezier(.16,.8,.24,1);}
+  [data-tile] .tile-img,[data-tile] .tile-glow{transition:transform .5s var(--ease-out);}
   [data-tile]:hover .tile-img{transform:scale(1.14);}
   [data-tile]:hover .tile-glow{transform:scale(1.3);}
-  [data-tile] .tile-scrim{opacity:0;transition:opacity .35s ease;}
+  [data-tile] .tile-scrim{opacity:0;transition:opacity .35s var(--ease-out);}
   [data-tile]:hover .tile-scrim{opacity:1;}
-  [data-tile] .tile-cap{transform:translateY(14px);opacity:0;transition:transform .35s cubic-bezier(.16,.8,.24,1),opacity .35s ease;}
+  [data-tile] .tile-cap{transform:translateY(14px);opacity:0;transition:transform .35s var(--ease-out),opacity .35s var(--ease-out);}
   [data-tile]:hover .tile-cap{transform:none;opacity:1;}
-  [data-tile] .tile-arrow{opacity:0;transform:translate(-6px,6px);transition:all .35s ease;}
+  [data-tile] .tile-arrow{opacity:0;transform:translate(-6px,6px);transition:all .35s var(--ease-out);}
   [data-tile]:hover .tile-arrow{opacity:1;transform:none;}
   [data-tabs]{scrollbar-width:none;} [data-tabs]::-webkit-scrollbar{display:none;}
 
@@ -631,7 +664,7 @@ body {
   input[type=number]{-moz-appearance:textfield;appearance:textfield;}
 
   /* Case study video hover */
-  [data-video] .hero-vid-img{transition:transform .55s cubic-bezier(.16,.8,.24,1);}
+  [data-video] .hero-vid-img{transition:transform .55s var(--ease-out);}
   [data-video]:hover .hero-vid-img{transform:scale(1.07);}
 
   /* Careers listing hover */
@@ -639,8 +672,8 @@ body {
   [data-job]:hover .job-go{color:#3DE68C;border-color:#3DE68C;background:rgba(61,230,140,.12);}
 
   /* Why page video modal */
-  [data-vmodal]{transition:opacity .25s ease;}
-  [data-vpanel]{transition:transform .3s cubic-bezier(.16,.8,.24,1);}
+  [data-vmodal]{transition:opacity .25s var(--ease-out);}
+  [data-vpanel]{transition:transform .3s var(--ease-out);}
 }
 
 @keyframes pulseGlow {
@@ -763,7 +796,12 @@ body {
   transition: transform var(--dur-slow) var(--ease-out);
 }
 
-/* Focus rings */
+/* Focus rings. Mint on dark. Canvas ink on paper, where mint is only 1.6:1. */
+a:focus-visible,
+button:focus-visible,
+.chip:focus-visible,
+.bt-in:focus-visible,
+[tabindex]:focus-visible,
 .btn-mint:focus-visible,
 .btn-ghost:focus-visible,
 .btn-mint-lg:focus-visible,
@@ -774,9 +812,10 @@ body {
 .card-glass:focus-visible {
   transform: translateY(-4px);
 }
-.rt a:focus-visible,
-.btn-light:focus-visible {
-  outline: 2px solid var(--color-brand-onWhite);
+.btn-light:focus-visible,
+.bt-in:focus-visible,
+.rt a:focus-visible {
+  outline: 2px solid #0A0C22;
   outline-offset: 3px;
 }
 
@@ -788,16 +827,16 @@ html:not(.js) .reveal-atf {
 }
 
 @media (hover: hover) {
-  .btn-mint:hover {
+  .btn-mint:hover:not(:disabled):not([aria-disabled="true"]) {
     background-color: var(--color-brand-hover);
     box-shadow: var(--shadow-btn-hover);
     transform: translateY(-2px);
   }
-  .btn-light:hover {
+  .btn-light:hover:not(:disabled):not([aria-disabled="true"]) {
     background-color: var(--color-paper-muted);
     border-color: var(--color-hairline-light);
   }
-  .btn-ghost:hover {
+  .btn-ghost:hover:not(:disabled):not([aria-disabled="true"]) {
     background-color: rgba(61, 230, 140, 0.14);
     border-color: var(--color-brand);
     color: #fff;
@@ -817,7 +856,7 @@ html:not(.js) .reveal-atf {
   }
   .hover-lift-5:hover {
     transform: translateY(-5px);
-    box-shadow: 0 36px 72px rgba(0, 0, 0, 0.46);
+    box-shadow: var(--shadow-lift);
   }
   .hover-lift-3:hover {
     transform: translateY(-3px);
@@ -851,6 +890,11 @@ html:not(.js) .reveal-atf {
   }
 }
 
+@source inline("duration-base");
+@utility duration-base {
+  transition-duration: var(--dur-base);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -876,7 +920,9 @@ html:not(.js) .reveal-atf {
   .btn-mint:hover,
   .btn-mint-lg:hover,
   .btn-ghost:hover,
-  .card-glass:hover {
+  .card-glass:hover,
+  .hover-lift-5:hover,
+  .hover-lift-3:hover {
     transform: none !important;
   }
   [data-ambient],
