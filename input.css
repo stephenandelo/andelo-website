@@ -245,6 +245,28 @@ body {
            font-bold px-[34px] py-[18px] text-lead
            shadow-btn-lg transition-[transform,background,box-shadow] duration-fast;
   }
+  .btn-mint-sm {
+    @apply inline-flex items-center justify-center gap-[10px] rounded-pill bg-brand text-brand-ink
+           font-bold px-[20px] py-[11px] shadow-btn
+           transition-[transform,background,box-shadow] duration-fast;
+    font-size: 16px;
+  }
+  .btn-play {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 24px 9px 13px;
+    border-radius: var(--radius-pill);
+    background: rgba(10, 12, 34, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  }
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-[10px] rounded-pill border border-white/20
            text-body font-semibold px-[26px] py-[16px] text-button
@@ -254,6 +276,8 @@ body {
   .btn-mint[aria-disabled="true"],
   .btn-mint-lg:disabled,
   .btn-mint-lg[aria-disabled="true"],
+  .btn-mint-sm:disabled,
+  .btn-mint-sm[aria-disabled="true"],
   .btn-ghost:disabled,
   .btn-ghost[aria-disabled="true"],
   .btn-light:disabled,
@@ -818,6 +842,8 @@ button:focus-visible,
 .btn-mint:focus-visible,
 .btn-ghost:focus-visible,
 .btn-mint-lg:focus-visible,
+.btn-mint-sm:focus-visible,
+.btn-play:focus-visible,
 .card-glass:focus-visible {
   outline: 2px solid var(--color-brand);
   outline-offset: 3px;
@@ -840,7 +866,8 @@ html:not(.js) .reveal-atf {
 }
 
 @media (hover: hover) {
-  .btn-mint:hover:not(:disabled):not([aria-disabled="true"]) {
+  .btn-mint:hover:not(:disabled):not([aria-disabled="true"]),
+  .btn-mint-sm:hover:not(:disabled):not([aria-disabled="true"]) {
     background-color: var(--color-brand-hover);
     box-shadow: var(--shadow-btn-hover);
     transform: translateY(-2px);
@@ -925,6 +952,7 @@ html:not(.js) .reveal-atf {
   .reveal,
   .btn-mint,
   .btn-mint-lg,
+  .btn-mint-sm,
   .btn-ghost,
   .btn-light,
   .card-glass {
@@ -932,6 +960,7 @@ html:not(.js) .reveal-atf {
   }
   .btn-mint:hover,
   .btn-mint-lg:hover,
+  .btn-mint-sm:hover,
   .btn-ghost:hover,
   .card-glass:hover,
   .hover-lift-5:hover,

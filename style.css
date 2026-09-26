@@ -1684,9 +1684,6 @@
   .bg-\[rgba\(10\,12\,34\,\.9\)\] {
     background-color: rgba(10,12,34,.9);
   }
-  .bg-\[rgba\(10\,12\,34\,\.62\)\] {
-    background-color: rgba(10,12,34,.62);
-  }
   .bg-\[rgba\(61\,230\,140\,\.14\)\] {
     background-color: rgba(61,230,140,.14);
   }
@@ -2053,9 +2050,6 @@
   .px-\[34px\] {
     padding-inline: 34px;
   }
-  .px-\[36px\] {
-    padding-inline: 36px;
-  }
   .px-\[40px\] {
     padding-inline: 40px;
   }
@@ -2251,9 +2245,6 @@
   .pt-section-sm {
     padding-top: var(--spacing-section-sm);
   }
-  .pr-4 {
-    padding-right: var(--spacing-4);
-  }
   .pr-\[14px\] {
     padding-right: 14px;
   }
@@ -2326,9 +2317,6 @@
   .pl-\[12px\] {
     padding-left: 12px;
   }
-  .pl-\[13px\] {
-    padding-left: 13px;
-  }
   .text-center {
     text-align: center;
   }
@@ -2378,10 +2366,6 @@
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
-  }
-  .text-body-lg {
-    font-size: var(--text-body-lg);
-    line-height: var(--tw-leading, var(--text-body-lg--line-height));
   }
   .text-caption {
     font-size: var(--text-caption);
@@ -2958,10 +2942,6 @@
     --tw-shadow: 0 1px 2px var(--tw-shadow-color, rgba(24,36,28,.04));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .shadow-\[0_8px_22px_rgba\(61\,230\,140\,\.28\)\] {
-    --tw-shadow: 0 8px 22px var(--tw-shadow-color, rgba(61,230,140,.28));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-\[0_10px_24px_rgba\(0\,0\,0\,\.35\)\] {
     --tw-shadow: 0 10px 24px var(--tw-shadow-color, rgba(0,0,0,.35));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -3166,11 +3146,6 @@
   }
   .transition-\[background\,color\] {
     transition-property: background,color;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .transition-\[background\,transform\,color\] {
-    transition-property: background,transform,color;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -4001,6 +3976,43 @@ html, body {
     --tw-duration: var(--transition-duration-fast);
     transition-duration: var(--transition-duration-fast);
   }
+  .btn-mint-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: var(--radius-pill);
+    background-color: var(--color-brand);
+    padding-inline: 20px;
+    padding-block: 11px;
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-brand-ink);
+    --tw-shadow: 0 8px 22px var(--tw-shadow-color, rgba(61, 230, 140, 0.28));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    transition-property: transform,background,box-shadow;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: var(--transition-duration-fast);
+    transition-duration: var(--transition-duration-fast);
+    font-size: 16px;
+  }
+  .btn-play {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 24px 9px 13px;
+    border-radius: var(--radius-pill);
+    background: rgba(10, 12, 34, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  }
   .btn-ghost {
     display: inline-flex;
     align-items: center;
@@ -4025,7 +4037,7 @@ html, body {
     --tw-duration: var(--transition-duration-fast);
     transition-duration: var(--transition-duration-fast);
   }
-  .btn-mint:disabled, .btn-mint[aria-disabled="true"], .btn-mint-lg:disabled, .btn-mint-lg[aria-disabled="true"], .btn-ghost:disabled, .btn-ghost[aria-disabled="true"], .btn-light:disabled, .btn-light[aria-disabled="true"] {
+  .btn-mint:disabled, .btn-mint[aria-disabled="true"], .btn-mint-lg:disabled, .btn-mint-lg[aria-disabled="true"], .btn-mint-sm:disabled, .btn-mint-sm[aria-disabled="true"], .btn-ghost:disabled, .btn-ghost[aria-disabled="true"], .btn-light:disabled, .btn-light[aria-disabled="true"] {
     opacity: 0.45;
     cursor: not-allowed;
     box-shadow: none;
@@ -5065,7 +5077,7 @@ html, body {
 .ts-zoom {
   transition: transform var(--dur-slow) var(--ease-out);
 }
-a:focus-visible, button:focus-visible, .chip:focus-visible, .field:focus-visible, [tabindex]:focus-visible, .btn-mint:focus-visible, .btn-ghost:focus-visible, .btn-mint-lg:focus-visible, .card-glass:focus-visible {
+a:focus-visible, button:focus-visible, .chip:focus-visible, .field:focus-visible, [tabindex]:focus-visible, .btn-mint:focus-visible, .btn-ghost:focus-visible, .btn-mint-lg:focus-visible, .btn-mint-sm:focus-visible, .btn-play:focus-visible, .card-glass:focus-visible {
   outline: 2px solid var(--color-brand);
   outline-offset: 3px;
 }
@@ -5081,7 +5093,7 @@ html:not(.js) .reveal, html:not(.js) .reveal-atf {
   transform: none;
 }
 @media (hover: hover) {
-  .btn-mint:hover:not(:disabled):not([aria-disabled="true"]) {
+  .btn-mint:hover:not(:disabled):not([aria-disabled="true"]), .btn-mint-sm:hover:not(:disabled):not([aria-disabled="true"]) {
     background-color: var(--color-brand-hover);
     box-shadow: var(--shadow-btn-hover);
     transform: translateY(-2px);
@@ -5153,10 +5165,10 @@ html:not(.js) .reveal, html:not(.js) .reveal-atf {
     opacity: 1 !important;
     transform: none !important;
   }
-  .reveal, .btn-mint, .btn-mint-lg, .btn-ghost, .btn-light, .card-glass {
+  .reveal, .btn-mint, .btn-mint-lg, .btn-mint-sm, .btn-ghost, .btn-light, .card-glass {
     transition: none !important;
   }
-  .btn-mint:hover, .btn-mint-lg:hover, .btn-ghost:hover, .card-glass:hover, .hover-lift-5:hover, .hover-lift-3:hover {
+  .btn-mint:hover, .btn-mint-lg:hover, .btn-mint-sm:hover, .btn-ghost:hover, .card-glass:hover, .hover-lift-5:hover, .hover-lift-3:hover {
     transform: none !important;
   }
   [data-ambient], .animate-pulse-glow, .animate-marquee, .animate-hero-float {

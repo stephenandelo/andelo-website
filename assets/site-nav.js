@@ -99,7 +99,7 @@
       '<a href="/" class="flex items-center flex-none" aria-label="Andelo home">' + LOGO + '</a>' +
       '<div class="hidden md:flex gap-gutter items-center">' + primaryLinks(false) + '</div>' +
       '<div class="flex items-center gap-4">' +
-        '<a href="/book-a-call/" class="hidden md:inline-flex btn-mint px-[20px] py-[11px] text-[16px] shadow-[0_8px_22px_rgba(61,230,140,.28)]' +
+        '<a href="/book-a-call/" class="hidden md:inline-flex btn-mint-sm' +
           (isActive(['/book-a-call']) ? ' ring-2 ring-brand/40' : '') + '">Book a call</a>' +
         '<button type="button" data-menu-btn class="md:hidden w-[44px] h-[44px] rounded-full border border-white/[.14] flex flex-col items-center justify-center gap-[5px] transition-colors duration-fast" aria-label="Open menu" aria-expanded="false" aria-controls="site-mobile-nav">' +
           '<span data-bar class="w-[18px] h-[2px] bg-body rounded-full origin-center"></span>' +
@@ -113,7 +113,7 @@
         '<div class="px-gutter py-4 flex flex-col gap-3">' +
         primaryLinks(true) +
         '<div class="border-t border-hairline pt-3 mt-2">' + mobileExtraLinks() + '</div>' +
-        '<a href="/book-a-call/" class="mt-2 btn-mint w-full px-[20px] py-[11px] text-[16px] shadow-[0_8px_22px_rgba(61,230,140,.28)]">Book a call</a>' +
+        '<a href="/book-a-call/" class="mt-2 btn-mint-sm w-full">Book a call</a>' +
       '</div></div>' +
     '</div>' +
     '</nav>';
