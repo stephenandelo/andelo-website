@@ -254,6 +254,7 @@
   --blur-glow: 28px;
 
   --background-image-grad-mint: linear-gradient(150deg, #3DE68C, #12A566);
+  /* Default jewel ramps (decorative / empty panels) */
   --background-image-grad-blue: linear-gradient(150deg, #61A5F2, #2E5FB0);
   --background-image-grad-indigo: linear-gradient(150deg, #6170F2, #2E38B0);
   --background-image-grad-purple: linear-gradient(150deg, #A661F2, #6E2EB0);
@@ -261,6 +262,19 @@
   --background-image-grad-pink: linear-gradient(150deg, #F2619E, #B02E5E);
   --background-image-grad-red: linear-gradient(150deg, #F26161, #B02E2E);
   --background-image-grad-navy: linear-gradient(160deg, #161B45, #0C0E28);
+  /* Text-safe jewel ramps: light stop toward icons / empty edge only */
+  --background-image-jewel-purple-icon-top: linear-gradient(180deg, #A661F2 0%, #6E2EB0 58%);
+  --background-image-jewel-purple-copy-left: linear-gradient(90deg, #6E2EB0 0%, #6E2EB0 46%, #A661F2 100%);
+  --background-image-jewel-purple-copy-center: linear-gradient(180deg, #A661F2 0%, #6E2EB0 40%, #6E2EB0 100%);
+  --background-image-jewel-blue-icon-top: linear-gradient(180deg, #61A5F2 0%, #2E5FB0 55%);
+  --background-image-jewel-indigo-icon-top: linear-gradient(180deg, #6170F2 0%, #2E38B0 55%);
+  --background-image-jewel-indigo-copy-left: linear-gradient(90deg, #2E38B0 0%, #2E38B0 46%, #6170F2 100%);
+  --background-image-jewel-indigo-copy-top: linear-gradient(180deg, #2E38B0 0%, #2E38B0 68%, #6170F2 100%);
+  --background-image-jewel-indigo-icon-top-a6: linear-gradient(180deg, #6170F2 0%, #2E38A6 55%);
+  --background-image-jewel-red-copy-left: linear-gradient(90deg, #B02E2E 0%, #B02E2E 42%, #F26161 100%);
+  --background-image-jewel-pink-icon-top: linear-gradient(180deg, #F2619E 0%, #B02E5E 55%);
+  --background-image-jewel-magenta-icon-top: linear-gradient(180deg, #E161F2 0%, #B02EAE 55%);
+  --background-image-jewel-red-icon-top: linear-gradient(180deg, #F26161 0%, #B02E2E 55%);
 
   --ease-out: cubic-bezier(0.16, 0.8, 0.24, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
