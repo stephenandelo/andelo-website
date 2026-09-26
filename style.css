@@ -163,7 +163,7 @@
     --spacing-hero-offset: 150px;
     --radius-card: 20px;
     --radius-pill: 999px;
-    --shadow-btn: 0 8px 22px rgba(61, 230, 140, 0.28);
+    --shadow-btn: 0 14px 34px rgba(61, 230, 140, 0.28);
     --shadow-btn-hover: 0 18px 38px rgba(61, 230, 140, 0.34);
     --shadow-btn-lg: 0 12px 30px rgba(0, 0, 0, 0.25);
     --shadow-card: 0 20px 44px rgba(0, 0, 0, 0.32);
@@ -3070,7 +3070,7 @@
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-btn {
-    --tw-shadow: 0 8px 22px var(--tw-shadow-color, rgba(61, 230, 140, 0.28));
+    --tw-shadow: 0 14px 34px var(--tw-shadow-color, rgba(61, 230, 140, 0.28));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-card {
@@ -3957,7 +3957,7 @@ html, body {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
     color: var(--color-brand-ink);
-    --tw-shadow: 0 8px 22px var(--tw-shadow-color, rgba(61, 230, 140, 0.28));
+    --tw-shadow: 0 14px 34px var(--tw-shadow-color, rgba(61, 230, 140, 0.28));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     transition-property: transform,background,box-shadow;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -3998,7 +3998,7 @@ html, body {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
     color: var(--color-brand-ink);
-    --tw-shadow: 0 8px 22px var(--tw-shadow-color, rgba(61, 230, 140, 0.28));
+    --tw-shadow: 0 14px 34px var(--tw-shadow-color, rgba(61, 230, 140, 0.28));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     transition-property: transform,background,box-shadow;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
