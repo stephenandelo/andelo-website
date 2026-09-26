@@ -1,0 +1,751 @@
+{
+  "00df3741.png": {
+    "next": "00df3741.png",
+    "w": 962,
+    "h": 722,
+    "bytes": 115548,
+    "transparent": true
+  },
+  "564ec181.webp": {
+    "next": "564ec181.webp",
+    "w": 1600,
+    "h": 900,
+    "bytes": 52396,
+    "transparent": false
+  },
+  "7788f60a.webp": {
+    "next": "7788f60a.webp",
+    "w": 1600,
+    "h": 900,
+    "bytes": 64872,
+    "transparent": false
+  },
+  "aa2492ea.webp": {
+    "next": "aa2492ea.webp",
+    "w": 1600,
+    "h": 900,
+    "bytes": 54810,
+    "transparent": false
+  },
+  "blog-complete-brief.webp": {
+    "next": "blog-complete-brief.webp",
+    "w": 677,
+    "h": 400,
+    "bytes": 18974,
+    "transparent": false
+  },
+  "blog-design-hours-cta.png": {
+    "next": "blog-design-hours-cta.png",
+    "w": 577,
+    "h": 400,
+    "bytes": 50327,
+    "transparent": true
+  },
+  "blog-design-subscription.webp": {
+    "next": "blog-design-subscription.webp",
+    "w": 1280,
+    "h": 711,
+    "bytes": 40004,
+    "transparent": false
+  },
+  "blog-designer-level.webp": {
+    "next": "blog-designer-level.webp",
+    "w": 711,
+    "h": 400,
+    "bytes": 21794,
+    "transparent": false
+  },
+  "blog-good-output-good-input.webp": {
+    "next": "blog-good-output-good-input.webp",
+    "w": 1440,
+    "h": 851,
+    "bytes": 97770,
+    "transparent": false
+  },
+  "blog-hours-blow-out.webp": {
+    "next": "blog-hours-blow-out.webp",
+    "w": 1024,
+    "h": 550,
+    "bytes": 20312,
+    "transparent": false
+  },
+  "blog-how-long-design-takes.webp": {
+    "next": "blog-how-long-design-takes.webp",
+    "w": 748,
+    "h": 400,
+    "bytes": 17516,
+    "transparent": false
+  },
+  "blog-instruction-vs-direction.webp": {
+    "next": "blog-instruction-vs-direction.webp",
+    "w": 1440,
+    "h": 759,
+    "bytes": 24894,
+    "transparent": false
+  },
+  "blog-outsource-vs-inhouse.webp": {
+    "next": "blog-outsource-vs-inhouse.webp",
+    "w": 675,
+    "h": 400,
+    "bytes": 11200,
+    "transparent": false
+  },
+  "capacity-calculator-hero.png": {
+    "next": "capacity-calculator-hero.png",
+    "w": 313,
+    "h": 272,
+    "bytes": 10907,
+    "transparent": true
+  },
+  "capacity-cta-panel.png": {
+    "next": "capacity-cta-panel.png",
+    "w": 597,
+    "h": 414,
+    "bytes": 52729,
+    "transparent": true
+  },
+  "capacity-formula-hero.png": {
+    "next": "capacity-formula-hero.png",
+    "w": 540,
+    "h": 512,
+    "bytes": 76178,
+    "transparent": true
+  },
+  "careers-hero.png": {
+    "next": "careers-hero.png",
+    "w": 313,
+    "h": 272,
+    "bytes": 10907,
+    "transparent": true
+  },
+  "hero-collage.png": {
+    "next": "hero-collage.png",
+    "w": 1008,
+    "h": 1050,
+    "bytes": 193287,
+    "transparent": true
+  },
+  "home-hannah.webp": {
+    "next": "home-hannah.webp",
+    "w": 840,
+    "h": 473,
+    "bytes": 20684,
+    "transparent": false
+  },
+  "icon-brief.webp": {
+    "next": "icon-brief.webp",
+    "w": 156,
+    "h": 156,
+    "bytes": 360,
+    "transparent": false
+  },
+  "icon-calculator.webp": {
+    "next": "icon-calculator.webp",
+    "w": 156,
+    "h": 156,
+    "bytes": 612,
+    "transparent": false
+  },
+  "icon-consistent.png": {
+    "next": "icon-consistent.png",
+    "w": 116,
+    "h": 100,
+    "bytes": 2510,
+    "transparent": true
+  },
+  "icon-effortless.png": {
+    "next": "icon-effortless.png",
+    "w": 64,
+    "h": 58,
+    "bytes": 1523,
+    "transparent": true
+  },
+  "icon-reliable.png": {
+    "next": "icon-reliable.png",
+    "w": 58,
+    "h": 64,
+    "bytes": 1345,
+    "transparent": true
+  },
+  "icon-senior.png": {
+    "next": "icon-senior.png",
+    "w": 53,
+    "h": 59,
+    "bytes": 2354,
+    "transparent": true
+  },
+  "icon-who-agencies.png": {
+    "next": "icon-who-agencies.png",
+    "w": 64,
+    "h": 64,
+    "bytes": 1830,
+    "transparent": true
+  },
+  "icon-who-no-designer.png": {
+    "next": "icon-who-no-designer.png",
+    "w": 64,
+    "h": 64,
+    "bytes": 1387,
+    "transparent": true
+  },
+  "icon-who-overloaded.png": {
+    "next": "icon-who-overloaded.png",
+    "w": 64,
+    "h": 64,
+    "bytes": 1750,
+    "transparent": true
+  },
+  "icon-why-digital-ads.png": {
+    "next": "icon-why-digital-ads.png",
+    "w": 48,
+    "h": 48,
+    "bytes": 1153,
+    "transparent": true
+  },
+  "icon-why-presentations.png": {
+    "next": "icon-why-presentations.png",
+    "w": 48,
+    "h": 48,
+    "bytes": 1341,
+    "transparent": true
+  },
+  "icon-why-reports-documents.png": {
+    "next": "icon-why-reports-documents.png",
+    "w": 48,
+    "h": 48,
+    "bytes": 1020,
+    "transparent": true
+  },
+  "icon-why-social-graphics.png": {
+    "next": "icon-why-social-graphics.png",
+    "w": 48,
+    "h": 48,
+    "bytes": 1179,
+    "transparent": true
+  },
+  "lead-magnet-hero-capacity.png": {
+    "next": "lead-magnet-hero-capacity.png",
+    "w": 540,
+    "h": 512,
+    "bytes": 76178,
+    "transparent": true
+  },
+  "maskco-hannah.webp": {
+    "next": "maskco-hannah.webp",
+    "w": 840,
+    "h": 473,
+    "bytes": 20684,
+    "transparent": false
+  },
+  "oren-hero.webp": {
+    "next": "oren-hero.webp",
+    "w": 840,
+    "h": 473,
+    "bytes": 23358,
+    "transparent": false
+  },
+  "resources-hero.png": {
+    "next": "resources-hero.png",
+    "w": 544,
+    "h": 571,
+    "bytes": 88348,
+    "transparent": true
+  },
+  "service-3d.webp": {
+    "next": "service-3d.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 19436,
+    "transparent": false
+  },
+  "service-campaign-artwork.webp": {
+    "next": "service-campaign-artwork.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 30446,
+    "transparent": false
+  },
+  "service-email.webp": {
+    "next": "service-email.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 47636,
+    "transparent": false
+  },
+  "service-presentations.webp": {
+    "next": "service-presentations.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 33282,
+    "transparent": false
+  },
+  "service-print.webp": {
+    "next": "service-print.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 34418,
+    "transparent": false
+  },
+  "service-reports.webp": {
+    "next": "service-reports.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 37006,
+    "transparent": false
+  },
+  "service-social-media.webp": {
+    "next": "service-social-media.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 27962,
+    "transparent": false
+  },
+  "service-web-graphics.webp": {
+    "next": "service-web-graphics.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 64240,
+    "transparent": false
+  },
+  "speedfit-matej.webp": {
+    "next": "speedfit-matej.webp",
+    "w": 840,
+    "h": 473,
+    "bytes": 24776,
+    "transparent": false
+  },
+  "stephen-andelo.webp": {
+    "next": "stephen-andelo.webp",
+    "w": 120,
+    "h": 120,
+    "bytes": 2884,
+    "transparent": false
+  },
+  "trusted-bridgit.png": {
+    "next": "trusted-bridgit.png",
+    "w": 142,
+    "h": 48,
+    "bytes": 1622,
+    "transparent": true
+  },
+  "trusted-butcher-crowd.png": {
+    "next": "trusted-butcher-crowd.png",
+    "w": 247,
+    "h": 52,
+    "bytes": 2142,
+    "transparent": true
+  },
+  "trusted-fitness-cartel.png": {
+    "next": "trusted-fitness-cartel.png",
+    "w": 298,
+    "h": 56,
+    "bytes": 3513,
+    "transparent": true
+  },
+  "trusted-goodwill.png": {
+    "next": "trusted-goodwill.png",
+    "w": 169,
+    "h": 64,
+    "bytes": 3186,
+    "transparent": true
+  },
+  "trusted-mask.png": {
+    "next": "trusted-mask.png",
+    "w": 288,
+    "h": 56,
+    "bytes": 2796,
+    "transparent": true
+  },
+  "trusted-scope.png": {
+    "next": "trusted-scope.png",
+    "w": 144,
+    "h": 60,
+    "bytes": 2408,
+    "transparent": true
+  },
+  "trusted-speedfit.png": {
+    "next": "trusted-speedfit.png",
+    "w": 236,
+    "h": 44,
+    "bytes": 2052,
+    "transparent": true
+  },
+  "trusted-ungc.png": {
+    "next": "trusted-ungc.png",
+    "w": 243,
+    "h": 72,
+    "bytes": 4768,
+    "transparent": true
+  },
+  "why-consistent.png": {
+    "next": "why-consistent.png",
+    "w": 128,
+    "h": 128,
+    "bytes": 3875,
+    "transparent": true
+  },
+  "why-founder.webp": {
+    "next": "why-founder.webp",
+    "w": 330,
+    "h": 396,
+    "bytes": 7236,
+    "transparent": false
+  },
+  "why-matej-avatar.webp": {
+    "next": "why-matej-avatar.webp",
+    "w": 104,
+    "h": 59,
+    "bytes": 1608,
+    "transparent": false
+  },
+  "work-3d.webp": {
+    "next": "work-3d.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 19436,
+    "transparent": false
+  },
+  "work-campaign.webp": {
+    "next": "work-campaign.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 30446,
+    "transparent": false
+  },
+  "work-case-maskco.webp": {
+    "next": "work-case-maskco.webp",
+    "w": 714,
+    "h": 420,
+    "bytes": 29624,
+    "transparent": false
+  },
+  "work-case-oren.webp": {
+    "next": "work-case-oren.webp",
+    "w": 714,
+    "h": 420,
+    "bytes": 20674,
+    "transparent": false
+  },
+  "work-case-speedfit.webp": {
+    "next": "work-case-speedfit.webp",
+    "w": 714,
+    "h": 420,
+    "bytes": 46496,
+    "transparent": false
+  },
+  "work-digital-ads.webp": {
+    "next": "work-digital-ads.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 64240,
+    "transparent": false
+  },
+  "work-email-fc-supps.webp": {
+    "next": "work-email-fc-supps.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 19476,
+    "transparent": false
+  },
+  "work-email-fc-wrapped.webp": {
+    "next": "work-email-fc-wrapped.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 35120,
+    "transparent": false
+  },
+  "work-email-mask-apricot.webp": {
+    "next": "work-email-mask-apricot.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 33020,
+    "transparent": false
+  },
+  "work-email-mask-bf.webp": {
+    "next": "work-email-mask-bf.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 22186,
+    "transparent": false
+  },
+  "work-email-mask-eofy.webp": {
+    "next": "work-email-mask-eofy.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 20472,
+    "transparent": false
+  },
+  "work-email-mask-incense.webp": {
+    "next": "work-email-mask-incense.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 18518,
+    "transparent": false
+  },
+  "work-email-mask-store.webp": {
+    "next": "work-email-mask-store.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 21800,
+    "transparent": false
+  },
+  "work-email-mask-xmas.webp": {
+    "next": "work-email-mask-xmas.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 21488,
+    "transparent": false
+  },
+  "work-email-merse.webp": {
+    "next": "work-email-merse.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 13766,
+    "transparent": false
+  },
+  "work-email.webp": {
+    "next": "work-email.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 47636,
+    "transparent": false
+  },
+  "work-port-anna-polyviou.webp": {
+    "next": "work-port-anna-polyviou.webp",
+    "w": 1024,
+    "h": 663,
+    "bytes": 57246,
+    "transparent": false
+  },
+  "work-port-black-friday.webp": {
+    "next": "work-port-black-friday.webp",
+    "w": 1024,
+    "h": 663,
+    "bytes": 58914,
+    "transparent": false
+  },
+  "work-port-christmas.webp": {
+    "next": "work-port-christmas.webp",
+    "w": 1024,
+    "h": 663,
+    "bytes": 48994,
+    "transparent": false
+  },
+  "work-port-eofy.webp": {
+    "next": "work-port-eofy.webp",
+    "w": 1024,
+    "h": 663,
+    "bytes": 89284,
+    "transparent": false
+  },
+  "work-port-hota.webp": {
+    "next": "work-port-hota.webp",
+    "w": 1024,
+    "h": 663,
+    "bytes": 88628,
+    "transparent": false
+  },
+  "work-port-merse-spa.webp": {
+    "next": "work-port-merse-spa.webp",
+    "w": 1024,
+    "h": 663,
+    "bytes": 76412,
+    "transparent": false
+  },
+  "work-port-pink-ribbon.webp": {
+    "next": "work-port-pink-ribbon.webp",
+    "w": 1024,
+    "h": 663,
+    "bytes": 57258,
+    "transparent": false
+  },
+  "work-port-sara-lee.webp": {
+    "next": "work-port-sara-lee.webp",
+    "w": 1024,
+    "h": 663,
+    "bytes": 50460,
+    "transparent": false
+  },
+  "work-port-wizz-fizz.webp": {
+    "next": "work-port-wizz-fizz.webp",
+    "w": 1024,
+    "h": 663,
+    "bytes": 49046,
+    "transparent": false
+  },
+  "work-pres-ambition.webp": {
+    "next": "work-pres-ambition.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 22842,
+    "transparent": false
+  },
+  "work-pres-bridgit.webp": {
+    "next": "work-pres-bridgit.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 26666,
+    "transparent": false
+  },
+  "work-pres-fc-training.webp": {
+    "next": "work-pres-fc-training.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 36822,
+    "transparent": false
+  },
+  "work-pres-merse.webp": {
+    "next": "work-pres-merse.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 19438,
+    "transparent": false
+  },
+  "work-pres-nutrition-gtm.webp": {
+    "next": "work-pres-nutrition-gtm.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 18216,
+    "transparent": false
+  },
+  "work-presentations.webp": {
+    "next": "work-presentations.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 33282,
+    "transparent": false
+  },
+  "work-print-anna.webp": {
+    "next": "work-print-anna.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 37138,
+    "transparent": false
+  },
+  "work-print-fc-kamikaze.webp": {
+    "next": "work-print-fc-kamikaze.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 25566,
+    "transparent": false
+  },
+  "work-print-fc-lesmills.webp": {
+    "next": "work-print-fc-lesmills.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 19830,
+    "transparent": false
+  },
+  "work-print-hota-aframe.webp": {
+    "next": "work-print-hota-aframe.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 21130,
+    "transparent": false
+  },
+  "work-print-redcliffe.webp": {
+    "next": "work-print-redcliffe.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 20562,
+    "transparent": false
+  },
+  "work-print-sara-lee.webp": {
+    "next": "work-print-sara-lee.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 12676,
+    "transparent": false
+  },
+  "work-print-speedfit.webp": {
+    "next": "work-print-speedfit.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 39408,
+    "transparent": false
+  },
+  "work-print.webp": {
+    "next": "work-print.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 34418,
+    "transparent": false
+  },
+  "work-reports.webp": {
+    "next": "work-reports.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 37006,
+    "transparent": false
+  },
+  "work-social-fc.webp": {
+    "next": "work-social-fc.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 30900,
+    "transparent": false
+  },
+  "work-social-mask-pyjama.webp": {
+    "next": "work-social-mask-pyjama.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 31348,
+    "transparent": false
+  },
+  "work-social-mask-saralee.webp": {
+    "next": "work-social-mask-saralee.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 22944,
+    "transparent": false
+  },
+  "work-social-mask-store.webp": {
+    "next": "work-social-mask-store.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 18300,
+    "transparent": false
+  },
+  "work-social-mask-xmas.webp": {
+    "next": "work-social-mask-xmas.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 19236,
+    "transparent": false
+  },
+  "work-social-media.webp": {
+    "next": "work-social-media.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 27962,
+    "transparent": false
+  },
+  "work-social-merse-feed.webp": {
+    "next": "work-social-merse-feed.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 29734,
+    "transparent": false
+  },
+  "work-social-merse-stories.webp": {
+    "next": "work-social-merse-stories.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 26304,
+    "transparent": false
+  },
+  "work-social-sleepscope.webp": {
+    "next": "work-social-sleepscope.webp",
+    "w": 582,
+    "h": 375,
+    "bytes": 16136,
+    "transparent": false
+  },
+  "work-web-graphics.webp": {
+    "next": "work-web-graphics.webp",
+    "w": 1024,
+    "h": 584,
+    "bytes": 26802,
+    "transparent": false
+  }
+}
