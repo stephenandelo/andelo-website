@@ -180,6 +180,7 @@
     --transition-duration-base: 250ms;
     --transition-duration-slow: 500ms;
     --max-width-container: 1200px;
+    --max-width-intro: 520px;
     --max-width-narrow: 920px;
   }
 }
@@ -1058,9 +1059,6 @@
   .max-w-\[24ch\] {
     max-width: 24ch;
   }
-  .max-w-\[36ch\] {
-    max-width: 36ch;
-  }
   .max-w-\[56ch\] {
     max-width: 56ch;
   }
@@ -1138,6 +1136,9 @@
   }
   .max-w-container {
     max-width: var(--max-width-container);
+  }
+  .max-w-intro {
+    max-width: var(--max-width-intro);
   }
   .max-w-narrow {
     max-width: var(--max-width-narrow);

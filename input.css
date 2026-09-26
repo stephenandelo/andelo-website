@@ -201,6 +201,7 @@
   --default-transition-duration: 150ms;
 
   --max-width-container: 1200px;
+  --max-width-intro: 520px;
   --max-width-narrow: 920px;
 }
 
