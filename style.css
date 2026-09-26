@@ -2462,14 +2462,8 @@
   .text-\[clamp\(18px\,1\.6vw\,21px\)\] {
     font-size: clamp(18px, 1.6vw, 21px);
   }
-  .text-\[clamp\(20px\,2\.1vw\,25px\)\] {
-    font-size: clamp(20px, 2.1vw, 25px);
-  }
   .text-\[clamp\(20px\,2vw\,26px\)\] {
     font-size: clamp(20px, 2vw, 26px);
-  }
-  .text-\[clamp\(21px\,2\.2vw\,28px\)\] {
-    font-size: clamp(21px, 2.2vw, 28px);
   }
   .text-\[clamp\(21px\,2vw\,26px\)\] {
     font-size: clamp(21px, 2vw, 26px);
@@ -2486,29 +2480,17 @@
   .text-\[clamp\(26px\,3\.4vw\,38px\)\] {
     font-size: clamp(26px, 3.4vw, 38px);
   }
-  .text-\[clamp\(26px\,3vw\,34px\)\] {
-    font-size: clamp(26px, 3vw, 34px);
-  }
   .text-\[clamp\(27px\,3\.6vw\,38px\)\] {
     font-size: clamp(27px, 3.6vw, 38px);
   }
   .text-\[clamp\(28px\,3\.4vw\,42px\)\] {
     font-size: clamp(28px, 3.4vw, 42px);
   }
-  .text-\[clamp\(28px\,3\.6vw\,42px\)\] {
-    font-size: clamp(28px, 3.6vw, 42px);
-  }
   .text-\[clamp\(28px\,3\.6vw\,44px\)\] {
     font-size: clamp(28px, 3.6vw, 44px);
   }
   .text-\[clamp\(30px\,3\.4vw\,42px\)\] {
     font-size: clamp(30px, 3.4vw, 42px);
-  }
-  .text-\[clamp\(30px\,3\.8vw\,46px\)\] {
-    font-size: clamp(30px, 3.8vw, 46px);
-  }
-  .text-\[clamp\(30px\,4vw\,48px\)\] {
-    font-size: clamp(30px, 4vw, 48px);
   }
   .text-\[clamp\(32px\,4\.4vw\,52px\)\] {
     font-size: clamp(32px, 4.4vw, 52px);
@@ -2595,14 +2577,6 @@
   .leading-\[1\.35\] {
     --tw-leading: 1.35;
     line-height: 1.35;
-  }
-  .leading-\[1\.38\] {
-    --tw-leading: 1.38;
-    line-height: 1.38;
-  }
-  .leading-\[1\.45\] {
-    --tw-leading: 1.45;
-    line-height: 1.45;
   }
   .leading-\[1\.55\] {
     --tw-leading: 1.55;
@@ -2804,9 +2778,6 @@
   }
   .text-\[\#F3F4FD\] {
     color: #F3F4FD;
-  }
-  .text-\[\#F3F5FF\] {
-    color: #F3F5FF;
   }
   .text-\[\#F58FB8\] {
     color: #F58FB8;
