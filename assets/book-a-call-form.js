@@ -74,67 +74,65 @@
   }
 
   mount.innerHTML =
-    '<div class="bt-light bg-[#F7F9FE] border border-[#E4E8F2] rounded-[22px] pt-[14px] px-5 pb-[38px] shadow-[0_24px_60px_rgba(10,14,40,.28)]">' +
-    '<form data-book-call novalidate class="mt-1 flex flex-col gap-[26px]">' +
+    '<form data-book-call novalidate class="flex flex-col gap-[26px]">' +
     '<div class="bac-honeypot" aria-hidden="true">' +
     '<label for="bac-website">Website</label>' +
     '<input type="text" id="bac-website" name="website_url" tabindex="-1" autocomplete="off">' +
     '</div>' +
     '<div>' +
-    '<label for="bac-email" class="field-label">Work email <span class="text-brand-onWhite">*</span></label>' +
-    '<input type="email" id="bac-email" class="field" autocomplete="email" inputmode="email" required>' +
-    '<div data-email-typo class="hidden field-email-typo"></div>' +
-    '<div data-err="email" class="hidden field-error">Enter your work email.</div>' +
+    '<label for="bac-email" class="field-label-dark">Work email <span class="text-brand">*</span></label>' +
+    '<input type="email" id="bac-email" class="field-dark" autocomplete="email" inputmode="email" required>' +
+    '<div data-email-typo class="hidden field-email-typo-dark"></div>' +
+    '<div data-err="email" class="hidden field-error-dark">Enter your work email.</div>' +
     '</div>' +
     '<div>' +
-    '<label for="bac-name" class="field-label">Full name <span class="text-brand-onWhite">*</span></label>' +
-    '<input type="text" id="bac-name" class="field" autocomplete="name" required>' +
-    '<div data-err="name" class="hidden field-error">Enter your full name.</div>' +
+    '<label for="bac-name" class="field-label-dark">Full name <span class="text-brand">*</span></label>' +
+    '<input type="text" id="bac-name" class="field-dark" autocomplete="name" required>' +
+    '<div data-err="name" class="hidden field-error-dark">Enter your full name.</div>' +
     '</div>' +
     '<div>' +
-    '<label for="bac-company" class="field-label">Company <span class="text-brand-onWhite">*</span></label>' +
-    '<input type="text" id="bac-company" class="field" autocomplete="organization" required>' +
-    '<div data-err="company" class="hidden field-error">Enter your company.</div>' +
+    '<label for="bac-company" class="field-label-dark">Company <span class="text-brand">*</span></label>' +
+    '<input type="text" id="bac-company" class="field-dark" autocomplete="organization" required>' +
+    '<div data-err="company" class="hidden field-error-dark">Enter your company.</div>' +
     '</div>' +
     '<div>' +
-    '<label for="bac-title" class="field-label">Job title <span class="text-brand-onWhite">*</span></label>' +
-    '<input type="text" id="bac-title" class="field" autocomplete="organization-title" required>' +
-    '<div data-err="title" class="hidden field-error">Enter your job title.</div>' +
+    '<label for="bac-title" class="field-label-dark">Job title <span class="text-brand">*</span></label>' +
+    '<input type="text" id="bac-title" class="field-dark" autocomplete="organization-title" required>' +
+    '<div data-err="title" class="hidden field-error-dark">Enter your job title.</div>' +
     '</div>' +
     '<div>' +
-    '<label for="bac-fit" class="field-label">Which fits you best? <span class="text-brand-onWhite">*</span></label>' +
-    '<select id="bac-fit" class="field" required>' +
+    '<label for="bac-fit" class="field-label-dark">Which fits you best? <span class="text-brand">*</span></label>' +
+    '<select id="bac-fit" class="field-dark" required>' +
     optionTags(FIT_OPTIONS, 'Choose one') +
     '</select>' +
-    '<div data-err="fit" class="hidden field-error">Choose the option that fits best.</div>' +
+    '<div data-err="fit" class="hidden field-error-dark">Choose the option that fits best.</div>' +
     '</div>' +
     '<div>' +
-    '<label for="bac-urgency" class="field-label">How soon do you need help? <span class="text-brand-onWhite">*</span></label>' +
-    '<select id="bac-urgency" class="field" required>' +
+    '<label for="bac-urgency" class="field-label-dark">How soon do you need help? <span class="text-brand">*</span></label>' +
+    '<select id="bac-urgency" class="field-dark" required>' +
     optionTags(URGENCY_OPTIONS, 'Choose one') +
     '</select>' +
-    '<div data-err="urgency" class="hidden field-error">Choose how soon you need help.</div>' +
+    '<div data-err="urgency" class="hidden field-error-dark">Choose how soon you need help.</div>' +
     '</div>' +
     '<div>' +
-    '<label for="bac-notes" class="field-label">Anything we should know before we talk? <span class="text-[#8A90A6] font-medium">(optional)</span></label>' +
-    '<textarea id="bac-notes" rows="4" class="field" placeholder="Workload, channels, team size, or what prompted you to reach out."></textarea>' +
+    '<label for="bac-notes" class="field-label-dark">Anything we should know before we talk? <span class="text-body-caption font-medium">(optional)</span></label>' +
+    '<textarea id="bac-notes" rows="4" class="field-dark" placeholder="Workload, channels, team size, or what prompted you to reach out."></textarea>' +
     '</div>' +
     '<div>' +
-    '<label class="field-label">Phone <span class="text-[#8A90A6] font-medium">(optional)</span></label>' +
+    '<label class="field-label-dark">Phone <span class="text-body-caption font-medium">(optional)</span></label>' +
     '<div class="field-phone-row">' +
-    '<select id="bac-dial" class="field field-phone-dial" aria-label="Country code">' +
+    '<select id="bac-dial" class="field-dark field-phone-dial" aria-label="Country code">' +
     countryOptions() +
     '</select>' +
-    '<input type="tel" id="bac-phone" class="field" autocomplete="tel-national" inputmode="tel" placeholder="412 345 678">' +
+    '<input type="tel" id="bac-phone" class="field-dark" autocomplete="tel-national" inputmode="tel" placeholder="412 345 678">' +
     '</div>' +
     '</div>' +
-    '<div data-form-error class="hidden field-error" role="alert"></div>' +
+    '<div data-form-error class="hidden field-error-dark" role="alert"></div>' +
     '<button type="submit" class="btn-mint w-full border-none cursor-pointer mt-[2px]" data-submit>Send enquiry</button>' +
-    '<p class="text-caption text-ink-caption text-center m-0 [text-wrap:pretty]">We use your details only to respond to this enquiry. See our <a href="/privacy-policy/" class="link-on-paper">privacy policy</a>.</p>' +
+    '<p class="text-caption text-body-caption text-center m-0 [text-wrap:pretty]">We use your details only to respond to this enquiry. See our <a href="/privacy-policy/" class="link">privacy policy</a>.</p>' +
     '</form>' +
     '<div data-success class="hidden mt-1 text-center py-6">' +
-    '<p class="font-display text-title text-ink m-0 [text-wrap:pretty]" data-success-msg></p>' +
-    '</div>' +
+    '<p class="font-display text-title text-heading m-0 [text-wrap:pretty]" data-success-msg></p>' +
     '</div>';
 
   var form = mount.querySelector('[data-book-call]');
@@ -241,7 +239,7 @@
     }
     emailTypo.classList.remove('hidden');
     emailTypo.innerHTML =
-      'Did you mean <button type="button" class="field-email-typo-fix" data-email-typo-fix>' +
+      'Did you mean <button type="button" class="field-email-typo-fix-dark" data-email-typo-fix>' +
       esc(typoSuggestion) +
       '</button>?';
   }

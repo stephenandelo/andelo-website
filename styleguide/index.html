@@ -29,6 +29,7 @@
       <a href="#type" class="chip">Typography</a>
       <a href="#buttons" class="chip">Buttons</a>
       <a href="#components" class="chip">Components</a>
+      <a href="#utility-pages" class="chip">Utility pages</a>
       <a href="#spacing" class="chip">Spacing</a>
       <a href="#radius" class="chip">Radius</a>
       <a href="#shadows" class="chip">Shadows</a>
@@ -187,7 +188,58 @@
           </div>
           <button type="button" class="chip mt-3" data-copy="rt">Copy class</button>
         </div>
+        <div class="card-glass p-card-standard max-w-[480px] mt-4">
+          <p class="text-body-muted text-small mb-4 max-w-prose">On dark (book a call). Fill 4% white, border 9% white, mint border on focus, placeholder in body-caption, errors in status-red.</p>
+          <label class="field-label-dark" for="sg-field-dark">Work email</label>
+          <input id="sg-field-dark" type="email" class="field-dark" placeholder="you@company.com">
+          <label class="field-label-dark mt-4" for="sg-field-dark-err">Error</label>
+          <input id="sg-field-dark-err" type="text" class="field-dark" value="Missing name" aria-invalid="true" aria-describedby="sg-field-dark-err-msg">
+          <p id="sg-field-dark-err-msg" class="field-error-dark">Enter your work email.</p>
+          <p class="field-email-typo-dark mt-2">Did you mean <button type="button" class="field-email-typo-fix-dark">gmail.com</button>?</p>
+          <button type="button" class="chip mt-3" data-copy="field-dark">Copy class</button>
+        </div>
         <p class="text-body">On dark, an <a href="#components" class="link">inline link</a> uses the shared link class.</p>
+      </div>
+    </section>
+
+    <section id="utility-pages" class="pt-section">
+      <h2 class="font-display text-h2 text-heading">Utility pages</h2>
+      <p class="text-body-muted text-small mt-2 mb-6 max-w-prose">Book a call and legal pages. Marketing heroes use pt-hero-offset unless noted.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-small border-collapse">
+          <thead>
+            <tr class="text-caption text-body-caption border-b border-hairline">
+              <th class="py-3 pr-4 font-semibold">Page</th>
+              <th class="py-3 pr-4 font-semibold">Hero top</th>
+              <th class="py-3 pr-4 font-semibold">Title / intro</th>
+              <th class="py-3 pr-4 font-semibold">Main column</th>
+              <th class="py-3 font-semibold">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="text-body-muted">
+            <tr class="border-b border-hairline-card">
+              <td class="py-3 pr-4 text-heading">Book a call</td>
+              <td class="py-3 pr-4"><code class="text-caption">pt-hero-offset</code></td>
+              <td class="py-3 pr-4"><code class="text-caption">text-h1</code>, intro <code class="text-caption">text-lead max-w-intro</code>, stack 760px</td>
+              <td class="py-3 pr-4"><code class="text-caption">max-w-narrow</code> form in <code class="text-caption">card-glass</code>, <code class="text-caption">field-dark</code></td>
+              <td class="py-3">Async enquiry, no scheduler</td>
+            </tr>
+            <tr class="border-b border-hairline-card">
+              <td class="py-3 pr-4 text-heading">Privacy policy</td>
+              <td class="py-3 pr-4">132px (<code class="text-caption">pt-[132px]</code>)</td>
+              <td class="py-3 pr-4"><code class="text-caption">text-h1</code>, intro <code class="text-caption">text-lead max-w-intro</code></td>
+              <td class="py-3 pr-4">1120px outer, body in <code class="text-caption">rt</code> on paper</td>
+              <td class="py-3">TOC labels <code class="text-caption">text-micro</code></td>
+            </tr>
+            <tr>
+              <td class="py-3 pr-4 text-heading">Terms of use</td>
+              <td class="py-3 pr-4">132px</td>
+              <td class="py-3 pr-4">Same as privacy</td>
+              <td class="py-3 pr-4">1120px outer, <code class="text-caption">rt</code> on paper</td>
+              <td class="py-3">Part A / Part B in TOC</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -299,6 +351,7 @@
     'brand', 'brand-hover', 'brand-ink', 'brand-soft', 'brand-softStrong', 'brand-border', 'brand-onWhite',
     'heading', 'body', 'body-strong', 'body-muted', 'body-caption', 'body-faint',
     'paper', 'ink', 'ink-body', 'ink-muted', 'ink-caption', 'paper-muted', 'hairline-light',
+    'field-dark-fill', 'field-dark-border',
     'jewel-blue', 'jewel-blueDeep', 'jewel-indigo', 'jewel-indigoDeep', 'jewel-purple', 'jewel-purpleDeep',
     'jewel-magenta', 'jewel-magentaDeep', 'jewel-pink', 'jewel-pinkDeep', 'jewel-red', 'jewel-redDeep',
     'onSecondary', 'onSecondary-body',
