@@ -263,8 +263,8 @@ body {
     display: inline-block;
     padding: 6px 14px;
     border-radius: var(--radius-pill);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--color-glass);
+    border: 1px solid var(--color-hairline);
     font-size: var(--text-badge);
     color: var(--color-body-strong);
   }
@@ -606,11 +606,15 @@ body {
   /* Design brief builder */
   /* Brief Builder form on paper. Component CSS: form controls + states. */
   .bt-light{color-scheme:light;}
-  .bt-in{width:100%;padding:14px 16px;border:1.5px solid #D4D9E6;border-radius:14px;background:#fff;color:#12141C;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:15px;line-height:1.5;transition:border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);}
-  .bt-in:focus{outline:none;border-color:#3DE68C;box-shadow:var(--shadow-field);}
-  .bt-in::placeholder{color:#9AA0B2;opacity:1;}
-  textarea.bt-in{resize:vertical;min-height:52px;}
-  .bt-in.bt-bad,.bt-bad{border-color:#F26161!important;}
+  .field{width:100%;padding:14px 16px;border:1.5px solid #D4D9E6;border-radius:14px;background:#fff;color:#12141C;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:15px;line-height:1.5;transition:border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);}
+  .field:focus{outline:none;border-color:#3DE68C;box-shadow:var(--shadow-field);}
+  .field::placeholder{color:#6B7099;opacity:1;}
+  textarea.field{resize:vertical;min-height:52px;}
+  .field.bt-bad,.bt-bad,.field[aria-invalid="true"]{border-color:#F26161!important;}
+  .field:disabled{opacity:.45;cursor:not-allowed;}
+  .field-label{@apply block text-ink text-small font-semibold mb-2;}
+  .field-hint{color:#5A6172;font-size:13.5px;line-height:1.5;margin:0 0 10px;}
+  .field-error{color:var(--color-status-redInk);font-size:13px;line-height:1.5;margin:6px 0 0;}
   .bt-seg label{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:500;font-size:14px;padding:11px 16px;border:1.5px solid #D4D9E6;border-radius:100px;cursor:pointer;transition:all .15s var(--ease-out);margin:0;position:relative;}
   .bt-seg label span{display:block;color:#3D4048;}
   .bt-seg input{position:absolute;opacity:0;pointer-events:none;}
@@ -800,7 +804,7 @@ body {
 a:focus-visible,
 button:focus-visible,
 .chip:focus-visible,
-.bt-in:focus-visible,
+.field:focus-visible,
 [tabindex]:focus-visible,
 .btn-mint:focus-visible,
 .btn-ghost:focus-visible,
@@ -813,7 +817,7 @@ button:focus-visible,
   transform: translateY(-4px);
 }
 .btn-light:focus-visible,
-.bt-in:focus-visible,
+.field:focus-visible,
 .rt a:focus-visible {
   outline: 2px solid #0A0C22;
   outline-offset: 3px;

@@ -4021,8 +4021,8 @@ html, body {
     display: inline-block;
     padding: 6px 14px;
     border-radius: var(--radius-pill);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--color-glass);
+    border: 1px solid var(--color-hairline);
     font-size: var(--text-badge);
     color: var(--color-body-strong);
   }
@@ -4625,7 +4625,7 @@ html, body {
   .bt-light {
     color-scheme: light;
   }
-  .bt-in {
+  .field {
     width: 100%;
     padding: 14px 16px;
     border: 1.5px solid #D4D9E6;
@@ -4637,21 +4637,46 @@ html, body {
     line-height: 1.5;
     transition: border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);
   }
-  .bt-in:focus {
+  .field:focus {
     outline: none;
     border-color: #3DE68C;
     box-shadow: var(--shadow-field);
   }
-  .bt-in::placeholder {
-    color: #9AA0B2;
+  .field::placeholder {
+    color: #6B7099;
     opacity: 1;
   }
-  textarea.bt-in {
+  textarea.field {
     resize: vertical;
     min-height: 52px;
   }
-  .bt-in.bt-bad,.bt-bad {
+  .field.bt-bad,.bt-bad,.field[aria-invalid="true"] {
     border-color: #F26161 !important;
+  }
+  .field:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+  }
+  .field-label {
+    margin-bottom: var(--spacing-2);
+    display: block;
+    font-size: var(--text-small);
+    line-height: var(--tw-leading, var(--text-small--line-height));
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-ink);
+  }
+  .field-hint {
+    color: #5A6172;
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+  }
+  .field-error {
+    color: var(--color-status-redInk);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 6px 0 0;
   }
   .bt-seg label {
     font-family: 'Hanken Grotesk',system-ui,sans-serif;
@@ -5021,14 +5046,14 @@ html, body {
 .ts-zoom {
   transition: transform var(--dur-slow) var(--ease-out);
 }
-a:focus-visible, button:focus-visible, .chip:focus-visible, .bt-in:focus-visible, [tabindex]:focus-visible, .btn-mint:focus-visible, .btn-ghost:focus-visible, .btn-mint-lg:focus-visible, .card-glass:focus-visible {
+a:focus-visible, button:focus-visible, .chip:focus-visible, .field:focus-visible, [tabindex]:focus-visible, .btn-mint:focus-visible, .btn-ghost:focus-visible, .btn-mint-lg:focus-visible, .card-glass:focus-visible {
   outline: 2px solid var(--color-brand);
   outline-offset: 3px;
 }
 .card-glass:focus-visible {
   transform: translateY(-4px);
 }
-.btn-light:focus-visible, .bt-in:focus-visible, .rt a:focus-visible {
+.btn-light:focus-visible, .field:focus-visible, .rt a:focus-visible {
   outline: 2px solid #0A0C22;
   outline-offset: 3px;
 }
