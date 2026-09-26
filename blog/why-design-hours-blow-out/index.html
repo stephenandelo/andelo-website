@@ -10,12 +10,13 @@
 <style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Why your design hours blow out | Andelo</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
 <!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
 <link rel="stylesheet" href="/style.css">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
@@ -23,7 +24,7 @@
 
   <div data-site-nav-mount></div>
 <main id="main">
-  <script src="/assets/site-nav.js"></script>
+  <script src="/assets/site-nav.js" defer></script>
 
   <div data-progress class="fixed top-0 left-0 h-[3px] z-[101] bg-brand" aria-hidden="true"></div>
 
@@ -37,12 +38,12 @@
         <h1 class="font-display text-h2 text-heading">Why your design hours blow out</h1>
         <p class="max-w-prose mt-[20px] text-body-muted text-lead">The hours blow out during the design, but they are never caused there. Here is what actually drains them, and how to catch it before work starts.</p>
         <div class="flex items-center gap-[11px] mt-[28px] flex-wrap">
-          <img src="../../assets/stephen-andelo.jpeg" alt="" width="42" height="42" class="w-[42px] h-[42px] rounded-full object-cover border border-white/[.12]">
+          <img src="../../assets/stephen-andelo.webp" alt="" class="w-[42px] h-[42px] rounded-full object-cover border border-white/[.12]" width="120" height="120" loading="lazy">
           <div class="text-body-strong text-small">by <span class="text-heading font-semibold">Stephen Andelo</span> · <time datetime="2026-07-22">22 July 2026</time> · 8 min read</div>
         </div>
       </div>
       <div class="aspect-[16/9] sm:aspect-[4/3] max-sm:-order-1 rounded-lg overflow-hidden border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,.45)] relative">
-        <img src="../../assets/blog-hours-blow-out.png" alt="" class="w-full h-full object-cover block" width="1024" height="550" fetchpriority="high">
+        <img src="../../assets/blog-hours-blow-out.webp" alt="" class="w-full h-full object-cover block" width="1024" height="550" fetchpriority="high">
       </div>
     </div>
   </header>
@@ -86,14 +87,14 @@
         </table>
 
         <h2 id="direction-vs-instruction">The trade you're making without knowing it</h2>
-        <figure><img src="../../assets/blog-instruction-vs-direction.jpg" alt="Instruction equals less time and limited creativity. Direction equals more time and more creativity." class="block w-full h-auto rounded-card border border-hairline-light" width="1200" height="675" loading="lazy"></figure>
+        <figure><img src="../../assets/blog-instruction-vs-direction.webp" alt="Instruction equals less time and limited creativity. Direction equals more time and more creativity." class="block w-full h-auto rounded-card border border-hairline-light" width="1440" height="759" loading="lazy"></figure>
         <p>Plenty of the rows above come down to one confusion: sending direction while expecting the speed of instruction.</p>
         <p><strong>Direction</strong> ("make the key visual feel premium," "something that captures the spring campaign") hands the designer a destination without a route. They research, explore, and shape it into a design that meets what you meant. That's where the creativity lives, and it's genuinely time-consuming, because interpretation is work.</p>
         <p><strong>Instruction</strong> ("product centred on a white set, headline top left in our red, logo bottom right, like this reference") is fast, because nothing is left to interpret. But it caps the creativity at exactly what you specified. If you brief by instruction, don't be surprised when the designer plays inside your limits: following them is the job you gave.</p>
         <p>Neither is wrong. The blowout comes from mixing them up: paying direction-level hours for what you thought was an instruction, or getting instruction-level output where you hoped for direction. Say which one you're sending, and the hours stop surprising you.</p>
 
         <h2 id="how-to-prevent">How to prevent design blowouts</h2>
-        <figure><img src="../../assets/blog-good-output-good-input.jpg" alt="Good output is downstream of good input" class="block w-full h-auto rounded-card border border-hairline-light" width="1200" height="675" loading="lazy"></figure>
+        <figure><img src="../../assets/blog-good-output-good-input.webp" alt="Good output is downstream of good input" class="block w-full h-auto rounded-card border border-hairline-light" width="1440" height="851" loading="lazy"></figure>
         <p>Good output is downstream of good input. No amount of talent on the design side rescues a brief that left the decisions unmade, which means the cheapest place to prevent rework is before the work starts.</p>
         <p>Take the next brief you're about to send and check three things before it goes:</p>
         <ul>
@@ -117,7 +118,7 @@
         <div class="mt-[20px] bg-white border border-hairline-light rounded-card px-gutter py-[30px]">
           <div class="eyebrow-paper mb-[18px]">Written by</div>
           <div class="flex items-center gap-[16px] flex-wrap">
-            <img src="../../assets/stephen-andelo.jpeg" alt="" width="60" height="60" class="w-[60px] h-[60px] rounded-full object-cover flex-none" loading="lazy">
+            <img src="../../assets/stephen-andelo.webp" alt="" class="w-[60px] h-[60px] rounded-full object-cover flex-none" width="120" height="120" loading="lazy">
             <div class="flex-1 min-w-[180px]">
               <div class="font-display font-bold text-base text-ink">Stephen Andelo</div>
               <div class="text-ink-muted text-small mt-[2px]">Founder &amp; CEO, Andelo</div>
@@ -156,7 +157,7 @@
       <h2 class="font-display text-h2 text-heading mb-[26px]">Keep reading</h2>
       <div class="grid grid-cols-1 gap-[20px] max-w-[680px]">
         <a href="/blog/what-is-a-design-subscription" class="card-glass flex flex-col overflow-hidden">
-          <div class="h-[160px] overflow-hidden"><img src="../../assets/blog-design-subscription.png" alt="" class="w-full h-full object-cover block" width="680" height="160" loading="lazy"></div>
+          <div class="h-[160px] overflow-hidden"><img src="../../assets/blog-design-subscription.webp" alt="" class="w-full h-full object-cover block" width="1280" height="711" loading="lazy"></div>
           <div class="p-card-compact">
             <div class="text-caption text-body-caption mb-[10px]">8 min read</div>
             <h3 class="font-display text-title text-heading">What is a design subscription service?</h3>

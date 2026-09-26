@@ -10,14 +10,13 @@
 <title>Andelo | Your design team without the hiring.</title>
 <meta name="description" content="Your design team without the hiring. A dedicated team that learns your brand and delivers in 1–2 days. Australian-founded design subscription.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" data-calendly-css>
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async data-calendly-js></script>
 
 <!-- Compiled Andelo theme + motion tokens (see input.css / docs/animation-standards.md) -->
 <link rel="stylesheet" href="/style.css">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
@@ -33,7 +32,7 @@
     <!-- Site nav mounted by /assets/site-nav.js -->
   <div data-site-nav-mount></div>
 <main id="main">
-  <script src="/assets/site-nav.js"></script>
+  <script src="/assets/site-nav.js" defer></script>
 
 
   <!-- ══ HERO ══ -->
@@ -54,7 +53,7 @@
 
       <!-- Work collage. Gentle float; paused off-screen, off under reduced motion. -->
       <div class="reveal-atf relative">
-        <img data-ambient src="assets/hero-collage.png" alt="Design work: Protein One WPI, Fitness Cartel flyer, Mask × Anna Polyviou campaign, and a Vintage Lane popup poster" class="animate-hero-float block w-full h-auto" width="1008" height="1050">
+        <img data-ambient src="assets/hero-collage.png" alt="Design work: Protein One WPI, Fitness Cartel flyer, Mask × Anna Polyviou campaign, and a Vintage Lane popup poster" class="animate-hero-float block w-full h-auto" width="1008" height="1050" fetchpriority="high">
       </div>
     </div>
   </section>
@@ -65,23 +64,23 @@
       <div class="text-center text-caption font-semibold tracking-[.24em] uppercase text-body-caption mb-[30px]">Trusted by</div>
       <div class="overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_12%,#000_88%,transparent)] [-webkit-mask-image:linear-gradient(90deg,transparent,#000_12%,#000_88%,transparent)]">
         <div data-ambient class="flex gap-[52px] w-max items-center animate-marquee">
-          <img src="assets/trusted-mask.png" alt="mask" class="h-[28px] w-auto object-contain opacity-55" width="120" height="28">
-          <img src="assets/trusted-goodwill.png" alt="goodwill projects" class="h-[32px] w-auto object-contain opacity-55" width="160" height="32">
-          <img src="assets/trusted-ungc.png" alt="Global Compact Network Australia" class="h-[36px] w-auto object-contain opacity-55" width="200" height="36">
-          <img src="assets/trusted-butcher-crowd.png" alt="Butcher Crowd" class="h-[26px] w-auto object-contain opacity-55" width="160" height="26">
-          <img src="assets/trusted-speedfit.png" alt="SPEEDFIT" class="h-[22px] w-auto object-contain opacity-55" width="160" height="22">
-          <img src="assets/trusted-scope.png" alt="Scope Healthcare" class="h-[30px] w-auto object-contain opacity-55" width="150" height="30">
-          <img src="assets/trusted-bridgit.png" alt="Bridgit" class="h-[24px] w-auto object-contain opacity-55" width="120" height="24">
-          <img src="assets/trusted-fitness-cartel.png" alt="Fitness Cartel Health Clubs" class="h-[28px] w-auto object-contain opacity-55" width="200" height="28">
+          <img src="assets/trusted-mask.png" alt="mask" class="h-[28px] w-auto object-contain opacity-55" width="288" height="56" loading="lazy">
+          <img src="assets/trusted-goodwill.png" alt="goodwill projects" class="h-[32px] w-auto object-contain opacity-55" width="169" height="64" loading="lazy">
+          <img src="assets/trusted-ungc.png" alt="Global Compact Network Australia" class="h-[36px] w-auto object-contain opacity-55" width="243" height="72" loading="lazy">
+          <img src="assets/trusted-butcher-crowd.png" alt="Butcher Crowd" class="h-[26px] w-auto object-contain opacity-55" width="247" height="52" loading="lazy">
+          <img src="assets/trusted-speedfit.png" alt="SPEEDFIT" class="h-[22px] w-auto object-contain opacity-55" width="236" height="44" loading="lazy">
+          <img src="assets/trusted-scope.png" alt="Scope Healthcare" class="h-[30px] w-auto object-contain opacity-55" width="144" height="60" loading="lazy">
+          <img src="assets/trusted-bridgit.png" alt="Bridgit" class="h-[24px] w-auto object-contain opacity-55" width="142" height="48" loading="lazy">
+          <img src="assets/trusted-fitness-cartel.png" alt="Fitness Cartel Health Clubs" class="h-[28px] w-auto object-contain opacity-55" width="298" height="56" loading="lazy">
           <!-- duplicate set for seamless marquee -->
-          <img src="assets/trusted-mask.png" alt="" aria-hidden="true" class="h-[28px] w-auto object-contain opacity-55" width="120" height="28">
-          <img src="assets/trusted-goodwill.png" alt="" aria-hidden="true" class="h-[32px] w-auto object-contain opacity-55" width="160" height="32">
-          <img src="assets/trusted-ungc.png" alt="" aria-hidden="true" class="h-[36px] w-auto object-contain opacity-55" width="200" height="36">
-          <img src="assets/trusted-butcher-crowd.png" alt="" aria-hidden="true" class="h-[26px] w-auto object-contain opacity-55" width="160" height="26">
-          <img src="assets/trusted-speedfit.png" alt="" aria-hidden="true" class="h-[22px] w-auto object-contain opacity-55" width="160" height="22">
-          <img src="assets/trusted-scope.png" alt="" aria-hidden="true" class="h-[30px] w-auto object-contain opacity-55" width="150" height="30">
-          <img src="assets/trusted-bridgit.png" alt="" aria-hidden="true" class="h-[24px] w-auto object-contain opacity-55" width="120" height="24">
-          <img src="assets/trusted-fitness-cartel.png" alt="" aria-hidden="true" class="h-[28px] w-auto object-contain opacity-55" width="200" height="28">
+          <img src="assets/trusted-mask.png" alt="" aria-hidden="true" class="h-[28px] w-auto object-contain opacity-55" width="288" height="56" loading="lazy">
+          <img src="assets/trusted-goodwill.png" alt="" aria-hidden="true" class="h-[32px] w-auto object-contain opacity-55" width="169" height="64" loading="lazy">
+          <img src="assets/trusted-ungc.png" alt="" aria-hidden="true" class="h-[36px] w-auto object-contain opacity-55" width="243" height="72" loading="lazy">
+          <img src="assets/trusted-butcher-crowd.png" alt="" aria-hidden="true" class="h-[26px] w-auto object-contain opacity-55" width="247" height="52" loading="lazy">
+          <img src="assets/trusted-speedfit.png" alt="" aria-hidden="true" class="h-[22px] w-auto object-contain opacity-55" width="236" height="44" loading="lazy">
+          <img src="assets/trusted-scope.png" alt="" aria-hidden="true" class="h-[30px] w-auto object-contain opacity-55" width="144" height="60" loading="lazy">
+          <img src="assets/trusted-bridgit.png" alt="" aria-hidden="true" class="h-[24px] w-auto object-contain opacity-55" width="142" height="48" loading="lazy">
+          <img src="assets/trusted-fitness-cartel.png" alt="" aria-hidden="true" class="h-[28px] w-auto object-contain opacity-55" width="298" height="56" loading="lazy">
         </div>
       </div>
     </div>
@@ -212,43 +211,43 @@
       <div data-svc-reel class="flex md:flex-col gap-[16px] md:gap-0 max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:-mx-gutter max-md:px-gutter max-md:[scroll-padding-left:32px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div data-svc-slot class="max-md:flex-none max-md:w-[84%] max-md:snap-start md:min-h-[62vh] md:flex md:items-center">
           <div data-svc-media data-active="true" class="relative w-full aspect-[1276/728] rounded-lg overflow-hidden border border-hairline-card shadow-[0_30px_70px_rgba(0,0,0,.35)] md:opacity-40 md:scale-[.94] md:data-[active=true]:opacity-100 md:data-[active=true]:scale-100 transition-[opacity,transform] duration-slow ease-out">
-            <img src="assets/service-social-media.jpg" alt="Social media design for MaskCo on tablet and phone" class="absolute inset-0 w-full h-full object-cover block">
+            <img src="assets/service-social-media.webp" alt="Social media design for MaskCo on tablet and phone" class="absolute inset-0 w-full h-full object-cover block" width="1024" height="584" loading="lazy">
             <span class="md:hidden absolute left-[12px] bottom-[12px] px-[12px] py-[6px] rounded-pill bg-canvas/[.72] backdrop-blur-[8px] border border-white/[.14] text-heading text-caption font-semibold">Social Media</span>
           </div>
         </div>
         <div data-svc-slot class="max-md:flex-none max-md:w-[84%] max-md:snap-start md:min-h-[62vh] md:flex md:items-center">
           <div data-svc-media data-active="false" class="relative w-full aspect-[1276/728] rounded-lg overflow-hidden border border-hairline-card shadow-[0_30px_70px_rgba(0,0,0,.35)] md:opacity-40 md:scale-[.94] md:data-[active=true]:opacity-100 md:data-[active=true]:scale-100 transition-[opacity,transform] duration-slow ease-out">
-            <img src="assets/service-campaign-artwork.jpg" alt="MaskCo Black Friday campaign artwork on a phone" class="absolute inset-0 w-full h-full object-cover block">
+            <img src="assets/service-campaign-artwork.webp" alt="MaskCo Black Friday campaign artwork on a phone" class="absolute inset-0 w-full h-full object-cover block" width="1024" height="584" loading="lazy">
             <span class="md:hidden absolute left-[12px] bottom-[12px] px-[12px] py-[6px] rounded-pill bg-canvas/[.72] backdrop-blur-[8px] border border-white/[.14] text-heading text-caption font-semibold">Campaign Artwork</span>
           </div>
         </div>
         <div data-svc-slot class="max-md:flex-none max-md:w-[84%] max-md:snap-start md:min-h-[62vh] md:flex md:items-center">
           <div data-svc-media data-active="false" class="relative w-full aspect-[1276/728] rounded-lg overflow-hidden border border-hairline-card shadow-[0_30px_70px_rgba(0,0,0,.35)] md:opacity-40 md:scale-[.94] md:data-[active=true]:opacity-100 md:data-[active=true]:scale-100 transition-[opacity,transform] duration-slow ease-out">
-            <img src="assets/service-presentations.jpg" alt="Corporate wellness presentation slide on a desktop monitor" class="absolute inset-0 w-full h-full object-cover block">
+            <img src="assets/service-presentations.webp" alt="Corporate wellness presentation slide on a desktop monitor" class="absolute inset-0 w-full h-full object-cover block" width="1024" height="584" loading="lazy">
             <span class="md:hidden absolute left-[12px] bottom-[12px] px-[12px] py-[6px] rounded-pill bg-canvas/[.72] backdrop-blur-[8px] border border-white/[.14] text-heading text-caption font-semibold">Presentations</span>
           </div>
         </div>
         <div data-svc-slot class="max-md:flex-none max-md:w-[84%] max-md:snap-start md:min-h-[62vh] md:flex md:items-center">
           <div data-svc-media data-active="false" class="relative w-full aspect-[1276/728] rounded-lg overflow-hidden border border-hairline-card shadow-[0_30px_70px_rgba(0,0,0,.35)] md:opacity-40 md:scale-[.94] md:data-[active=true]:opacity-100 md:data-[active=true]:scale-100 transition-[opacity,transform] duration-slow ease-out">
-            <img src="assets/service-email.jpg" alt="MaskCo store opening email on two phones" class="absolute inset-0 w-full h-full object-cover block">
+            <img src="assets/service-email.webp" alt="MaskCo store opening email on two phones" class="absolute inset-0 w-full h-full object-cover block" width="1024" height="584" loading="lazy">
             <span class="md:hidden absolute left-[12px] bottom-[12px] px-[12px] py-[6px] rounded-pill bg-canvas/[.72] backdrop-blur-[8px] border border-white/[.14] text-heading text-caption font-semibold">Email</span>
           </div>
         </div>
         <div data-svc-slot class="max-md:flex-none max-md:w-[84%] max-md:snap-start md:min-h-[62vh] md:flex md:items-center">
           <div data-svc-media data-active="false" class="relative w-full aspect-[1276/728] rounded-lg overflow-hidden border border-hairline-card shadow-[0_30px_70px_rgba(0,0,0,.35)] md:opacity-40 md:scale-[.94] md:data-[active=true]:opacity-100 md:data-[active=true]:scale-100 transition-[opacity,transform] duration-slow ease-out">
-            <img src="assets/service-print.jpg" alt="Fitness Cartel printed flyer" class="absolute inset-0 w-full h-full object-cover block">
+            <img src="assets/service-print.webp" alt="Fitness Cartel printed flyer" class="absolute inset-0 w-full h-full object-cover block" width="1024" height="584" loading="lazy">
             <span class="md:hidden absolute left-[12px] bottom-[12px] px-[12px] py-[6px] rounded-pill bg-canvas/[.72] backdrop-blur-[8px] border border-white/[.14] text-heading text-caption font-semibold">Print &amp; Signage</span>
           </div>
         </div>
         <div data-svc-slot class="max-md:flex-none max-md:w-[84%] max-md:snap-start md:min-h-[62vh] md:flex md:items-center">
           <div data-svc-media data-active="false" class="relative w-full aspect-[1276/728] rounded-lg overflow-hidden border border-hairline-card shadow-[0_30px_70px_rgba(0,0,0,.35)] md:opacity-40 md:scale-[.94] md:data-[active=true]:opacity-100 md:data-[active=true]:scale-100 transition-[opacity,transform] duration-slow ease-out">
-            <img src="assets/service-reports.jpg" alt="Scope Institute program brochure cover" class="absolute inset-0 w-full h-full object-cover block">
+            <img src="assets/service-reports.webp" alt="Scope Institute program brochure cover" class="absolute inset-0 w-full h-full object-cover block" width="1024" height="584" loading="lazy">
             <span class="md:hidden absolute left-[12px] bottom-[12px] px-[12px] py-[6px] rounded-pill bg-canvas/[.72] backdrop-blur-[8px] border border-white/[.14] text-heading text-caption font-semibold">Reports &amp; Documents</span>
           </div>
         </div>
         <div data-svc-slot class="max-md:flex-none max-md:w-[84%] max-md:snap-start md:min-h-[62vh] md:flex md:items-center">
           <div data-svc-media data-active="false" class="relative w-full aspect-[1276/728] rounded-lg overflow-hidden border border-hairline-card shadow-[0_30px_70px_rgba(0,0,0,.35)] md:opacity-40 md:scale-[.94] md:data-[active=true]:opacity-100 md:data-[active=true]:scale-100 transition-[opacity,transform] duration-slow ease-out">
-            <img src="assets/service-web-graphics.jpg" alt="MaskCo Essence Collection web banner on a tablet" class="absolute inset-0 w-full h-full object-cover block">
+            <img src="assets/service-web-graphics.webp" alt="MaskCo Essence Collection web banner on a tablet" class="absolute inset-0 w-full h-full object-cover block" width="1024" height="584" loading="lazy">
             <span class="md:hidden absolute left-[12px] bottom-[12px] px-[12px] py-[6px] rounded-pill bg-canvas/[.72] backdrop-blur-[8px] border border-white/[.14] text-heading text-caption font-semibold">Web Graphics</span>
           </div>
         </div>
@@ -260,7 +259,7 @@
         </div>
         <div data-svc-slot class="max-md:flex-none max-md:w-[84%] max-md:snap-start md:min-h-[62vh] md:flex md:items-center">
           <div data-svc-media data-active="false" class="relative w-full aspect-[1276/728] rounded-lg overflow-hidden border border-hairline-card shadow-[0_30px_70px_rgba(0,0,0,.35)] md:opacity-40 md:scale-[.94] md:data-[active=true]:opacity-100 md:data-[active=true]:scale-100 transition-[opacity,transform] duration-slow ease-out">
-            <img src="assets/service-3d.jpg" alt="Nutrition Cartel WPI tub 3D product render" class="absolute inset-0 w-full h-full object-cover block">
+            <img src="assets/service-3d.webp" alt="Nutrition Cartel WPI tub 3D product render" class="absolute inset-0 w-full h-full object-cover block" width="1024" height="584" loading="lazy">
             <span class="md:hidden absolute left-[12px] bottom-[12px] px-[12px] py-[6px] rounded-pill bg-canvas/[.72] backdrop-blur-[8px] border border-white/[.14] text-heading text-caption font-semibold">3D</span>
           </div>
         </div>
@@ -318,7 +317,7 @@
         <div data-testimonial class="reveal card-glass backdrop-blur-none overflow-hidden">
           <div class="relative h-[200px] overflow-hidden rounded-t-lg">
             <div class="ts-zoom absolute inset-0">
-              <img class="ts-img w-full h-full object-cover object-center block" src="assets/home-hannah.png" alt="Hannah, Head of Marketing at MaskCo">
+              <img class="ts-img w-full h-full object-cover object-center block" src="assets/home-hannah.webp" alt="Hannah, Head of Marketing at MaskCo" width="840" height="473" loading="lazy">
             </div>
             <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,8,24,.05),rgba(6,8,24,.5))]"></div>
             <button data-play data-vname="Hannah, Head of Marketing at MaskCo" data-vsrc="https://www.youtube-nocookie.com/embed/6Hx7yGEpAV4?autoplay=1&amp;rel=0&amp;playsinline=1" class="absolute bottom-[14px] right-[14px] btn-play">
@@ -326,7 +325,7 @@
             </button>
           </div>
           <div class="p-4">
-            <img src="assets/trusted-mask.png" alt="Mask" class="h-[22px] w-auto object-contain mb-4" width="113" height="22">
+            <img src="assets/trusted-mask.png" alt="Mask" class="h-[22px] w-auto object-contain mb-4" width="288" height="56" loading="lazy">
             <p class="text-quote text-[#F3F4FD] mb-[22px]">"I've given them huge amounts of artwork and they've never <span class="text-brand">missed a deadline</span>. As we scale and need more, it's great the team can support bigger volumes."</p>
             <div>
               <div class="font-semibold text-heading text-small mb-[3px]">Hannah</div>
@@ -338,7 +337,7 @@
         <div data-testimonial class="reveal [transition-delay:80ms] card-glass backdrop-blur-none overflow-hidden">
           <div class="relative h-[200px] overflow-hidden rounded-t-lg">
             <div class="ts-zoom absolute inset-0">
-              <img class="ts-img w-full h-full object-cover object-center block" src="assets/speedfit-matej.png" alt="Matej Varhalik, CEO &amp; Co-Founder of SpeedFit">
+              <img class="ts-img w-full h-full object-cover object-center block" src="assets/speedfit-matej.webp" alt="Matej Varhalik, CEO &amp; Co-Founder of SpeedFit" width="840" height="473" loading="lazy">
             </div>
             <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,8,24,.05),rgba(6,8,24,.5))]"></div>
             <button data-play data-vname="Matej Varhalik, CEO &amp; Co-Founder of SpeedFit" data-vsrc="https://www.youtube-nocookie.com/embed/aqFulkv0U_4?autoplay=1&amp;rel=0&amp;playsinline=1" class="absolute bottom-[14px] right-[14px] btn-play">
@@ -346,7 +345,7 @@
             </button>
           </div>
           <div class="p-4">
-            <img src="assets/trusted-speedfit.png" alt="Speedfit" class="h-[22px] w-auto object-contain mb-4" width="118" height="22">
+            <img src="assets/trusted-speedfit.png" alt="Speedfit" class="h-[22px] w-auto object-contain mb-4" width="236" height="44" loading="lazy">
             <p class="text-quote text-[#F3F4FD] mb-[22px]">"We scaled up hours to relaunch our website, then scaled back once it was done. <span class="text-brand">Very cost-effective</span> compared to having multiple internal people."</p>
             <div>
               <div class="font-semibold text-heading text-small mb-[3px]">Matej Varhalik</div>
@@ -358,7 +357,7 @@
         <div data-testimonial class="reveal [transition-delay:160ms] card-glass backdrop-blur-none overflow-hidden">
           <div class="relative h-[200px] overflow-hidden rounded-t-lg">
             <div class="ts-zoom absolute inset-0">
-              <img class="ts-img w-full h-full object-cover object-center block" src="assets/oren-hero.png" alt="Oren Greenberg, AI &amp; Marketing Advisor">
+              <img class="ts-img w-full h-full object-cover object-center block" src="assets/oren-hero.webp" alt="Oren Greenberg, AI &amp; Marketing Advisor" width="840" height="473" loading="lazy">
             </div>
             <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,8,24,.05),rgba(6,8,24,.5))]"></div>
             <button data-play data-vname="Oren Greenberg, AI &amp; Marketing Advisor" data-vsrc="https://www.youtube-nocookie.com/embed/Cg_QJIZMeqs?autoplay=1&amp;rel=0&amp;playsinline=1" class="absolute bottom-[14px] right-[14px] btn-play">
@@ -459,7 +458,7 @@
           <a href="/design-capacity-formula" class="btn-mint-lg">Work out my capacity number</a>
         </div>
         <div class="relative flex items-center justify-center">
-          <img src="assets/capacity-cta-panel.png" alt="Do you have enough design capacity?" class="block w-[48%] max-w-[180px] sm:w-[68%] sm:max-w-[280px] md:w-[76%] md:max-w-none h-auto mx-auto" width="597" height="414">
+          <img src="assets/capacity-cta-panel.png" alt="Do you have enough design capacity?" class="block w-[48%] max-w-[180px] sm:w-[68%] sm:max-w-[280px] md:w-[76%] md:max-w-none h-auto mx-auto" width="597" height="414" loading="lazy">
         </div>
       </div>
     </div>

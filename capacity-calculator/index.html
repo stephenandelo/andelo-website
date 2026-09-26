@@ -9,12 +9,13 @@
 <style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Capacity calculator | Andelo</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
 <link rel="stylesheet" href="/style.css">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-clip">
@@ -30,7 +31,7 @@
     <!-- Site nav mounted by /assets/site-nav.js -->
   <div data-site-nav-mount></div>
 <main id="main">
-  <script src="/assets/site-nav.js"></script>
+  <script src="/assets/site-nav.js" defer></script>
 
 
   <!-- ══ HERO (indigo jewel panel, the page's one) ══ -->
@@ -43,7 +44,7 @@
           <h1 class="reveal [transition-delay:60ms] font-display text-h1 text-white">How many design hours does <span class="text-brand">your month need?</span></h1>
           <p class="reveal [transition-delay:120ms] mt-4 text-onSecondary-body text-lead">Use our calculator to find out your average monthly design need (not resizes or quick updates). Checked against industry benchmarks.</p>
         </div>
-        <div class="flex-[1_1_42%] self-stretch flex items-center justify-center px-[28px] py-[28px] md:px-5 md:py-gutter"><img src="../assets/capacity-calculator-hero.png" alt="Capacity calculator" class="block w-full h-auto max-h-[300px] object-contain"></div>
+        <div class="flex-[1_1_42%] self-stretch flex items-center justify-center px-[28px] py-[28px] md:px-5 md:py-gutter"><img src="../assets/capacity-calculator-hero.png" alt="Capacity calculator" class="block w-full h-auto max-h-[300px] object-contain" width="313" height="272" fetchpriority="high"></div>
       </div>
     </div>
   </section>
@@ -63,7 +64,7 @@
           <div data-lines class="min-h-[8px] mt-[10px] mb-[4px]"></div>
           <div class="flex justify-between items-baseline pt-4 pb-[6px] mt-[8px]">
             <span class="font-display font-semibold text-[15px] text-white">Time Estimation:</span>
-            <span data-total class="font-display text-stat tracking-snug tabular-nums text-brand">0<small class="text-white/75 text-caption font-normal"> hrs</small></span>
+            <span data-total class="font-display text-stat tracking-snug tabular-nums text-brand">0<small class="text-white/75 text-caption font-normal">h</small></span>
           </div>
           <div class="mt-[14px] mb-[6px]" aria-hidden="true">
             <div class="relative h-[14px] rounded-pill bg-black/[.22] border border-white/[.28] overflow-hidden">
@@ -152,7 +153,7 @@
   var rows = root.querySelector('[data-rows]'), lines = root.querySelector('[data-lines]'), total = root.querySelector('[data-total]'),
       range = root.querySelector('[data-range]'), rec = root.querySelector('[data-rec]'), recT = root.querySelector('[data-rec-title]'), recB = root.querySelector('[data-rec-body]');
   var fmt = function (n) { return Math.round(n * 10) % 10 === 0 ? Math.round(n) : n.toFixed(1).replace('.0', ''); };
-  var SMALL = '<small class="text-white/75 text-caption font-normal"> hrs</small>';
+  var SMALL = '<small class="text-white/75 text-caption font-normal">h</small>';
   var BTN = 'w-[40px] h-[40px] bg-transparent border-none text-[#9CA0AE] text-[20px] cursor-pointer transition-colors duration-fast hover:bg-brand-soft hover:text-brand';
 
   rows.innerHTML = ITEMS.map(function (it) {

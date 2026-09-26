@@ -10,12 +10,13 @@
 <style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Blog | Andelo</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
 <link rel="stylesheet" href="/style.css">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
@@ -32,7 +33,7 @@
     <!-- Site nav mounted by /assets/site-nav.js -->
   <div data-site-nav-mount></div>
 <main id="main">
-  <script src="/assets/site-nav.js"></script>
+  <script src="/assets/site-nav.js" defer></script>
 
 
   <!-- ══ HERO ══ -->
@@ -62,7 +63,7 @@
 
       <!-- featured lead (blue wash) -->
       <a href="/blog/what-is-a-design-subscription" data-post data-category="subscription" data-date="2026-07-22" class="reveal [transition-delay:50ms] grid grid-cols-1 md:grid-cols-[1.15fr_.85fr] rounded-lg overflow-hidden border border-[rgba(97,165,242,.28)] bg-[rgba(97,165,242,.14)] mb-[56px] transition-[background,border-color,transform] duration-fast hover:bg-[rgba(97,165,242,.2)] hover:border-[rgba(97,165,242,.5)] hover:-translate-y-[4px]">
-        <div class="m-[16px] min-h-[300px] rounded-[16px] relative overflow-hidden"><img src="../assets/blog-design-subscription.png" alt="What is a design subscription service" class="absolute inset-0 w-full h-full object-cover block"></div>
+        <div class="m-[16px] min-h-[300px] rounded-[16px] relative overflow-hidden"><img src="../assets/blog-design-subscription.webp" alt="What is a design subscription service" class="absolute inset-0 w-full h-full object-cover block" width="1280" height="711" loading="lazy"></div>
         <div class="p-5 flex flex-col justify-center">
           <div class="flex items-center gap-2 mb-[16px] flex-wrap">
             <span class="px-[12px] py-[5px] rounded-pill bg-brand-soft border border-brand-border text-brand text-micro font-bold tracking-label-wide uppercase">Featured</span>
@@ -76,7 +77,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[30px] max-md:max-w-[520px] max-md:mx-auto" data-post-grid>
         <div data-post data-category="capacity" data-date="" class="reveal card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card flex flex-col overflow-hidden opacity-90">
-          <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-how-long-design-takes.png" alt="How long design actually takes" class="w-full h-full object-cover block"></div>
+          <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-how-long-design-takes.webp" alt="How long design actually takes" class="w-full h-full object-cover block" width="748" height="400" loading="lazy"></div>
           <div class="px-4 pt-[8px] pb-[26px]">
             <div class="text-micro font-semibold tracking-label uppercase text-body-caption mb-[11px]">Capacity · Coming soon</div>
             <h3 class="font-display text-title text-heading mb-[9px]">How long design actually takes</h3>
@@ -84,7 +85,7 @@
           </div>
         </div>
         <a href="/blog/why-design-hours-blow-out" data-post data-category="efficiency" data-date="2026-07-22" class="reveal card-glass hover:bg-glass-hover flex flex-col overflow-hidden">
-          <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-hours-blow-out.png" alt="Why your design hours blow out" class="w-full h-full object-cover block"></div>
+          <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-hours-blow-out.webp" alt="Why your design hours blow out" class="w-full h-full object-cover block" width="1024" height="550" loading="lazy"></div>
           <div class="px-4 pt-[8px] pb-[26px]">
             <div class="text-micro font-semibold tracking-label uppercase text-body-caption mb-[11px]">Efficiency · 8 min read</div>
             <h3 class="font-display text-title text-heading mb-[9px]">Why your design hours blow out</h3>
@@ -92,7 +93,7 @@
           </div>
         </a>
         <div data-post data-category="briefing" data-date="" class="reveal card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card flex flex-col overflow-hidden opacity-90">
-          <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-complete-brief.png" alt="What a complete brief needs" class="w-full h-full object-cover block"></div>
+          <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-complete-brief.webp" alt="What a complete brief needs" class="w-full h-full object-cover block" width="677" height="400" loading="lazy"></div>
           <div class="px-4 pt-[8px] pb-[26px]">
             <div class="text-micro font-semibold tracking-label uppercase text-body-caption mb-[11px]">Briefing · Coming soon</div>
             <h3 class="font-display text-title text-heading mb-[9px]">What a complete brief needs</h3>
@@ -100,7 +101,7 @@
           </div>
         </div>
         <div data-post data-category="resourcing" data-date="" class="reveal card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card flex flex-col overflow-hidden opacity-90">
-          <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-designer-level.png" alt="Which designer level do you need?" class="w-full h-full object-cover block"></div>
+          <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-designer-level.webp" alt="Which designer level do you need?" class="w-full h-full object-cover block" width="711" height="400" loading="lazy"></div>
           <div class="px-4 pt-[8px] pb-[26px]">
             <div class="text-micro font-semibold tracking-label uppercase text-body-caption mb-[11px]">Resourcing · Coming soon</div>
             <h3 class="font-display text-title text-heading mb-[9px]">Which designer level do you need?</h3>
@@ -108,7 +109,7 @@
           </div>
         </div>
         <div data-post data-category="hiring" data-date="" class="reveal card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card flex flex-col overflow-hidden opacity-90">
-          <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-outsource-vs-inhouse.png" alt="When to outsource design vs hire in-house" class="w-full h-full object-cover block"></div>
+          <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-outsource-vs-inhouse.webp" alt="When to outsource design vs hire in-house" class="w-full h-full object-cover block" width="675" height="400" loading="lazy"></div>
           <div class="px-4 pt-[8px] pb-[26px]">
             <div class="text-micro font-semibold tracking-label uppercase text-body-caption mb-[11px]">Hiring · Coming soon</div>
             <h3 class="font-display text-title text-heading mb-[9px]">When to outsource design vs hire in-house</h3>
@@ -133,7 +134,7 @@
           </div>
         </div>
         <div class="relative flex items-center justify-center">
-          <img src="../assets/capacity-cta-panel.png" alt="Do you have enough design hours?" class="block w-[48%] max-w-[180px] sm:w-[68%] sm:max-w-[280px] md:w-full md:max-w-none h-auto mx-auto" width="597" height="414">
+          <img src="../assets/capacity-cta-panel.png" alt="Do you have enough design hours?" class="block w-[48%] max-w-[180px] sm:w-[68%] sm:max-w-[280px] md:w-full md:max-w-none h-auto mx-auto" width="597" height="414" loading="lazy">
         </div>
       </div>
     </div>

@@ -567,6 +567,10 @@ const PAGES = [
 
   .hidden { display: none !important; }
 </style>
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
   <div class="banner">Internal only · noindex · not for search engines</div>
@@ -672,7 +676,7 @@ const PAGES = [
     var v = trim(src);
     if (!v) return '<span class="og-missing">missing</span>';
     return (
-      '<img class="og-img" src="' + esc(v) + '" alt="" title="' + esc(v) + '" ' +
+      '<img class="og-img" src="' + esc(v) + '" alt="" width="72" height="40" title="' + esc(v) + '" ' +
       'onerror="this.outerHTML=\'<span class=og-missing>missing</span>\'">'
     );
   }

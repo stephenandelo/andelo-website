@@ -9,12 +9,13 @@
 <style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Our Work | Andelo</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
 <link rel="stylesheet" href="/style.css">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
@@ -31,7 +32,7 @@
     <!-- Site nav mounted by /assets/site-nav.js -->
   <div data-site-nav-mount></div>
 <main id="main">
-  <script src="/assets/site-nav.js"></script>
+  <script src="/assets/site-nav.js" defer></script>
 
 
   <!-- ══ HERO ══ -->
@@ -49,7 +50,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[22px]">
         <a href="/case-studies/speedfit" data-case class="reveal card-glass overflow-hidden block">
           <div class="h-[210px] overflow-hidden">
-            <img src="../assets/work-case-speedfit.jpg" alt="Speedfit meal planning campaign on a tablet" class="case-img w-full h-full object-cover block" width="1024" height="602">
+            <img src="../assets/work-case-speedfit.webp" alt="Speedfit meal planning campaign on a tablet" class="case-img w-full h-full object-cover block" width="714" height="420" loading="lazy">
           </div>
           <div class="p-card-compact">
             <div class="text-micro font-bold tracking-label-wide uppercase text-brand mb-2">Speedfit</div>
@@ -60,7 +61,7 @@
         </a>
         <a href="/case-studies/maskco" data-case class="reveal [transition-delay:100ms] card-glass overflow-hidden block">
           <div class="h-[210px] overflow-hidden">
-            <img src="../assets/work-case-maskco.jpg" alt="MaskCo free gift campaign on a phone" class="case-img w-full h-full object-cover block" width="1024" height="602">
+            <img src="../assets/work-case-maskco.webp" alt="MaskCo free gift campaign on a phone" class="case-img w-full h-full object-cover block" width="714" height="420" loading="lazy">
           </div>
           <div class="p-card-compact">
             <div class="text-micro font-bold tracking-label-wide uppercase text-brand mb-2">MaskCo</div>
@@ -71,7 +72,7 @@
         </a>
         <a href="/case-studies/oren-greenberg" data-case class="reveal [transition-delay:200ms] card-glass overflow-hidden block">
           <div class="h-[210px] overflow-hidden">
-            <img src="../assets/work-case-oren.jpg" alt="Oren Greenberg website on a desktop monitor" class="case-img w-full h-full object-cover block" width="1024" height="602">
+            <img src="../assets/work-case-oren.webp" alt="Oren Greenberg website on a desktop monitor" class="case-img w-full h-full object-cover block" width="714" height="420" loading="lazy">
           </div>
           <div class="p-card-compact">
             <div class="text-micro font-bold tracking-label-wide uppercase text-brand mb-2">Oren Greenberg</div>
@@ -139,6 +140,7 @@
     <button type="button" data-lb-next aria-label="Next" class="absolute right-4 top-1/2 -translate-y-1/2 w-[52px] h-[52px] rounded-full bg-white/[.08] border border-white/[.16] text-body cursor-pointer flex items-center justify-center transition-[background,border-color] duration-fast hover:bg-white/[.16] hover:border-white/[.34]"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <div data-lb-panel class="w-full max-w-[760px]">
       <div data-lb-img class="relative w-full aspect-[16/10] rounded-lg overflow-hidden border border-white/[.12] shadow-[0_40px_90px_rgba(0,0,0,.5)]">
+        <img data-lb-photo alt="" class="absolute inset-0 w-full h-full object-cover block" width="760" height="475">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,.16),transparent_55%)]"></div>
         <span data-lb-cat class="absolute top-[18px] left-[18px] px-[13px] py-[6px] rounded-pill bg-[rgba(6,8,24,.55)] backdrop-blur-[6px] border border-white/[.16] text-micro font-semibold text-body"></span>
       </div>
@@ -195,58 +197,65 @@
   /* Portfolio: data → tiles, category filter, load more, lightbox.
      Prefer `img`; fall back to `grad` for placeholders. */
   var TILES = [
-    { cat: 'Campaigns', img: '../assets/work-port-anna-polyviou.jpg', title: 'MaskCo x Anna Polyviou', sub: 'Smells you can taste' },
-    { cat: 'Campaigns', img: '../assets/work-port-sara-lee.jpg', title: 'MaskCo x Sara Lee', sub: 'Sticky Date Pudding' },
-    { cat: 'Campaigns', img: '../assets/work-port-merse-spa.jpg', title: 'Fitness Cartel x Merse', sub: 'Club challenge prize' },
-    { cat: 'Campaigns', img: '../assets/work-port-wizz-fizz.jpg', title: 'MaskCo x Wizz Fizz', sub: 'Original Sherbet' },
-    { cat: 'Campaigns', img: '../assets/work-port-black-friday.jpg', title: 'MaskCo Black Friday', sub: 'Seasonal sale' },
-    { cat: 'Campaigns', img: '../assets/work-port-eofy.jpg', title: 'MaskCo EOFY Deal', sub: 'End of financial year' },
-    { cat: 'Print & Signage', img: '../assets/work-port-christmas.jpg', title: 'MaskCo Christmas Spray', sub: 'Transit advertising' },
-    { cat: 'Print & Signage', img: '../assets/work-port-hota.jpg', title: 'HOTA Gets Hotter', sub: 'Event flyer' },
-    { cat: 'Print & Signage', img: '../assets/work-print-anna.jpg', title: 'MaskCo x Anna Polyviou', sub: 'Launch collateral' },
-    { cat: 'Print & Signage', img: '../assets/work-print-speedfit.jpg', title: 'Speedfit Kingston', sub: 'Trifold + open day flyer' },
-    { cat: 'Print & Signage', img: '../assets/work-print-fc-kamikaze.jpg', title: 'Fitness Cartel x Kamikaze', sub: 'In-club poster' },
-    { cat: 'Print & Signage', img: '../assets/work-print-fc-lesmills.jpg', title: 'Les Mills Launch Day', sub: 'Event poster' },
-    { cat: 'Print & Signage', img: '../assets/work-print-sara-lee.jpg', title: 'MaskCo x Sara Lee', sub: 'POS display' },
-    { cat: 'Print & Signage', img: '../assets/work-print-hota-aframe.jpg', title: 'HOTA Gets Hotter', sub: 'A-frame signage' },
-    { cat: 'Print & Signage', img: '../assets/work-print-redcliffe.jpg', title: 'Redcliffe Up Late', sub: 'Night market A-frame' },
-    { cat: 'Campaigns', img: '../assets/work-port-pink-ribbon.jpg', title: 'Speedfit Pink Ribbon', sub: 'Awareness campaign' },
-    { cat: 'Email', img: '../assets/work-email-merse.jpg', title: 'Merse Wellness Spa', sub: 'Holiday newsletter' },
-    { cat: 'Email', img: '../assets/work-email-fc-wrapped.jpg', title: 'Fitness Cartel Wrapped', sub: 'Year in review' },
-    { cat: 'Email', img: '../assets/work-email-mask-eofy.jpg', title: 'MaskCo Cart Recovery', sub: 'EOFY abandoned cart' },
-    { cat: 'Email', img: '../assets/work-email-mask-incense.jpg', title: 'MaskCo Incense Launch', sub: 'New product email' },
-    { cat: 'Email', img: '../assets/work-email-fc-supps.jpg', title: 'Nutrition Cartel Supps', sub: 'Product spotlight' },
-    { cat: 'Email', img: '../assets/work-email-mask-bf.jpg', title: 'MaskCo Black Friday', sub: 'Sale newsletter' },
-    { cat: 'Email', img: '../assets/work-email-mask-xmas.jpg', title: 'MaskCo Christmas Offer', sub: 'Free spray promo' },
-    { cat: 'Email', img: '../assets/work-email-mask-store.jpg', title: 'MaskCo Store Opening', sub: 'Pacific Fair RSVP' },
-    { cat: 'Email', img: '../assets/work-email-mask-apricot.jpg', title: 'MaskCo Apricot Log', sub: 'Fragrance drop' },
-    { cat: 'Social Media', img: '../assets/work-social-fc.jpg', title: 'Fitness Cartel Social', sub: 'Club offers + run club' },
-    { cat: 'Social Media', img: '../assets/work-social-mask-xmas.jpg', title: 'MaskCo Christmas Grid', sub: 'Festive giveaway feed' },
-    { cat: 'Social Media', img: '../assets/work-social-mask-pyjama.jpg', title: 'MaskCo x Pyjama Foundation', sub: 'Instagram stories' },
-    { cat: 'Social Media', img: '../assets/work-social-mask-saralee.jpg', title: 'MaskCo x Sara Lee', sub: 'Facebook sponsored ad' },
-    { cat: 'Social Media', img: '../assets/work-social-merse-feed.jpg', title: 'Merse Wellness Feed', sub: 'Always-on Instagram' },
-    { cat: 'Social Media', img: '../assets/work-social-mask-store.jpg', title: 'MaskCo Store Opening', sub: 'Facebook page launch' },
-    { cat: 'Social Media', img: '../assets/work-social-sleepscope.jpg', title: 'Sleep Scope', sub: 'Booking platform launch' },
-    { cat: 'Social Media', img: '../assets/work-social-merse-stories.jpg', title: 'Merse Wellness Stories', sub: 'Membership promos' },
-    { cat: 'Presentations & Reports', img: '../assets/work-pres-ambition.jpg', title: 'Fitness Cartel Ambition', sub: 'Sales recognition report' },
-    { cat: 'Presentations & Reports', img: '../assets/work-pres-bridgit.jpg', title: 'Bridgit x MFAA', sub: 'Bridging finance session' },
-    { cat: 'Presentations & Reports', img: '../assets/work-pres-nutrition-gtm.jpg', title: 'Nutrition Cartel GTM', sub: 'Go-to-market strategy' },
-    { cat: 'Presentations & Reports', img: '../assets/work-pres-fc-training.jpg', title: 'Fitness Cartel Training', sub: 'Values + incentives deck' },
-    { cat: 'Presentations & Reports', img: '../assets/work-pres-merse.jpg', title: 'Merse Corporate Wellness', sub: 'Partnership proposal' }
+    { cat: 'Campaigns', img: '../assets/work-port-anna-polyviou.webp', title: 'MaskCo x Anna Polyviou', sub: 'Smells you can taste' },
+    { cat: 'Campaigns', img: '../assets/work-port-sara-lee.webp', title: 'MaskCo x Sara Lee', sub: 'Sticky Date Pudding' },
+    { cat: 'Campaigns', img: '../assets/work-port-merse-spa.webp', title: 'Fitness Cartel x Merse', sub: 'Club challenge prize' },
+    { cat: 'Campaigns', img: '../assets/work-port-wizz-fizz.webp', title: 'MaskCo x Wizz Fizz', sub: 'Original Sherbet' },
+    { cat: 'Campaigns', img: '../assets/work-port-black-friday.webp', title: 'MaskCo Black Friday', sub: 'Seasonal sale' },
+    { cat: 'Campaigns', img: '../assets/work-port-eofy.webp', title: 'MaskCo EOFY Deal', sub: 'End of financial year' },
+    { cat: 'Print & Signage', img: '../assets/work-port-christmas.webp', title: 'MaskCo Christmas Spray', sub: 'Transit advertising' },
+    { cat: 'Print & Signage', img: '../assets/work-port-hota.webp', title: 'HOTA Gets Hotter', sub: 'Event flyer' },
+    { cat: 'Print & Signage', img: '../assets/work-print-anna.webp', title: 'MaskCo x Anna Polyviou', sub: 'Launch collateral' },
+    { cat: 'Print & Signage', img: '../assets/work-print-speedfit.webp', title: 'Speedfit Kingston', sub: 'Trifold + open day flyer' },
+    { cat: 'Print & Signage', img: '../assets/work-print-fc-kamikaze.webp', title: 'Fitness Cartel x Kamikaze', sub: 'In-club poster' },
+    { cat: 'Print & Signage', img: '../assets/work-print-fc-lesmills.webp', title: 'Les Mills Launch Day', sub: 'Event poster' },
+    { cat: 'Print & Signage', img: '../assets/work-print-sara-lee.webp', title: 'MaskCo x Sara Lee', sub: 'POS display' },
+    { cat: 'Print & Signage', img: '../assets/work-print-hota-aframe.webp', title: 'HOTA Gets Hotter', sub: 'A-frame signage' },
+    { cat: 'Print & Signage', img: '../assets/work-print-redcliffe.webp', title: 'Redcliffe Up Late', sub: 'Night market A-frame' },
+    { cat: 'Campaigns', img: '../assets/work-port-pink-ribbon.webp', title: 'Speedfit Pink Ribbon', sub: 'Awareness campaign' },
+    { cat: 'Email', img: '../assets/work-email-merse.webp', title: 'Merse Wellness Spa', sub: 'Holiday newsletter' },
+    { cat: 'Email', img: '../assets/work-email-fc-wrapped.webp', title: 'Fitness Cartel Wrapped', sub: 'Year in review' },
+    { cat: 'Email', img: '../assets/work-email-mask-eofy.webp', title: 'MaskCo Cart Recovery', sub: 'EOFY abandoned cart' },
+    { cat: 'Email', img: '../assets/work-email-mask-incense.webp', title: 'MaskCo Incense Launch', sub: 'New product email' },
+    { cat: 'Email', img: '../assets/work-email-fc-supps.webp', title: 'Nutrition Cartel Supps', sub: 'Product spotlight' },
+    { cat: 'Email', img: '../assets/work-email-mask-bf.webp', title: 'MaskCo Black Friday', sub: 'Sale newsletter' },
+    { cat: 'Email', img: '../assets/work-email-mask-xmas.webp', title: 'MaskCo Christmas Offer', sub: 'Free spray promo' },
+    { cat: 'Email', img: '../assets/work-email-mask-store.webp', title: 'MaskCo Store Opening', sub: 'Pacific Fair RSVP' },
+    { cat: 'Email', img: '../assets/work-email-mask-apricot.webp', title: 'MaskCo Apricot Log', sub: 'Fragrance drop' },
+    { cat: 'Social Media', img: '../assets/work-social-fc.webp', title: 'Fitness Cartel Social', sub: 'Club offers + run club' },
+    { cat: 'Social Media', img: '../assets/work-social-mask-xmas.webp', title: 'MaskCo Christmas Grid', sub: 'Festive giveaway feed' },
+    { cat: 'Social Media', img: '../assets/work-social-mask-pyjama.webp', title: 'MaskCo x Pyjama Foundation', sub: 'Instagram stories' },
+    { cat: 'Social Media', img: '../assets/work-social-mask-saralee.webp', title: 'MaskCo x Sara Lee', sub: 'Facebook sponsored ad' },
+    { cat: 'Social Media', img: '../assets/work-social-merse-feed.webp', title: 'Merse Wellness Feed', sub: 'Always-on Instagram' },
+    { cat: 'Social Media', img: '../assets/work-social-mask-store.webp', title: 'MaskCo Store Opening', sub: 'Facebook page launch' },
+    { cat: 'Social Media', img: '../assets/work-social-sleepscope.webp', title: 'Sleep Scope', sub: 'Booking platform launch' },
+    { cat: 'Social Media', img: '../assets/work-social-merse-stories.webp', title: 'Merse Wellness Stories', sub: 'Membership promos' },
+    { cat: 'Presentations & Reports', img: '../assets/work-pres-ambition.webp', title: 'Fitness Cartel Ambition', sub: 'Sales recognition report' },
+    { cat: 'Presentations & Reports', img: '../assets/work-pres-bridgit.webp', title: 'Bridgit x MFAA', sub: 'Bridging finance session' },
+    { cat: 'Presentations & Reports', img: '../assets/work-pres-nutrition-gtm.webp', title: 'Nutrition Cartel GTM', sub: 'Go-to-market strategy' },
+    { cat: 'Presentations & Reports', img: '../assets/work-pres-fc-training.webp', title: 'Fitness Cartel Training', sub: 'Values + incentives deck' },
+    { cat: 'Presentations & Reports', img: '../assets/work-pres-merse.webp', title: 'Merse Corporate Wellness', sub: 'Partnership proposal' }
   ];
   var PAGE = 9, active = 'All', visible = PAGE, filtered = TILES.slice(), lbIdx = -1;
   var grid = root.querySelector('[data-grid]'), more = root.querySelector('[data-more]'), moreWrap = root.querySelector('[data-more-wrap]');
   var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+  function dimsOf(src) {
+    var file = String(src).split('/').pop();
+    if (file.indexOf('work-port-') === 0) return [1024, 663];
+    return [582, 375];
+  }
   function tileBg(t) {
-    return t.img
-      ? 'background-image:url(' + t.img + ');background-size:cover;background-position:center'
-      : 'background:' + t.grad;
+    return 'background:' + t.grad;
   }
 
   function tileHTML(t, i) {
+    var d = t.img ? dimsOf(t.img) : [1, 1];
+    var media = t.img
+      ? '<img class="tile-img absolute inset-0 w-full h-full object-cover block" src="' + t.img + '" alt="' + esc(t.title) + '" width="' + d[0] + '" height="' + d[1] + '" loading="lazy">'
+      : '<div class="tile-img absolute inset-0" style="' + tileBg(t) + '"></div>' +
+        '<div class="tile-glow absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,.16),transparent_55%)]"></div>';
     return '<div data-tile data-idx="' + i + '" class="relative rounded-md overflow-hidden border border-white/[.08] bg-[#0F1230] cursor-pointer transition-[transform,border-color,box-shadow] duration-fast hover:-translate-y-[4px] hover:border-hairline-hover hover:shadow-[0_24px_50px_rgba(0,0,0,.4)]">' +
-      '<div class="tile-img absolute inset-0" style="' + tileBg(t) + '"></div>' +
-      (t.img ? '' : '<div class="tile-glow absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,.16),transparent_55%)]"></div>') +
+      media +
       '<span class="absolute top-[14px] left-[14px] z-[2] px-[11px] py-[5px] rounded-pill bg-[rgba(6,8,24,.55)] backdrop-blur-[6px] border border-white/[.16] text-micro font-semibold text-body">' + esc(t.cat) + '</span>' +
       '<div class="tile-scrim absolute inset-0 bg-[linear-gradient(180deg,transparent_30%,rgba(4,6,20,.86))]"></div>' +
       '<div class="tile-cap absolute inset-0 z-[2] flex flex-col justify-end p-[20px]"><div class="flex items-end justify-between gap-2"><div>' +
@@ -278,9 +287,20 @@
     lbIdx = (i + filtered.length) % filtered.length;
     var t = filtered[lbIdx];
     var lbImg = root.querySelector('[data-lb-img]');
-    lbImg.style.background = t.img
-      ? 'center / cover no-repeat url(' + t.img + ')'
-      : t.grad;
+    var photo = root.querySelector('[data-lb-photo]');
+    if (t.img) {
+      var d = dimsOf(t.img);
+      photo.hidden = false;
+      photo.src = t.img;
+      photo.alt = t.title;
+      photo.width = d[0];
+      photo.height = d[1];
+      lbImg.style.background = '';
+    } else {
+      photo.hidden = true;
+      photo.removeAttribute('src');
+      lbImg.style.background = t.grad;
+    }
     root.querySelector('[data-lb-cat]').textContent = t.cat;
     root.querySelector('[data-lb-title]').textContent = t.title;
     root.querySelector('[data-lb-sub]').textContent = t.sub;

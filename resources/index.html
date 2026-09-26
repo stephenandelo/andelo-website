@@ -9,12 +9,13 @@
 <style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Resources | Andelo</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
 <link rel="stylesheet" href="/style.css">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
@@ -31,7 +32,7 @@
     <!-- Site nav mounted by /assets/site-nav.js -->
   <div data-site-nav-mount></div>
 <main id="main">
-  <script src="/assets/site-nav.js"></script>
+  <script src="/assets/site-nav.js" defer></script>
 
 
   <!-- ══ HERO (purple jewel panel, the page's one) ══ -->
@@ -44,7 +45,7 @@
           <h1 class="reveal [transition-delay:60ms] font-display text-h1 text-white">Build a stronger <span class="text-brand">creative engine.</span></h1>
           <p class="reveal [transition-delay:120ms] mt-4 max-w-prose text-onSecondary-body text-lead [text-wrap:pretty]">Free tools, guides, and real production benchmarks for marketing &amp; creative leaders to help you raise your team's creative standard at whatever stage the team is at. Nothing gated, no email walls.</p>
         </div>
-        <div class="flex-[1_1_42%] self-stretch flex items-center justify-center px-[28px] py-[28px] md:px-5 md:py-gutter"><img src="../assets/resources-hero.png" alt="Clipboard with checklist" class="block w-full h-auto max-h-[300px] object-contain" width="544" height="571"></div>
+        <div class="flex-[1_1_42%] self-stretch flex items-center justify-center px-[28px] py-[28px] md:px-5 md:py-gutter"><img src="../assets/resources-hero.png" alt="Clipboard with checklist" class="block w-full h-auto max-h-[300px] object-contain" width="544" height="571" fetchpriority="high"></div>
       </div>
     </div>
   </section>
@@ -61,18 +62,18 @@
           </div>
           <div class="flex flex-col gap-[16px]">
             <a href="/capacity-calculator" class="reveal group flex items-center gap-[22px] p-[16px] rounded-card bg-glass border border-hairline-card transition-[background,border-color,transform] duration-fast hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[2px] max-sm:flex-wrap">
-              <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden bg-grad-indigo flex items-center justify-center max-sm:w-full max-sm:h-[170px]"><img src="../assets/icon-calculator.png" alt="Capacity calculator" class="w-auto h-[78px] object-contain block"></div>
+              <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden bg-grad-indigo flex items-center justify-center max-sm:w-full max-sm:h-[170px]"><img src="../assets/icon-calculator.webp" alt="Capacity calculator" class="w-auto h-[78px] object-contain block" width="156" height="156" loading="lazy"></div>
               <h3 class="flex-1 min-w-0 font-display text-title text-heading transition-colors duration-fast group-hover:text-brand">Capacity Calculator</h3>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-none text-body-caption transition-colors duration-fast group-hover:text-brand"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
             <a href="/design-capacity-formula" class="reveal group flex items-center gap-[22px] p-[16px] rounded-card bg-glass border border-hairline-card transition-[background,border-color,transform] duration-fast hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[2px] max-sm:flex-wrap">
-              <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden bg-grad-purple flex items-center justify-center max-sm:w-full max-sm:h-[170px]"><img src="../assets/capacity-cta-panel.png" alt="Do you have enough design hours?" class="w-auto h-[78px] object-contain block"></div>
+              <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden bg-grad-purple flex items-center justify-center max-sm:w-full max-sm:h-[170px]"><img src="../assets/capacity-cta-panel.png" alt="Do you have enough design hours?" class="w-auto h-[78px] object-contain block" width="597" height="414" loading="lazy"></div>
               <h3 class="flex-1 min-w-0 font-display text-title text-heading transition-colors duration-fast group-hover:text-brand">The Design Capacity Formula</h3>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-none text-body-caption transition-colors duration-fast group-hover:text-brand"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
             
             <a href="/blog/what-is-a-design-subscription" class="reveal [transition-delay:120ms] group flex items-center gap-[22px] p-[16px] rounded-card bg-glass border border-hairline-card transition-[background,border-color,transform] duration-fast hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[2px] max-sm:flex-wrap">
-              <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden max-sm:w-full max-sm:h-[170px]"><img src="../assets/blog-design-subscription.png" alt="What is a design subscription service" class="w-full h-full object-cover block"></div>
+              <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden max-sm:w-full max-sm:h-[170px]"><img src="../assets/blog-design-subscription.webp" alt="What is a design subscription service" class="w-full h-full object-cover block" width="1280" height="711" loading="lazy"></div>
               <h3 class="flex-1 min-w-0 font-display text-title text-heading transition-colors duration-fast group-hover:text-brand">What Is a Design Subscription?</h3>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-none text-body-caption transition-colors duration-fast group-hover:text-brand"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
@@ -86,13 +87,13 @@
           </div>
           <div class="flex flex-col gap-[16px]">
             <a href="/design-brief-builder" class="reveal group flex items-center gap-[22px] p-[16px] rounded-card bg-glass border border-hairline-card transition-[background,border-color,transform] duration-fast hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[2px] max-sm:flex-wrap">
-              <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden bg-grad-purple flex items-center justify-center max-sm:w-full max-sm:h-[170px]"><img src="../assets/icon-brief.png" alt="Design Brief Builder" class="w-auto h-[78px] object-contain block"></div>
+              <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden bg-grad-purple flex items-center justify-center max-sm:w-full max-sm:h-[170px]"><img src="../assets/icon-brief.webp" alt="Design Brief Builder" class="w-auto h-[78px] object-contain block" width="156" height="156" loading="lazy"></div>
               <h3 class="flex-1 min-w-0 font-display text-title text-heading transition-colors duration-fast group-hover:text-brand">Design Brief Builder</h3>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-none text-body-caption transition-colors duration-fast group-hover:text-brand"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
             
             <a href="/blog/why-design-hours-blow-out" class="reveal [transition-delay:60ms] group flex items-center gap-[22px] p-[16px] rounded-card bg-glass border border-hairline-card transition-[background,border-color,transform] duration-fast hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[2px] max-sm:flex-wrap">
-              <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden max-sm:w-full max-sm:h-[170px]"><img src="../assets/blog-hours-blow-out.png" alt="Why your design hours blow out" class="w-full h-full object-cover block"></div>
+              <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden max-sm:w-full max-sm:h-[170px]"><img src="../assets/blog-hours-blow-out.webp" alt="Why your design hours blow out" class="w-full h-full object-cover block" width="1024" height="550" loading="lazy"></div>
               <h3 class="flex-1 min-w-0 font-display text-title text-heading transition-colors duration-fast group-hover:text-brand">Why Design Hours Blow Out</h3>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-none text-body-caption transition-colors duration-fast group-hover:text-brand"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>

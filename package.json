@@ -4,7 +4,7 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "build:css": "npx @tailwindcss/cli -i ./input.css -o ./style.css",
+    "build:css": "npx @tailwindcss/cli -i ./input.css -o ./style.css --minify",
     "watch:css": "npx @tailwindcss/cli -i ./input.css -o ./style.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

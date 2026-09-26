@@ -10,12 +10,14 @@
 
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
 <link rel="stylesheet" href="/style.css">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-clip">
@@ -31,7 +33,7 @@
   <!-- Site nav mounted by /assets/site-nav.js -->
 <div data-site-nav-mount></div>
 <main id="main">
-<script src="/assets/site-nav.js"></script>
+<script src="/assets/site-nav.js" defer></script>
   <!-- ══ HERO ══ -->
   <section class="relative pt-hero-offset">
     <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(1100px_520px_at_30%_-6%,rgba(124,92,240,.22),transparent_62%)]"></div>

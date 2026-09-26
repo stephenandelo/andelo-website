@@ -9,12 +9,13 @@
 <style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>The Design Capacity Formula | Andelo</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
 <link rel="stylesheet" href="/style.css">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
@@ -30,7 +31,7 @@
     <!-- Site nav mounted by /assets/site-nav.js -->
   <div data-site-nav-mount></div>
 <main id="main">
-  <script src="/assets/site-nav.js"></script>
+  <script src="/assets/site-nav.js" defer></script>
 
 
   <!-- ══ HERO ══ -->
@@ -51,7 +52,7 @@
         </div>
       </div>
       <div class="reveal [transition-delay:100ms] print:hidden">
-        <img src="../assets/capacity-formula-hero.png" alt="Hours need vs team capacity" class="w-full h-auto object-contain block ml-auto" width="540" height="512">
+        <img src="../assets/capacity-formula-hero.png" alt="Hours need vs team capacity" class="w-full h-auto object-contain block ml-auto" width="540" height="512" fetchpriority="high">
       </div>
     </div>
   </section>
@@ -192,7 +193,7 @@
       <div class="reveal mt-[44px] pt-[28px] border-t border-[#E6E8EE]">
         <p class="text-base text-ink-body mb-[18px]">Thanks for reading, and I hope this interactive tool helps!</p>
         <div class="flex items-center gap-[16px] flex-wrap">
-          <img src="../assets/stephen-andelo.jpeg" alt="Stephen Andelo" class="w-[60px] h-[60px] rounded-full object-cover flex-none">
+          <img src="../assets/stephen-andelo.webp" alt="Stephen Andelo" class="w-[60px] h-[60px] rounded-full object-cover flex-none" width="120" height="120" loading="lazy">
           <div class="flex-1 min-w-[180px]">
             <div class="font-display font-bold text-[18px] text-ink">Stephen Andelo</div>
             <div class="text-[#6B7280] text-[15px] mt-[2px]">Founder, Andelo · <a href="https://www.linkedin.com/in/stephenandelo/" target="_blank" rel="noopener" class="font-semibold text-brand-onWhite hover:text-[#0A5730] transition-colors duration-fast">Connect on LinkedIn</a></div>
@@ -299,7 +300,7 @@
       return '<tr><td><input type="text" class="cs-in cs-in-text" placeholder="What is it?" aria-label="Item name" data-xb-label="' + i + '" value="' + esc(r.label) + '"></td><td><input type="number" min="0" inputmode="numeric" class="cs-in" aria-label="Quantity per month" data-xb-qty="' + i + '" value="' + esc(r.qty) + '"></td><td class="cs-num">× <input type="number" min="0" step="0.5" inputmode="decimal" class="cs-in" style="width:64px" aria-label="Hours each" data-xb-hrs="' + i + '" value="' + esc(r.hrs) + '">h</td><td class="cs-num whitespace-nowrap"><span data-xb-total="' + i + '">= 0h</span>' + RM.replace('data-rm', 'data-rm-bench="' + i + '"') + '</td></tr>';
     }).join('');
     t.innerHTML = S.extraTeam.map(function (r, i) {
-      return '<tr><td><input type="text" class="cs-in cs-in-text" placeholder="Who?" aria-label="Person" data-xt-label="' + i + '" value="' + esc(r.label) + '"></td><td colspan="2" class="whitespace-nowrap"><input type="number" min="0" inputmode="numeric" class="cs-in" aria-label="Real hours" data-xt-qty="' + i + '" value="' + esc(r.qty) + '"> real hours</td><td class="cs-num whitespace-nowrap"><span data-xt-total="' + i + '">= 0h</span>' + RM.replace('data-rm', 'data-rm-team="' + i + '"') + '</td></tr>';
+      return '<tr><td><input type="text" class="cs-in cs-in-text" placeholder="Who?" aria-label="Person" data-xt-label="' + i + '" value="' + esc(r.label) + '"></td><td colspan="2" class="whitespace-nowrap"><input type="number" min="0" inputmode="numeric" class="cs-in" aria-label="Real hours" data-xt-qty="' + i + '" value="' + esc(r.qty) + '">h</td><td class="cs-num whitespace-nowrap"><span data-xt-total="' + i + '">= 0h</span>' + RM.replace('data-rm', 'data-rm-team="' + i + '"') + '</td></tr>';
     }).join('');
     q('[data-ft]').value = S.ftCount; q('[data-pt-count]').value = S.ptCount; q('[data-pt-days]').value = S.ptDays;
     q('[data-mult-slow]').value = S.multSlow; q('[data-mult-busy]').value = S.multBusy;

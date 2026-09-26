@@ -9,12 +9,13 @@
 <style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Careers | Andelo</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
 <link rel="stylesheet" href="/style.css">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
@@ -31,7 +32,7 @@
     <!-- Site nav mounted by /assets/site-nav.js -->
   <div data-site-nav-mount></div>
 <main id="main">
-  <script src="/assets/site-nav.js"></script>
+  <script src="/assets/site-nav.js" defer></script>
 
 
   <!-- ══ HERO ══ -->
@@ -45,7 +46,7 @@
           <p class="mt-4 mb-[30px] text-body-muted text-lead max-w-prose [text-wrap:pretty]">Andelo is a design company that creates thousands of creative projects each year. Our work environment is driven by creativity, tech skills, and a positive vibe, making it a truly enjoyable place to build a career.</p>
           <a href="#jobs" class="btn-mint">Explore available jobs</a>
         </div>
-        <div class="flex-[1_1_54%] self-stretch flex items-center justify-center"><img src="../assets/careers-hero.png" alt="Global design team" class="block w-full h-auto object-contain"></div>
+        <div class="flex-[1_1_54%] self-stretch flex items-center justify-center"><img src="../assets/careers-hero.png" alt="Global design team" class="block w-full h-auto object-contain" width="313" height="272" fetchpriority="high"></div>
       </div>
     </div>
   </section>
@@ -55,22 +56,22 @@
     <div class="max-w-container mx-auto px-gutter">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[22px]">
         <div class="reveal card-glass p-card-standard">
-          <img src="../assets/icon-coins.svg" alt="Full-time stability" class="block w-[64px] h-[64px] object-contain mb-[18px]">
+          <img src="../assets/icon-coins.svg" alt="Full-time stability" class="block w-[64px] h-[64px] object-contain mb-[18px]" width="64" height="64" loading="lazy">
           <h3 class="font-display text-title text-heading mb-[10px]">Full-time stability</h3>
           <p class="text-body-muted text-small m-0 [text-wrap:pretty]">Secure a full-time position and enjoy steady work that supports your long-term career goals.</p>
         </div>
         <div class="reveal [transition-delay:60ms] card-glass p-card-standard">
-          <img src="../assets/icon-cap.svg" alt="Supportive team" class="block w-[64px] h-[64px] object-contain mb-[18px]">
+          <img src="../assets/icon-cap.svg" alt="Supportive team" class="block w-[64px] h-[64px] object-contain mb-[18px]" width="64" height="64" loading="lazy">
           <h3 class="font-display text-title text-heading mb-[10px]">Supportive team</h3>
           <p class="text-body-muted text-small m-0 [text-wrap:pretty]">Our workplace geared towards nurturing your potential and well-being.</p>
         </div>
         <div class="reveal [transition-delay:120ms] card-glass p-card-standard">
-          <img src="../assets/icon-shield.svg" alt="Competitive salary" class="block w-[64px] h-[64px] object-contain mb-[18px]">
+          <img src="../assets/icon-shield.svg" alt="Competitive salary" class="block w-[64px] h-[64px] object-contain mb-[18px]" width="64" height="64" loading="lazy">
           <h3 class="font-display text-title text-heading mb-[10px]">Competitive salary</h3>
           <p class="text-body-muted text-small m-0 [text-wrap:pretty]">Earn what you deserve with a salary that matches your skills and dedication.</p>
         </div>
         <div class="reveal [transition-delay:180ms] card-glass p-card-standard">
-          <img src="../assets/icon-team.svg" alt="Regular training" class="block w-[64px] h-[64px] object-contain mb-[18px]">
+          <img src="../assets/icon-team.svg" alt="Regular training" class="block w-[64px] h-[64px] object-contain mb-[18px]" width="64" height="64" loading="lazy">
           <h3 class="font-display text-title text-heading mb-[10px]">Regular training</h3>
           <p class="text-body-muted text-small m-0 [text-wrap:pretty]">Training that enhances your skills and prepares you for future challenges.</p>
         </div>

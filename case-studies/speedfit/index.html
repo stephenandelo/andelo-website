@@ -9,12 +9,13 @@
 <style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>SpeedFit case study | Andelo</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
 <link rel="stylesheet" href="/style.css">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
@@ -31,7 +32,7 @@
     <!-- Site nav mounted by /assets/site-nav.js -->
   <div data-site-nav-mount></div>
 <main id="main">
-  <script src="/assets/site-nav.js"></script>
+  <script src="/assets/site-nav.js" defer></script>
 
 
   <!-- ══ HERO ══ -->
@@ -49,7 +50,7 @@
         </div>
       </div>
       <div data-video data-vsrc="https://www.youtube-nocookie.com/embed/aqFulkv0U_4?autoplay=1&amp;rel=0&amp;playsinline=1" class="reveal [transition-delay:120ms] relative rounded-lg overflow-hidden border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,.5)] aspect-[9/16] w-full max-w-[340px] md:justify-self-end bg-[#0F1230] cursor-pointer">
-        <img class="hero-vid-img absolute inset-0 w-full h-full object-cover block" src="../../assets/speedfit-matej.png" alt="Matej, CEO &amp; Co-Founder of SpeedFit">
+        <img class="hero-vid-img absolute inset-0 w-full h-full object-cover block" src="../../assets/speedfit-matej.webp" alt="Matej, CEO &amp; Co-Founder of SpeedFit" width="840" height="473" fetchpriority="high">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(255,255,255,.22),transparent_60%)]"></div>
         <div class="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,transparent_45%,rgba(6,8,24,.55))]"></div>
         <button type="button" data-play class="btn-mint absolute left-[16px] right-[16px] bottom-[16px] gap-2 p-2 border-none text-[14px] tracking-[.08em] uppercase shadow-[0_10px_24px_rgba(0,0,0,.35)]"><span class="w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center flex-none"><svg width="14" height="14" viewBox="0 0 24 24" fill="#0A0C22" class="ml-[2px]"><path d="M8 5v14l11-7z"/></svg></span>Watch testimonial video</button>
