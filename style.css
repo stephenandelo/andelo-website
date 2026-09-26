@@ -128,6 +128,10 @@
     --text-eyebrow--letter-spacing: 0.2em;
     --text-caption: 14px;
     --text-caption--line-height: 1.5;
+    --text-stat: 36px;
+    --text-stat--line-height: 1;
+    --text-stat--font-weight: 700;
+    --text-micro: 12px;
     --font-weight-regular: 400;
     --font-weight-heavy: 800;
     --tracking-display: -0.03em;
@@ -2360,6 +2364,11 @@
     letter-spacing: var(--tw-tracking, var(--text-h3--letter-spacing));
     font-weight: var(--tw-font-weight, var(--text-h3--font-weight));
   }
+  .text-stat {
+    font-size: var(--text-stat);
+    line-height: var(--tw-leading, var(--text-stat--line-height));
+    font-weight: var(--tw-font-weight, var(--text-stat--font-weight));
+  }
   .text-blog-h1 {
     font-size: var(--text-blog-h1);
     line-height: var(--tw-leading, var(--text-blog-h1--line-height));
@@ -2418,9 +2427,6 @@
   .text-\[17px\] {
     font-size: 17px;
   }
-  .text-\[18\.5px\] {
-    font-size: 18.5px;
-  }
   .text-\[18px\] {
     font-size: 18px;
   }
@@ -2436,26 +2442,11 @@
   .text-\[22px\] {
     font-size: 22px;
   }
-  .text-\[23\.5px\] {
-    font-size: 23.5px;
-  }
-  .text-\[25px\] {
-    font-size: 25px;
-  }
-  .text-\[27px\] {
-    font-size: 27px;
-  }
   .text-\[28px\] {
     font-size: 28px;
   }
   .text-\[30px\] {
     font-size: 30px;
-  }
-  .text-\[34px\] {
-    font-size: 34px;
-  }
-  .text-\[36px\] {
-    font-size: 36px;
   }
   .text-\[45px\] {
     font-size: 45px;
@@ -2472,9 +2463,6 @@
   .text-\[clamp\(17px\,1\.6vw\,20px\)\] {
     font-size: clamp(17px, 1.6vw, 20px);
   }
-  .text-\[clamp\(18px\,1\.5vw\,21\.5px\)\] {
-    font-size: clamp(18px, 1.5vw, 21.5px);
-  }
   .text-\[clamp\(18px\,1\.6vw\,21px\)\] {
     font-size: clamp(18px, 1.6vw, 21px);
   }
@@ -2490,17 +2478,11 @@
   .text-\[clamp\(21px\,2vw\,26px\)\] {
     font-size: clamp(21px, 2vw, 26px);
   }
-  .text-\[clamp\(22px\,2\.3vw\,30px\)\] {
-    font-size: clamp(22px, 2.3vw, 30px);
-  }
   .text-\[clamp\(24px\,2\.4vw\,32px\)\] {
     font-size: clamp(24px, 2.4vw, 32px);
   }
   .text-\[clamp\(24px\,3vw\,32px\)\] {
     font-size: clamp(24px, 3vw, 32px);
-  }
-  .text-\[clamp\(26px\,2\.6vw\,34px\)\] {
-    font-size: clamp(26px, 2.6vw, 34px);
   }
   .text-\[clamp\(26px\,3\.2vw\,38px\)\] {
     font-size: clamp(26px, 3.2vw, 38px);
@@ -2523,9 +2505,6 @@
   .text-\[clamp\(28px\,3\.6vw\,44px\)\] {
     font-size: clamp(28px, 3.6vw, 44px);
   }
-  .text-\[clamp\(29\.5px\,4vw\,45px\)\] {
-    font-size: clamp(29.5px, 4vw, 45px);
-  }
   .text-\[clamp\(30px\,3\.4vw\,42px\)\] {
     font-size: clamp(30px, 3.4vw, 42px);
   }
@@ -2541,9 +2520,6 @@
   .text-\[clamp\(32px\,4\.6vw\,56px\)\] {
     font-size: clamp(32px, 4.6vw, 56px);
   }
-  .text-\[clamp\(32px\,4vw\,50px\)\] {
-    font-size: clamp(32px, 4vw, 50px);
-  }
   .text-\[clamp\(32px\,5vw\,50px\)\] {
     font-size: clamp(32px, 5vw, 50px);
   }
@@ -2553,23 +2529,20 @@
   .text-\[clamp\(34px\,4\.4vw\,54px\)\] {
     font-size: clamp(34px, 4.4vw, 54px);
   }
-  .text-\[clamp\(34px\,4\.5vw\,52px\)\] {
-    font-size: clamp(34px, 4.5vw, 52px);
-  }
   .text-\[clamp\(34px\,4\.6vw\,54px\)\] {
     font-size: clamp(34px, 4.6vw, 54px);
   }
   .text-\[clamp\(36px\,5vw\,58px\)\] {
     font-size: clamp(36px, 5vw, 58px);
   }
-  .text-\[clamp\(38\.5px\,5\.5vw\,67\.5px\)\] {
-    font-size: clamp(38.5px, 5.5vw, 67.5px);
-  }
   .text-\[clamp\(38px\,4\.8vw\,58px\)\] {
     font-size: clamp(38px, 4.8vw, 58px);
   }
   .text-\[clamp\(40px\,5\.2vw\,64px\)\] {
     font-size: clamp(40px, 5.2vw, 64px);
+  }
+  .text-micro {
+    font-size: var(--text-micro);
   }
   .leading-\[\.6\] {
     --tw-leading: .6;

@@ -122,6 +122,10 @@
   --text-eyebrow--letter-spacing: 0.2em;
   --text-caption: 14px;
   --text-caption--line-height: 1.5;
+  --text-stat: 36px;
+  --text-stat--line-height: 1;
+  --text-stat--font-weight: 700;
+  --text-micro: 12px;
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
