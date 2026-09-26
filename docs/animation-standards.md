@@ -6,7 +6,7 @@ Motion guides attention and confirms interaction. It never decorates for its own
 
 | Token | Value | Use |
 | --- | --- | --- |
-| `--ease-out` | `cubic-bezier(0.22, 1, 0.36, 1)` | **Live house curve** (default exit / settle). Source of truth for the site; older materials that cite `0.16, 0.8, 0.24, 1` are superseded. |
+| `--ease-out` | `cubic-bezier(0.16, 0.8, 0.24, 1)` | House easing for UI transitions. |
 | `--ease-in-out` | `cubic-bezier(0.65, 0, 0.35, 1)` | Balanced enter/exit |
 | `--dur-fast` | `150ms` | Hover, focus, button press |
 | `--dur-base` | `250ms` | Menus, dropdowns, tabs, accordions |
@@ -27,3 +27,5 @@ Transitions: nothing longer than `700ms`. The cap does not apply to ambient loop
 9. No animation libraries unless already in the project. CSS first, small vanilla JS for scroll triggers.
 10. Same component gets the same animation on every page.
 11. Ambient loops (marquee, background glow) are allowed, max 2 per page. They must pause when off-screen and stop fully under `prefers-reduced-motion`. The 700ms cap applies to transitions, not loops.
+
+UI motion uses the house easing. ease-in-out is only for looping glows. With reduced motion on, reveals show at once, cards don't lift and the glows stop.

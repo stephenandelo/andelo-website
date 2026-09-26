@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en-AU" style="color-scheme:dark;background-color:#0A0C22">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0C22">
+<style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}</style>
+<title>Style guide | Andelo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-canvas text-base text-body font-body antialiased overflow-x-hidden">
+<div id="top" class="relative">
+  <div data-site-nav-mount></div>
+<main id="main">
+  <script src="/assets/site-nav.js"></script>
+
+  <div class="relative z-[1] max-w-container mx-auto px-gutter pt-[140px] pb-section">
+    <div class="eyebrow">Internal</div>
+    <h1 class="font-display font-bold text-h1 text-heading-hi mt-4">Style guide</h1>
+    <p class="text-body text-lead mt-4 max-w-prose">Live specimens. Every value on this page is read from the compiled CSS. Copy classes from here, not from other pages.</p>
+    <nav class="flex flex-wrap gap-2 mt-6" aria-label="Style guide sections">
+      <a href="#colours" class="chip">Colours</a>
+      <a href="#type" class="chip">Typography</a>
+      <a href="#buttons" class="chip">Buttons</a>
+      <a href="#components" class="chip">Components</a>
+      <a href="#spacing" class="chip">Spacing</a>
+      <a href="#radius" class="chip">Radius</a>
+      <a href="#shadows" class="chip">Shadows</a>
+      <a href="#layout" class="chip">Layout</a>
+      <a href="#motion" class="chip">Motion</a>
+      <a href="#icons" class="chip">Icons</a>
+    </nav>
+
+    <section id="colours" class="pt-section">
+      <h2 class="font-display font-bold text-h2 text-heading">Colours</h2>
+      <p class="text-body-muted text-small mt-2 mb-6 max-w-prose">Swatches use the colour variables. The value and Tailwind class are read from the compiled theme.</p>
+      <div data-sg-colours class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-card"></div>
+    </section>
+
+    <section id="type" class="pt-section">
+      <h2 class="font-display font-bold text-h2 text-heading">Typography</h2>
+      <div class="flex flex-col gap-6 mt-6">
+        <div>
+          <p class="font-display text-h1 text-heading-hi">Heading 1</p>
+          <button type="button" class="chip mt-2" data-copy="font-display text-h1 text-heading-hi">Copy class</button>
+        </div>
+        <div>
+          <p class="font-display text-h2 text-heading">Heading 2</p>
+          <button type="button" class="chip mt-2" data-copy="font-display text-h2 text-heading">Copy class</button>
+        </div>
+        <div>
+          <p class="font-display text-h3 text-heading">Heading 3</p>
+          <button type="button" class="chip mt-2" data-copy="font-display text-h3 text-heading">Copy class</button>
+        </div>
+        <div>
+          <p class="text-lead text-body">Lead. The size and line height come from the lead token.</p>
+          <button type="button" class="chip mt-2" data-copy="text-lead text-body">Copy class</button>
+        </div>
+        <div>
+          <p class="text-body text-base">Body. Hanken Grotesk at the base size.</p>
+          <button type="button" class="chip mt-2" data-copy="text-body text-base">Copy class</button>
+        </div>
+        <div>
+          <p class="text-body-muted text-small">Supporting lines under headings and in cards.</p>
+          <button type="button" class="chip mt-2" data-copy="text-body-muted text-small">Copy class</button>
+        </div>
+        <div>
+          <p class="text-caption text-body-caption">Labels, meta and mono values. Never long-form.</p>
+          <button type="button" class="chip mt-2" data-copy="text-caption text-body-caption">Copy class</button>
+        </div>
+        <div>
+          <div class="eyebrow">Eyebrow</div>
+          <button type="button" class="chip mt-2" data-copy="eyebrow">Copy class</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="buttons" class="pt-section">
+      <h2 class="font-display font-bold text-h2 text-heading">Buttons</h2>
+      <p class="text-body-muted text-small mt-2 max-w-prose">Every link, chip, button and field shows the focus ring. Tab through the chip, the link and the field below to check it. Disabled uses the same class with the disabled attribute. The class handles the look. Links can't be disabled, so use a button.</p>
+      <div class="flex flex-wrap items-center gap-3 mt-4">
+        <a href="#buttons" class="text-brand underline">Sample link</a>
+        <span class="chip" tabindex="0">Sample chip</span>
+      </div>
+      <div class="flex flex-col gap-6 mt-6">
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="#buttons" class="btn-mint">Mint</a>
+          <button type="button" class="btn-mint" disabled>Mint disabled</button>
+          <button type="button" class="chip" data-copy="btn-mint">Copy class</button>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="#buttons" class="btn-mint-lg">Mint large</a>
+          <button type="button" class="btn-mint-lg" disabled>Mint large disabled</button>
+          <button type="button" class="chip" data-copy="btn-mint-lg">Copy class</button>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="#buttons" class="btn-ghost">Ghost</a>
+          <button type="button" class="btn-ghost" disabled>Ghost disabled</button>
+          <button type="button" class="chip" data-copy="btn-ghost">Copy class</button>
+        </div>
+      </div>
+      <div class="bg-paper rounded-lg p-gutter mt-6">
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="#buttons" class="btn-light">Light</a>
+          <button type="button" class="btn-light" disabled>Light disabled</button>
+        </div>
+      </div>
+      <button type="button" class="chip mt-3" data-copy="btn-light">Copy class</button>
+    </section>
+
+    <section id="components" class="pt-section">
+      <h2 class="font-display text-h2 text-heading">Components</h2>
+      <div class="flex flex-col gap-6 mt-6">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="chip">Chip</span>
+          <button type="button" class="chip" data-copy="chip">Copy class</button>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="badge">Client badge</span>
+          <button type="button" class="chip" data-copy="badge">Copy class</button>
+        </div>
+        <div>
+          <div class="card-glass p-card max-w-[420px]">
+            <h3 class="font-display font-bold text-heading mb-2">Glass card</h3>
+            <p class="text-body text-base">Hover lifts the card. Same class as the homepage cards.</p>
+          </div>
+          <button type="button" class="chip mt-3" data-copy="card-glass p-card">Copy class</button>
+        </div>
+        <div class="bg-paper rounded-lg p-gutter max-w-[480px]">
+          <p class="text-ink text-small mb-4 max-w-prose">On paper. Tab to the field. The error row is wired with aria-invalid and aria-describedby.</p>
+          <label class="field-label" for="sg-field">Default</label>
+          <input id="sg-field" type="text" class="field" placeholder="Brief title">
+          <label class="field-label mt-4" for="sg-error">Error</label>
+          <input id="sg-error" type="text" class="field" value="Missing name" aria-invalid="true" aria-describedby="sg-error-msg">
+          <p id="sg-error-msg" class="field-error">Give the task a name.</p>
+          <p class="field-hint mt-4">A short name you will recognise later.</p>
+          <label class="field-label" for="sg-off">Disabled</label>
+          <input id="sg-off" type="text" class="field" value="Not editable" disabled>
+          <button type="button" class="chip mt-3" data-copy="field">Copy class</button>
+        </div>
+        <div class="bg-paper text-ink rounded-lg p-gutter">
+          <div class="rt max-w-prose">
+            <p>Paper body with an <a href="#components">inline link</a> in the article style.</p>
+            <ul>
+              <li>One item</li>
+              <li>Another item</li>
+            </ul>
+            <table>
+              <thead><tr><th>Task</th><th>Hours</th></tr></thead>
+              <tbody><tr><td>Social</td><td>4</td></tr></tbody>
+            </table>
+          </div>
+          <button type="button" class="chip mt-3" data-copy="rt">Copy class</button>
+        </div>
+        <p class="text-body">On dark, an <a href="#components" class="text-brand underline">inline link</a> uses mint with an underline.</p>
+      </div>
+    </section>
+
+    <section id="spacing" class="pt-section">
+      <h2 class="font-display font-bold text-h2 text-heading">Spacing</h2>
+      <p class="text-body-muted text-small mt-2 mb-6 max-w-prose">Section padding and gaps from the spacing tokens.</p>
+      <div data-sg-spacing class="flex flex-col gap-3"></div>
+    </section>
+
+    <section id="radius" class="pt-section">
+      <h2 class="font-display text-h2 text-heading">Radius</h2>
+      <div data-sg-radius class="flex flex-col gap-3 mt-6"></div>
+    </section>
+
+    <section id="shadows" class="pt-section">
+      <h2 class="font-display text-h2 text-heading">Shadows</h2>
+      <div data-sg-shadows class="flex flex-col gap-3 mt-6"></div>
+    </section>
+
+    <section id="layout" class="pt-section">
+      <h2 class="font-display text-h2 text-heading">Layout</h2>
+      <div data-sg-layout class="flex flex-col gap-3 mt-6"></div>
+    </section>
+
+    <section id="motion" class="pt-section">
+      <h2 class="font-display font-bold text-h2 text-heading">Motion</h2>
+      <p class="text-body-muted text-small mt-2 mb-6 max-w-prose">With reduced motion on, reveals show at once, cards don't lift and the glows stop. UI motion uses the house easing. ease-in-out is only for looping glows.</p>
+      <div data-sg-motion class="flex flex-col gap-3 mb-6"></div>
+      <div class="flex flex-wrap items-end gap-6">
+        <div>
+          <div data-sg-reveal class="reveal card-glass p-card max-w-[280px]">
+            <p class="font-display font-bold text-heading">Reveal</p>
+            <p class="text-body text-small mt-1">Fades up once, using .reveal.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <button type="button" class="chip" data-sg-replay>Play reveal</button>
+            <button type="button" class="chip" data-copy="reveal">Copy class</button>
+          </div>
+        </div>
+        <div>
+          <div class="card-glass p-card max-w-[280px]">
+            <p class="font-display font-bold text-heading">Hover</p>
+            <p class="text-body text-small mt-1">.card-glass lifts on hover.</p>
+          </div>
+          <button type="button" class="chip mt-3" data-copy="card-glass">Copy class</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="icons" class="pt-section">
+      <h2 class="font-display font-bold text-h2 text-heading">Icons</h2>
+      <p class="text-body-muted text-small mt-2 mb-6">SVG files in /assets. Copy class copies the display class.</p>
+      <div data-sg-icons class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-card"></div>
+      <h3 class="font-display font-bold text-heading mt-8 mb-4">Client logos</h3>
+      <div data-sg-logos class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-card"></div>
+    </section>
+  </div>
+
+</main>
+  <div data-site-footer-mount></div>
+  <script src="/assets/site-footer.js"></script>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var cs = getComputedStyle(root);
+
+  function read(name) {
+    return (cs.getPropertyValue(name) || '').trim();
+  }
+
+  function toHex(value) {
+    var m = value.match(/^rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:[,\s/]+([\d.]+))?\s*\)$/i);
+    if (!m) return value;
+    function h(n) { var s = Number(n).toString(16); return s.length < 2 ? '0' + s : s; }
+    var hex = '#' + h(m[1]) + h(m[2]) + h(m[3]);
+    if (m[4] !== undefined && Number(m[4]) < 1) hex += h(Math.round(Number(m[4]) * 255));
+    return hex.toUpperCase();
+  }
+
+  function copyBtn(text) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'chip';
+    b.setAttribute('data-copy', text);
+    b.setAttribute('aria-label', 'Copy ' + text);
+    b.setAttribute('aria-live', 'polite');
+    b.textContent = 'Copy class';
+    return b;
+  }
+
+  function missing(parent, label) {
+    var row = document.createElement('div');
+    row.className = 'font-mono text-caption text-body-muted';
+    row.textContent = label + ' · Not in compiled CSS';
+    parent.appendChild(row);
+  }
+
+  function colourPrefix(name) {
+    if (name.indexOf('hairline') === 0 || name === 'brand-border') return 'border-';
+    if (name === 'brand' || name === 'brand-hover' || name === 'brand-ink' || name === 'brand-onWhite' || name.indexOf('heading') === 0 || name.indexOf('body') === 0 || name.indexOf('ink') === 0 || name.indexOf('onSecondary') === 0 || name.indexOf('status-') === 0) return 'text-';
+    return 'bg-';
+  }
+
+  var colourNames = [
+    'canvas', 'canvas-raised', 'navy-1', 'navy-2', 'glass', 'glass-hover',
+    'hairline', 'hairline-card', 'hairline-hover',
+    'brand', 'brand-hover', 'brand-ink', 'brand-soft', 'brand-softStrong', 'brand-border', 'brand-onWhite',
+    'heading', 'heading-hi', 'body', 'body-strong', 'body-muted', 'body-tertiary', 'body-caption', 'body-faint',
+    'paper', 'ink', 'ink-body', 'ink-muted', 'paper-muted', 'hairline-light', 'table-cell',
+    'jewel-blue', 'jewel-blueDeep', 'jewel-indigo', 'jewel-indigoDeep', 'jewel-purple', 'jewel-purpleDeep',
+    'jewel-magenta', 'jewel-magentaDeep', 'jewel-pink', 'jewel-pinkDeep', 'jewel-red', 'jewel-redDeep',
+    'onSecondary', 'onSecondary-body',
+    'status-red', 'status-amber', 'status-neutral'
+  ];
+  var colours = document.querySelector('[data-sg-colours]');
+  colourNames.forEach(function (name) {
+    var raw = read('--color-' + name);
+    var tw = colourPrefix(name) + name;
+    if (!raw) { missing(colours, '--color-' + name); return; }
+    var card = document.createElement('div');
+    card.className = 'card-glass p-card flex flex-col gap-2';
+    var sw = document.createElement('div');
+    sw.className = 'w-[72px] h-[72px] rounded-md border border-hairline';
+    sw.style.background = 'var(--color-' + name + ')';
+    var title = document.createElement('div');
+    title.className = 'font-mono text-caption text-heading';
+    title.textContent = '--color-' + name;
+    var hex = document.createElement('div');
+    hex.className = 'text-caption text-body-muted';
+    hex.textContent = toHex(raw);
+    var cls = document.createElement('div');
+    cls.className = 'font-mono text-caption text-body-strong';
+    cls.textContent = tw;
+    card.appendChild(sw);
+    card.appendChild(title);
+    card.appendChild(hex);
+    card.appendChild(cls);
+    card.appendChild(copyBtn(tw));
+    colours.appendChild(card);
+  });
+
+  var spaceNames = ['1', '2', '3', '4', '5', '6', '7', 'card', 'gutter', 'section', 'section-sm', 'nav'];
+  var spacing = document.querySelector('[data-sg-spacing]');
+  spaceNames.forEach(function (name) {
+    var token = '--spacing-' + name;
+    var raw = read(token);
+    var util = { section: 'py-section', gutter: 'px-gutter', card: 'p-card', 'section-sm': 'pt-section-sm' }[name] || ('p-' + name);
+    if (!raw) { missing(spacing, token); return; }
+    var row = document.createElement('div');
+    row.className = 'flex flex-wrap items-center gap-3';
+    var bar = document.createElement('div');
+    bar.className = 'h-[8px] rounded-pill bg-brand';
+    bar.style.width = raw;
+    var label = document.createElement('div');
+    label.className = 'font-mono text-caption text-body-strong';
+    label.textContent = util;
+    row.appendChild(bar);
+    row.appendChild(label);
+    row.appendChild(copyBtn(util));
+    spacing.appendChild(row);
+  });
+
+  var motionNames = [
+    ['--ease-out', 'ease-out'],
+    ['--ease-in-out', 'ease-in-out'],
+    ['--dur-fast', 'duration-fast'],
+    ['--dur-base', 'duration-base'],
+    ['--dur-slow', 'duration-slow']
+  ];
+  var motion = document.querySelector('[data-sg-motion]');
+  motionNames.forEach(function (pair) {
+    var raw = read(pair[0]);
+    if (!raw) { missing(motion, pair[0]); return; }
+    var row = document.createElement('div');
+    row.className = 'flex flex-wrap items-center gap-3';
+    var label = document.createElement('div');
+    label.className = 'font-mono text-caption text-body-strong';
+    label.textContent = pair[0] + ' · ' + raw + ' · ' + pair[1];
+    row.appendChild(label);
+    row.appendChild(copyBtn(pair[1]));
+    motion.appendChild(row);
+  });
+
+  var icons = [
+    'icon-brief.svg', 'icon-calculator.svg', 'icon-cap.svg', 'icon-coins.svg',
+    'icon-consistent.svg', 'icon-effortless.svg',
+    'icon-fix-base.svg', 'icon-fix-clock.svg', 'icon-fix-cubes.svg', 'icon-fix-paper.svg', 'icon-fix-resize.svg', 'icon-fix-search.svg',
+    'icon-how-brief.svg', 'icon-how-deliver.svg', 'icon-how-scale.svg',
+    'icon-reliable.svg', 'icon-senior.svg', 'icon-shield.svg',
+    'icon-svc-3d.svg', 'icon-svc-ads.svg', 'icon-svc-campaign.svg', 'icon-svc-email.svg', 'icon-svc-motion.svg',
+    'icon-svc-presentations.svg', 'icon-svc-print.svg', 'icon-svc-reports.svg', 'icon-svc-social.svg', 'icon-svc-web.svg',
+    'icon-team-check.svg', 'icon-team-container.svg', 'icon-team-cubes.svg', 'icon-team-star.svg', 'icon-team.svg',
+    'icon-who-agencies.svg', 'icon-who-no-designer.svg', 'icon-who-overloaded.svg'
+  ];
+  var iconClass = 'w-[56px] h-[56px] object-contain';
+  var iconGrid = document.querySelector('[data-sg-icons]');
+  icons.forEach(function (file) {
+    var card = document.createElement('div');
+    card.className = 'card-glass p-card flex flex-col gap-2';
+    var img = document.createElement('img');
+    img.src = '/assets/' + file;
+    img.alt = '';
+    img.className = iconClass;
+    img.width = 56;
+    img.height = 56;
+    var name = document.createElement('div');
+    name.className = 'font-mono text-caption text-body-muted break-all';
+    name.textContent = file;
+    card.appendChild(img);
+    card.appendChild(name);
+    card.appendChild(copyBtn(iconClass));
+    iconGrid.appendChild(card);
+  });
+
+  var logos = [
+    ['logo-oren.svg', 'Oren Greenberg'],
+    ['trusted-mask.png', 'Mask'],
+    ['trusted-speedfit.png', 'Speedfit'],
+    ['trusted-fitness-cartel.png', 'Fitness Cartel'],
+    ['trusted-goodwill.png', 'Goodwill'],
+    ['trusted-ungc.png', 'UNGC'],
+    ['trusted-butcher-crowd.png', 'Butcher Crowd'],
+    ['trusted-scope.png', 'Scope'],
+    ['trusted-bridgit.png', 'Bridgit']
+  ];
+  var logoClass = 'h-[22px] w-auto object-contain';
+  var logoGrid = document.querySelector('[data-sg-logos]');
+  logos.forEach(function (item) {
+    var card = document.createElement('div');
+    card.className = 'card-glass p-card flex flex-col gap-2';
+    var img = document.createElement('img');
+    img.src = '/assets/' + item[0];
+    img.alt = item[1];
+    img.className = logoClass;
+    var name = document.createElement('div');
+    name.className = 'font-mono text-caption text-body-muted break-all';
+    name.textContent = item[0];
+    card.appendChild(img);
+    card.appendChild(name);
+    card.appendChild(copyBtn(logoClass));
+    logoGrid.appendChild(card);
+  });
+
+  function fillGroup(parent, names) {
+    names.forEach(function (name) {
+      var raw = read(name);
+      if (!raw) { missing(parent, name + ' from @theme'); return; }
+      var row = document.createElement('div');
+      row.className = 'font-mono text-caption text-body-strong';
+      row.textContent = name + ' · ' + raw;
+      parent.appendChild(row);
+      parent.appendChild(copyBtn(name));
+    });
+  }
+  fillGroup(document.querySelector('[data-sg-radius]'), ['--radius-xs', '--radius-sm', '--radius-md', '--radius-card', '--radius-lg', '--radius-pill']);
+  fillGroup(document.querySelector('[data-sg-shadows]'), ['--shadow-btn', '--shadow-btn-hover', '--shadow-btn-lg', '--shadow-card', '--shadow-panel', '--shadow-lift', '--shadow-table', '--shadow-field']);
+  fillGroup(document.querySelector('[data-sg-layout]'), ['--max-width-container', '--spacing-gutter', '--breakpoint-sm', '--breakpoint-md', '--breakpoint-lg', '--breakpoint-xl']);
+
+  document.querySelectorAll('#type [data-copy]').forEach(function (btn) {
+    var el = btn.previousElementSibling, s = getComputedStyle(el);
+    var fs = parseFloat(s.fontSize), lh = parseFloat(s.lineHeight), ls = parseFloat(s.letterSpacing);
+    var out = document.createElement('div');
+    out.className = 'font-mono text-caption text-body-muted mt-2';
+    out.textContent = s.fontFamily.split(',')[0] + ' · ' + Math.round(fs * 10) / 10 + 'px · line ' +
+      (lh ? (lh / fs).toFixed(2) : 'normal') + ' · weight ' + s.fontWeight +
+      ' · tracking ' + (ls ? (ls / fs).toFixed(3) + 'em' : '0');
+    el.after(out);
+  });
+
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var value = btn.getAttribute('data-copy');
+    btn.setAttribute('aria-label', 'Copy ' + value);
+    btn.setAttribute('aria-live', 'polite');
+    btn.addEventListener('click', function () {
+      var done = function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy class'; }, 1200);
+      };
+      var fail = function () { btn.textContent = 'Copy failed'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(done).catch(fail);
+      } else {
+        fail();
+      }
+    });
+  });
+
+  var sample = document.querySelector('[data-sg-reveal]');
+  var replay = document.querySelector('[data-sg-replay]');
+  if (replay && sample) {
+    replay.addEventListener('click', function () {
+      sample.classList.remove('reveal-in');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { sample.classList.add('reveal-in'); });
+      });
+    });
+  }
+
+  var reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(function (el) {
+    el.classList.add('reveal-in');
+  });
+})();
+</script>
+</body>
+</html>
