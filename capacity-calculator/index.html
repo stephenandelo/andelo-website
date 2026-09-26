@@ -63,7 +63,7 @@
           <div data-lines class="min-h-[8px] mt-[10px] mb-[4px]"></div>
           <div class="flex justify-between items-baseline pt-4 pb-[6px] mt-[8px]">
             <span class="font-display font-semibold text-[15px] text-white">Time Estimation:</span>
-            <span data-total class="font-display text-stat tracking-snug tabular-nums text-brand">0<small class="text-white/75 text-[13px] font-normal"> hrs</small></span>
+            <span data-total class="font-display text-stat tracking-snug tabular-nums text-brand">0<small class="text-white/75 text-caption font-normal"> hrs</small></span>
           </div>
           <div class="mt-[14px] mb-[6px]" aria-hidden="true">
             <div class="relative h-[14px] rounded-pill bg-black/[.22] border border-white/[.28] overflow-hidden">
@@ -152,7 +152,7 @@
   var rows = root.querySelector('[data-rows]'), lines = root.querySelector('[data-lines]'), total = root.querySelector('[data-total]'),
       range = root.querySelector('[data-range]'), rec = root.querySelector('[data-rec]'), recT = root.querySelector('[data-rec-title]'), recB = root.querySelector('[data-rec-body]');
   var fmt = function (n) { return Math.round(n * 10) % 10 === 0 ? Math.round(n) : n.toFixed(1).replace('.0', ''); };
-  var SMALL = '<small class="text-white/75 text-[13px] font-normal"> hrs</small>';
+  var SMALL = '<small class="text-white/75 text-caption font-normal"> hrs</small>';
   var BTN = 'w-[40px] h-[40px] bg-transparent border-none text-[#9CA0AE] text-[20px] cursor-pointer transition-colors duration-fast hover:bg-brand-soft hover:text-brand';
 
   rows.innerHTML = ITEMS.map(function (it) {
@@ -171,17 +171,17 @@
     ITEMS.forEach(function (it) {
       if (qty[it.id] > 0) {
         var l = qty[it.id] * it.lo, h = qty[it.id] * it.hi; lo += l; hi += h;
-        html += '<div class="flex justify-between gap-[12px] py-[7px] border-b border-white/[.18] text-white/[.85] text-caption"><span class="text-body">' + qty[it.id] + ' \u00d7 ' + it.name.toLowerCase() + '</span><span class="tabular-nums whitespace-nowrap">' + fmt(l) + '-' + fmt(h) + 'h</span></div>';
+        html += '<div class="flex justify-between gap-[12px] py-[7px] border-b border-white/[.18] text-white/[.85] text-caption"><span class="text-body">' + qty[it.id] + ' \u00d7 ' + it.name.toLowerCase() + '</span><span class="tabular-nums whitespace-nowrap">' + fmt(l) + '\u2013' + fmt(h) + 'h</span></div>';
       }
     });
     lines.innerHTML = html;
-    total.innerHTML = (hi === 0 ? '0' : fmt(lo) + '-' + fmt(hi)) + SMALL;
+    total.innerHTML = (hi === 0 ? '0' : fmt(lo) + '\u2013' + fmt(hi)) + SMALL;
     var L = Math.min(lo, SCALE) / SCALE * 100, W = Math.max(2, (Math.min(hi, SCALE) - Math.min(lo, SCALE)) / SCALE * 100);
     range.style.left = L + '%'; range.style.width = (hi === 0 ? 0 : W) + '%';
     rec.classList.toggle('hidden', hi === 0);
     rec.style.borderColor = hi > 0 ? 'rgba(124,92,240,.55)' : '';
     if (hi === 0) return;
-    var mid = lo + (hi - lo) * 0.625, r = '<b class="text-body">' + fmt(lo) + '-' + fmt(hi) + ' hours</b>', t, b;
+    var mid = lo + (hi - lo) * 0.625, r = '<b class="text-body">' + fmt(lo) + '\u2013' + fmt(hi) + ' hours</b>', t, b;
     if (hi < 18)       { t = 'Too light for a subscription';            b = 'About ' + r + ' of design a month: occasional work. One-off design or a freelancer is the better fit here.'; }
     else if (mid <= 32){ t = 'A good size to test a subscription';      b = 'About ' + r + ' a month of steady, recurring work. Enough volume to see what a design subscription does for you, without overcommitting.'; }
     else if (mid <= 62){ t = 'A subscription saves you real time here'; b = 'About ' + r + ' a month of regular, recurring work. Exactly what a design subscription is built for: steady volume, handled every week.'; }

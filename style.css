@@ -62,9 +62,9 @@
     --color-ink: var(--color-canvas);
     --color-ink-body: #3D4048;
     --color-ink-muted: #4A4F63;
+    --color-ink-caption: #6B7099;
     --color-paper-muted: #F5F7FB;
     --color-hairline-light: #E3E7EF;
-    --color-table-cell: #3A4160;
     --color-jewel-blue: #61A5F2;
     --color-jewel-blueDeep: #2E5FB0;
     --color-jewel-indigo: #6170F2;
@@ -512,6 +512,9 @@
   .left-\[27px\] {
     left: 27px;
   }
+  .isolate {
+    isolation: isolate;
+  }
   .z-0 {
     z-index: 0;
   }
@@ -790,9 +793,6 @@
   }
   .table {
     display: table;
-  }
-  .table-cell {
-    display: table-cell;
   }
   .aspect-\[9\/16\] {
     aspect-ratio: 9/16;
@@ -1090,9 +1090,6 @@
   }
   .max-w-\[560px\] {
     max-width: 560px;
-  }
-  .max-w-\[600px\] {
-    max-width: 600px;
   }
   .max-w-\[620px\] {
     max-width: 620px;
@@ -1414,6 +1411,9 @@
   }
   .self-stretch {
     align-self: stretch;
+  }
+  .overflow-clip {
+    overflow: clip;
   }
   .overflow-hidden {
     overflow: hidden;
@@ -2361,12 +2361,6 @@
   .text-\[13\.5px\] {
     font-size: 13.5px;
   }
-  .text-\[13px\] {
-    font-size: 13px;
-  }
-  .text-\[14\.5px\] {
-    font-size: 14.5px;
-  }
   .text-\[14px\] {
     font-size: 14px;
   }
@@ -2397,17 +2391,8 @@
   .text-\[45px\] {
     font-size: 45px;
   }
-  .text-\[clamp\(18px\,1\.6vw\,21px\)\] {
-    font-size: clamp(18px, 1.6vw, 21px);
-  }
   .text-\[clamp\(28px\,3\.6vw\,44px\)\] {
     font-size: clamp(28px, 3.6vw, 44px);
-  }
-  .text-\[clamp\(34px\,4\.4vw\,54px\)\] {
-    font-size: clamp(34px, 4.4vw, 54px);
-  }
-  .text-\[clamp\(40px\,5\.2vw\,64px\)\] {
-    font-size: clamp(40px, 5.2vw, 64px);
   }
   .text-micro {
     font-size: var(--text-micro);
@@ -2415,18 +2400,6 @@
   .leading-\[\.6\] {
     --tw-leading: .6;
     line-height: .6;
-  }
-  .leading-\[1\.05\] {
-    --tw-leading: 1.05;
-    line-height: 1.05;
-  }
-  .leading-\[1\.06\] {
-    --tw-leading: 1.06;
-    line-height: 1.06;
-  }
-  .leading-\[1\.7\] {
-    --tw-leading: 1.7;
-    line-height: 1.7;
   }
   .leading-\[1\.08\] {
     --tw-leading: 1.08;
@@ -2455,6 +2428,10 @@
   .leading-\[1\.75\] {
     --tw-leading: 1.75;
     line-height: 1.75;
+  }
+  .leading-long {
+    --tw-leading: var(--leading-long);
+    line-height: var(--leading-long);
   }
   .leading-snug {
     --tw-leading: var(--leading-snug);
@@ -2520,10 +2497,6 @@
     --tw-tracking: .24em;
     letter-spacing: .24em;
   }
-  .tracking-display {
-    --tw-tracking: var(--tracking-display);
-    letter-spacing: var(--tracking-display);
-  }
   .tracking-label {
     --tw-tracking: var(--tracking-label);
     letter-spacing: var(--tracking-label);
@@ -2543,6 +2516,9 @@
   .\[text-wrap\:pretty\] {
     text-wrap: pretty;
   }
+  .text-wrap {
+    text-wrap: wrap;
+  }
   .break-words {
     overflow-wrap: break-word;
   }
@@ -2560,9 +2536,6 @@
   }
   .text-\[\#0E7A43\] {
     color: #0E7A43;
-  }
-  .text-\[\#5A6072\] {
-    color: #5A6072;
   }
   .text-\[\#5E8B72\] {
     color: #5E8B72;
@@ -2740,11 +2713,11 @@
   .opacity-0 {
     opacity: 0%;
   }
-  .opacity-40 {
-    opacity: 40%;
-  }
   .opacity-55 {
     opacity: 55%;
+  }
+  .opacity-70 {
+    opacity: 70%;
   }
   .opacity-90 {
     opacity: 90%;
@@ -2873,6 +2846,10 @@
     @supports (color: color-mix(in lab, red, red)) {
       --tw-ring-color: color-mix(in oklab, var(--color-brand) 40%, transparent);
     }
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .blur {
     --tw-blur: blur(8px);
@@ -3074,6 +3051,9 @@
   }
   .\[-webkit-mask-image\:linear-gradient\(90deg\,transparent\,\#000_12\%\,\#000_88\%\,transparent\)\] {
     -webkit-mask-image: linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  }
+  .\[xml\:lang\] {
+    xml: lang;
   }
   @media (hover: hover) {
     .group-hover\:text-brand:is(:where(.group):hover *) {
@@ -4015,7 +3995,7 @@ html, body {
     background: var(--color-paper-muted);
   }
   .rt td {
-    color: var(--color-table-cell);
+    color: var(--color-ink-body);
   }
   .rt hr {
     border: none;
@@ -4045,7 +4025,7 @@ html, body {
     .rt td {
       border: none;
       padding: 0;
-      color: var(--color-table-cell);
+      color: var(--color-ink-body);
     }
     .rt td:first-child {
       font-family: var(--font-display);
@@ -4112,7 +4092,7 @@ html, body {
   }
   .rt details.faq .faq-body p {
     margin: 0;
-    color: var(--color-table-cell);
+    color: var(--color-ink-body);
   }
   .rt blockquote {
     margin: 30px 0;
@@ -4432,8 +4412,8 @@ html, body {
     background: #fff;
     color: var(--color-ink);
     font-family: 'Hanken Grotesk',system-ui,sans-serif;
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: var(--text-small);
+    line-height: var(--text-small--line-height);
     transition: border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);
   }
   .field:focus {
@@ -4442,7 +4422,7 @@ html, body {
     box-shadow: var(--shadow-field);
   }
   .field::placeholder {
-    color: #6B7099;
+    color: var(--color-ink-caption);
     opacity: 1;
   }
   textarea.field {
@@ -4466,9 +4446,9 @@ html, body {
     color: var(--color-ink);
   }
   .field-hint {
-    color: var(--color-ink-muted);
-    font-size: 13.5px;
-    line-height: 1.5;
+    color: var(--color-ink-caption);
+    font-size: var(--text-caption);
+    line-height: var(--text-caption--line-height);
     margin: 0 0 10px;
   }
   .field-error {
@@ -5093,6 +5073,11 @@ html:not(.js) .reveal, html:not(.js) .reveal-atf {
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -5250,6 +5235,7 @@ html:not(.js) .reveal, html:not(.js) .reveal-atf {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;

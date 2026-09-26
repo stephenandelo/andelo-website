@@ -66,8 +66,10 @@
           <button type="button" class="chip mt-2" data-copy="text-lead text-body">Copy class</button>
         </div>
         <div>
-          <p class="text-body text-base">Body. Hanken Grotesk at the base size.</p>
-          <button type="button" class="chip mt-2" data-copy="text-body text-base">Copy class</button>
+        <div class="bg-paper rounded-lg p-gutter">
+          <p class="text-ink-body text-base leading-long m-0">Long-read body in articles and job descriptions. Line height 1.7.</p>
+        </div>
+        <button type="button" class="chip mt-2" data-copy="text-base leading-long">Copy class</button>
         </div>
         <div>
           <p class="text-body-muted text-small">Supporting lines under headings and in cards.</p>
@@ -288,7 +290,7 @@
     'hairline', 'hairline-card', 'hairline-hover',
     'brand', 'brand-hover', 'brand-ink', 'brand-soft', 'brand-softStrong', 'brand-border', 'brand-onWhite',
     'heading', 'body', 'body-strong', 'body-muted', 'body-caption', 'body-faint',
-    'paper', 'ink', 'ink-body', 'ink-muted', 'paper-muted', 'hairline-light', 'table-cell',
+    'paper', 'ink', 'ink-body', 'ink-muted', 'ink-caption', 'paper-muted', 'hairline-light',
     'jewel-blue', 'jewel-blueDeep', 'jewel-indigo', 'jewel-indigoDeep', 'jewel-purple', 'jewel-purpleDeep',
     'jewel-magenta', 'jewel-magentaDeep', 'jewel-pink', 'jewel-pinkDeep', 'jewel-red', 'jewel-redDeep',
     'onSecondary', 'onSecondary-body',
@@ -356,7 +358,8 @@
     ['--ease-in-out', 'ease-in-out'],
     ['--dur-fast', 'duration-fast'],
     ['--dur-base', 'duration-base'],
-    ['--dur-slow', 'duration-slow']
+    ['--dur-slow', 'duration-slow'],
+    ['--leading-long', 'leading-long']
   ];
   var motion = document.querySelector('[data-sg-motion]');
   motionNames.forEach(function (pair) {
@@ -445,7 +448,7 @@
   }
   fillGroup(document.querySelector('[data-sg-radius]'), ['--radius-xs', '--radius-sm', '--radius-md', '--radius-card', '--radius-lg', '--radius-pill']);
   fillGroup(document.querySelector('[data-sg-shadows]'), ['--shadow-btn', '--shadow-btn-hover', '--shadow-btn-lg', '--shadow-card', '--shadow-panel', '--shadow-lift', '--shadow-table', '--shadow-field']);
-  fillGroup(document.querySelector('[data-sg-layout]'), ['--max-width-container', '--max-width-prose', '--max-width-intro', '--spacing-gutter', '--breakpoint-sm', '--breakpoint-md', '--breakpoint-lg', '--breakpoint-xl']);
+  fillGroup(document.querySelector('[data-sg-layout]'), ['--max-width-container', '--max-width-narrow', '--max-width-column', '--max-width-prose', '--max-width-intro', '--spacing-gutter', '--breakpoint-sm', '--breakpoint-md', '--breakpoint-lg', '--breakpoint-xl']);
 
   document.querySelectorAll('#type [data-copy]').forEach(function (btn) {
     var el = btn.previousElementSibling, s = getComputedStyle(el);

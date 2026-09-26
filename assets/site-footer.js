@@ -21,7 +21,7 @@
       return '<a href="' + item.href + '" class="' + link + '">' + item.label + '</a>';
     }).join('');
     return '<div>' +
-      '<div class="text-[13.5px] font-semibold tracking-label-wide uppercase text-body-faint mb-[18px]">' + title + '</div>' +
+      '<div class="text-[13.5px] font-semibold tracking-label-wide uppercase text-body-caption mb-[18px]">' + title + '</div>' +
       '<div class="flex flex-col gap-2">' + links + '</div></div>';
   }
 
@@ -57,11 +57,11 @@
       '</div>' +
       '<div class="max-w-container mx-auto mt-[44px] px-gutter pt-4 border-t border-white/[.06] flex flex-wrap justify-between gap-[14px]">' +
         '<div class="flex flex-wrap items-center gap-[18px]">' +
-          '<span class="text-body-faint text-[15px]">© 2026 Andelo Pty Ltd. All rights reserved.</span>' +
-          '<a href="/privacy-policy/" class="text-body-faint text-[15px] hover:text-brand transition-colors duration-fast">Privacy Policy</a>' +
-          '<a href="/terms-of-use/" class="text-body-faint text-[15px] hover:text-brand transition-colors duration-fast">Terms of Use</a>' +
+          '<span class="text-body-caption text-[15px]">© 2026 Andelo Pty Ltd. All rights reserved.</span>' +
+          '<a href="/privacy-policy/" class="text-body-caption text-[15px] hover:text-brand transition-colors duration-fast">Privacy Policy</a>' +
+          '<a href="/terms-of-use/" class="text-body-caption text-[15px] hover:text-brand transition-colors duration-fast">Terms of Use</a>' +
         '</div>' +
-        '<span class="text-body-faint text-[15px]">Andelo acknowledges the Traditional Owners of Country throughout Australia.</span>' +
+        '<span class="text-body-caption text-[15px]">Andelo acknowledges the Traditional Owners of Country throughout Australia.</span>' +
       '</div>' +
     '</footer>';
 
