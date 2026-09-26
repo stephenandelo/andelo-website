@@ -1,1 +1,16 @@
+# Dev / internal (not for public site)
+AGENTS.md
+.env.example
+.cursor/
+docs/
+scripts/
 seo-dashboard.html
+input.css
+tailwind.config.js
+
+# _internal except styleguide + seo (when present)
+_internal/*
+!_internal/styleguide/
+!_internal/styleguide/**
+!_internal/seo/
+!_internal/seo/**

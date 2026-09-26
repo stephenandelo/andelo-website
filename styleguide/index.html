@@ -162,6 +162,13 @@
           <input id="sg-error" type="text" class="field" value="Missing name" aria-invalid="true" aria-describedby="sg-error-msg">
           <p id="sg-error-msg" class="field-error">Give the task a name.</p>
           <p class="field-hint mt-4">A short name you will recognise later.</p>
+          <label class="field-label mt-4" for="sg-phone-local">Phone row (book a call)</label>
+          <div class="field-phone-row">
+            <select id="sg-phone-dial" class="field field-phone-dial" aria-label="Country code"><option value="+61">Australia (+61)</option><option value="+64">New Zealand (+64)</option></select>
+            <input id="sg-phone-local" type="tel" class="field" placeholder="412 345 678">
+          </div>
+          <p class="field-email-typo mt-2">Did you mean <button type="button" class="field-email-typo-fix">gmail.com</button>?</p>
+          <p class="text-ink-caption text-caption mt-2">Paper links: <a href="#components" class="link-on-paper">privacy policy</a></p>
           <label class="field-label" for="sg-off">Disabled</label>
           <input id="sg-off" type="text" class="field" value="Not editable" disabled>
           <button type="button" class="chip mt-3" data-copy="field">Copy class</button>
