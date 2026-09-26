@@ -1,8 +1,21 @@
 /**
- * Sample jewel panel contrast at text lightest edge (375 / 1280 viewports).
- * Uses gradient math + DOM geometry (matches input.css ramps).
+ * Sample jewel panel contrast at the lightest edge behind copy (375 / 768 / 1280).
+ * Local only. Requires devDependency puppeteer (.npmrc skips Chromium on CI/Vercel).
+ * First run locally: npx puppeteer browsers install chrome
+ * Usage: node scripts/measure-jewel-contrast.mjs http://127.0.0.1:PORT/
  */
-import puppeteer from 'puppeteer';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+let puppeteer;
+try {
+  puppeteer = require('puppeteer');
+} catch {
+  console.error('Missing puppeteer. Run: npm install (dev) then npx puppeteer browsers install chrome');
+  process.exit(1);
+}
+
+const WIDTHS = [375, 768, 1280];
 
 const OLD_RAMPS = {
   'jewel-purple-icon-top': 'linear-gradient(180deg, #A661F2 0%, #6E2EB0 58%)',
@@ -23,12 +36,12 @@ const OLD_RAMPS = {
 
 const NEW_RAMPS = {
   'jewel-purple-icon-top': 'linear-gradient(180deg, #A661F2 0%, #6E2EB0 42%)',
-  'jewel-purple-copy-left': 'linear-gradient(90deg, #6E2EB0 0%, #6E2EB0 64%, #A661F2 100%)',
+  'jewel-purple-copy-left': 'linear-gradient(90deg, #6E2EB0 0%, #6E2EB0 80%, #A661F2 100%)',
   'jewel-purple-copy-center': 'linear-gradient(180deg, #A661F2 0%, #6E2EB0 22%, #6E2EB0 100%)',
   'jewel-purple-copy-top': 'linear-gradient(180deg, #6E2EB0 0%, #6E2EB0 72%, #A661F2 100%)',
   'jewel-blue-icon-top': 'linear-gradient(180deg, #61A5F2 0%, #2E5FB0 34%)',
   'jewel-indigo-icon-top': 'linear-gradient(180deg, #6170F2 0%, #2E38B0 42%)',
-  'jewel-indigo-copy-left': 'linear-gradient(90deg, #2E38B0 0%, #2E38B0 64%, #6170F2 100%)',
+  'jewel-indigo-copy-left': 'linear-gradient(90deg, #2E38B0 0%, #2E38B0 80%, #6170F2 100%)',
   'jewel-indigo-copy-top': 'linear-gradient(180deg, #2E38B0 0%, #2E38B0 74%, #6170F2 100%)',
   'jewel-red-copy-left': 'linear-gradient(90deg, #B02E2E 0%, #B02E2E 92%, #F26161 100%)',
   'jewel-red-copy-top': 'linear-gradient(180deg, #B02E2E 0%, #B02E2E 78%, #F26161 100%)',
@@ -114,6 +127,11 @@ const PANELS = [
   { name: 'Home bento — Effortless', page: '/', panel: '#why .grid > div:nth-child(4)', mode: 'copy-left', rampKey: 'jewel-red-copy-left', rampKeyMd: 'jewel-red-copy-left', rampKeySm: 'jewel-red-copy-top', label: 'span.text-micro', h: 'h3', p: 'p' },
   { name: 'Home — lead magnet', page: '/', panel: 'section:has(a[href="/design-capacity-formula"]) .rounded-lg', mode: 'copy-left', rampKey: 'jewel-purple-copy-left', rampKeySm: 'jewel-purple-copy-top', label: null, h: 'h2', p: 'p' },
   { name: 'Why — purple card', page: '/why/', panel: '#why .grid > div:nth-child(1)', mode: 'icon-top', rampKey: 'jewel-purple-icon-top', h: 'h3', p: 'p' },
+  { name: 'Why — blue card', page: '/why/', panel: '#why .grid > div:nth-child(2)', mode: 'icon-top', rampKey: 'jewel-blue-icon-top', h: 'h3', p: 'p' },
+  { name: 'Why — pink card', page: '/why/', panel: '#why .grid > div:nth-child(3)', mode: 'icon-top', rampKey: 'jewel-pink-icon-top', h: 'h3', p: 'p' },
+  { name: 'Why — indigo card', page: '/why/', panel: '#why .grid > div:nth-child(4)', mode: 'icon-top', rampKey: 'jewel-indigo-icon-top-a6', h: 'h3', p: 'p' },
+  { name: 'Why — magenta card', page: '/why/', panel: '#why .grid > div:nth-child(5)', mode: 'icon-top', rampKey: 'jewel-magenta-icon-top', h: 'h3', p: 'p' },
+  { name: 'Why — red card', page: '/why/', panel: '#why .grid > div:nth-child(6)', mode: 'icon-top', rampKey: 'jewel-red-icon-top', h: 'h3', p: 'p' },
   { name: 'Blog index CTA', page: '/blog/', panel: 'section:has(a[href="/design-capacity-formula"]) .rounded-lg', mode: 'copy-left', rampKey: 'jewel-purple-copy-left', rampKeySm: 'jewel-purple-copy-top', h: 'h2', p: 'p' },
   { name: 'Blog article CTA', page: '/blog/why-design-hours-blow-out/', panel: 'section.bg-paper .rounded-lg', mode: 'copy-left', rampKey: 'jewel-purple-copy-left', rampKeySm: 'jewel-purple-copy-top', h: 'h2', p: 'p' },
   { name: 'Resources hero', page: '/resources/', panel: 'section.pt-hero-offset .rounded-lg', mode: 'copy-left', rampKey: 'jewel-purple-copy-left', rampKeySm: 'jewel-purple-copy-top', h: 'h1', p: 'p' },
@@ -122,6 +140,16 @@ const PANELS = [
   { name: 'Formula CTA', page: '/design-capacity-formula/', panel: '.cs-print-hide.rounded-lg', mode: 'copy-center', rampKey: 'jewel-purple-copy-center', h: 'h2', p: 'p' },
   { name: 'Careers aside', page: '/careers/account-manager/', panel: 'aside.rounded-lg', mode: 'copy-top', rampKey: 'jewel-indigo-copy-top', h: '.text-title', p: '.text-base' },
 ];
+
+function resolveRampKey(cfg, width) {
+  if (cfg.rampKeySm) {
+    const mdStack = cfg.name === 'Resources hero' || cfg.name === 'Capacity calc hero';
+    if (mdStack && width < 769) return cfg.rampKeySm;
+    if (!mdStack && width < 640) return cfg.rampKeySm;
+  }
+  if (cfg.rampKeyMd && width >= 768) return cfg.rampKeyMd;
+  return cfg.rampKey;
+}
 
 async function measurePage(page, width, ramps, base) {
   await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
@@ -134,12 +162,7 @@ async function measurePage(page, width, ramps, base) {
       await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
     }
     await page.evaluate(() => window.scrollTo(0, 0));
-    let rampKey = cfg.rampKey;
-    if (cfg.rampKeySm) {
-      const mdStack = cfg.name === 'Resources hero' || cfg.name === 'Capacity calc hero';
-      if ((mdStack && width < 768) || (!mdStack && width < 640)) rampKey = cfg.rampKeySm;
-    }
-    if (width >= 768 && cfg.rampKeyMd) rampKey = cfg.rampKeyMd;
+    const rampKey = resolveRampKey(cfg, width);
     const css = ramps[rampKey];
     const spec = parseStops(css);
     if (!spec) continue;
@@ -240,12 +263,13 @@ async function main() {
   const base = process.argv[2] || 'http://127.0.0.1:59400/';
   const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
   const page = await browser.newPage();
-  const old375 = await measurePage(page, 375, OLD_RAMPS, base);
-  const old1280 = await measurePage(page, 1280, OLD_RAMPS, base);
-  const new375 = await measurePage(page, 375, NEW_RAMPS, base);
-  const new1280 = await measurePage(page, 1280, NEW_RAMPS, base);
+  const out = { old: {}, new: {} };
+  for (const w of WIDTHS) {
+    out.old[w] = await measurePage(page, w, OLD_RAMPS, base);
+    out.new[w] = await measurePage(page, w, NEW_RAMPS, base);
+  }
   await browser.close();
-  console.log(JSON.stringify({ old375, old1280, new375, new1280 }, null, 2));
+  console.log(JSON.stringify(out, null, 2));
 }
 
 main().catch((e) => {

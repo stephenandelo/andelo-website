@@ -20,7 +20,6 @@
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
-    "puppeteer": "^23.11.1",
     "sharp": "^0.35.4",
     "to-ico": "^1.1.5"
   }
