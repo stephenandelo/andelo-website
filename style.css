@@ -714,9 +714,6 @@
   .aspect-\[16\/10\] {
     aspect-ratio: 16/10;
   }
-  .aspect-\[1014\/961\] {
-    aspect-ratio: 1014/961;
-  }
   .aspect-\[1276\/728\] {
     aspect-ratio: 1276/728;
   }
@@ -2989,10 +2986,6 @@
   }
   .shadow-\[0_30px_60px_rgba\(0\,0\,0\,\.45\)\] {
     --tw-shadow: 0 30px 60px var(--tw-shadow-color, rgba(0,0,0,.45));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-\[0_30px_70px_rgba\(0\,0\,0\,\.4\)\] {
-    --tw-shadow: 0 30px 70px var(--tw-shadow-color, rgba(0,0,0,.4));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-\[0_30px_70px_rgba\(0\,0\,0\,\.35\)\] {
