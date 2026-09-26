@@ -150,6 +150,7 @@
   --leading-tight: 1.1;
   --leading-snug: 1.5;
   --leading-body: 1.6;
+  --leading-long: 1.7;
 
   --spacing-1: 6px;
   --spacing-2: 12px;
@@ -365,7 +366,7 @@ body {
   .rt {
     color: var(--color-ink-muted);
     font-size: var(--text-base);
-    line-height: var(--text-base--line-height);
+    line-height: var(--leading-long);
   }
   .rt h2 {
     font-family: var(--font-display);
@@ -652,14 +653,14 @@ body {
   /* Design brief builder */
   /* Brief Builder form on paper. Component CSS: form controls + states. */
   .bt-light{color-scheme:light;}
-  .field{width:100%;padding:14px 16px;border:1.5px solid #D4D9E6;border-radius:14px;background:#fff;color:#12141C;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:15px;line-height:1.5;transition:border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);}
+  .field{width:100%;padding:14px 16px;border:1.5px solid #D4D9E6;border-radius:14px;background:#fff;color:var(--color-ink);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:15px;line-height:1.5;transition:border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);}
   .field:focus{outline:none;border-color:#3DE68C;box-shadow:var(--shadow-field);}
   .field::placeholder{color:#6B7099;opacity:1;}
   textarea.field{resize:vertical;min-height:52px;}
   .field.bt-bad,.bt-bad,.field[aria-invalid="true"]{border-color:#F26161!important;}
   .field:disabled{opacity:.45;cursor:not-allowed;}
   .field-label{@apply block text-ink text-small font-semibold mb-2;}
-  .field-hint{color:#5A6172;font-size:13.5px;line-height:1.5;margin:0 0 10px;}
+  .field-hint{color:var(--color-ink-muted);font-size:13.5px;line-height:1.5;margin:0 0 10px;}
   .field-error{color:var(--color-status-redInk);font-size:13px;line-height:1.5;margin:6px 0 0;}
   .bt-seg label{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:500;font-size:14px;padding:11px 16px;border:1.5px solid #D4D9E6;border-radius:100px;cursor:pointer;transition:all .15s var(--ease-out);margin:0;position:relative;}
   .bt-seg label span{display:block;color:#3D4048;}
@@ -677,19 +678,19 @@ body {
 
   /* Careers job detail pages */
   /* Job description prose on paper. Component CSS: authored HTML. */
-  .job h2{font-family:var(--font-display);font-weight:var(--text-h3--font-weight);font-size:var(--text-h3);line-height:var(--text-h3--line-height);letter-spacing:var(--text-h3--letter-spacing);color:#12162E;margin:56px 0 18px;}
+  .job h2{font-family:var(--font-display);font-weight:var(--text-h3--font-weight);font-size:var(--text-h3);line-height:var(--text-h3--line-height);letter-spacing:var(--text-h3--letter-spacing);color:var(--color-ink);margin:56px 0 18px;}
   .job h2:first-child{margin-top:0;}
-  .job h3{font-family:var(--font-display);font-weight:var(--text-title--font-weight);font-size:var(--text-title);line-height:var(--text-title--line-height);letter-spacing:var(--text-title--letter-spacing);color:#12162E;margin:34px 0 14px;}
-  .job p{color:#3A4160;font-size:var(--text-base);line-height:var(--text-base--line-height);margin:0 0 18px;text-wrap:pretty;}
+  .job h3{font-family:var(--font-display);font-weight:var(--text-title--font-weight);font-size:var(--text-title);line-height:var(--text-title--line-height);letter-spacing:var(--text-title--letter-spacing);color:var(--color-ink);margin:34px 0 14px;}
+  .job p{color:var(--color-ink-body);font-size:var(--text-base);line-height:var(--leading-long);margin:0 0 18px;text-wrap:pretty;}
   .job ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
-  .job li{display:flex;align-items:flex-start;gap:13px;color:#3A4160;font-size:var(--text-base);line-height:var(--text-base--line-height);}
+  .job li{display:flex;align-items:flex-start;gap:13px;color:var(--color-ink-body);font-size:var(--text-base);line-height:var(--text-base--line-height);}
   .job li::before{content:"";flex:none;margin-top:7px;width:7px;height:7px;border-radius:50%;background:var(--color-brand-onWhite);}
   .job .steps{display:flex;flex-direction:column;}
   .job .step{display:flex;align-items:flex-start;gap:18px;padding:13px 0;border-top:1px solid rgba(18,22,46,.1);}
   .job .step-n{flex:none;width:36px;height:36px;border-radius:50%;background:rgba(14,122,67,.1);border:1px solid rgba(14,122,67,.26);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:var(--text-small);color:var(--color-brand-onWhite);}
-  .job .step-t{font-family:var(--font-display);font-weight:var(--text-title--font-weight);font-size:var(--text-title);line-height:var(--text-title--line-height);letter-spacing:var(--text-title--letter-spacing);color:#12162E;margin-bottom:5px;}
-  .job .step p{color:#5A6172;font-size:var(--text-small);line-height:var(--text-small--line-height);margin:0;}
-  .job .eeo{margin:32px 0 0;color:#5A6172;font-size:var(--text-small);line-height:var(--text-small--line-height);}
+  .job .step-t{font-family:var(--font-display);font-weight:var(--text-title--font-weight);font-size:var(--text-title);line-height:var(--text-title--line-height);letter-spacing:var(--text-title--letter-spacing);color:var(--color-ink);margin-bottom:5px;}
+  .job .step p{color:var(--color-ink-muted);font-size:var(--text-small);line-height:var(--text-small--line-height);margin:0;}
+  .job .eeo{margin:32px 0 0;color:var(--color-ink-muted);font-size:var(--text-small);line-height:var(--text-small--line-height);}
 
   /* Case study cards (Work page) */
   [data-case] .case-img {

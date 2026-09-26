@@ -30,15 +30,15 @@
   <script src="/assets/site-nav.js"></script>
 
 
-  <div class="relative z-[1] max-w-[760px] mx-auto px-4 pt-[150px] pb-[100px]">
+  <div class="relative z-[1] max-w-[760px] mx-auto px-4 pt-hero-offset pb-[100px]">
 
     <!-- ══ INTRO ══ -->
-    <div class="inline-flex items-center gap-[9px] pl-[8px] pr-[14px] py-[7px] rounded-pill bg-brand-soft border border-[rgba(61,230,140,.28)] mb-[20px]">
+    <div class="eyebrow mb-[20px]">
       <span class="w-[24px] h-[24px] rounded-full bg-brand flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#04160C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="font-display text-[13px] font-semibold tracking-label uppercase text-brand">Free tool · No sign-up</span>
+      Free tool, no sign-up
     </div>
-    <h1 class="font-display font-bold text-[clamp(32px,5vw,50px)] leading-[1.05] tracking-display text-heading mb-[16px]">Design Brief <span class="text-brand">Builder</span></h1>
-    <p class="text-white text-lead max-w-[60ch] [text-wrap:pretty]">Use this free tool to stop rework before it starts. A complete brief means a higher chance the work comes back right the first time. Fill in the form and get a clean, formatted brief, ready to copy and paste to your designer.</p>
+    <h1 class="font-display text-h1 text-heading mb-[16px]">Design brief <span class="text-brand">builder</span></h1>
+    <p class="text-body-muted text-lead max-w-prose [text-wrap:pretty]">Use this free tool to stop rework before it starts. A complete brief means a higher chance the work comes back right the first time. Fill in the form and get a clean, formatted brief, ready to copy and paste to your designer.</p>
     <ul class="list-none mt-[20px] p-0 flex flex-col gap-[8px] max-w-[560px]">
       <li class="flex items-start gap-[10px] text-base leading-snug text-body"><span class="flex-none mt-[4px] flex"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="font-semibold">Two minutes</strong> start to finish.</span></li>
       <li class="flex items-start gap-[10px] text-base leading-snug text-body"><span class="flex-none mt-[4px] flex"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="font-semibold">Stays private,</strong> nothing is sent anywhere.</span></li>
@@ -50,50 +50,50 @@
       <form data-brief novalidate class="mt-5 flex flex-col gap-[26px]">
 
         <div>
-          <label for="bt-name" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">Task name <span class="text-brand-onWhite">*</span></label>
-          <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">A short name you'll recognise later.</div>
+          <label for="bt-name" class="field-label">Task name <span class="text-brand-onWhite">*</span></label>
+          <div class="field-hint">A short name you'll recognise later.</div>
           <input type="text" id="bt-name" class="field" placeholder="e.g. October launch social set">
-          <div data-err="name" class="hidden text-[#BE3826] text-[13px] mt-[6px]">Give the task a name.</div>
+          <div data-err="name" class="hidden field-error">Give the task a name.</div>
         </div>
 
         <div>
-          <label for="bt-scope" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">What you need <span class="text-brand-onWhite">*</span></label>
-          <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">List the deliverables and how many. Each format is its own file, so name them all.</div>
+          <label for="bt-scope" class="field-label">What you need <span class="text-brand-onWhite">*</span></label>
+          <div class="field-hint">List the deliverables and how many. Each format is its own file, so name them all.</div>
           <textarea id="bt-scope" rows="3" class="field" placeholder="e.g. 1 Instagram post + 3 resizes (square, story, landscape). Or: 8-page A4 brochure, print-ready."></textarea>
-          <div data-err="scope" class="hidden text-[#BE3826] text-[13px] mt-[6px]">List what you need made.</div>
+          <div data-err="scope" class="hidden field-error">List what you need made.</div>
         </div>
 
         <div>
-          <label for="bt-obj" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">The objective, in one sentence <span class="text-brand-onWhite">*</span></label>
-          <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">What is this design for, and what should it achieve?</div>
+          <label for="bt-obj" class="field-label">The objective, in one sentence <span class="text-brand-onWhite">*</span></label>
+          <div class="field-hint">What is this design for, and what should it achieve?</div>
           <input type="text" id="bt-obj" class="field" placeholder="e.g. Drive event signups from our email list.">
-          <div data-err="obj" class="hidden text-[#BE3826] text-[13px] mt-[6px]">Say what the design is for.</div>
+          <div data-err="obj" class="hidden field-error">Say what the design is for.</div>
         </div>
 
         <div>
-          <label class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">Is the copy final? <span class="text-brand-onWhite">*</span></label>
-          <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">Final, approved words prevent the most common cause of redone work.</div>
+          <label class="field-label">Is the copy final? <span class="text-brand-onWhite">*</span></label>
+          <div class="field-hint">Final, approved words prevent the most common cause of redone work.</div>
           <div class="bt-seg flex gap-[8px] flex-wrap" data-seg="copy"><label><input type="radio" name="copy" value="Final and approved"><span>Final and approved</span></label><label><input type="radio" name="copy" value="Still in draft (may change)"><span>Still in draft</span></label><label><input type="radio" name="copy" value="No copy needed"><span>No copy needed</span></label></div>
-          <div data-err="copy" class="hidden text-[#BE3826] text-[13px] mt-[6px]">Choose the copy status.</div>
+          <div data-err="copy" class="hidden field-error">Choose the copy status.</div>
           <textarea id="bt-copytext" rows="3" class="field mt-2" placeholder="Paste the final copy here, or note where it lives."></textarea>
         </div>
 
         <div>
-          <label for="bt-specs" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">Brand and specs <span class="text-brand-onWhite">*</span></label>
-          <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">Sizes, orientation, output format (print-ready PDF, PNG, etc.), platform, plus links to your logo, fonts, colours, and any images or product shots. Updating something? Link the existing file.</div>
+          <label for="bt-specs" class="field-label">Brand and specs <span class="text-brand-onWhite">*</span></label>
+          <div class="field-hint">Sizes, orientation, output format (print-ready PDF, PNG, etc.), platform, plus links to your logo, fonts, colours, and any images or product shots. Updating something? Link the existing file.</div>
           <textarea id="bt-specs" rows="3" class="field" placeholder="e.g. 1080x1080 + 1080x1920, digital, Instagram. Brand kit: [link]. Use our teal, not the old blue."></textarea>
-          <div data-err="specs" class="hidden text-[#BE3826] text-[13px] mt-[6px]">Add sizes, format, and where the brand files are.</div>
+          <div data-err="specs" class="hidden field-error">Add sizes, format, and where the brand files are.</div>
         </div>
 
         <div>
-          <label for="bt-must" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">Must-haves <span class="text-[#8A90A6] font-medium">(optional)</span></label>
-          <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">Anything that MUST appear: CTA links, promo codes, QR destinations, phone numbers, legal lines, T&amp;Cs, partner or sponsor logos. If none, leave blank.</div>
+          <label for="bt-must" class="field-label">Must-haves <span class="text-[#8A90A6] font-medium">(optional)</span></label>
+          <div class="field-hint">Anything that MUST appear: CTA links, promo codes, QR destinations, phone numbers, legal lines, T&amp;Cs, partner or sponsor logos. If none, leave blank.</div>
           <textarea id="bt-must" rows="2" class="field" placeholder="e.g. CTA links to andelo.com.au/spring. Promo code SPRING25. Include sponsor logo strip + fundraising T&amp;Cs."></textarea>
         </div>
 
         <div>
-          <label for="bt-datebtn" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">Deadline <span class="text-brand-onWhite">*</span></label>
-          <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">A real date, not "ASAP". It lets the work be planned and checked properly.</div>
+          <label for="bt-datebtn" class="field-label">Deadline <span class="text-brand-onWhite">*</span></label>
+          <div class="field-hint">A real date, not "ASAP". It lets the work be planned and checked properly.</div>
           <div class="relative">
             <input type="hidden" id="bt-date">
             <button type="button" id="bt-datebtn" class="field text-left cursor-pointer flex items-center justify-between gap-2">
@@ -110,65 +110,65 @@
               <div id="bt-calgrid" class="grid grid-cols-7 gap-[4px]"></div>
             </div>
           </div>
-          <div data-err="date" class="hidden text-[#BE3826] text-[13px] mt-[6px]">Pick a date.</div>
+          <div data-err="date" class="hidden field-error">Pick a date.</div>
           <label class="flex items-center gap-[11px] cursor-pointer mt-2"><input type="checkbox" id="bt-firm"><span class="text-[15px] text-ink-body">This date is firm (a hard deadline)</span></label>
         </div>
 
         <div>
-          <label for="bt-approver" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">Final approver <span class="text-[#8A90A6] font-medium">(optional, leave blank if that's you)</span></label>
-          <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">The one person who signs off, with everyone's feedback gathered into a single set.</div>
+          <label for="bt-approver" class="field-label">Final approver <span class="text-[#8A90A6] font-medium">(optional, leave blank if that's you)</span></label>
+          <div class="field-hint">The one person who signs off, with everyone's feedback gathered into a single set.</div>
           <input type="text" id="bt-approver" class="field" placeholder="e.g. Priya (Marketing Manager)">
         </div>
 
         <div>
-          <label class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">Rough scale <span class="text-[#8A90A6] font-medium">(optional)</span></label>
-          <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">A rough sense of size helps the designer plan. Skip it if you're not sure.</div>
+          <label class="field-label">Rough scale <span class="text-[#8A90A6] font-medium">(optional)</span></label>
+          <div class="field-hint">A rough sense of size helps the designer plan. Skip it if you're not sure.</div>
           <div class="bt-seg flex gap-[8px] flex-wrap" data-seg="size"><label><input type="radio" name="size" value="Quick fix"><span>Quick fix</span></label><label><input type="radio" name="size" value="Half a day"><span>Half a day</span></label><label><input type="radio" name="size" value="A full day"><span>A full day</span></label><label><input type="radio" name="size" value="A few days"><span>A few days</span></label><label><input type="radio" name="size" value="A large project"><span>Large project</span></label></div>
         </div>
 
         <div>
-          <label for="bt-ref" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">Reference or direction <span class="text-[#8A90A6] font-medium">(optional)</span></label>
-          <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">Examples, links, or "same as last month". If you have a direction, share it. If not, that's fine, say so.</div>
+          <label for="bt-ref" class="field-label">Reference or direction <span class="text-[#8A90A6] font-medium">(optional)</span></label>
+          <div class="field-hint">Examples, links, or "same as last month". If you have a direction, share it. If not, that's fine, say so.</div>
           <textarea id="bt-ref" rows="2" class="field" placeholder="e.g. Same layout as September's edition. Or: we like [link], especially the type."></textarea>
         </div>
 
-        <button type="submit" class="btn-mint w-full py-[17px] text-[16px] font-display border-none cursor-pointer mt-[6px]">Build the brief</button>
+        <button type="submit" class="btn-mint w-full border-none cursor-pointer mt-[6px]">Build the brief</button>
       </form>
 
-      <div data-output class="hidden mt-5 bg-white border-[1.5px] border-[#E2E6EF] rounded-md p-[26px]">
+      <div data-output class="hidden mt-5 bg-white border-[1.5px] border-[#E2E6EF] rounded-md p-card-compact">
         <div class="flex items-center justify-between gap-[14px] mb-[18px] flex-wrap">
-          <h2 class="font-display font-bold text-[20px] text-ink m-0">Your brief</h2>
-          <button type="button" data-copy class="btn-mint px-[22px] py-2 text-caption font-semibold border-none cursor-pointer shadow-none">Copy brief</button>
+          <h2 class="font-display text-title text-ink m-0">Your brief</h2>
+          <button type="button" data-copy class="btn-mint-sm border-none cursor-pointer">Copy brief</button>
         </div>
         <pre data-pre class="whitespace-pre-wrap break-words bg-transparent border-0 border-t border-[#E2E6EF] pt-[22px] font-body text-caption leading-[1.75] text-ink-body m-0"></pre>
       </div>
     </div>
 
-    <p class="mt-[26px] mx-auto max-w-[70ch] text-center text-body-strong text-[17.5px] leading-[1.65] [text-wrap:pretty]">Found it useful? Bookmark it for next time, and send the link to anyone on your team who briefs designers. It works with any designer, on any project, and it stays free.</p>
+    <p class="mt-[26px] mx-auto max-w-intro text-center text-body-muted text-base [text-wrap:pretty]">Found it useful? Bookmark it for next time, and send the link to anyone on your team who briefs designers. It works with any designer, on any project, and it stays free.</p>
 
     <!-- ══ FAQ ══ -->
     <section class="mt-[60px]">
-      <h2 class="font-display font-bold text-[clamp(24px,3vw,32px)] leading-[1.1] tracking-tight text-heading mb-4">Common questions</h2>
+      <h2 class="font-display text-h2 text-heading mb-4">Common questions</h2>
       <div class="flex flex-col gap-[14px]">
-        <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] px-[26px] py-4">
-          <h3 class="font-display font-semibold text-[19px] text-heading mb-[8px]">Is my brief sent anywhere?</h3>
-          <p class="text-body text-small m-0">No. Nothing you type leaves this page. No account, no email, no server. It runs entirely in your browser.</p>
+        <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] p-card-compact">
+          <h3 class="font-display text-title text-heading mb-[8px]">Is my brief sent anywhere?</h3>
+          <p class="text-body-muted text-small m-0">No. Nothing you type leaves this page. No account, no email, no server. It runs entirely in your browser.</p>
         </div>
-        <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] px-[26px] py-4">
-          <h3 class="font-display font-semibold text-[19px] text-heading mb-[8px]">Why is this free?</h3>
-          <p class="text-body text-small m-0">Better briefs make design work better for everyone, including us. And a good brief is only half of it. The other half is an experienced designer turning it into great work. So the knowledge is free, and the expertise is what we sell.</p>
+        <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] p-card-compact">
+          <h3 class="font-display text-title text-heading mb-[8px]">Why is this free?</h3>
+          <p class="text-body-muted text-small m-0">Better briefs make design work better for everyone, including us. And a good brief is only half of it. The other half is an experienced designer turning it into great work. So the knowledge is free, and the expertise is what we sell.</p>
         </div>
-        <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] px-[26px] py-4">
-          <h3 class="font-display font-semibold text-[19px] text-heading mb-[8px]">Does this only work with Andelo?</h3>
-          <p class="text-body text-small m-0">No. It works for every production design type (graphics, presentations, print, digital). For web development, motion, or app design, use it as the base and add that discipline's specs.</p>
+        <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] p-card-compact">
+          <h3 class="font-display text-title text-heading mb-[8px]">Does this only work with Andelo?</h3>
+          <p class="text-body-muted text-small m-0">No. It works for every production design type (graphics, presentations, print, digital). For web development, motion, or app design, use it as the base and add that discipline's specs.</p>
         </div>
-        <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] px-[26px] py-4">
-          <h3 class="font-display font-semibold text-[19px] text-heading mb-[8px]">Do small tasks really need a brief?</h3>
-          <p class="text-body text-small m-0">A repeat task with a designer who already knows your brand can skip the brief. The ones that need it are the firsts: a new designer, or a task that looks small but you've never briefed before. Don't assume the familiar request is the same request.</p>
+        <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] p-card-compact">
+          <h3 class="font-display text-title text-heading mb-[8px]">Do small tasks really need a brief?</h3>
+          <p class="text-body-muted text-small m-0">A repeat task with a designer who already knows your brand can skip the brief. The ones that need it are the firsts: a new designer, or a task that looks small but you've never briefed before. Don't assume the familiar request is the same request.</p>
         </div>
-        <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] px-[26px] py-4">
-          <h3 class="font-display font-semibold text-[19px] text-heading mb-[8px]">What if I can't answer every question?</h3>
-          <p class="text-body text-small m-0">Fill what you know and say what's still open. A brief that names its gaps (&ldquo;copy is still in review&rdquo;) beats one that leaves them empty: the designer knows it's incomplete, instead of assuming it's complete and building on the missing piece.</p>
+        <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] p-card-compact">
+          <h3 class="font-display text-title text-heading mb-[8px]">What if I can't answer every question?</h3>
+          <p class="text-body-muted text-small m-0">Fill what you know and say what's still open. A brief that names its gaps (&ldquo;copy is still in review&rdquo;) beats one that leaves them empty: the designer knows it's incomplete, instead of assuming it's complete and building on the missing piece.</p>
         </div>
       </div>
     </section>

@@ -34,14 +34,14 @@
 
 
   <!-- ══ HERO (indigo jewel panel, the page's one) ══ -->
-  <section class="relative pt-[110px] pb-5">
+  <section class="relative pt-hero-offset pb-5">
     <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(1100px_520px_at_50%_-4%,rgba(124,92,240,.24),transparent_60%)]"></div>
     <div class="relative max-w-container mx-auto px-gutter">
       <div class="flex flex-col md:flex-row items-stretch overflow-hidden rounded-lg bg-grad-indigo shadow-[0_24px_54px_rgba(46,56,176,.32)] border border-white/[.14]">
         <div class="flex-[1_1_58%] px-[28px] py-[36px] md:px-[44px] md:py-[48px] text-left">
-          <div class="reveal inline-flex items-center gap-[9px] text-[13px] font-semibold tracking-eyebrow uppercase text-white mb-[16px]"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" class="flex-none"><rect x="4.5" y="2.5" width="15" height="19" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 7h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15h.01M8.5 18.5h.01M12 18.5h.01M15.5 18.5h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Capacity calculator</div>
-          <h1 class="reveal [transition-delay:60ms] font-display font-bold text-[clamp(34px,4.4vw,52px)] leading-[1.05] tracking-display text-white">How many design hours does <span class="text-brand">your month need?</span></h1>
-          <p class="reveal [transition-delay:120ms] mt-4 text-onSecondary-body text-[clamp(17px,1.4vw,19px)] leading-body">Use our calculator to find out your average monthly design need (not resizes or quick updates). Checked against industry benchmarks.</p>
+          <div class="reveal eyebrow mb-[16px]"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" class="flex-none"><rect x="4.5" y="2.5" width="15" height="19" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 7h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15h.01M8.5 18.5h.01M12 18.5h.01M15.5 18.5h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Capacity calculator</div>
+          <h1 class="reveal [transition-delay:60ms] font-display text-h1 text-white">How many design hours does <span class="text-brand">your month need?</span></h1>
+          <p class="reveal [transition-delay:120ms] mt-4 text-onSecondary-body text-lead">Use our calculator to find out your average monthly design need (not resizes or quick updates). Checked against industry benchmarks.</p>
         </div>
         <div class="flex-[1_1_42%] self-stretch flex items-center justify-center px-[28px] py-[28px] md:px-5 md:py-gutter"><img src="../assets/capacity-calculator-hero.png" alt="Capacity calculator" class="block w-full h-auto max-h-[300px] object-contain"></div>
       </div>
@@ -53,17 +53,17 @@
     <div class="max-w-container mx-auto px-gutter">
       <div class="reveal [transition-delay:80ms] grid grid-cols-1 md:grid-cols-[1.15fr_.85fr] gap-[22px] items-start">
         <div class="bg-glass backdrop-blur-card border border-hairline-card rounded-lg overflow-hidden">
-          <h2 class="font-display text-[14.5px] font-semibold tracking-label-wide uppercase text-heading px-4 pt-[22px] pb-[6px]">Deliverables</h2>
+          <h2 class="eyebrow px-4 pt-[22px] pb-[6px]">Deliverables</h2>
           <div class="px-4 pt-[2px] pb-[16px] text-[#8A90B8] text-small leading-[1.55]">Each number covers designing the piece from the brief and delivering it in the sizes it needs.</div>
           <div data-rows></div>
         </div>
 
         <aside aria-live="polite" class="self-start md:sticky md:top-[96px] rounded-lg p-4 backdrop-blur-card border border-[rgba(124,92,240,.4)] bg-[radial-gradient(520px_320px_at_100%_0,rgba(124,92,240,.32),transparent_62%),linear-gradient(165deg,#2A2A72,#171A44)] shadow-[0_20px_50px_rgba(90,80,240,.22),0_8px_24px_rgba(0,0,0,.35)]">
-          <h2 class="font-display text-[14.5px] font-semibold tracking-label-wide uppercase text-white/[.85] mb-[6px]">Your Month</h2>
+          <h2 class="eyebrow mb-[6px]">Your month</h2>
           <div data-lines class="min-h-[8px] mt-[10px] mb-[4px]"></div>
           <div class="flex justify-between items-baseline pt-4 pb-[6px] mt-[8px]">
             <span class="font-display font-semibold text-[15px] text-white">Time Estimation:</span>
-            <span data-total class="font-display font-bold text-[30px] tracking-snug tabular-nums text-brand">0<small class="text-white/75 text-[13px] font-normal"> hrs</small></span>
+            <span data-total class="font-display text-stat tracking-snug tabular-nums text-brand">0<small class="text-white/75 text-[13px] font-normal"> hrs</small></span>
           </div>
           <div class="mt-[14px] mb-[6px]" aria-hidden="true">
             <div class="relative h-[14px] rounded-pill bg-black/[.22] border border-white/[.28] overflow-hidden">
@@ -75,7 +75,7 @@
           </div>
           <div data-rec class="hidden mt-[14px] p-4 rounded-sm bg-black/[.18] border border-white/[.18] transition-colors duration-[300ms]">
             <div class="text-[11.5px] tracking-label-wide uppercase text-[#8FB7FF] font-semibold mb-[5px]">What this means</div>
-            <h3 data-rec-title class="font-display text-[20px] font-bold text-heading mb-[5px]"></h3>
+            <h3 data-rec-title class="font-display text-title text-heading mb-[5px]"></h3>
             <p data-rec-body class="text-white/[.86] text-caption leading-[1.55] m-0"></p>
           </div>
           <div class="mt-[16px] pt-[14px] border-t border-white/[.24] text-white/[.78] text-[12px] leading-snug text-center">This is a guide, not a quote. Every real brief gets its own estimate before work starts.</div>
@@ -90,9 +90,9 @@
       <div class="reveal relative overflow-hidden rounded-lg px-5 py-[96px] text-center border border-hairline bg-[radial-gradient(900px_400px_at_50%_-10%,rgba(124,92,240,.4),transparent_60%),linear-gradient(160deg,#161B45,#0C0E28)]">
         <div class="absolute -bottom-[120px] left-1/2 -translate-x-1/2 w-[520px] h-[340px] rounded-full blur-[24px] bg-[radial-gradient(circle,rgba(61,230,140,.22),transparent_70%)]"></div>
         <div class="relative">
-          <h2 class="font-display font-bold text-[clamp(32px,4.6vw,56px)] leading-[1.03] tracking-[-.025em] text-heading mx-auto max-w-[22ch]">Can your team actually cover <span class="text-brand">those hours?</span></h2>
-          <p class="text-body text-lead mt-4 mb-5 mx-auto max-w-[60ch] [text-wrap:pretty]">The free guide runs the full working: your real months, a working margin, and whether your team can cover it. Then the decision it points to: hire in-house, outsource, or a mix. No email required.</p>
-          <a href="/design-capacity-formula" class="btn-mint font-display font-extrabold px-[40px] py-[19px] text-[19px] uppercase tracking-[.01em] shadow-[0_16px_40px_rgba(61,230,140,.3)]">Diagnose my team's capacity</a>
+          <h2 class="font-display text-h2 text-heading mx-auto max-w-[22ch]">Can your team actually cover <span class="text-brand">those hours?</span></h2>
+          <p class="text-body-muted text-lead mt-4 mb-5 mx-auto max-w-intro [text-wrap:pretty]">The free guide runs the full working: your real months, a working margin, and whether your team can cover it. Then the decision it points to: hire in-house, outsource, or a mix. No email required.</p>
+          <a href="/design-capacity-formula" class="btn-mint-lg">Diagnose my team's capacity</a>
         </div>
       </div>
     </div>
@@ -161,7 +161,7 @@
       '<div><div class="font-medium text-body">' + it.name + '</div><div class="text-body-faint text-caption mt-[2px]">' + it.bench + '</div></div>' +
       '<div class="flex items-center border border-white/[.12] rounded-[10px] bg-white/[.03] overflow-hidden">' +
         '<button type="button" aria-label="Fewer ' + it.name + '" data-d="-1" data-id="' + it.id + '" class="' + BTN + '">\u2212</button>' +
-        '<input type="number" min="0" max="99" value="0" id="pcin-' + it.id + '" aria-label="' + it.name + ' per month" class="w-[52px] h-[40px] bg-transparent border-0 border-x border-white/[.12] text-heading font-body tabular-nums text-[16px] font-semibold text-center focus:outline-none">' +
+        '<input type="number" min="0" max="99" value="0" id="pcin-' + it.id + '" aria-label="' + it.name + ' per month" class="w-[52px] h-[40px] bg-transparent border-0 border-x border-white/[.12] text-heading font-body tabular-nums text-small font-semibold text-center focus:outline-none">' +
         '<button type="button" aria-label="More ' + it.name + '" data-d="1" data-id="' + it.id + '" class="' + BTN + '">+</button>' +
       '</div></div>';
   }).join('');
