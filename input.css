@@ -105,9 +105,6 @@
   --text-quote--line-height: 1.5;
   --text-quote--letter-spacing: -0.01em;
   --text-quote--font-weight: 500;
-  --text-blog-h1: clamp(32px, 3.8vw, 50px);
-  --text-blog-h1--line-height: 1.08;
-  --text-blog-h1--letter-spacing: -0.03em;
   --text-rt-h2: 30px;
   --text-rt-h2--line-height: 1.2;
   --text-rt-h2--letter-spacing: -0.02em;
@@ -465,7 +462,7 @@ body {
       border-radius: 999px;
       background: var(--color-paper-muted);
       border: 1px solid var(--color-hairline-light);
-      font-size: 13px;
+      font-size: var(--text-caption);
       font-weight: 600;
       color: var(--color-ink);
     }
@@ -524,7 +521,7 @@ body {
     display: block;
     margin-top: 12px;
     font-family: var(--font-body);
-    font-size: 15px;
+    font-size: var(--text-caption);
     font-weight: 600;
     font-style: normal;
     color: #4E7A63;
@@ -680,19 +677,19 @@ body {
 
   /* Careers job detail pages */
   /* Job description prose on paper. Component CSS: authored HTML. */
-  .job h2{font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-.02em;color:#12162E;margin:56px 0 18px;}
+  .job h2{font-family:var(--font-display);font-weight:var(--text-h3--font-weight);font-size:var(--text-h3);line-height:var(--text-h3--line-height);letter-spacing:var(--text-h3--letter-spacing);color:#12162E;margin:56px 0 18px;}
   .job h2:first-child{margin-top:0;}
-  .job h3{font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;color:#12162E;margin:34px 0 14px;}
-  .job p{color:#3A4160;font-size:18px;line-height:1.7;margin:0 0 18px;text-wrap:pretty;}
+  .job h3{font-family:var(--font-display);font-weight:var(--text-title--font-weight);font-size:var(--text-title);line-height:var(--text-title--line-height);letter-spacing:var(--text-title--letter-spacing);color:#12162E;margin:34px 0 14px;}
+  .job p{color:#3A4160;font-size:var(--text-base);line-height:var(--text-base--line-height);margin:0 0 18px;text-wrap:pretty;}
   .job ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
-  .job li{display:flex;align-items:flex-start;gap:13px;color:#3A4160;font-size:18px;line-height:1.6;}
-  .job li::before{content:"";flex:none;margin-top:7px;width:7px;height:7px;border-radius:50%;background:#0E7A43;}
+  .job li{display:flex;align-items:flex-start;gap:13px;color:#3A4160;font-size:var(--text-base);line-height:var(--text-base--line-height);}
+  .job li::before{content:"";flex:none;margin-top:7px;width:7px;height:7px;border-radius:50%;background:var(--color-brand-onWhite);}
   .job .steps{display:flex;flex-direction:column;}
   .job .step{display:flex;align-items:flex-start;gap:18px;padding:13px 0;border-top:1px solid rgba(18,22,46,.1);}
-  .job .step-n{flex:none;width:36px;height:36px;border-radius:50%;background:rgba(14,122,67,.1);border:1px solid rgba(14,122,67,.26);display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:16px;color:#0E7A43;}
-  .job .step-t{font-family:Inter,system-ui,sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;color:#12162E;margin-bottom:5px;}
-  .job .step p{color:#5A6172;font-size:17px;line-height:1.55;margin:0;}
-  .job .eeo{margin:32px 0 0;color:#5A6172;font-size:16px;line-height:1.65;}
+  .job .step-n{flex:none;width:36px;height:36px;border-radius:50%;background:rgba(14,122,67,.1);border:1px solid rgba(14,122,67,.26);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:var(--text-small);color:var(--color-brand-onWhite);}
+  .job .step-t{font-family:var(--font-display);font-weight:var(--text-title--font-weight);font-size:var(--text-title);line-height:var(--text-title--line-height);letter-spacing:var(--text-title--letter-spacing);color:#12162E;margin-bottom:5px;}
+  .job .step p{color:#5A6172;font-size:var(--text-small);line-height:var(--text-small--line-height);margin:0;}
+  .job .eeo{margin:32px 0 0;color:#5A6172;font-size:var(--text-small);line-height:var(--text-small--line-height);}
 
   /* Case study cards (Work page) */
   [data-case] .case-img {
