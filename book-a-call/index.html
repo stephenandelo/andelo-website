@@ -8,7 +8,8 @@
 <meta name="theme-color" content="#0A0C22">
 <style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Book a call | Andelo</title>
-
+<meta name="description" content="Tell us about your workload and we'll send a couple of times for a call on whether a design team fits and what it would cost.">
+<meta property="og:description" content="Tell us about your workload and we'll send a couple of times for a call on whether a design team fits and what it would cost.">
 
 <!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
 <link rel="stylesheet" href="/style.css">
@@ -43,7 +44,19 @@
       <p class="reveal [transition-delay:80ms] max-w-intro mx-auto mt-4 text-body-muted text-lead">15 minutes with Stephen Andelo, our founder. We'll look at your workload and whether we'd fit as an extension of your team, and you'll leave knowing what it would cost.</p>
     </div>
   </section>
+
+  <section class="pb-[70px]">
+    <div class="max-w-narrow mx-auto px-gutter">
+      <div data-booking-form-mount class="reveal card-glass p-card-standard min-h-[280px]" aria-label="Booking form">
+        <!-- Embed your booking form here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Site footer mounted by /assets/site-footer.js -->
 </main>
+  <div data-site-footer-mount></div>
+  <script src="/assets/site-footer.js"></script>
 
 </div>
 </div>
