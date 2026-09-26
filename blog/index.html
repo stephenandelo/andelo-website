@@ -36,12 +36,12 @@
 
 
   <!-- ══ HERO ══ -->
-  <section class="relative pt-[150px] pb-[60px]">
+  <section class="relative pt-hero-offset pb-[60px]">
     <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(1100px_520px_at_50%_-4%,rgba(124,92,240,.22),transparent_58%)]"></div>
-    <div class="relative max-w-[820px] mx-auto px-gutter text-center">
-      <div class="reveal inline-flex items-center gap-[9px] px-[14px] py-[7px] rounded-pill border border-white/[.12] bg-white/[.04] text-[12.5px] font-semibold tracking-label-wide uppercase text-[#BFC4E6] mb-[22px]">The Andelo Blog</div>
-      <h1 class="reveal [transition-delay:40ms] font-display font-bold text-[clamp(40px,5.2vw,64px)] leading-[1.05] tracking-display text-heading">Design production, <span class="text-brand">explained properly.</span></h1>
-      <p class="reveal [transition-delay:80ms] max-w-[640px] mx-auto mt-4 text-body text-[clamp(17px,1.5vw,20px)] leading-body">Practical guides for marketing teams running a design workload, written from years on the production floor and given away whole.</p>
+    <div class="relative max-w-column mx-auto px-gutter text-center">
+      <div class="reveal eyebrow mb-[22px]">The Andelo Blog</div>
+      <h1 class="reveal [transition-delay:40ms] font-display text-h1 text-heading">Design production, <span class="text-brand">explained properly.</span></h1>
+      <p class="reveal [transition-delay:80ms] max-w-intro mx-auto mt-4 text-body-muted text-lead">Practical guides for marketing teams running a design workload, written from years on the production floor and given away whole.</p>
     </div>
   </section>
 
@@ -51,13 +51,13 @@
 
       <!-- Category filter -->
       <div class="reveal flex flex-wrap items-center gap-[10px] mb-[36px]" data-blog-filters role="tablist" aria-label="Filter posts by category">
-        <button type="button" data-filter="all" aria-pressed="true" class="px-[16px] py-[9px] rounded-pill text-[14px] font-semibold tracking-[.04em] transition-[background,border-color,color,transform] duration-fast bg-brand text-brand-ink border border-brand shadow-btn">All</button>
-        <button type="button" data-filter="subscription" aria-pressed="false" class="px-[16px] py-[9px] rounded-pill text-[14px] font-semibold tracking-[.04em] transition-[background,border-color,color,transform] duration-fast bg-white/[.04] text-body-strong border border-white/10 hover:bg-white/[.1] hover:border-hairline-hover hover:text-white">Design Subscription</button>
-        <button type="button" data-filter="capacity" aria-pressed="false" class="px-[16px] py-[9px] rounded-pill text-[14px] font-semibold tracking-[.04em] transition-[background,border-color,color,transform] duration-fast bg-white/[.04] text-body-strong border border-white/10 hover:bg-white/[.1] hover:border-hairline-hover hover:text-white">Capacity</button>
-        <button type="button" data-filter="efficiency" aria-pressed="false" class="px-[16px] py-[9px] rounded-pill text-[14px] font-semibold tracking-[.04em] transition-[background,border-color,color,transform] duration-fast bg-white/[.04] text-body-strong border border-white/10 hover:bg-white/[.1] hover:border-hairline-hover hover:text-white">Efficiency</button>
-        <button type="button" data-filter="briefing" aria-pressed="false" class="px-[16px] py-[9px] rounded-pill text-[14px] font-semibold tracking-[.04em] transition-[background,border-color,color,transform] duration-fast bg-white/[.04] text-body-strong border border-white/10 hover:bg-white/[.1] hover:border-hairline-hover hover:text-white">Briefing</button>
-        <button type="button" data-filter="resourcing" aria-pressed="false" class="px-[16px] py-[9px] rounded-pill text-[14px] font-semibold tracking-[.04em] transition-[background,border-color,color,transform] duration-fast bg-white/[.04] text-body-strong border border-white/10 hover:bg-white/[.1] hover:border-hairline-hover hover:text-white">Resourcing</button>
-        <button type="button" data-filter="hiring" aria-pressed="false" class="px-[16px] py-[9px] rounded-pill text-[14px] font-semibold tracking-[.04em] transition-[background,border-color,color,transform] duration-fast bg-white/[.04] text-body-strong border border-white/10 hover:bg-white/[.1] hover:border-hairline-hover hover:text-white">Hiring</button>
+        <button type="button" data-filter="all" aria-pressed="true" class="chip whitespace-nowrap is-active">All</button>
+        <button type="button" data-filter="subscription" aria-pressed="false" class="chip whitespace-nowrap">Design subscription</button>
+        <button type="button" data-filter="capacity" aria-pressed="false" class="chip whitespace-nowrap">Capacity</button>
+        <button type="button" data-filter="efficiency" aria-pressed="false" class="chip whitespace-nowrap">Efficiency</button>
+        <button type="button" data-filter="briefing" aria-pressed="false" class="chip whitespace-nowrap">Briefing</button>
+        <button type="button" data-filter="resourcing" aria-pressed="false" class="chip whitespace-nowrap">Resourcing</button>
+        <button type="button" data-filter="hiring" aria-pressed="false" class="chip whitespace-nowrap">Hiring</button>
       </div>
 
       <!-- featured lead (blue wash) -->
@@ -65,11 +65,11 @@
         <div class="m-[16px] min-h-[300px] rounded-[16px] relative overflow-hidden"><img src="../assets/blog-design-subscription.png" alt="What is a design subscription service" class="absolute inset-0 w-full h-full object-cover block"></div>
         <div class="p-5 flex flex-col justify-center">
           <div class="flex items-center gap-2 mb-[16px] flex-wrap">
-            <span class="px-[12px] py-[5px] rounded-pill bg-brand-soft border border-brand-border text-brand text-[11.5px] font-bold tracking-[.1em] uppercase">Featured</span>
-            <span class="text-[12.5px] font-semibold tracking-label uppercase text-body-caption">Design Subscription · 8 min read</span>
+            <span class="px-[12px] py-[5px] rounded-pill bg-brand-soft border border-brand-border text-brand text-micro font-bold tracking-label-wide uppercase">Featured</span>
+            <span class="text-micro font-semibold tracking-label uppercase text-body-caption">Design subscription · 8 min read</span>
           </div>
-          <h3 class="font-display font-bold text-[clamp(24px,2.4vw,32px)] leading-[1.15] tracking-tight text-heading mb-[14px]">What is a Design Subscription service? The definitive guide</h3>
-          <p class="text-body text-small mb-[22px]">How the model actually works, what you should get for the money, and the questions to ask before you sign, from a team that has run it for years.</p>
+          <h3 class="font-display text-title text-heading mb-[14px]">What is a Design Subscription service? The definitive guide</h3>
+          <p class="text-body-muted text-small mb-[22px]">How the model actually works, what you should get for the money, and the questions to ask before you sign, from a team that has run it for years.</p>
           <span class="inline-flex items-center gap-[8px] text-brand font-semibold text-[15px]">Read the guide<svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="flex-none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </a>
@@ -78,41 +78,41 @@
         <div data-post data-category="capacity" data-date="" class="reveal card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card flex flex-col overflow-hidden opacity-90">
           <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-how-long-design-takes.png" alt="How long design actually takes" class="w-full h-full object-cover block"></div>
           <div class="px-4 pt-[8px] pb-[26px]">
-            <div class="text-[12px] font-semibold tracking-label uppercase text-body-caption mb-[11px]">Capacity · Coming soon</div>
-            <h3 class="font-display font-semibold text-[19px] leading-[1.25] text-heading mb-[9px]">How long design actually takes</h3>
-            <p class="text-body text-small leading-[1.55] m-0">Most design estimates only count canvas time. The real number covers the full production cycle, brief to final file.</p>
+            <div class="text-micro font-semibold tracking-label uppercase text-body-caption mb-[11px]">Capacity · Coming soon</div>
+            <h3 class="font-display text-title text-heading mb-[9px]">How long design actually takes</h3>
+            <p class="text-body-muted text-small m-0">Most design estimates only count canvas time. The real number covers the full production cycle, brief to final file.</p>
           </div>
         </div>
         <a href="/blog/why-design-hours-blow-out" data-post data-category="efficiency" data-date="2026-07-22" class="reveal card-glass hover:bg-glass-hover flex flex-col overflow-hidden">
           <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-hours-blow-out.png" alt="Why your design hours blow out" class="w-full h-full object-cover block"></div>
           <div class="px-4 pt-[8px] pb-[26px]">
-            <div class="text-[12px] font-semibold tracking-label uppercase text-body-caption mb-[11px]">Efficiency · 8 min read</div>
-            <h3 class="font-display font-semibold text-[19px] leading-[1.25] text-heading mb-[9px]">Why your design hours blow out</h3>
-            <p class="text-body text-small leading-[1.55] m-0">The hours blow out during the design, but they are never caused there. Here is what actually drains them.</p>
+            <div class="text-micro font-semibold tracking-label uppercase text-body-caption mb-[11px]">Efficiency · 8 min read</div>
+            <h3 class="font-display text-title text-heading mb-[9px]">Why your design hours blow out</h3>
+            <p class="text-body-muted text-small m-0">The hours blow out during the design, but they are never caused there. Here is what actually drains them.</p>
           </div>
         </a>
         <div data-post data-category="briefing" data-date="" class="reveal card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card flex flex-col overflow-hidden opacity-90">
           <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-complete-brief.png" alt="What a complete brief needs" class="w-full h-full object-cover block"></div>
           <div class="px-4 pt-[8px] pb-[26px]">
-            <div class="text-[12px] font-semibold tracking-label uppercase text-body-caption mb-[11px]">Briefing · Coming soon</div>
-            <h3 class="font-display font-semibold text-[19px] leading-[1.25] text-heading mb-[9px]">What a complete brief needs</h3>
-            <p class="text-body text-small leading-[1.55] m-0">The checklist behind the brief tool: what every brief should carry before work starts, so nothing comes back for a second round.</p>
+            <div class="text-micro font-semibold tracking-label uppercase text-body-caption mb-[11px]">Briefing · Coming soon</div>
+            <h3 class="font-display text-title text-heading mb-[9px]">What a complete brief needs</h3>
+            <p class="text-body-muted text-small m-0">The checklist behind the brief tool: what every brief should carry before work starts, so nothing comes back for a second round.</p>
           </div>
         </div>
         <div data-post data-category="resourcing" data-date="" class="reveal card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card flex flex-col overflow-hidden opacity-90">
           <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-designer-level.png" alt="Which designer level do you need?" class="w-full h-full object-cover block"></div>
           <div class="px-4 pt-[8px] pb-[26px]">
-            <div class="text-[12px] font-semibold tracking-label uppercase text-body-caption mb-[11px]">Resourcing · Coming soon</div>
-            <h3 class="font-display font-semibold text-[19px] leading-[1.25] text-heading mb-[9px]">Which designer level do you need?</h3>
-            <p class="text-body text-small leading-[1.55] m-0">Sort your tasks into three levels, so you stop paying senior rates for simple work, or handing complex work to someone who cannot carry it.</p>
+            <div class="text-micro font-semibold tracking-label uppercase text-body-caption mb-[11px]">Resourcing · Coming soon</div>
+            <h3 class="font-display text-title text-heading mb-[9px]">Which designer level do you need?</h3>
+            <p class="text-body-muted text-small m-0">Sort your tasks into three levels, so you stop paying senior rates for simple work, or handing complex work to someone who cannot carry it.</p>
           </div>
         </div>
         <div data-post data-category="hiring" data-date="" class="reveal card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card flex flex-col overflow-hidden opacity-90">
           <div class="m-[16px] h-[180px] rounded-[16px] overflow-hidden"><img src="../assets/blog-outsource-vs-inhouse.png" alt="When to outsource design vs hire in-house" class="w-full h-full object-cover block"></div>
           <div class="px-4 pt-[8px] pb-[26px]">
-            <div class="text-[12px] font-semibold tracking-label uppercase text-body-caption mb-[11px]">Hiring · Coming soon</div>
-            <h3 class="font-display font-semibold text-[19px] leading-[1.25] text-heading mb-[9px]">When to outsource design vs hire in-house</h3>
-            <p class="text-body text-small leading-[1.55] m-0">A hire and a partner solve different problems. Here is the framework for telling which one you actually have.</p>
+            <div class="text-micro font-semibold tracking-label uppercase text-body-caption mb-[11px]">Hiring · Coming soon</div>
+            <h3 class="font-display text-title text-heading mb-[9px]">When to outsource design vs hire in-house</h3>
+            <p class="text-body-muted text-small m-0">A hire and a partner solve different problems. Here is the framework for telling which one you actually have.</p>
           </div>
         </div>
       </div>
@@ -125,10 +125,10 @@
     <div class="max-w-container mx-auto px-4 sm:px-gutter">
       <div class="reveal relative overflow-hidden rounded-lg px-4 py-5 sm:p-[40px] md:p-[52px] grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-gutter items-center bg-grad-purple">
         <div class="relative">
-          <h2 class="font-display font-bold text-[clamp(26px,3.4vw,38px)] leading-[1.12] tracking-tight text-onSecondary">Do You Have Enough Design Hours?</h2>
-          <p class="text-white/[.82] text-small mt-[18px] mb-[26px] max-w-[540px]">We broke this down further in our free guide: the hidden hours nobody counts, the real planning figures, and the four-step method to work out your team's design gap.</p>
+          <h2 class="font-display text-h2 text-onSecondary">Do you have enough design hours?</h2>
+          <p class="text-white/[.82] text-small mt-[18px] mb-[26px] max-w-prose">We broke this down further in our free guide: the hidden hours nobody counts, the real planning figures, and the four-step method to work out your team's design gap.</p>
           <div class="flex flex-wrap items-center gap-[18px]">
-            <a href="/design-capacity-formula" class="btn-mint px-[34px] py-[18px] text-[17px] shadow-[0_12px_30px_rgba(0,0,0,.25)]">Work out your gap</a>
+            <a href="/design-capacity-formula" class="btn-mint-lg">Work out your gap</a>
             <span class="text-white/[.62] text-caption">No email required. Or find your number in 60 seconds with the <a href="/capacity-calculator" class="text-white font-semibold">capacity calculator</a>.</span>
           </div>
         </div>
@@ -168,8 +168,6 @@
   var filters = root.querySelector('[data-blog-filters]');
   var grid = root.querySelector('[data-post-grid]');
   var empty = root.querySelector('[data-filter-empty]');
-  var ACTIVE = 'bg-brand text-brand-ink border-brand shadow-btn';
-  var IDLE = 'bg-white/[.04] text-body-strong border-white/10 hover:bg-white/[.1] hover:border-hairline-hover hover:text-white';
 
   function dateValue(el) {
     var raw = (el.getAttribute('data-date') || '').trim();
@@ -201,8 +199,7 @@
     filters.querySelectorAll('[data-filter]').forEach(function (b) {
       var on = b === btn;
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      ACTIVE.split(' ').forEach(function (c) { b.classList.toggle(c, on); });
-      IDLE.split(' ').forEach(function (c) { b.classList.toggle(c, !on); });
+      b.classList.toggle('is-active', on);
     });
   }
 

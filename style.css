@@ -1096,9 +1096,6 @@
   .max-w-\[520px\] {
     max-width: 520px;
   }
-  .max-w-\[540px\] {
-    max-width: 540px;
-  }
   .max-w-\[560px\] {
     max-width: 560px;
   }
@@ -1119,9 +1116,6 @@
   }
   .max-w-\[760px\] {
     max-width: 760px;
-  }
-  .max-w-\[820px\] {
-    max-width: 820px;
   }
   .max-w-\[860px\] {
     max-width: 860px;
@@ -1576,9 +1570,6 @@
   }
   .border-\[rgba\(245\,63\,142\,\.3\)\] {
     border-color: rgba(245,63,142,.3);
-  }
-  .border-brand {
-    border-color: var(--color-brand);
   }
   .border-brand-border {
     border-color: var(--color-brand-border);
@@ -2060,9 +2051,6 @@
   .px-\[30px\] {
     padding-inline: 30px;
   }
-  .px-\[34px\] {
-    padding-inline: 34px;
-  }
   .px-\[40px\] {
     padding-inline: 40px;
   }
@@ -2461,9 +2449,6 @@
   .text-\[clamp\(17px\,1\.4vw\,19px\)\] {
     font-size: clamp(17px, 1.4vw, 19px);
   }
-  .text-\[clamp\(17px\,1\.5vw\,20px\)\] {
-    font-size: clamp(17px, 1.5vw, 20px);
-  }
   .text-\[clamp\(17px\,1\.6vw\,20px\)\] {
     font-size: clamp(17px, 1.6vw, 20px);
   }
@@ -2473,14 +2458,8 @@
   .text-\[clamp\(21px\,2vw\,26px\)\] {
     font-size: clamp(21px, 2vw, 26px);
   }
-  .text-\[clamp\(24px\,2\.4vw\,32px\)\] {
-    font-size: clamp(24px, 2.4vw, 32px);
-  }
   .text-\[clamp\(24px\,3vw\,32px\)\] {
     font-size: clamp(24px, 3vw, 32px);
-  }
-  .text-\[clamp\(26px\,3\.4vw\,38px\)\] {
-    font-size: clamp(26px, 3.4vw, 38px);
   }
   .text-\[clamp\(27px\,3\.6vw\,38px\)\] {
     font-size: clamp(27px, 3.6vw, 38px);
@@ -2554,10 +2533,6 @@
     --tw-leading: 1.08;
     line-height: 1.08;
   }
-  .leading-\[1\.12\] {
-    --tw-leading: 1.12;
-    line-height: 1.12;
-  }
   .leading-\[1\.15\] {
     --tw-leading: 1.15;
     line-height: 1.15;
@@ -2629,10 +2604,6 @@
   .tracking-\[\.01em\] {
     --tw-tracking: .01em;
     letter-spacing: .01em;
-  }
-  .tracking-\[\.1em\] {
-    --tw-tracking: .1em;
-    letter-spacing: .1em;
   }
   .tracking-\[\.02em\] {
     --tw-tracking: .02em;
@@ -2924,10 +2895,6 @@
     --tw-shadow: 0 12px 30px var(--tw-shadow-color, rgba(0,0,0,.24));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .shadow-\[0_12px_30px_rgba\(0\,0\,0\,\.25\)\] {
-    --tw-shadow: 0 12px 30px var(--tw-shadow-color, rgba(0,0,0,.25));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-\[0_14px_34px_rgba\(0\,0\,0\,\.24\)\] {
     --tw-shadow: 0 14px 34px var(--tw-shadow-color, rgba(0,0,0,.24));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -3028,10 +2995,6 @@
     --tw-shadow: 0 40px 90px var(--tw-shadow-color, rgba(0,0,0,.6));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .shadow-btn {
-    --tw-shadow: 0 14px 34px var(--tw-shadow-color, rgba(61, 230, 140, 0.28));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-card {
     --tw-shadow: 0 20px 44px var(--tw-shadow-color, rgba(0, 0, 0, 0.32));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -3096,11 +3059,6 @@
   }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .transition-\[background\,border-color\,color\,transform\] {
-    transition-property: background,border-color,color,transform;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -3358,14 +3316,6 @@
         background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
       }
     }
-    .hover\:bg-white\/\[\.1\]:hover {
-      background-color: color-mix(in srgb, #fff 10%, transparent);
-    }
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:bg-white\/\[\.1\]:hover {
-        background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
-      }
-    }
     .hover\:bg-white\/\[\.08\]:hover {
       background-color: color-mix(in srgb, #fff 8%, transparent);
     }
@@ -3615,9 +3565,6 @@
     }
     .sm\:text-left {
       text-align: left;
-    }
-    .sm\:text-\[clamp\(24px\,3vw\,34px\)\] {
-      font-size: clamp(24px, 3vw, 34px);
     }
   }
   @media (width >= 901px) {
@@ -4136,23 +4083,24 @@ html, body {
   .rt {
     color: var(--color-ink-muted);
     font-size: var(--text-base);
-    line-height: 1.75;
+    line-height: var(--text-base--line-height);
   }
   .rt h2 {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: var(--text-rt-h2);
-    line-height: var(--text-rt-h2--line-height);
-    letter-spacing: var(--text-rt-h2--letter-spacing);
+    font-weight: var(--text-h3--font-weight);
+    font-size: var(--text-h3);
+    line-height: var(--text-h3--line-height);
+    letter-spacing: var(--text-h3--letter-spacing);
     color: var(--color-ink);
     margin: 48px 0 16px;
     scroll-margin-top: 96px;
   }
   .rt h3 {
     font-family: var(--font-display);
-    font-weight: 600;
-    font-size: var(--text-rt-h3);
-    line-height: var(--text-rt-h3--line-height);
+    font-weight: var(--text-title--font-weight);
+    font-size: var(--text-title);
+    line-height: var(--text-title--line-height);
+    letter-spacing: var(--text-title--letter-spacing);
     color: var(--color-ink);
     margin: 34px 0 12px;
     scroll-margin-top: 96px;
@@ -4191,7 +4139,7 @@ html, body {
     border-collapse: collapse;
     margin: 28px 0;
     margin-left: calc(50% - min(480px, 50vw - 32px));
-    font-size: 16px;
+    font-size: var(--text-small);
   }
   .rt th, .rt td {
     text-align: left;
@@ -4214,9 +4162,6 @@ html, body {
     margin: 40px 0;
   }
   @media (max-width: 720px) {
-    .rt h2 {
-      font-size: 26px;
-    }
     .rt table, .rt thead, .rt tbody, .rt th, .rt td, .rt tr {
       display: block;
       width: 100%;
@@ -4275,8 +4220,8 @@ html, body {
     padding: 20px 0;
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 19px;
-    line-height: 1.35;
+    font-size: var(--text-base);
+    line-height: var(--text-base--line-height);
     color: var(--color-ink);
     transition: color var(--dur-fast) var(--ease-out);
   }
@@ -4315,9 +4260,10 @@ html, body {
     background: #F0FAF4;
     border-radius: 0 14px 14px 0;
     font-family: var(--font-display);
-    font-size: 22px;
-    line-height: 1.45;
-    font-weight: 500;
+    font-size: var(--text-quote);
+    line-height: var(--text-quote--line-height);
+    font-weight: var(--text-quote--font-weight);
+    letter-spacing: var(--text-quote--letter-spacing);
     color: #153A2A;
   }
   .rt blockquote cite {
@@ -4332,8 +4278,8 @@ html, body {
   .rt .part-label {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.16em;
+    font-size: var(--text-micro);
+    letter-spacing: var(--tracking-label-wide);
     text-transform: uppercase;
     color: var(--color-brand-onWhite);
     margin: 0 0 4px;
