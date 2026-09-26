@@ -46,7 +46,7 @@
         <h1 class="font-display text-h1 text-heading mt-[22px]">Your design team<br>without the <span class="text-brand">hiring.</span></h1>
         <p class="max-w-prose text-body-muted text-lead mt-[22px]">More design work than hands? A dedicated team that learns your brand, keeps pace with your calendar, and hits every date it gives. Australian-founded.</p>
         <div class="flex flex-wrap gap-[14px] mt-5">
-          <a href="/book-a-call" data-calendly-popup class="btn-mint">Book a 15-Min Call</a>
+          <a href="/book-a-call" class="btn-mint">Book a 15-Min Call</a>
           <a href="/design-capacity-formula" class="btn-ghost">Get my capacity number</a>
         </div>
       </div>
@@ -734,69 +734,6 @@
     window.addEventListener('resize', svcScroll);
     svcScroll();
   }
-
-  /* Hero Book a call → Calendly popup (widget preloaded in <head>; falls back to /book-a-call) */
-  var CALENDLY_URL = 'https://calendly.com/stephen-118/book-a-call?primary_color=15f397';
-  var calendlyAssets = null;
-
-  function calendlyReady() {
-    return !!(window.Calendly && typeof Calendly.initPopupWidget === 'function');
-  }
-
-  function loadCalendlyAssets() {
-    if (calendlyReady()) return Promise.resolve();
-    if (calendlyAssets) return calendlyAssets;
-    calendlyAssets = new Promise(function (resolve, reject) {
-      if (!document.querySelector('link[data-calendly-css]')) {
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://assets.calendly.com/assets/external/widget.css';
-        link.setAttribute('data-calendly-css', '');
-        document.head.appendChild(link);
-      }
-      var existing = document.querySelector('script[data-calendly-js]');
-      if (!existing) {
-        var script = document.createElement('script');
-        script.src = 'https://assets.calendly.com/assets/external/widget.js';
-        script.async = true;
-        script.setAttribute('data-calendly-js', '');
-        script.onload = function () { resolve(); };
-        script.onerror = function () { calendlyAssets = null; reject(new Error('Calendly failed to load')); };
-        document.head.appendChild(script);
-      } else {
-        var wait = setInterval(function () {
-          if (calendlyReady()) { clearInterval(wait); resolve(); }
-        }, 40);
-        setTimeout(function () {
-          clearInterval(wait);
-          if (!calendlyReady()) { calendlyAssets = null; reject(new Error('Calendly timed out')); }
-        }, 8000);
-      }
-    });
-    return calendlyAssets;
-  }
-
-  function openCalendlyPopup() {
-    if (document.querySelector('.calendly-overlay')) return;
-    Calendly.initPopupWidget({ url: CALENDLY_URL });
-  }
-
-  root.addEventListener('click', function (e) {
-    var trigger = e.target.closest('[data-calendly-popup]');
-    if (!trigger) return;
-    e.preventDefault();
-    e.stopPropagation();
-    if (document.querySelector('.calendly-overlay')) return;
-
-    if (calendlyReady()) {
-      openCalendlyPopup();
-      return;
-    }
-
-    loadCalendlyAssets().then(openCalendlyPopup).catch(function () {
-      window.location.href = trigger.getAttribute('href') || '/book-a-call';
-    });
-  });
 })();
 </script>
 </body>
