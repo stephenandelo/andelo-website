@@ -2999,10 +2999,6 @@
     --tw-shadow: 0 10px 26px var(--tw-shadow-color, rgba(61,230,140,.28));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .shadow-\[0_12px_28px_rgba\(61\,230\,140\,\.28\)\] {
-    --tw-shadow: 0 12px 28px var(--tw-shadow-color, rgba(61,230,140,.28));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-\[0_12px_30px_rgba\(0\,0\,0\,\.24\)\] {
     --tw-shadow: 0 12px 30px var(--tw-shadow-color, rgba(0,0,0,.24));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
