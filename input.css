@@ -110,6 +110,7 @@
   --text-lead: clamp(1.125rem, 1.6vw, 1.3125rem);
   --text-lead--line-height: 1.55;
   --text-button: 17px;
+  --text-button-lg: 19px;
   --text-badge: 13px;
   --text-small: 16.5px;
   --text-small--line-height: 1.6;
@@ -242,7 +243,7 @@ body {
   }
   .btn-mint-lg {
     @apply inline-flex items-center justify-center gap-[10px] rounded-pill bg-brand text-brand-ink
-           font-bold px-[34px] py-[18px] text-lead
+           font-bold px-[34px] py-[18px] text-button-lg
            shadow-btn-lg transition-[transform,background,box-shadow] duration-fast;
   }
   .btn-mint-sm {

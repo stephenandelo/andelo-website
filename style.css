@@ -116,6 +116,7 @@
     --text-lead: clamp(1.125rem, 1.6vw, 1.3125rem);
     --text-lead--line-height: 1.55;
     --text-button: 17px;
+    --text-button-lg: 19px;
     --text-badge: 13px;
     --text-small: 16.5px;
     --text-small--line-height: 1.6;
@@ -1118,9 +1119,6 @@
   }
   .max-w-\[900px\] {
     max-width: 900px;
-  }
-  .max-w-\[960px\] {
-    max-width: 960px;
   }
   .max-w-\[1080px\] {
     max-width: 1080px;
@@ -3963,8 +3961,7 @@ html, body {
     background-color: var(--color-brand);
     padding-inline: 34px;
     padding-block: 18px;
-    font-size: var(--text-lead);
-    line-height: var(--tw-leading, var(--text-lead--line-height));
+    font-size: var(--text-button-lg);
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
     color: var(--color-brand-ink);
