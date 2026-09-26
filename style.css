@@ -105,6 +105,10 @@
     --text-h3--line-height: 1.25;
     --text-h3--letter-spacing: -0.01em;
     --text-h3--font-weight: 700;
+    --text-quote: clamp(1.375rem, 2.1vw, 1.625rem);
+    --text-quote--line-height: 1.5;
+    --text-quote--letter-spacing: -0.01em;
+    --text-quote--font-weight: 500;
     --text-blog-h1: clamp(32px, 3.8vw, 50px);
     --text-blog-h1--line-height: 1.08;
     --text-blog-h1--letter-spacing: -0.03em;
@@ -1119,6 +1123,9 @@
   }
   .max-w-\[900px\] {
     max-width: 900px;
+  }
+  .max-w-\[960px\] {
+    max-width: 960px;
   }
   .max-w-\[1080px\] {
     max-width: 1080px;
@@ -2350,6 +2357,12 @@
     line-height: var(--tw-leading, var(--text-h3--line-height));
     letter-spacing: var(--tw-tracking, var(--text-h3--letter-spacing));
     font-weight: var(--tw-font-weight, var(--text-h3--font-weight));
+  }
+  .text-quote {
+    font-size: var(--text-quote);
+    line-height: var(--tw-leading, var(--text-quote--line-height));
+    letter-spacing: var(--tw-tracking, var(--text-quote--letter-spacing));
+    font-weight: var(--tw-font-weight, var(--text-quote--font-weight));
   }
   .text-stat {
     font-size: var(--text-stat);
