@@ -21,6 +21,9 @@ Use tokens from the style guide. Never hand-type a size, colour, or spacing valu
 - Units: `h` in figures and tables (e.g. `3–6h`); spell out **hours** only in prose sentences.
 - Every indexable page needs `<meta name="description">` and `<meta property="og:description">`, under 155 characters, benefit first. Skip dev-only pages (style guide, seo-dashboard).
 - Check /_internal/styleguide before creating new styles.
+- **Audience:** Agencies are not an advertised audience. White-label work comes by referral only. Homepage card 3 is “One brand, many locations”. Never add agency-targeted copy back.
+- **Copy:** Never frame the reader as doing a job they were not hired for. Describe the problem, not the person.
+- **Image tooling:** `sharp` and `to-ico` are devDependencies for `scripts/optimize-images.mjs`.
 
 ## Recent session (Sep 2026)
 
