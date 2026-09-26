@@ -149,10 +149,13 @@
   --spacing-6: 52px;
   --spacing-7: 80px;
   --spacing-card: 20px;
+  --spacing-card-standard: 32px;
+  --spacing-card-compact: 26px;
   --spacing-gutter: 32px;
   --spacing-section: 80px;
   --spacing-section-sm: 40px;
   --spacing-nav: 120px;
+  --spacing-hero-offset: 150px;
 
   --max-width-prose: 720px;
 

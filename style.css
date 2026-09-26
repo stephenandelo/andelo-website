@@ -145,10 +145,13 @@
     --spacing-6: 52px;
     --spacing-7: 80px;
     --spacing-card: 20px;
+    --spacing-card-standard: 32px;
+    --spacing-card-compact: 26px;
     --spacing-gutter: 32px;
     --spacing-section: 80px;
     --spacing-section-sm: 40px;
     --spacing-nav: 120px;
+    --spacing-hero-offset: 150px;
     --radius-card: 20px;
     --radius-pill: 999px;
     --shadow-btn: 0 8px 22px rgba(61, 230, 140, 0.28);
@@ -1982,17 +1985,17 @@
   .p-\[26px\] {
     padding: 26px;
   }
-  .p-\[28px\] {
-    padding: 28px;
-  }
-  .p-\[30px\] {
-    padding: 30px;
-  }
   .p-\[56px\] {
     padding: 56px;
   }
   .p-card {
     padding: var(--spacing-card);
+  }
+  .p-card-compact {
+    padding: var(--spacing-card-compact);
+  }
+  .p-card-standard {
+    padding: var(--spacing-card-standard);
   }
   .p-gutter {
     padding: var(--spacing-gutter);
@@ -2230,6 +2233,9 @@
   }
   .pt-\[150px\] {
     padding-top: 150px;
+  }
+  .pt-hero-offset {
+    padding-top: var(--spacing-hero-offset);
   }
   .pt-nav {
     padding-top: var(--spacing-nav);
