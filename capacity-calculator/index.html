@@ -9,6 +9,7 @@
 <style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Capacity calculator | Andelo</title>
 <meta name="description" content="See the average monthly design hours your work needs, checked against production benchmarks.">
+<meta property="og:description" content="See the average monthly design hours your work needs, checked against production benchmarks.">
 
 
 <!-- Compiled Andelo theme (Tailwind v4 CLI → /style.css) -->
@@ -64,23 +65,23 @@
           <h2 class="eyebrow mb-[6px]">Your month</h2>
           <div data-lines class="min-h-[8px] mt-[10px] mb-[4px]"></div>
           <div class="flex justify-between items-baseline pt-4 pb-[6px] mt-[8px]">
-            <span class="font-display font-semibold text-[15px] text-white">Time Estimation:</span>
-            <span data-total class="font-display text-stat tracking-snug tabular-nums text-brand">0<small class="text-white/75 text-caption font-normal">h</small></span>
+            <span class="font-display font-semibold text-[15px] text-onSecondary">Time Estimation:</span>
+            <span data-total class="font-display text-stat tracking-snug tabular-nums text-brand">0<small class="text-onSecondary-body text-caption font-normal">h</small></span>
           </div>
           <div class="mt-[14px] mb-[6px]" aria-hidden="true">
             <div class="relative h-[14px] rounded-pill bg-black/[.22] border border-white/[.28] overflow-hidden">
               <div data-range class="absolute inset-y-0 left-0 w-0 rounded-pill opacity-95 bg-[linear-gradient(90deg,#3DE68C,#1F9BC7)] transition-[left,width] duration"></div>
             </div>
-            <div class="flex text-[11.5px] text-white/[.82] mt-[6px] tracking-[.02em]">
+            <div class="flex text-caption text-onSecondary-body mt-[6px] tracking-[.02em]">
               <span class="w-[27.27%] text-center">up to 30h</span><span class="w-[27.27%] text-center">30-60h</span><span class="w-[27.27%] text-center">60-90h</span><span class="w-[18.19%] text-center">90h+</span>
             </div>
           </div>
           <div data-rec class="hidden mt-[14px] p-4 rounded-sm bg-black/[.18] border border-white/[.18] transition-colors duration-[300ms]">
             <div class="text-[11.5px] tracking-label-wide uppercase text-[#8FB7FF] font-semibold mb-[5px]">What this means</div>
             <h3 data-rec-title class="font-display text-title text-heading mb-[5px]"></h3>
-            <p data-rec-body class="text-white/[.86] text-caption leading-[1.55] m-0"></p>
+            <p data-rec-body class="text-onSecondary-body text-caption leading-[1.55] m-0"></p>
           </div>
-          <div class="mt-[16px] pt-[14px] border-t border-white/[.24] text-white/[.78] text-[12px] leading-snug text-center">This is a guide, not a quote. Every real brief gets its own estimate before work starts.</div>
+          <div class="mt-[16px] pt-[14px] border-t border-white/[.24] text-onSecondary-body text-caption leading-snug text-center">This is a guide, not a quote. Every real brief gets its own estimate before work starts.</div>
         </aside>
       </div>
     </div>
@@ -154,7 +155,7 @@
   var rows = root.querySelector('[data-rows]'), lines = root.querySelector('[data-lines]'), total = root.querySelector('[data-total]'),
       range = root.querySelector('[data-range]'), rec = root.querySelector('[data-rec]'), recT = root.querySelector('[data-rec-title]'), recB = root.querySelector('[data-rec-body]');
   var fmt = function (n) { return Math.round(n * 10) % 10 === 0 ? Math.round(n) : n.toFixed(1).replace('.0', ''); };
-  var SMALL = '<small class="text-white/75 text-caption font-normal">h</small>';
+  var SMALL = '<small class="text-onSecondary-body text-caption font-normal">h</small>';
   var BTN = 'w-[40px] h-[40px] bg-transparent border-none text-[#9CA0AE] text-[20px] cursor-pointer transition-colors duration-fast hover:bg-brand-soft hover:text-brand';
 
   rows.innerHTML = ITEMS.map(function (it) {
@@ -173,7 +174,7 @@
     ITEMS.forEach(function (it) {
       if (qty[it.id] > 0) {
         var l = qty[it.id] * it.lo, h = qty[it.id] * it.hi; lo += l; hi += h;
-        html += '<div class="flex justify-between gap-[12px] py-[7px] border-b border-white/[.18] text-white/[.85] text-caption"><span class="text-body">' + qty[it.id] + ' \u00d7 ' + it.name.toLowerCase() + '</span><span class="tabular-nums whitespace-nowrap">' + fmt(l) + '\u2013' + fmt(h) + 'h</span></div>';
+        html += '<div class="flex justify-between gap-[12px] py-[7px] border-b border-white/[.18] text-onSecondary-body text-caption"><span class="text-body">' + qty[it.id] + ' \u00d7 ' + it.name.toLowerCase() + '</span><span class="tabular-nums whitespace-nowrap">' + fmt(l) + '\u2013' + fmt(h) + 'h</span></div>';
       }
     });
     lines.innerHTML = html;

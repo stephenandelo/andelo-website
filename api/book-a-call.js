@@ -17,6 +17,20 @@ const URGENCY_OPTIONS = new Set([
   'Just exploring for now',
 ]);
 
+const RATE_LIMIT_MAX = Number(process.env.BOOK_A_CALL_RATE_MAX || 5);
+const RATE_LIMIT_WINDOW_MS = Number(process.env.BOOK_A_CALL_RATE_WINDOW_MS || 3600000);
+
+function consumeServerRateLimit(ipHash) {
+  const store = globalThis.__bookCallRateHits || (globalThis.__bookCallRateHits = new Map());
+  const now = Date.now();
+  const windowStart = now - RATE_LIMIT_WINDOW_MS;
+  const hits = (store.get(ipHash) || []).filter((t) => t >= windowStart);
+  if (hits.length >= RATE_LIMIT_MAX) return false;
+  hits.push(now);
+  store.set(ipHash, hits);
+  return true;
+}
+
 function json(res, status, body) {
   res.statusCode = status;
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -202,6 +216,16 @@ module.exports = async function handler(req, res) {
 
   if (trim(body.website_url, 500)) {
     return json(res, 200, { ok: true });
+  }
+
+  const rateSaltEarly = process.env.BOOK_A_CALL_RATE_SALT;
+  if (rateSaltEarly) {
+    const ipHashEarly = hashIp(clientIp(req), rateSaltEarly);
+    if (!consumeServerRateLimit(ipHashEarly)) {
+      return json(res, 429, {
+        error: 'Too many attempts. Try again in an hour or email stephen@andelo.com.au.',
+      });
+    }
   }
 
   const workEmail = trim(body.work_email, 320).toLowerCase();
