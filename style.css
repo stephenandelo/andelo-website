@@ -2571,9 +2571,6 @@
   .text-\[clamp\(40px\,5\.2vw\,64px\)\] {
     font-size: clamp(40px, 5.2vw, 64px);
   }
-  .text-button {
-    font-size: var(--text-button);
-  }
   .leading-\[\.6\] {
     --tw-leading: .6;
     line-height: .6;
