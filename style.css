@@ -105,6 +105,10 @@
     --text-h3--line-height: 1.25;
     --text-h3--letter-spacing: -0.01em;
     --text-h3--font-weight: 700;
+    --text-title: 20px;
+    --text-title--line-height: 1.3;
+    --text-title--letter-spacing: -0.01em;
+    --text-title--font-weight: 700;
     --text-quote: clamp(1.375rem, 2.1vw, 1.625rem);
     --text-quote--line-height: 1.5;
     --text-quote--letter-spacing: -0.01em;
@@ -187,6 +191,7 @@
     --max-width-container: 1200px;
     --max-width-intro: 520px;
     --max-width-narrow: 920px;
+    --max-width-column: 820px;
   }
 }
 @layer base {
@@ -1138,6 +1143,9 @@
   }
   .max-w-\[1320px\] {
     max-width: 1320px;
+  }
+  .max-w-column {
+    max-width: var(--max-width-column);
   }
   .max-w-container {
     max-width: var(--max-width-container);
@@ -2094,9 +2102,6 @@
   .py-\[9px\] {
     padding-block: 9px;
   }
-  .py-\[10px\] {
-    padding-block: 10px;
-  }
   .py-\[11px\] {
     padding-block: 11px;
   }
@@ -2364,6 +2369,12 @@
     letter-spacing: var(--tw-tracking, var(--text-quote--letter-spacing));
     font-weight: var(--tw-font-weight, var(--text-quote--font-weight));
   }
+  .text-title {
+    font-size: var(--text-title);
+    line-height: var(--tw-leading, var(--text-title--line-height));
+    letter-spacing: var(--tw-tracking, var(--text-title--letter-spacing));
+    font-weight: var(--tw-font-weight, var(--text-title--font-weight));
+  }
   .text-stat {
     font-size: var(--text-stat);
     line-height: var(--tw-leading, var(--text-stat--line-height));
@@ -2447,9 +2458,6 @@
   .text-\[45px\] {
     font-size: 45px;
   }
-  .text-\[clamp\(16px\,1\.4vw\,19px\)\] {
-    font-size: clamp(16px, 1.4vw, 19px);
-  }
   .text-\[clamp\(17px\,1\.4vw\,19px\)\] {
     font-size: clamp(17px, 1.4vw, 19px);
   }
@@ -2462,9 +2470,6 @@
   .text-\[clamp\(18px\,1\.6vw\,21px\)\] {
     font-size: clamp(18px, 1.6vw, 21px);
   }
-  .text-\[clamp\(20px\,2vw\,26px\)\] {
-    font-size: clamp(20px, 2vw, 26px);
-  }
   .text-\[clamp\(21px\,2vw\,26px\)\] {
     font-size: clamp(21px, 2vw, 26px);
   }
@@ -2473,9 +2478,6 @@
   }
   .text-\[clamp\(24px\,3vw\,32px\)\] {
     font-size: clamp(24px, 3vw, 32px);
-  }
-  .text-\[clamp\(26px\,3\.2vw\,38px\)\] {
-    font-size: clamp(26px, 3.2vw, 38px);
   }
   .text-\[clamp\(26px\,3\.4vw\,38px\)\] {
     font-size: clamp(26px, 3.4vw, 38px);
@@ -2491,9 +2493,6 @@
   }
   .text-\[clamp\(30px\,3\.4vw\,42px\)\] {
     font-size: clamp(30px, 3.4vw, 42px);
-  }
-  .text-\[clamp\(32px\,4\.4vw\,52px\)\] {
-    font-size: clamp(32px, 4.4vw, 52px);
   }
   .text-\[clamp\(32px\,4\.6vw\,56px\)\] {
     font-size: clamp(32px, 4.6vw, 56px);
@@ -2512,9 +2511,6 @@
   }
   .text-\[clamp\(36px\,5vw\,58px\)\] {
     font-size: clamp(36px, 5vw, 58px);
-  }
-  .text-\[clamp\(38px\,4\.8vw\,58px\)\] {
-    font-size: clamp(38px, 4.8vw, 58px);
   }
   .text-\[clamp\(40px\,5\.2vw\,64px\)\] {
     font-size: clamp(40px, 5.2vw, 64px);
@@ -2537,10 +2533,6 @@
   .leading-\[1\.03\] {
     --tw-leading: 1.03;
     line-height: 1.03;
-  }
-  .leading-\[1\.04\] {
-    --tw-leading: 1.04;
-    line-height: 1.04;
   }
   .leading-\[1\.05\] {
     --tw-leading: 1.05;
@@ -2593,10 +2585,6 @@
   .leading-body {
     --tw-leading: var(--leading-body);
     line-height: var(--leading-body);
-  }
-  .leading-none {
-    --tw-leading: 1;
-    line-height: 1;
   }
   .leading-snug {
     --tw-leading: var(--leading-snug);
@@ -3176,11 +3164,6 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .transition-all {
-    transition-property: all;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
   .transition-colors {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -3342,14 +3325,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       .hover\:border-white\/40:hover {
         border-color: color-mix(in oklab, var(--color-white) 40%, transparent);
-      }
-    }
-    .hover\:border-white\/\[\.3\]:hover {
-      border-color: color-mix(in srgb, #fff 30%, transparent);
-    }
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:border-white\/\[\.3\]:hover {
-        border-color: color-mix(in oklab, var(--color-white) 30%, transparent);
       }
     }
     .hover\:border-white\/\[\.34\]:hover {
@@ -4098,6 +4073,11 @@ html, body {
     transition-duration: var(--tw-duration, var(--default-transition-duration));
     --tw-duration: var(--transition-duration-fast);
     transition-duration: var(--transition-duration-fast);
+  }
+  .chip.is-active {
+    background-color: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-brand-ink);
   }
   .eyebrow {
     display: inline-flex;
