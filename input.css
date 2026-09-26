@@ -37,12 +37,10 @@
   --color-brand-border: rgba(61, 230, 140, 0.3);
   --color-brand-onWhite: #0E7A43;
 
-  --color-heading: #F5F7FF;
-  --color-heading-hi: #F6F8FF;
+  --color-heading: #F6F8FF;
   --color-body: #EEF0FF;
   --color-body-strong: #C4C8E6;
   --color-body-muted: #A6AAD0;
-  --color-body-tertiary: #9EA2C8;
   --color-body-caption: #8388AE;
   --color-body-faint: #6B7099;
 
@@ -117,8 +115,6 @@
   --text-small--line-height: 1.6;
   --text-body-lg: 19px;
   --text-body-lg--line-height: 1.6;
-  --text-body: 18px;
-  --text-body--line-height: 1.6;
   --text-body-sm: 16.5px;
   --text-body-sm--line-height: 1.6;
   --text-eyebrow: 14px;
@@ -167,7 +163,7 @@
   --radius-lg: 26px;
   --radius-pill: 999px;
 
-  --shadow-btn: 0 14px 34px rgba(61, 230, 140, 0.28);
+  --shadow-btn: 0 8px 22px rgba(61, 230, 140, 0.28);
   --shadow-btn-hover: 0 18px 38px rgba(61, 230, 140, 0.34);
   --shadow-btn-lg: 0 12px 30px rgba(0, 0, 0, 0.25);
   --shadow-card: 0 20px 44px rgba(0, 0, 0, 0.32);
@@ -264,7 +260,7 @@ body {
     padding: 6px 14px;
     border-radius: var(--radius-pill);
     background: var(--color-glass);
-    border: 1px solid var(--color-hairline);
+    border: 1px solid var(--color-hairline-card);
     font-size: var(--text-badge);
     color: var(--color-body-strong);
   }
@@ -276,6 +272,11 @@ body {
   .card-glass {
     @apply bg-glass backdrop-blur-card border border-hairline-card rounded-lg
            transition-[background,border-color,transform] duration-fast;
+  }
+  .link {
+    color: var(--color-brand);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
   .chip {
     @apply px-[12px] py-[6px] rounded-pill bg-white/[.06] border border-white/10
@@ -532,7 +533,7 @@ body {
   h1, h2, h3, h4, p, li, span, td, th, label, strong, div {
   color: inherit;
   }
-  .text-heading-hi, .text-heading, .text-ink, .text-ink-body,
+  .text-heading, .text-ink, .text-ink-body,
   .text-body, .text-body-caption, .text-body-muted, .text-body-faint,
   .text-onSecondary, .text-white, [class*="text-white"] {
   color: #14161C !important;
@@ -813,7 +814,7 @@ button:focus-visible,
   outline: 2px solid var(--color-brand);
   outline-offset: 3px;
 }
-.card-glass:focus-visible {
+a.card-glass:focus-visible {
   transform: translateY(-4px);
 }
 .btn-light:focus-visible,
@@ -846,7 +847,7 @@ html:not(.js) .reveal-atf {
     color: #fff;
     transform: translateY(-2px);
   }
-  .card-glass:hover {
+  a.card-glass:hover {
     background-color: var(--color-glass-hover);
     border-color: var(--color-hairline-hover);
     transform: translateY(-4px);

@@ -21,7 +21,7 @@
 
   <div class="relative z-[1] max-w-container mx-auto px-gutter pt-[140px] pb-section">
     <div class="eyebrow">Internal</div>
-    <h1 class="font-display font-bold text-h1 text-heading-hi mt-4">Style guide</h1>
+    <h1 class="font-display text-h1 text-heading mt-4">Style guide</h1>
     <p class="text-body text-lead mt-4 max-w-prose">Live specimens. Every value on this page is read from the compiled CSS. Copy classes from here, not from other pages.</p>
     <nav class="flex flex-wrap gap-2 mt-6" aria-label="Style guide sections">
       <a href="#colours" class="chip">Colours</a>
@@ -37,17 +37,17 @@
     </nav>
 
     <section id="colours" class="pt-section">
-      <h2 class="font-display font-bold text-h2 text-heading">Colours</h2>
+      <h2 class="font-display text-h2 text-heading">Colours</h2>
       <p class="text-body-muted text-small mt-2 mb-6 max-w-prose">Swatches use the colour variables. The value and Tailwind class are read from the compiled theme.</p>
       <div data-sg-colours class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-card"></div>
     </section>
 
     <section id="type" class="pt-section">
-      <h2 class="font-display font-bold text-h2 text-heading">Typography</h2>
+      <h2 class="font-display text-h2 text-heading">Typography</h2>
       <div class="flex flex-col gap-6 mt-6">
         <div>
-          <p class="font-display text-h1 text-heading-hi">Heading 1</p>
-          <button type="button" class="chip mt-2" data-copy="font-display text-h1 text-heading-hi">Copy class</button>
+          <p class="font-display text-h1 text-heading">Heading 1</p>
+          <button type="button" class="chip mt-2" data-copy="font-display text-h1 text-heading">Copy class</button>
         </div>
         <div>
           <p class="font-display text-h2 text-heading">Heading 2</p>
@@ -81,10 +81,10 @@
     </section>
 
     <section id="buttons" class="pt-section">
-      <h2 class="font-display font-bold text-h2 text-heading">Buttons</h2>
+      <h2 class="font-display text-h2 text-heading">Buttons</h2>
       <p class="text-body-muted text-small mt-2 max-w-prose">Every link, chip, button and field shows the focus ring. Tab through the chip, the link and the field below to check it. Disabled uses the same class with the disabled attribute. The class handles the look. Links can't be disabled, so use a button.</p>
       <div class="flex flex-wrap items-center gap-3 mt-4">
-        <a href="#buttons" class="text-brand underline">Sample link</a>
+        <a href="#buttons" class="link">Sample link</a>
         <span class="chip" tabindex="0">Sample chip</span>
       </div>
       <div class="flex flex-col gap-6 mt-6">
@@ -157,12 +157,12 @@
           </div>
           <button type="button" class="chip mt-3" data-copy="rt">Copy class</button>
         </div>
-        <p class="text-body">On dark, an <a href="#components" class="text-brand underline">inline link</a> uses mint with an underline.</p>
+        <p class="text-body">On dark, an <a href="#components" class="link">inline link</a> uses the shared link class.</p>
       </div>
     </section>
 
     <section id="spacing" class="pt-section">
-      <h2 class="font-display font-bold text-h2 text-heading">Spacing</h2>
+      <h2 class="font-display text-h2 text-heading">Spacing</h2>
       <p class="text-body-muted text-small mt-2 mb-6 max-w-prose">Section padding and gaps from the spacing tokens.</p>
       <div data-sg-spacing class="flex flex-col gap-3"></div>
     </section>
@@ -183,7 +183,7 @@
     </section>
 
     <section id="motion" class="pt-section">
-      <h2 class="font-display font-bold text-h2 text-heading">Motion</h2>
+      <h2 class="font-display text-h2 text-heading">Motion</h2>
       <p class="text-body-muted text-small mt-2 mb-6 max-w-prose">With reduced motion on, reveals show at once, cards don't lift and the glows stop. UI motion uses the house easing. ease-in-out is only for looping glows.</p>
       <div data-sg-motion class="flex flex-col gap-3 mb-6"></div>
       <div class="flex flex-wrap items-end gap-6">
@@ -200,7 +200,7 @@
         <div>
           <div class="card-glass p-card max-w-[280px]">
             <p class="font-display font-bold text-heading">Hover</p>
-            <p class="text-body text-small mt-1">.card-glass lifts on hover.</p>
+            <p class="text-body text-small mt-1">A linked card-glass lifts on hover.</p>
           </div>
           <button type="button" class="chip mt-3" data-copy="card-glass">Copy class</button>
         </div>
@@ -208,7 +208,7 @@
     </section>
 
     <section id="icons" class="pt-section">
-      <h2 class="font-display font-bold text-h2 text-heading">Icons</h2>
+      <h2 class="font-display text-h2 text-heading">Icons</h2>
       <p class="text-body-muted text-small mt-2 mb-6">SVG files in /assets. Copy class copies the display class.</p>
       <div data-sg-icons class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-card"></div>
       <h3 class="font-display font-bold text-heading mt-8 mb-4">Client logos</h3>
@@ -267,7 +267,7 @@
     'canvas', 'canvas-raised', 'navy-1', 'navy-2', 'glass', 'glass-hover',
     'hairline', 'hairline-card', 'hairline-hover',
     'brand', 'brand-hover', 'brand-ink', 'brand-soft', 'brand-softStrong', 'brand-border', 'brand-onWhite',
-    'heading', 'heading-hi', 'body', 'body-strong', 'body-muted', 'body-tertiary', 'body-caption', 'body-faint',
+    'heading', 'body', 'body-strong', 'body-muted', 'body-caption', 'body-faint',
     'paper', 'ink', 'ink-body', 'ink-muted', 'paper-muted', 'hairline-light', 'table-cell',
     'jewel-blue', 'jewel-blueDeep', 'jewel-indigo', 'jewel-indigoDeep', 'jewel-purple', 'jewel-purpleDeep',
     'jewel-magenta', 'jewel-magentaDeep', 'jewel-pink', 'jewel-pinkDeep', 'jewel-red', 'jewel-redDeep',
@@ -286,7 +286,16 @@
     sw.style.background = 'var(--color-' + name + ')';
     var title = document.createElement('div');
     title.className = 'font-mono text-caption text-heading';
-    title.textContent = '--color-' + name;
+    var roles = {
+      heading: 'heading',
+      body: 'primary',
+      'body-strong': 'secondary',
+      'body-muted': 'body',
+      'body-caption': 'caption',
+      'body-faint': 'disabled'
+    };
+    var role = roles[name];
+    title.textContent = '--color-' + name + (role ? ' · ' + role : '');
     var hex = document.createElement('div');
     hex.className = 'text-caption text-body-muted';
     hex.textContent = toHex(raw);

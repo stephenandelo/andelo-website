@@ -6,7 +6,7 @@
 <!-- andelo-critical-canvas -->
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0C22">
-<style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}.btn-mint{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:#3DE68C;color:#04160C;font-weight:700;text-decoration:none;box-shadow:0 8px 22px rgba(61,230,140,.28)}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
+<style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Design Brief Builder | Andelo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,8 +37,8 @@
       <span class="w-[24px] h-[24px] rounded-full bg-brand flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#04160C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       <span class="font-display text-[13px] font-semibold tracking-label uppercase text-brand">Free tool · No sign-up</span>
     </div>
-    <h1 class="font-display font-bold text-[clamp(32px,5vw,50px)] leading-[1.05] tracking-display text-heading-hi mb-[16px]">Design Brief <span class="text-brand">Builder</span></h1>
-    <p class="text-white text-lead leading-body max-w-[60ch] [text-wrap:pretty]">Use this free tool to stop rework before it starts. A complete brief means a higher chance the work comes back right the first time. Fill in the form and get a clean, formatted brief, ready to copy and paste to your designer.</p>
+    <h1 class="font-display font-bold text-[clamp(32px,5vw,50px)] leading-[1.05] tracking-display text-heading mb-[16px]">Design Brief <span class="text-brand">Builder</span></h1>
+    <p class="text-white text-lead max-w-[60ch] [text-wrap:pretty]">Use this free tool to stop rework before it starts. A complete brief means a higher chance the work comes back right the first time. Fill in the form and get a clean, formatted brief, ready to copy and paste to your designer.</p>
     <ul class="list-none mt-[20px] p-0 flex flex-col gap-[8px] max-w-[560px]">
       <li class="flex items-start gap-[10px] text-base leading-snug text-body"><span class="flex-none mt-[4px] flex"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="font-semibold">Two minutes</strong> start to finish.</span></li>
       <li class="flex items-start gap-[10px] text-base leading-snug text-body"><span class="flex-none mt-[4px] flex"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3DE68C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="font-semibold">Stays private,</strong> nothing is sent anywhere.</span></li>
@@ -53,28 +53,28 @@
           <label for="bt-name" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">Task name <span class="text-brand-onWhite">*</span></label>
           <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">A short name you'll recognise later.</div>
           <input type="text" id="bt-name" class="field" placeholder="e.g. October launch social set">
-          <div data-err="name" class="hidden text-[#F26161] text-[13px] mt-[6px]">Give the task a name.</div>
+          <div data-err="name" class="hidden text-[#BE3826] text-[13px] mt-[6px]">Give the task a name.</div>
         </div>
 
         <div>
           <label for="bt-scope" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">What you need <span class="text-brand-onWhite">*</span></label>
           <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">List the deliverables and how many. Each format is its own file, so name them all.</div>
           <textarea id="bt-scope" rows="3" class="field" placeholder="e.g. 1 Instagram post + 3 resizes (square, story, landscape). Or: 8-page A4 brochure, print-ready."></textarea>
-          <div data-err="scope" class="hidden text-[#F26161] text-[13px] mt-[6px]">List what you need made.</div>
+          <div data-err="scope" class="hidden text-[#BE3826] text-[13px] mt-[6px]">List what you need made.</div>
         </div>
 
         <div>
           <label for="bt-obj" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">The objective, in one sentence <span class="text-brand-onWhite">*</span></label>
           <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">What is this design for, and what should it achieve?</div>
           <input type="text" id="bt-obj" class="field" placeholder="e.g. Drive event signups from our email list.">
-          <div data-err="obj" class="hidden text-[#F26161] text-[13px] mt-[6px]">Say what the design is for.</div>
+          <div data-err="obj" class="hidden text-[#BE3826] text-[13px] mt-[6px]">Say what the design is for.</div>
         </div>
 
         <div>
           <label class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">Is the copy final? <span class="text-brand-onWhite">*</span></label>
           <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">Final, approved words prevent the most common cause of redone work.</div>
           <div class="bt-seg flex gap-[8px] flex-wrap" data-seg="copy"><label><input type="radio" name="copy" value="Final and approved"><span>Final and approved</span></label><label><input type="radio" name="copy" value="Still in draft (may change)"><span>Still in draft</span></label><label><input type="radio" name="copy" value="No copy needed"><span>No copy needed</span></label></div>
-          <div data-err="copy" class="hidden text-[#F26161] text-[13px] mt-[6px]">Choose the copy status.</div>
+          <div data-err="copy" class="hidden text-[#BE3826] text-[13px] mt-[6px]">Choose the copy status.</div>
           <textarea id="bt-copytext" rows="3" class="field mt-2" placeholder="Paste the final copy here, or note where it lives."></textarea>
         </div>
 
@@ -82,7 +82,7 @@
           <label for="bt-specs" class="block font-display font-semibold text-[15px] tracking-[-.005em] mb-[4px] text-ink">Brand and specs <span class="text-brand-onWhite">*</span></label>
           <div class="text-[#5A6172] text-[13.5px] mb-[10px] leading-snug">Sizes, orientation, output format (print-ready PDF, PNG, etc.), platform, plus links to your logo, fonts, colours, and any images or product shots. Updating something? Link the existing file.</div>
           <textarea id="bt-specs" rows="3" class="field" placeholder="e.g. 1080x1080 + 1080x1920, digital, Instagram. Brand kit: [link]. Use our teal, not the old blue."></textarea>
-          <div data-err="specs" class="hidden text-[#F26161] text-[13px] mt-[6px]">Add sizes, format, and where the brand files are.</div>
+          <div data-err="specs" class="hidden text-[#BE3826] text-[13px] mt-[6px]">Add sizes, format, and where the brand files are.</div>
         </div>
 
         <div>
@@ -110,7 +110,7 @@
               <div id="bt-calgrid" class="grid grid-cols-7 gap-[4px]"></div>
             </div>
           </div>
-          <div data-err="date" class="hidden text-[#F26161] text-[13px] mt-[6px]">Pick a date.</div>
+          <div data-err="date" class="hidden text-[#BE3826] text-[13px] mt-[6px]">Pick a date.</div>
           <label class="flex items-center gap-[11px] cursor-pointer mt-2"><input type="checkbox" id="bt-firm"><span class="text-[15px] text-ink-body">This date is firm (a hard deadline)</span></label>
         </div>
 
@@ -148,27 +148,27 @@
 
     <!-- ══ FAQ ══ -->
     <section class="mt-[60px]">
-      <h2 class="font-display font-bold text-[clamp(24px,3vw,32px)] leading-[1.1] tracking-tight text-heading-hi mb-4">Common questions</h2>
+      <h2 class="font-display font-bold text-[clamp(24px,3vw,32px)] leading-[1.1] tracking-tight text-heading mb-4">Common questions</h2>
       <div class="flex flex-col gap-[14px]">
         <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] px-[26px] py-4">
           <h3 class="font-display font-semibold text-[19px] text-heading mb-[8px]">Is my brief sent anywhere?</h3>
-          <p class="text-body text-small leading-body m-0">No. Nothing you type leaves this page. No account, no email, no server. It runs entirely in your browser.</p>
+          <p class="text-body text-small m-0">No. Nothing you type leaves this page. No account, no email, no server. It runs entirely in your browser.</p>
         </div>
         <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] px-[26px] py-4">
           <h3 class="font-display font-semibold text-[19px] text-heading mb-[8px]">Why is this free?</h3>
-          <p class="text-body text-small leading-body m-0">Better briefs make design work better for everyone, including us. And a good brief is only half of it. The other half is an experienced designer turning it into great work. So the knowledge is free, and the expertise is what we sell.</p>
+          <p class="text-body text-small m-0">Better briefs make design work better for everyone, including us. And a good brief is only half of it. The other half is an experienced designer turning it into great work. So the knowledge is free, and the expertise is what we sell.</p>
         </div>
         <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] px-[26px] py-4">
           <h3 class="font-display font-semibold text-[19px] text-heading mb-[8px]">Does this only work with Andelo?</h3>
-          <p class="text-body text-small leading-body m-0">No. It works for every production design type (graphics, presentations, print, digital). For web development, motion, or app design, use it as the base and add that discipline's specs.</p>
+          <p class="text-body text-small m-0">No. It works for every production design type (graphics, presentations, print, digital). For web development, motion, or app design, use it as the base and add that discipline's specs.</p>
         </div>
         <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] px-[26px] py-4">
           <h3 class="font-display font-semibold text-[19px] text-heading mb-[8px]">Do small tasks really need a brief?</h3>
-          <p class="text-body text-small leading-body m-0">A repeat task with a designer who already knows your brand can skip the brief. The ones that need it are the firsts: a new designer, or a task that looks small but you've never briefed before. Don't assume the familiar request is the same request.</p>
+          <p class="text-body text-small m-0">A repeat task with a designer who already knows your brand can skip the brief. The ones that need it are the firsts: a new designer, or a task that looks small but you've never briefed before. Don't assume the familiar request is the same request.</p>
         </div>
         <div class="card-glass hover:translate-y-0 hover:bg-glass hover:border-hairline-card rounded-[16px] px-[26px] py-4">
           <h3 class="font-display font-semibold text-[19px] text-heading mb-[8px]">What if I can't answer every question?</h3>
-          <p class="text-body text-small leading-body m-0">Fill what you know and say what's still open. A brief that names its gaps (&ldquo;copy is still in review&rdquo;) beats one that leaves them empty: the designer knows it's incomplete, instead of assuming it's complete and building on the missing piece.</p>
+          <p class="text-body text-small m-0">Fill what you know and say what's still open. A brief that names its gaps (&ldquo;copy is still in review&rdquo;) beats one that leaves them empty: the designer knows it's incomplete, instead of assuming it's complete and building on the missing piece.</p>
         </div>
       </div>
     </section>

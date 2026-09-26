@@ -6,7 +6,7 @@
 <!-- andelo-critical-canvas -->
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0C22">
-<style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}.btn-mint{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:#3DE68C;color:#04160C;font-weight:700;text-decoration:none;box-shadow:0 8px 22px rgba(61,230,140,.28)}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
+<style>html{color-scheme:dark;background-color:#0A0C22!important}html,body{background-color:#0A0C22!important;color-scheme:dark}@view-transition{navigation:auto}::view-transition{background-color:#0A0C22}::view-transition-group(root){animation-duration:.01s}::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;height:100%;overflow:clip}</style>
 <title>Resources | Andelo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,12 +22,8 @@
 
   <!-- Ambient glows -->
   <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-    <div class="absolute -top-[140px] -left-[100px] w-[540px] h-[540px] rounded-full blur-[24px]
-                bg-[radial-gradient(circle,rgba(61,230,140,.16),transparent_70%)]
-                animate-[pulseGlow_9s_ease-in-out_infinite]"></div>
-    <div class="absolute top-[520px] -right-[160px] w-[600px] h-[600px] rounded-full blur-[24px]
-                bg-[radial-gradient(circle,rgba(124,92,240,.15),transparent_70%)]
-                animate-[pulseGlow_12s_ease-in-out_infinite]"></div>
+    <div class="absolute -top-[140px] -left-[100px] w-[540px] h-[540px] rounded-full blur-[24px] bg-[radial-gradient(circle,rgba(61,230,140,.16),transparent_70%)] animate-[pulseGlow_9s_ease-in-out_infinite]"></div>
+    <div class="absolute top-[520px] -right-[160px] w-[600px] h-[600px] rounded-full blur-[24px] bg-[radial-gradient(circle,rgba(124,92,240,.15),transparent_70%)] animate-[pulseGlow_12s_ease-in-out_infinite]"></div>
   </div>
 
 <div class="relative z-[1]">
@@ -60,24 +56,24 @@
 
         <div class="grid grid-cols-1 md:grid-cols-[.8fr_1.2fr] gap-4 md:gap-[44px] items-start pb-[56px] border-b border-hairline">
           <div class="reveal text-left md:sticky md:top-[110px]">
-            <h2 class="font-display font-bold text-[clamp(26px,3vw,34px)] leading-[1.15] tracking-tight text-heading-hi mb-2">Planning your design resourcing</h2>
-            <p class="text-body-muted text-base leading-body [text-wrap:pretty]">For the decision moments: how much design your team needs, which way to cover it, and the numbers to defend the call.</p>
+            <h2 class="font-display font-bold text-[clamp(26px,3vw,34px)] leading-[1.15] tracking-tight text-heading mb-2">Planning your design resourcing</h2>
+            <p class="text-body-muted text-base [text-wrap:pretty]">For the decision moments: how much design your team needs, which way to cover it, and the numbers to defend the call.</p>
           </div>
           <div class="flex flex-col gap-[16px]">
             <a href="/capacity-calculator" class="reveal group flex items-center gap-[22px] p-[16px] rounded-card bg-glass border border-hairline-card transition-[background,border-color,transform] duration-fast hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[2px] max-sm:flex-wrap">
               <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden bg-grad-indigo flex items-center justify-center max-sm:w-full max-sm:h-[170px]"><img src="../assets/icon-calculator.png" alt="Capacity calculator" class="w-auto h-[78px] object-contain block"></div>
-              <h3 class="flex-1 min-w-0 font-display font-bold text-[21px] leading-[1.25] tracking-[-.015em] text-heading-hi transition-colors duration-fast group-hover:text-brand">Capacity Calculator</h3>
+              <h3 class="flex-1 min-w-0 font-display font-bold text-[21px] leading-[1.25] tracking-[-.015em] text-heading transition-colors duration-fast group-hover:text-brand">Capacity Calculator</h3>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-none text-body-caption transition-colors duration-fast group-hover:text-brand"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
             <a href="/design-capacity-formula" class="reveal group flex items-center gap-[22px] p-[16px] rounded-card bg-glass border border-hairline-card transition-[background,border-color,transform] duration-fast hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[2px] max-sm:flex-wrap">
               <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden bg-grad-purple flex items-center justify-center max-sm:w-full max-sm:h-[170px]"><img src="../assets/capacity-cta-panel.png" alt="Do you have enough design hours?" class="w-auto h-[78px] object-contain block"></div>
-              <h3 class="flex-1 min-w-0 font-display font-bold text-[21px] leading-[1.25] tracking-[-.015em] text-heading-hi transition-colors duration-fast group-hover:text-brand">The Design Capacity Formula</h3>
+              <h3 class="flex-1 min-w-0 font-display font-bold text-[21px] leading-[1.25] tracking-[-.015em] text-heading transition-colors duration-fast group-hover:text-brand">The Design Capacity Formula</h3>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-none text-body-caption transition-colors duration-fast group-hover:text-brand"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
             
             <a href="/blog/what-is-a-design-subscription" class="reveal [transition-delay:120ms] group flex items-center gap-[22px] p-[16px] rounded-card bg-glass border border-hairline-card transition-[background,border-color,transform] duration-fast hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[2px] max-sm:flex-wrap">
               <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden max-sm:w-full max-sm:h-[170px]"><img src="../assets/blog-design-subscription.png" alt="What is a design subscription service" class="w-full h-full object-cover block"></div>
-              <h3 class="flex-1 min-w-0 font-display font-bold text-[21px] leading-[1.25] tracking-[-.015em] text-heading-hi transition-colors duration-fast group-hover:text-brand">What Is a Design Subscription?</h3>
+              <h3 class="flex-1 min-w-0 font-display font-bold text-[21px] leading-[1.25] tracking-[-.015em] text-heading transition-colors duration-fast group-hover:text-brand">What Is a Design Subscription?</h3>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-none text-body-caption transition-colors duration-fast group-hover:text-brand"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -85,19 +81,19 @@
 
         <div class="grid grid-cols-1 md:grid-cols-[.8fr_1.2fr] gap-4 md:gap-[44px] items-start">
           <div class="reveal text-left md:sticky md:top-[110px]">
-            <h2 class="font-display font-bold text-[clamp(26px,3vw,34px)] leading-[1.15] tracking-tight text-heading-hi mb-2">Working with designers day to day</h2>
-            <p class="text-body-muted text-base leading-body [text-wrap:pretty]">For the weeks in between: briefs that land first time, the right level on the right task, and hours that stop disappearing.</p>
+            <h2 class="font-display font-bold text-[clamp(26px,3vw,34px)] leading-[1.15] tracking-tight text-heading mb-2">Working with designers day to day</h2>
+            <p class="text-body-muted text-base [text-wrap:pretty]">For the weeks in between: briefs that land first time, the right level on the right task, and hours that stop disappearing.</p>
           </div>
           <div class="flex flex-col gap-[16px]">
             <a href="/design-brief-builder" class="reveal group flex items-center gap-[22px] p-[16px] rounded-card bg-glass border border-hairline-card transition-[background,border-color,transform] duration-fast hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[2px] max-sm:flex-wrap">
               <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden bg-grad-purple flex items-center justify-center max-sm:w-full max-sm:h-[170px]"><img src="../assets/icon-brief.png" alt="Design Brief Builder" class="w-auto h-[78px] object-contain block"></div>
-              <h3 class="flex-1 min-w-0 font-display font-bold text-[21px] leading-[1.25] tracking-[-.015em] text-heading-hi transition-colors duration-fast group-hover:text-brand">Design Brief Builder</h3>
+              <h3 class="flex-1 min-w-0 font-display font-bold text-[21px] leading-[1.25] tracking-[-.015em] text-heading transition-colors duration-fast group-hover:text-brand">Design Brief Builder</h3>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-none text-body-caption transition-colors duration-fast group-hover:text-brand"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
             
             <a href="/blog/why-design-hours-blow-out" class="reveal [transition-delay:60ms] group flex items-center gap-[22px] p-[16px] rounded-card bg-glass border border-hairline-card transition-[background,border-color,transform] duration-fast hover:bg-glass-hover hover:border-hairline-hover hover:-translate-y-[2px] max-sm:flex-wrap">
               <div class="flex-none w-[132px] h-[96px] rounded-[14px] overflow-hidden max-sm:w-full max-sm:h-[170px]"><img src="../assets/blog-hours-blow-out.png" alt="Why your design hours blow out" class="w-full h-full object-cover block"></div>
-              <h3 class="flex-1 min-w-0 font-display font-bold text-[21px] leading-[1.25] tracking-[-.015em] text-heading-hi transition-colors duration-fast group-hover:text-brand">Why Design Hours Blow Out</h3>
+              <h3 class="flex-1 min-w-0 font-display font-bold text-[21px] leading-[1.25] tracking-[-.015em] text-heading transition-colors duration-fast group-hover:text-brand">Why Design Hours Blow Out</h3>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="flex-none text-body-caption transition-colors duration-fast group-hover:text-brand"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
 
@@ -111,12 +107,11 @@
   <!-- ══ CLOSING CTA (navy panel) ══ -->
   <section id="book" class="pt-[10px] pb-[100px]">
     <div class="max-w-container mx-auto px-gutter">
-      <div class="reveal relative overflow-hidden rounded-lg px-5 py-[96px] text-center border border-hairline
-                  bg-[radial-gradient(900px_400px_at_50%_-10%,rgba(124,92,240,.4),transparent_60%),linear-gradient(160deg,#161B45,#0C0E28)]">
+      <div class="reveal relative overflow-hidden rounded-lg px-5 py-[96px] text-center border border-hairline bg-[radial-gradient(900px_400px_at_50%_-10%,rgba(124,92,240,.4),transparent_60%),linear-gradient(160deg,#161B45,#0C0E28)]">
         <div class="absolute -bottom-[120px] left-1/2 -translate-x-1/2 w-[520px] h-[340px] rounded-full blur-[24px] bg-[radial-gradient(circle,rgba(61,230,140,.22),transparent_70%)]"></div>
         <div class="relative">
-          <h2 class="font-display font-bold text-[clamp(32px,4.6vw,56px)] leading-[1.03] tracking-[-.025em] text-heading-hi mx-auto max-w-[22ch]">Do you have enough design capacity?</h2>
-          <p class="text-body text-lead leading-body mt-4 mb-5 mx-auto max-w-[60ch] [text-wrap:pretty]">Find out exactly how many hours you or your team can cover, and whether you need more help. Then take a real number into your next budget conversation, not a guess. Free, no email required.</p>
+          <h2 class="font-display font-bold text-[clamp(32px,4.6vw,56px)] leading-[1.03] tracking-[-.025em] text-heading mx-auto max-w-[22ch]">Do you have enough design capacity?</h2>
+          <p class="text-body text-lead mt-4 mb-5 mx-auto max-w-[60ch] [text-wrap:pretty]">Find out exactly how many hours you or your team can cover, and whether you need more help. Then take a real number into your next budget conversation, not a guess. Free, no email required.</p>
           <a href="/design-capacity-formula" class="btn-mint font-display font-extrabold px-[40px] py-[19px] text-[19px] uppercase tracking-snug shadow-[0_16px_40px_rgba(61,230,140,.3)]">Work out my capacity number</a>
         </div>
       </div>
